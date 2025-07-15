@@ -1,0 +1,23 @@
+Slide 1: Introduction to Quantum Computing
+- Instructor: Dr. Quantum Expert
+- Course Overview
+
+Slide 2: Quantum Mechanics Fundamentals
+- Superposition
+- Entanglement
+- Measurement
+
+Slide 3: Understanding Qubits
+- Definition: Quantum bits
+- States: |0⟩, |1⟩, and superpositions
+- Mathematical representation: |ψ⟩ = α|0⟩ + β|1⟩
+
+Slide 4: Quantum Gates
+- X Gate (NOT gate)
+- H Gate (Hadamard gate)
+- CNOT Gate (Controlled-NOT gate)
+
+Slide 5: Quantum Algorithms
+- Grover's Algorithm
+- Shor's Algorithm
+- Quantum Fourier Transform

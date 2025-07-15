@@ -1,0 +1,160 @@
+{
+  "transcript_info": {
+    "title": "Das NOT-Gate und das Hadamard-Gate",
+    "duration": "3:16",
+    "word_count": 380,
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erste Schritte im Programmieren eines Quantencomputers",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": 1.149,
+      "end_time": 8.289,
+      "duration": 7.14,
+      "text": "hi wir haben zuvor gesehen, wie man den IBM Quantum Composer bedient und heute möchten wir sehen wie man das not gate und das",
+      "section": "Einführung in Quantenlogikgatter",
+      "subsection": "Not-Gate",
+      "keywords": [
+        "IBM Quantum Composer",
+        "NOT-Gate"
+      ],
+      "concepts": [
+        "Quantenlogikgatter",
+        "IBM Quantum Composer"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:08.289",
+      "end_time": "00:00:16.839",
+      "duration": 8.549999999999999,
+      "text": "hadamard gate verwendet beziehungsweise was diese zwei gates machen das not gate wird häufig auch x gate genannt und es ist sehr ähnlich wie das klassische not in der booleschen logik, dass ein not sein eins und das eins ins null macht das es kehrt es um und genau dasselbe macht das not gate hier, wenn man es auf einen Qubit anwendet und das Qubit im zustand null ist geht es zu so stand eins über und in das ganze ein 2. mal anwendet geht es zurück in zustand null das gleiche als wenn man das ganze nicht angewendet hätte ist insofern reversible. Zweimal anwenden ist es gleich wie gar nicht anwenden.",
+      "section": "Einführung in Quantenlogikgatter",
+      "subsection": "Not-Gate",
+      "keywords": [
+        "NOT-Gate",
+        "Qubit",
+        "Reversibilität"
+      ],
+      "concepts": [
+        "Reversibilität",
+        "Qubit-Zustände"
+      ],
+      "relationships": [
+        "NOT-Gate kehrt Qubit-Zustände um"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 8.289,
+      "end_seconds": 16.839
+    },
+    {
+      "id": "segment_3",
+      "start_time": "00:00:52.140",
+      "end_time": "00:00:58.399",
+      "duration": 6.259,
+      "text": "Das not gate ist ein gate das einfach ein einzelnes Qubit wirkt das ein Qubit gate und es kehrt in zustand und eben von null zu eins von eins zu null aber wenn das Qubit in super position ist wird das ganze auch umgekehrt angenommen das Qubit ist im zustand alpha mal null plus beta mal eins und wir wenden das x gate darauf an, was passiert ist, dass das gate um das Ganze umgekehrt wird, und danach im Zustand alpha mal eins plus beta mal null ist natürlich immer ein 2. Mal anwendet, das Ganze wieder zurück gemacht.",
+      "section": "Einführung in Quantenlogikgatter",
+      "subsection": "Not-Gate",
+      "keywords": [
+        "Superposition",
+        "Qubit",
+        "NOT-Gate"
+      ],
+      "concepts": [
+        "Superposition",
+        "Qubit-Zustände"
+      ],
+      "relationships": [
+        "NOT-Gate beeinflusst Superposition"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 52.14,
+      "end_seconds": 58.399
+    },
+    {
+      "id": "segment_4",
+      "start_time": 58.399,
+      "end_time": 108.09,
+      "duration": 49.691,
+      "text": "Das zweite gate dass wir uns anschauen möchten, ist das hadamard gate das ist dieses gate, das man braucht, um überhaupt eine super Position zu erzeugen, wie man sie vorher gesehen hat. Das bedeutet wenn wir ein Qubit im Ursprungszustand Null haben darauf ein hadamard gate anwenden haben wir nachher super position zwischen null und eins. Und auch hier, wenn es ein 2. mal anwenden würde, geht es wieder zurück zum Zustand null, wie wir hier sehen. Einmal auf das hadamard gate angewendeten haben wir zwei Amplituden aus nicht mehr nur eine, sondern wir haben einen Amplitude von ungefähr 0,7 außer eins über sqrt 2 und dasselbe bei eins.",
+      "section": "Einführung in Quantenlogikgatter",
+      "subsection": "Hadamard-Gate",
+      "keywords": [
+        "Hadamard-Gate",
+        "Superposition",
+        "Qubit"
+      ],
+      "concepts": [
+        "Superposition",
+        "Hadamard-Gate"
+      ],
+      "relationships": [
+        "Hadamard-Gate erzeugt Superposition"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_5",
+      "start_time": "00:02:12.879",
+      "end_time": "00:02:20.110",
+      "duration": 7.231000000000023,
+      "text": "Und das ist genau das, was wir mit Super Positionen nennen ist ein super Position. Es ist in diesem verschrenktem Zustand und das verwenden wir später im zum Beispiel mit dem X gate, um dann andere Zustände auszudrücken. Wichtig ist hier noch Wir können, das hadamard gate sowohl auf zustand null als auch den zustand eins anwenden. In beiden Fällen haben wir danach eine Super Position.",
+      "section": "Einführung in Quantenlogikgatter",
+      "subsection": "Hadamard-Gate",
+      "keywords": [
+        "Superposition",
+        "Hadamard-Gate",
+        "Zustände"
+      ],
+      "concepts": [
+        "Superposition",
+        "Zustände"
+      ],
+      "relationships": [
+        "Hadamard-Gate beeinflusst Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 132.879,
+      "end_seconds": 140.11
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:02:39.759",
+      "end_time": "00:02:46.669",
+      "duration": 6.909999999999968,
+      "text": "Der Unterschied ist dieses Pluszeichen das sie dort sehen, wenn wir das hadamard gate auf Zustand null anwenden sie in den Zustand null plus eins mit werten 1/sqrt 2, falls wir auf den zustand eins anwenden stattdessen Zustand null minus eins und das kommt später eine sehr große Rolle spielen, Wenn wir komplexe Algorithmen betrachten, das werden wir in diese Serie nicht tun. Allerdings spielt ist später, hat eine sehr große Rolle und ist eines der wichtigen Teile. Mit Quantencomputer ganz neu ordnen, von Algorithmen machen können.",
+      "section": "Einführung in Quantenlogikgatter",
+      "subsection": "Hadamard-Gate",
+      "keywords": [
+        "Hadamard-Gate",
+        "Zustände",
+        "Algorithmen"
+      ],
+      "concepts": [
+        "Zustände",
+        "Algorithmen"
+      ],
+      "relationships": [
+        "Hadamard-Gate ist wichtig für komplexe Algorithmen"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 159.75900000000001,
+      "end_seconds": 166.66899999999998
+    }
+  ],
+  "key_takeaways": [
+    "Das NOT-Gate (X-Gate) kehrt den Zustand eines Qubits um und ist reversibel.",
+    "Das Hadamard-Gate erzeugt Superpositionen und ist entscheidend für die Quantenprogrammierung.",
+    "Die Anwendung des Hadamard-Gates auf verschiedene Qubit-Zustände führt zu unterschiedlichen Superpositionen."
+  ]
+}

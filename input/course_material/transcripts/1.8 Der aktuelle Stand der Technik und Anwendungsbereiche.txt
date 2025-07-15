@@ -1,0 +1,276 @@
+WEBVTT
+
+1
+00:00:01.270 --> 00:00:07.929 
+Jetzt möchten wir uns mit der Frage beschäftigen, wo ist der momentane Stand der Technik und was mögliche Anwendungsbereiche
+
+2
+00:00:08.039 --> 00:00:13.820 
+Wobei hier ist auch wichtig, nicht nur zuschauen, was man genau jetzt Moment kommt, so was wird  nach ein paar Jahren
+
+3
+00:00:13.820 --> 00:00:18.640 
+kommen, deswegen ist es auch noch ein kurzer Ausblick, wie sich das Ganze entwickeln könnte.
+
+4
+00:00:18.640 --> 00:00:22.210 
+Mit Quanten Computern
+
+5
+00:00:22.210 --> 00:00:31.739 
+der Status Quo ist, wo im Moment ist dass sehr viele verschiedene Firmen, Forschungseinrichtungen und teilweise sogar kleine Gruppen
+
+6
+00:00:31.929 --> 00:00:34.810 
+sich damit beschäftigen Quanten Computern beziehungsweise.
+
+7
+00:00:34.810 --> 00:00:40.340 
+QuBits so machen herzustellen und zwar auf ganz verschiedene Orten.
+
+8
+00:00:40.810 --> 00:00:49.090 
+Es geht supraleitender Ansatz, das Super Conducting Qubit, den man bei IBM findet es gibt Ionenfallen den man
+
+9
+00:00:49.090 --> 00:00:49.570 
+an der Universität
+
+10
+00:00:49.570 --> 00:00:56.700 
+Innsbruck häufig verwendet
+Es gibt  photonischer Ansatz und Halbleiter Ansatz und ich bin sicher, es gibt auch noch andere
+
+11
+00:00:57.390 --> 00:01:07.829 
+Und dennoch Ansatz hat man verschiedene Vorteile und Nachteile, mit dem man technische Limitation übergehen könnte
+
+12
+00:01:07.829 --> 00:01:19.230 
+Im Moment Die meisten QuBiTS hat man mit dem supraleitenden Ansatz Neue Computer von IBM Osprey hat 433 QuBiTS,
+
+13
+00:01:19.230 --> 00:01:26.450 
+und nächsten Jahres sollten ein neuer Computer Condor mit über 1000 Qubits, das heißt Hier sieht man nicht
+
+14
+00:01:26.450 --> 00:01:32.739 
+nur das Muschel lassen, sondern man hat sogar mehr als eine Verdopplung In diesem Jahr hatte man fast eine Verdreifachung
+
+15
+00:01:33.370 --> 00:01:36.510 
+Das heißt, man sieht die Anzahl Qubits war auch sehr schnell.
+
+16
+00:01:37.040 --> 00:01:43.049 
+Allerdings ist hier wichtig sagen nicht, dass nicht nur die Anzahl Qubits wichtig ist, sondern halt auch noch viele andere
+
+17
+00:01:43.049 --> 00:01:43.530 
+Dinge.
+
+18
+00:01:43.629 --> 00:01:49.700 
+Die größte Herausforderung Moment ist die Fehleranfälligkeit der Hardware
+
+19
+00:01:49.700 --> 00:01:58.920 
+Qubits sind extrem empfindlich sind empfindlich gegen Licht, Wärme, Strahlung, Elektromagnetismus und auch noch anderes entsprechend
+
+20
+00:01:58.920 --> 00:02:06.879 
+muss man das Ganze davon abschirmen und man muss in der Zukunft an einen Ort Fehlerkorrektur einbauen Quanten Fehlerkorrektur
+
+21
+00:02:07.390 --> 00:02:11.050 
+die im Moment noch nicht ganz möglich ist, weil man noch nicht genug Qubits hat
+
+22
+00:02:11.919 --> 00:02:15.560 
+Das heißt, man hat noch einige Herausforderungen, die man lösen möchte.
+
+23
+00:02:15.759 --> 00:02:23.349 
+Und das heißt eben auch, dass nicht nur die Qubit Anzahl steigen muss und wird, was ganz klar Plan ist, sondern auch die
+
+24
+00:02:23.349 --> 00:02:31.110 
+Fehlerrate wird drastische untergehen in den nächsten Jahren Moment können wir Fehler von zehn hoch minus drei bis zehn hoch
+
+25
+00:02:31.110 --> 00:02:38.919 
+minus vier erreichen, was jetzt noch nicht so viel klingt, das irgendwie ein Tausendstel bis ein zehntausendstel  Fehler
+
+26
+00:02:39.270 --> 00:02:44.490 
+Aber wenn man sich überlegt, dass man halt nicht auch nur eine einzelne Operationen auf Qubits machen muss, sondern vielleicht
+
+27
+00:02:44.490 --> 00:02:49.610 
+1000, dann skalieren diese Fehler halt hoch und am Schluss haben nur noch Rauschen.
+
+28
+00:02:49.840 --> 00:02:55.830 
+Deswegen ist es wichtig, die Sache unterzubringen sowie Ansätze zu entwickeln um die ganzen Fehler zu verbessern.
+
+29
+00:02:56.889 --> 00:03:01.879 
+Deswegen ist es auch wichtig zu sehen, dass genau das passiert.
+
+30
+00:03:02.009 --> 00:03:10.169 
+Neue Ansätze für die Fehlerkorrektur, statistische Methoden und auch Hardware Methoden.
+
+31
+00:03:10.169 --> 00:03:17.819 
+Dass man zum beispiel nicht  Qubits sortiert das nicht so schnell zerfallen werden angewendet, so dass die fehlerrate weiter
+
+32
+00:03:17.819 --> 00:03:18.860 
+und weiter untergeht.
+
+33
+00:03:18.870 --> 00:03:24.210 
+Jedes jahr gibt es bessere Qubits und das wird auch in den nächsten jahren so weiter gehen.
+
+34
+00:03:25.289 --> 00:03:30.229 
+Ist so ein paar anwendungsbereichen allgemein wie auch supercomputer.
+
+35
+00:03:30.389 --> 00:03:33.240 
+Wenn quanten computer dort angewendet?
+
+36
+00:03:33.449 --> 00:03:43.889 
+Muss halt wichtig ist für industrie und für die welt wichtiges beispiel qunaten chemie neue batterien
+
+37
+00:03:43.889 --> 00:03:53.270 
+chemie passiert auf sehr kleinen teilchen atomen, die miteinander oft auch in einem quanten bereich miteinander austauschen
+
+38
+00:03:53.360 --> 00:03:59.560 
+Entsprechend macht es sinn mit dem quanten computer das ganze probieren zu simulieren, weil man dort schon diese ganzen
+
+39
+00:03:59.819 --> 00:04:04.099 
+quanten Effekte hat und sie nicht einfach simulieren muss.
+
+40
+00:04:04.349 --> 00:04:10.770 
+So erhofft man sich, dass man auf diesen Bereich mit Quanten Computern bessere Ergebnisse erreichen kann.
+
+41
+00:04:10.770 --> 00:04:13.620 
+In der Zukunft
+
+42
+00:04:13.620 --> 00:04:17.740 
+dann Optimierungs Probleme allgemein
+
+43
+00:04:17.740 --> 00:04:20.990 
+Reisende Handels Personen ist ein sehr Bekanntes.
+
+44
+00:04:21.379 --> 00:04:26.790 
+Worum es hier geht, ist einfach, dass man viele Probleme hat, wie zum Beispiel das Geburtstags
+
+45
+00:04:26.790 --> 00:04:34.170 
+Problem, das ich erwähnt hatte, die sehr schnell sehr groß werden, extrem schnell skalieren und man nicht genau lösen
+
+46
+00:04:34.170 --> 00:04:43.189 
+kann, weil man eine riesige Menge an möglichen Lösungen hat und daraus die Beste suchen muss, das sind Quanten Algorithm
+
+47
+00:04:43.189 --> 00:04:51.160 
+wie  zum Beispiel das Groover Algorithmus, bekannt dafür, dass sie in bestimmten Mengen gut
+
+48
+00:04:51.160 --> 00:04:53.279 
+Lösungen rausfinden können beziehungsweise.
+
+49
+00:04:53.279 --> 00:05:01.040 
+Raussuchen und zu hoffen, dass sich erhofft man sich dort bessere Ergebnisse mit Quanten Computern dann als nächstes gibt
+
+50
+00:05:01.040 --> 00:05:05.319 
+es auch noch kommt Machine Learning
+Machine Learning ist heute sehr wichtig für viele verschiedene Dinge.
+
+51
+00:05:05.689 --> 00:05:14.529 
+Und bei Machine Learning gibt es unter anderem den uns Ansatz von den Neuronalen Netzwerken, und diese Ansatz ist viel versprechend
+
+52
+00:05:14.529 --> 00:05:22.579 
+für Quantencomputer, weil man heute Neuronale Netzwerke, also Hirnzellen simulieren möchte, die miteinander interagieren, und
+
+53
+00:05:22.579 --> 00:05:29.649 
+nach dort macht es durchaus Sinn, diesen physikalischen Prozess auf eine physikalische Weise zu simulieren und nicht nur
+
+54
+00:05:29.649 --> 00:05:37.810 
+auf einen digitalen Computer das Ganze zu machen, Quantum Games Es ist es nicht so wichtig, aber Quanten kann als Inspiration
+
+55
+00:05:37.810 --> 00:05:44.980 
+für Game mechaniken taugen oder Auch gibt es Computerspiele, die für einen pädagogischen Zweck eingesetzt werden können
+
+56
+00:05:44.980 --> 00:05:53.300 
+zum Beispiel Puzzles mit Quanten Zuständen, die Spaß machen können, und einem helfen, Quanten Computing besser zu verstehen
+
+57
+00:05:54.800 --> 00:05:59.949 
+Und als letztes wird es ganz sicher auch bei Finanzen Einsatz finden.
+
+58
+00:06:01.089 --> 00:06:08.319 
+Zum einen war es einfach allgemein für Optimieren gut ist und zum anderen meist Finanz Modelle gibt, die sehr stark auf physikalischen
+
+59
+00:06:08.319 --> 00:06:09.620 
+grundlagen bassieren.
+
+60
+00:06:09.620 --> 00:06:16.910 
+Das heißt, auch wenn das Finanzsystem selbst nicht physikalisch ist, hat man ein Modell dafür entwickelt, das auf eine Art
+
+61
+00:06:17.009 --> 00:06:18.850 
+physikalischen System entspricht.
+
+62
+00:06:18.980 --> 00:06:21.100 
+Und auch, weil man hier wieder am
+
+63
+00:06:21.100 --> 00:06:28.740 
+physikalischen System hat, macht es Sinn, dass man Quanten Computer versucht, um das zu lösen.
+
+64
+00:06:29.810 --> 00:06:36.850 
+Es geht natürlich noch ganz viele andere Anwendungsbereiche
+einige von den Zuschauern Hier werden vielleicht auch neue dafür finden
+
+65
+00:06:36.889 --> 00:06:37.949 
+oder neue Chemie.
+
+66
+00:06:37.949 --> 00:06:47.220 
+deswegen ist es wichtig, neue Algorithmen zu entwickeln und auch in Zukunft ja mehr und mehr Dinge lösen zu können.
+
+67
+00:06:48.160 --> 00:06:56.620 
+Und mit dem gesagt werden wir noch im praktischen Teil noch etwas mehr sehen in die Richtung, wie man Quanten denn wirklich
+
+68
+00:06:56.629 --> 00:06:58.990 
+sich unterscheidet von klassischen Computing

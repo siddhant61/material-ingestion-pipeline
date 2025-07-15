@@ -1,0 +1,167 @@
+WEBVTT
+
+1
+00:00:00.610 --> 00:00:07.650 
+Im vorherigen Video hat Marcel mit euch schon darüber gesprochen, weswegen einige Probleme vor heutige Computer sehr schwierig
+
+2
+00:00:07.650 --> 00:00:15.580 
+sind, und in diesem Video werden wir jetzt darüber sprechen, wie die Quantenphysik genutzt werden kann, um einen Quantencomputer
+
+3
+00:00:15.580 --> 00:00:16.280 
+zu bauen.
+
+4
+00:00:18.239 --> 00:00:24.969 
+Zunächst einmal möchte ich mit euch kurz darüber reden, wie ein klassischer Computer spricht.
+
+5
+00:00:24.980 --> 00:00:28.800 
+Was wir hier sehen, ist eine Folge von Nullen und Einsen.
+
+6
+00:00:29.949 --> 00:00:39.659 
+Das ist aber keine zufällige Folge von Nullen Einsen, sondern dieses Stück Code Binärcode sagt eigentlich einfach nur Hallo
+
+7
+00:00:39.920 --> 00:00:40.960 
+ich spreche in Null
+
+8
+00:00:40.960 --> 00:00:51.450 
+und Einsen und das ist nämlich genau wie ein klassischer Computer sozusagen, spricht mit sogenannten klassischen Bits ein
+
+9
+00:00:51.450 --> 00:01:01.469 
+klassisches Bit kann entweder den Basis Zustand null oder den Basis Zustand eins annehmen, und wenn wir zwei klassische
+
+10
+00:01:01.469 --> 00:01:07.870 
+Bits haben, dann kann jeweils jedes Bit eben entweder in null oder eins vorliegen.
+
+11
+00:01:08.069 --> 00:01:21.430 
+Das bedeutet Insgesamt haben wir für zwei Bits vier mögliche Basis Zustände, nämlich 00 01 10 oder 11 Und das Ganze kann ich
+
+12
+00:01:21.430 --> 00:01:31.459 
+jetzt generalisieren für n Bits, wobei n einfach irgendeine positive ganze Zahl ist
+n klassische Bits haben nämlich zwei
+
+13
+00:01:31.459 --> 00:01:39.010 
+hoch n mögliche Basis Zustände, aber sie können nur in einem dieser zwei hoch möglichen
+
+14
+00:01:39.010 --> 00:01:44.859 
+Basis Zuständen vorliegen und dementsprechend auch nur n Bit Informationen speichern.
+
+15
+00:01:45.739 --> 00:01:47.390 
+Wie kommen wir jetzt zu diesen zwei
+
+16
+00:01:47.390 --> 00:01:47.629 
+hoch n
+
+17
+00:01:47.629 --> 00:01:57.390 
+möglichen Basis Zuständen?
+Stellt euch einfach vor, wir haben n Bits vorliegen, ich hab sie jetzt hier als blaue Kreise
+
+18
+00:01:57.390 --> 00:02:06.489 
+visualisiert und jetzt hat das erste Bit eben zwei Möglichkeiten entweder in null oder eins vorzulegen.
+
+19
+00:02:06.500 --> 00:02:15.009 
+Das zweite Bit hat ebenfalls zwei Möglichkeiten Das heißt, die ersten 2 Bits haben zwei Mal zwei Möglichkeiten vorzulegen.
+
+20
+00:02:15.270 --> 00:02:18.169 
+Das dritte Bit hat wieder zwei Möglichkeiten.
+
+21
+00:02:18.180 --> 00:02:26.310 
+Heißt Die esrten 3 Bits haben zwei mal zwei mal zwei Möglichkeiten und das ganze können wir sofort führen, bis wir beim n-ten
+
+22
+00:02:26.310 --> 00:02:35.599 
+Bit angekommen sind, das heißt insgesamt haben wir zwei mal zwei mal zwei und so weiter bis zum n-ten bit mögliche Basis
+
+23
+00:02:35.599 --> 00:02:38.889 
+Zustände also zwei hoch n mögliche Basis Zustände.
+
+24
+00:02:43.659 --> 00:02:52.289 
+Jetzt möchte ich mit euch einen kurzen Live Versuch durchführen, ich habe eine Münze mitgebracht und diese Münze lege ich
+
+25
+00:02:52.289 --> 00:03:00.949 
+auf meiner Handfläche während die Münze auf meiner Handfläche liegt, zeigt sie mir einen bestimmten Zustand an.
+
+26
+00:03:01.330 --> 00:03:09.879 
+In diesem Fall zeigt das gerade Zahl das heißt es ist in einem eindeutigen Zustand Zahl, dann flipp ich die Münze.
+
+27
+00:03:11.099 --> 00:03:12.310 
+Fange sie wieder auf
+
+28
+00:03:12.810 --> 00:03:14.530 
+Lege sie wieder auf meiner Handfläche.
+
+29
+00:03:14.900 --> 00:03:21.129 
+Und jetzt zeigt sie in diesem Fall wieder Zahl an, ist also wieder in einem eindeutigen Basis Zustand.
+
+30
+00:03:21.860 --> 00:03:23.750 
+Was war aber mit der Münze
+
+31
+00:03:23.759 --> 00:03:32.919 
+Während sie in der Luft war und sich gleichmäßig gedreht hat? Während die Münze in der Luft war, lag sie in einer Art Überlagerungs
+
+32
+00:03:32.919 --> 00:03:34.210 
+-Zustand vor
+
+33
+00:03:34.210 --> 00:03:38.370 
+Zwischen Kopf und Zahl
+
+34
+00:03:38.370 --> 00:03:40.840 
+fassen wir das alles noch mal auf einer Slide zusammen.
+
+35
+00:03:40.840 --> 00:03:49.659 
+Also ganz am Anfang lag die Münze auf meiner Handfläche und hatte einen eindeutigen Zustand Entweder Kopf oder Zahl, dann
+
+36
+00:03:49.659 --> 00:03:51.710 
+habe ich die Münze in die Luft geworfen.
+
+37
+00:03:51.719 --> 00:03:59.960 
+Die Münze hat sich in der Luft gleichmäßig gedreht und lag in einem Überlagerungszustand vor Zwischen Kopf und Zahl.
+
+38
+00:03:59.960 --> 00:04:07.699 
+Wir nennen das in der Physiker Super Positions Zustand und dann habe ich die Münze wieder aufgefangen und hab sie wieder
+
+39
+00:04:07.699 --> 00:04:08.900 
+auf meiner Handfläche gelegt.
+
+40
+00:04:08.900 --> 00:04:17.069 
+Habe also den Zustand der Münze sozusagen gemessen und nach der Messung lag die Münze wieder in einem eindeutigen Basis Zustand
+
+41
+00:04:17.069 --> 00:04:23.980 
+vor Zahl oder Kopf mit einer Wahrscheinlichkeit von jeweils 50 %, also gleich großer Wahrscheinlichkeit

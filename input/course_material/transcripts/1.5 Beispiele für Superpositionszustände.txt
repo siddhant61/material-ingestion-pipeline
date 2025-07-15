@@ -1,0 +1,201 @@
+WEBVTT
+
+1
+00:00:00.810 --> 00:00:01.100 
+Als
+
+2
+00:00:01.100 --> 00:00:05.360 
+Nächstes möchten wir uns ein paar Beispiele für die Super Positions Zustände anschauen.
+
+3
+00:00:05.700 --> 00:00:12.539 
+Wir haben schon gesehen, was Superposition ist und wir möchten uns anschauen wie können solche Zustände aussehen?
+
+4
+00:00:14.900 --> 00:00:24.789 
+Superposition ist zum Beispiel alpha mal null plus beta mal eins sein typisch Zustand, wobei alpha und beta natürlich bestimmte
+
+5
+00:00:24.789 --> 00:00:25.739 
+Parameter sind.
+
+6
+00:00:26.390 --> 00:00:34.179 
+Wir haben gesehen das Beispiel eines Münzwurf, wo mir 50 % Wahrscheinlichkeit Kopf 50 % Wahrscheinlichkeit Zahl haben das
+
+7
+00:00:34.179 --> 00:00:36.060 
+würde einer Superposition entsprechen.
+
+8
+00:00:36.170 --> 00:00:45.500 
+Wo man 1/sqrt 2  als Parameter für sowohl alpha als auch beta haben würde, und wenn man das Ganze quadriert, weil
+
+9
+00:00:45.500 --> 00:00:51.700 
+es sind ja nur die Amplituden, das heißt das sind die Wurzeln der Wahrscheinlichkeiten, kriegt natürlich eins über zwei und
+
+10
+00:00:51.700 --> 00:00:59.829 
+eins über zwei fürs andere, das bedeutet man haut insgesamt 50, 50 % Wahrscheinlichkeit entweder Zahl oder Kopf zu bekommen
+
+11
+00:01:02.429 --> 00:01:09.109 
+Ein generalisierte  Zustand sieht ein bisschen anders aus, hat immer noch die Parameter alpha beta für die Amplituden,
+
+12
+00:01:09.200 --> 00:01:12.349 
+aber man kann es andere Wahrscheinlichkeiten einsetzen.
+
+13
+00:01:13.000 --> 00:01:15.340 
+Andere Wahrscheinlichkeit Amplituden.
+
+14
+00:01:16.219 --> 00:01:18.140 
+Wichtig ist hier die Gesamt Wahrscheinlichkeit.
+
+15
+00:01:18.140 --> 00:01:24.239 
+Muss immer noch eins sein, wenn ich eine Münze werfen, auch wenn die irgendwie unfair ist und eine Seite schwer ist.
+
+16
+00:01:24.280 --> 00:01:28.159 
+Sie muss auf Kopf oder Zahl Landen auf der Seite landen.
+
+17
+00:01:28.159 --> 00:01:30.280 
+Lassen wir mal weg, aber sie kann nicht einfach verschwinden.
+
+18
+00:01:30.280 --> 00:01:35.140 
+Das heißt, unsere Gesamt Wahrscheinlichkeit muss wie immer auf 100 kommen, das heißt eins hier.
+
+19
+00:01:35.799 --> 00:01:38.469 
+Ansonsten können wir  ausmachen.
+
+20
+00:01:38.480 --> 00:01:39.560 
+Das heißt, es kann 0 sein.
+
+21
+00:01:39.560 --> 00:01:41.930 
+Das heißt, wir könnten zum Beispiel auf eine Münze nehmen.
+
+22
+00:01:41.939 --> 00:01:48.689 
+Auf  beiden Seiten einfach Zahl drauf ist eine Trick Münze, wie sie von den Betrügern genutzt wird oder wir könnten,
+
+23
+00:01:48.689 --> 00:01:56.140 
+andere Münzen haben, die ganz andere Wahrscheinlichkeiten hat
+
+24
+00:01:56.140 --> 00:01:56.650 
+wir haben gesehen.
+
+25
+00:01:56.650 --> 00:02:03.700 
+Das ist die Superposition, wie schon angedeutet Es muss nicht immer 50 50 sein, wir können auch andere Parameter finden wie eins
+
+26
+00:02:03.700 --> 00:02:13.729 
+über sqrt drei und zwei über drei uns ganz andere Wurzel, die insgesamt dann zu eins aufaddieren, das heißt, wir können hier
+
+27
+00:02:13.729 --> 00:02:14.909 
+alle Wahrscheinlichkeiten haben.
+
+28
+00:02:14.909 --> 00:02:23.069 
+Uns diesen Amplituden haben wir eine Wahrscheinlichkeit von ein Drittel und zwei Drittel was würde das entsprechen?
+
+29
+00:02:23.449 --> 00:02:31.800 
+Ganz einfaches Beispiel wie ihr Wahrscheinlichkeit in Schule vlt gesehen habt ihr hättet drei Bälle in einem Becher *nicht verständlich*
+
+30
+00:02:31.800 --> 00:02:32.770 
+ein raus.
+
+31
+00:02:32.780 --> 00:02:40.550 
+Eine davon ist Rot, die anderen zwie sind weiß und bevor man das Ganze nehmen, könnte man das auch als Suppression anschauen, wo man
+
+32
+00:02:40.550 --> 00:02:44.319 
+ein Drittel und zwei Drittel Wahrscheinlichkeit hat,
+
+33
+00:02:44.319 --> 00:02:46.490 
+dann noch mal die Frage, ob alle Amplituden
+
+34
+00:02:46.490 --> 00:02:54.930 
+Erlaubt sind hier Beispiele mit 1/sqrt 7 und 1/sqrt 3  Wenn das Aufaddiert nachdem man es quadriert hat, sieht man
+
+35
+00:02:54.930 --> 00:02:56.099 
+Es gibt mehr als eins.
+
+36
+00:02:56.849 --> 00:03:01.689 
+Das ist natürlich nicht erlaubt, weil hier haben wir eine Wahrscheinlichkeit, die größer als 100 % ist.
+
+37
+00:03:02.060 --> 00:03:10.139 
+Das geht insgesamt natürlich nicht, entsprechend muss man, wenn ihr selber irgendwelche Sachen kodieren wollt, das Schauen wir
+
+38
+00:03:10.139 --> 00:03:16.439 
+später noch ein Beispiel an, dann müssen wir sicherstellen, dass das Ganze richtig normalisiert ist, so dass wenn man die
+
+39
+00:03:16.439 --> 00:03:19.400 
+Amplituden quadriert, das Ganze zu 1 aufsummiert.
+
+40
+00:03:19.599 --> 00:03:28.550 
+Genau wie ein Vektor mit der Länge Die Länge muss eins sein, ein Einheits Vektor, ein natürliches Beispiel, weil oft mal
+
+41
+00:03:28.550 --> 00:03:35.240 
+denkt man, wenn ich zwei Wahrscheinlichkeiten habe ist irgendwie immer 50, 50 selbst auch Studenten fragt an eine Universität
+
+42
+00:03:35.400 --> 00:03:42.039 
+die häufigste Annahme, wenn sie iwie wie etwas sein kann oder nicht von Ihnen ist sagen Ja, es ist 50, 50 war entweder ist
+
+43
+00:03:42.039 --> 00:03:46.599 
+es oder es ist es nicht bei uns gibt es dann Brauch, wo man einen Kuchen hat.
+
+44
+00:03:46.599 --> 00:03:54.349 
+In einem ist ein König versteckt, wenn dieses Kuchenstück nimmt, hegt meine Krone, es gibt zehn Kuchenstück für das so und
+
+45
+00:03:54.349 --> 00:03:57.750 
+entsprechend hat man auch hier die Möglichkeit, König zu werden oder nicht.
+
+46
+00:03:58.240 --> 00:04:04.379 
+Es gibt also zwei Möglichkeiten, aber die Wahrscheinlichkeit ist logischerweise nicht 50 50, sondern ist eins zu zehn zu
+
+47
+00:04:04.379 --> 00:04:14.659 
+9 zu 10 mal das nur null an König gehen könnte und sonst viel mehr Könige brauchen würde mal 50, 50 zu kommen und mit diesem
+
+48
+00:04:14.659 --> 00:04:22.519 
+Beispiel möchte ich abschließen und wir gehen noch weiter und schauen uns noch weitere interessante Möglichkeiten und was man
+
+49
+00:04:22.519 --> 00:04:28.189 
+mit Quanten Zuständen machen, kommen, was vielleicht auch mit normalen Zuständen und Wahrscheinlichkeiten nicht möglich
+
+50
+00:04:28.189 --> 00:04:28.540 
+ist.

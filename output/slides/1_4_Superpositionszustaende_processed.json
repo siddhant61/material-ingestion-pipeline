@@ -1,0 +1,673 @@
+{
+  "slide_deck_info": {
+    "title": "Superpositionszustände von Qubits",
+    "slide_count": 5,
+    "estimated_duration": "20 minutes",
+    "main_topic": "Superposition states of qubits in quantum computing"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "lecture on Superposition",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not provided"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Superpositionszustände von Qubits",
+      "content": "Isabel Nha Minh Le\nIBM Quantum Community",
+      "section": "Introduction to Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Qubits"
+      ],
+      "concepts": [
+        "Superposition states",
+        "Qubits"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Quantencomputer: Quanten-Bits (Qubits)",
+      "content": "→Klammern: Quantenzustand\n→Dirac-Notation/Bra-Ket-Schreibweise |1⟩|0⟩ oder Klassischer Computer: klassisches Bit 1 0 oder „Superposition“ 𝛼|0⟩+𝛽|1⟩ allgemeiner Qubit-Zustand Basis-Zustände Basis-Zustände + Überlagerung aller Basis-Zustände",
+      "section": "Definition of Qubits",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Qubits",
+        "Dirac Notation",
+        "Superposition"
+      ],
+      "concepts": [
+        "Qubits",
+        "Quantum states",
+        "Classical bits"
+      ],
+      "relationships": [
+        "Qubits are the quantum equivalent of classical bits"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "„Superposition“",
+      "content": "𝛼|0⟩+𝛽|1⟩ •𝛼,𝛽 sind sogenannte Amplituden •Die Amplituden geben den Anteil der Basis-Zustände in der Überlagerung an •Je größer die Amplitude, desto größer ist die Wahrscheinlichkeit, den dazugehörigen Basis-Zustand zu messen",
+      "section": "Understanding Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Amplituden",
+        "Wahrscheinlichkeit"
+      ],
+      "concepts": [
+        "Amplitudes",
+        "Probability of measurement"
+      ],
+      "relationships": [
+        "Larger amplitudes increase measurement probability"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "„Superposition“",
+      "content": "𝛼|0⟩+𝛽|1⟩ •𝛼,𝛽∈ℂ sind sogenannte Amplituden •Die Amplituden geben den Anteil der Basis-Zustände in der Überlagerung an •Je „größer“ die Amplitude, desto größer ist die Wahrscheinlichkeit, den dazugehörigen Basis-Zustand zu messen Bloch-Sphäre",
+      "section": "Further Insights on Superposition",
+      "has_image": true,
+      "image_description": "Bloch sphere representation of qubit states",
+      "keywords": [
+        "Bloch-Sphäre",
+        "Superposition",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Bloch sphere",
+        "Complex amplitudes"
+      ],
+      "relationships": [
+        "Bloch sphere visualizes qubit states"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "Quantencomputer: Quanten-Bits (Qubits)",
+      "content": "|1⟩|0⟩ oder „Superposition“ 𝛼|0⟩+𝛽|1⟩ Bohrsches Atommodell →diskrete Energieniveaus |0⟩|1⟩ |0⟩|1⟩ Heisenbergsche Unschärferelation →Aufenthaltswahrscheinlichkeit",
+      "section": "Quantum Bits and Their Properties",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Bohrsches Atommodell",
+        "Heisenbergsche Unschärferelation"
+      ],
+      "concepts": [
+        "Discrete energy levels",
+        "Uncertainty principle"
+      ],
+      "relationships": [
+        "Quantum bits relate to atomic models and uncertainty"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Superposition states of qubits",
+    "Dirac notation",
+    "Amplitudes and their significance",
+    "Bloch sphere representation",
+    "Quantum bits and their properties"
+  ],
+  "visual_elements": [
+    {
+      "slide_number": 4,
+      "element_type": "diagram",
+      "description": "Bloch sphere representation of qubit states",
+      "concepts_illustrated": [
+        "Bloch sphere",
+        "Superposition states"
+      ]
+    }
+  ],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:29:34+02:00",
+    "page_count": 5,
+    "has_images": true,
+    "filename": "1_4_Superpositionszustaende.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "26\n",
+          "Superpositionszustände von \nQubits\n",
+          "---\nIsabel Nha Minh Le\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "27\n",
+          "Quantencomputer: Quanten-Bits (Qubits)\n",
+          "Klammern: Quantenzustand\nDirac-Notation/ Bra-Ket-Schreibweise\n",
+          "| ۧ\n1\nۧ\nȁ0\noder\n",
+          "Klassischer Computer: klassisches Bit\n",
+          "1\n0\noder\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n",
+          "allgemeiner \nQubit-Zustand\n",
+          "Basis-Zustände\n",
+          "Basis-Zustände + \nÜberlagerung aller \nBasis-Zustände\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "28\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n",
+          "•\n𝛼, 𝛽sind sogenannte Amplituden\n",
+          "•\nDie Amplituden geben den Anteil der \nBasis-Zustände in der Überlagerung an\n",
+          "•\nJe größer die Amplitude, desto größer ist \ndie Wahrscheinlichkeit, den \ndazugehörigen Basis-Zustand zu messen\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "29\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n",
+          "•\n𝛼, 𝛽∈ℂsind sogenannte Amplituden\n",
+          "•\nDie Amplituden geben den Anteil der \nBasis-Zustände in der Überlagerung an\n",
+          "•\nJe „größer“ die Amplitude, desto größer \nist die Wahrscheinlichkeit, den \ndazugehörigen Basis-Zustand zu messen\n",
+          "Bloch-Sphäre\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 5,
+        "has_image": true,
+        "image_texts": [
+          "30\n",
+          "Quantencomputer: Quanten-Bits (Qubits)\n",
+          "| ۧ\n1\nۧ\nȁ0\noder\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n",
+          "Bohrsches Atommodell \ndiskrete Energieniveaus\n",
+          "ۧ\nȁ0\n",
+          "ۧ\nȁ1\n",
+          "ۧ\nȁ0\n",
+          "ۧ\nȁ1\n",
+          "Heisenbergsche Unschärferelation\nAufenthaltswahrscheinlichkeit\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Quantum states",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Classical bits",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Probability of measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Bloch sphere",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Complex amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Superposition states",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Quantum states",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Classical bits",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Probability of measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Bloch sphere",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Complex amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Quantum states",
+      "target_concept": "Amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantum states",
+      "target_concept": "Probability of measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantum states",
+      "target_concept": "Bloch sphere",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantum states",
+      "target_concept": "Complex amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantum states",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Quantum states",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Classical bits",
+      "target_concept": "Amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Classical bits",
+      "target_concept": "Probability of measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Classical bits",
+      "target_concept": "Bloch sphere",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Classical bits",
+      "target_concept": "Complex amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Classical bits",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Classical bits",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Amplitudes",
+      "target_concept": "Bloch sphere",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Amplitudes",
+      "target_concept": "Complex amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Amplitudes",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Amplitudes",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Probability of measurement",
+      "target_concept": "Bloch sphere",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Probability of measurement",
+      "target_concept": "Complex amplitudes",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Probability of measurement",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Probability of measurement",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Bloch sphere",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Bloch sphere",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Complex amplitudes",
+      "target_concept": "Discrete energy levels",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Complex amplitudes",
+      "target_concept": "Uncertainty principle",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    }
+  ]
+}

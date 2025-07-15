@@ -1,0 +1,86 @@
+---
+description: Prompting & Chain-of-Thought (CoT) Rules
+globs: 
+---
+# Prompting & Chain-of-Thought (CoT) Rules for step1_material_ingestion
+
+## 1. Overview
+
+This document establishes the guidelines for crafting and utilizing prompt templates and chain-of-thought (CoT) reasoning within the **step1_material_ingestion** project. These rules ensure that every agent engages in explicit, documented reasoning processes when performing tasks, thereby facilitating debugging, error handling, and overall system robustness.
+
+## 2. Prompt Templates
+
+- **Structured Templates:**  
+  All prompts must follow a structured template that clearly outlines the input, expected output, and the chain-of-thought steps. These templates serve as both a guide for the agent and a record of its reasoning process.
+
+- **Explicit Reasoning Steps:**  
+  Prompts should incorporate explicit chain-of-thought instructions, encouraging agents to document intermediate steps, decision points, and fallback triggers.
+
+- **Integration with LangChain:**  
+  Leverage LangChain (or equivalent frameworks) to structure prompts and enable dynamic chain-of-thought responses. This ensures that each logical decision is traceable and reproducible.
+
+- **Example Template Structure:**
+  ```plaintext
+  [Prompt Header]
+  Task: [Brief description of the task]
+  Context: [Relevant contextual information]
+  Instructions:
+    1. Analyze the input data.
+    2. Document intermediate reasoning steps.
+    3. Identify potential pitfalls or fallback conditions.
+    4. Provide a final, reasoned output.
+  ```
+
+## 3. Chain-of-Thought (CoT) Logging
+
+- **Mandatory Logging:**  
+  Every agent must log detailed chain-of-thought steps during processing. This includes:
+  - Key decision points.
+  - Intermediate conclusions.
+  - Fallback triggers and error conditions.
+
+- **Documentation Format:**  
+  CoT logs should be embedded within the agent's output and clearly delineated from the final result. Standard markers or comments must be used to separate chain-of-thought logs from the final output.
+
+- **Traceability:**  
+  Ensure that all logged reasoning is traceable back to specific code modules and functions. This facilitates easier debugging and auditing of the decision-making process.
+
+## 4. Fallback Mechanisms & Triggering
+
+- **Fallback Triggers:**  
+  Agents should include logic within the CoT prompts to detect low-confidence outcomes or errors. If a primary method yields uncertain results, a fallback method must be clearly documented and invoked.
+
+- **Fallback Documentation:**  
+  Any fallback trigger should be logged as part of the chain-of-thought, detailing:
+  - The reason for triggering the fallback.
+  - The alternative method or process used.
+  - The outcome after invoking the fallback mechanism.
+
+## 5. Best Practices & Constraints
+
+- **Clear and Concise Reasoning:**  
+  Ensure that chain-of-thought logs focus on critical decision points without unnecessary verbosity. Clarity is paramount.
+
+- **Consistent Format:**  
+  Maintain a uniform format for CoT logs across all agents. Use standard headers, markers, or metadata tags to identify chain-of-thought sections.
+
+- **Separation from Final Output:**  
+  The final output provided to downstream modules should be separate from the chain-of-thought logs. In production, CoT logs should be available for debugging or verbose modes only.
+
+- **Security and Privacy:**  
+  Avoid including sensitive data in CoT logs. Ensure that logged data adheres to project security and privacy guidelines.
+
+## 6. Summary of Do’s and Don’ts
+
+### Do:
+- Utilize structured prompt templates with explicit chain-of-thought steps.
+- Log all key reasoning steps, decision points, and fallback triggers.
+- Maintain consistency in CoT log formatting across all agents.
+- Clearly separate chain-of-thought logs from the final output, particularly in production mode.
+
+### Don’t:
+- Omit chain-of-thought reasoning steps or fallback documentation.
+- Produce verbose, unstructured logs that hinder readability or debugging.
+- Include sensitive data in the chain-of-thought logs.
+- Compromise the traceability of the decision-making process within the agents.
+

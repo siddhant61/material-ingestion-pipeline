@@ -1,0 +1,86 @@
+---
+description: Integration with Third-Party APIs & SDKs
+globs: 
+---
+# Integration with Third-Party APIs & SDKs for step1_material_ingestion
+
+## 1. Overview
+
+This document provides guidelines for integrating third-party APIs and SDKs into the **step1_material_ingestion** pipeline. It outlines the best practices for API/SDK usage, documentation, error handling, versioning, and overall integration strategy to ensure that external dependencies are managed securely, efficiently, and consistently across the project.
+
+## 2. API/SDK Guidelines
+
+- **Standardized Integration:**  
+  - Use well-documented APIs/SDKs that follow industry standards.  
+  - Always authenticate API calls using secure tokens or API keys and follow the provider's recommended authentication mechanisms.
+
+- **Parameter Management:**  
+  - Clearly define and document the parameters required for API calls.  
+  - Use JSON or dictionary-based parameter structures to maintain consistency.
+
+- **Rate Limiting & Quotas:**  
+  - Be aware of API rate limits and quotas.  
+  - Implement appropriate handling for rate limit responses, such as exponential backoff or caching strategies.
+
+- **Security Considerations:**  
+  - Securely store API keys and credentials using environment variables or secret management tools.  
+  - Avoid hardcoding sensitive information in the codebase.
+
+## 3. Documentation of External Interfaces
+
+- **Interface Documentation:**  
+  - Document each third-party integration in a dedicated section of the project documentation or in separate markdown files.
+  - Include details such as endpoint URLs, request/response formats, authentication methods, and example payloads.
+
+- **Versioning and Updates:**  
+  - Track the version of each API/SDK used and monitor for deprecations or breaking changes.
+  - Maintain a changelog that records updates or modifications to third-party integrations.
+
+- **Usage Examples:**  
+  - Provide code examples and use cases demonstrating how to invoke the API/SDK within the pipeline.
+  - Clearly indicate any customization or special handling required for the integration.
+
+## 4. Error Handling & Fallback Mechanisms
+
+- **Error Propagation:**  
+  - All errors from third-party API calls should be captured, logged, and propagated up to the Coordinator Agent for centralized handling.
+  - Include error details (e.g., HTTP status codes, error messages) in the structured output.
+
+- **Fallback Strategies:**  
+  - Define and document fallback mechanisms for handling API failures, such as using alternative endpoints or SDK functions.
+  - Log fallback decisions along with chain-of-thought reasoning to assist with debugging and performance monitoring.
+
+## 5. Versioning & Deprecation Policies
+
+- **Dependency Versioning:**  
+  - Pin the versions of third-party APIs/SDKs in dependency files (e.g., `requirements.txt` or `Pipfile`) to ensure consistency.
+  - Monitor third-party releases and update integrations in a controlled manner, following proper testing and review procedures.
+
+- **Deprecation Handling:**  
+  - Stay informed about any deprecation notices from third-party providers.
+  - Plan and implement migration strategies well before the deprecated version is retired.
+
+## 6. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Secure Integration:**  
+  - Use environment variables or secret management for sensitive API keys and credentials.
+- **Document Thoroughly:**  
+  - Provide detailed documentation and usage examples for all third-party integrations.
+- **Handle Errors Gracefully:**  
+  - Implement robust error handling and fallback strategies for API/SDK failures.
+- **Monitor Versions:**  
+  - Keep dependencies updated and track API/SDK versions to anticipate breaking changes.
+- **Follow Provider Guidelines:**  
+  - Adhere to the best practices and rate limits specified by third-party providers.
+
+### Don’t:
+- **Hardcode Sensitive Data:**  
+  - Avoid embedding API keys or credentials directly in the source code.
+- **Ignore Rate Limits:**  
+  - Do not bypass or ignore API rate limits; implement proper handling and retry mechanisms.
+- **Overlook Documentation:**  
+  - Never integrate an API/SDK without comprehensive documentation and clear error handling strategies.
+- **Neglect Updates:**  
+  - Do not postpone updates or ignore deprecation warnings from third-party providers.
+

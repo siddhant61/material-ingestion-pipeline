@@ -1,0 +1,82 @@
+WEBVTT
+
+1
+00:00:00.830 --> 00:00:03.089 
+Herzlichen Glückwunsch, ihr habt es geschafft!
+
+2
+00:00:03.089 --> 00:00:09.960 
+In den vergangenen Wochen haben wir richtig viel über Quantencomputer gelernt
+Marcel Was haben wir alles so aus der Quantenphysik
+
+3
+00:00:09.960 --> 00:00:10.720 
+kennengelernt?
+
+4
+00:00:11.619 --> 00:00:14.359 
+In der Theorie haben die mehrere Phänomenen angeschaut aus der Quantenphysik.
+
+5
+00:00:14.359 --> 00:00:20.239 
+unter anderem ist die Super Position Und wir haben das mit Hilfe eines Münzwurfs gezeigt.
+
+6
+00:00:20.530 --> 00:00:27.239 
+Die Super Position ist, wenn ein Qubit nicht nur im Zustand null und dem Zustand eins sein kann, sondern stattdessen auch
+
+7
+00:00:27.239 --> 00:00:32.409 
+irgendwo dazwischen sein kann endlich wie eine Münze in der Luft ist, wenn noch nicht klar ist, wo sie landet.
+
+8
+00:00:32.850 --> 00:00:35.630 
+Danach haben wir auch die Quanten Verschränkungen angeschaut.
+
+9
+00:00:35.880 --> 00:00:43.250 
+Wo zwei oder mehr Qubits miteinander verschränkt sind und eine Art Verbindung angehen, sodass eines die anderen beeinflussen
+
+10
+00:00:43.250 --> 00:00:50.500 
+können und dann haben wir auch noch angeschaut, wie Messungen sich mit dem ganzen Verhalten und was wir damit machen können
+
+11
+00:00:50.859 --> 00:00:52.530 
+Und was haben wir da noch angeschaut?
+
+12
+00:00:52.969 --> 00:00:59.320 
+In einem zweiten Teil haben wir gemeinsam den Quantencomputer programmiert und im Prinzip genau diese Phänomene, die du
+
+13
+00:00:59.320 --> 00:01:01.369 
+gerade angesprochen hast, reproduziert.
+
+14
+00:01:01.950 --> 00:01:04.540 
+Wir haben zum Beispiel das X gate kennengelernt.
+
+15
+00:01:04.549 --> 00:01:11.370 
+Oder auch das Hadamard gate, mit dem Hadamard gate, haben wir die Super Position von Qubits Zuständen reproduziert, und dann
+
+16
+00:01:11.370 --> 00:01:16.579 
+haben wir zu guter Letzt auch noch, dass CNot gate kennengelernt und damit Quanten Verschränkung erzeugen können.
+
+17
+00:01:17.409 --> 00:01:23.609 
+Und wenn euch das ganz gefallen habt und ich noch mehr wissen wollt, wie man mit dem Quanten Computer programmiert, könnte man Qiskit
+
+18
+00:01:23.609 --> 00:01:29.450 
+textbook nachschauen oder auf dem Qiskit Youtube Channel, wo ihr weitere Informationen dazu finden werdet.
+
+19
+00:01:30.079 --> 00:01:35.450 
+Ich glaube, wir haben richtig viel Spaß, wir hoffen, ihr hattet genauso viel Spaß und wir wünschen euch ganz viel Erfolg
+
+20
+00:01:35.450 --> 00:01:36.590 
+bei der Abschlussprüfung.

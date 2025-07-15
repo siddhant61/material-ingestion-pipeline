@@ -1,0 +1,611 @@
+{
+  "transcript_info": {
+    "title": "Superpositionszustände von Qubits",
+    "duration": "09:29",
+    "word_count": 1541,
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erste Schritte in Quantencomputing",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ]
+  },
+  "segments": [
+    {
+      "id": "1",
+      "start_time": "00:00:00.900",
+      "end_time": "00:00:04.570",
+      "duration": 3.6700000000000004,
+      "text": "Im vorherigen Video haben wir über den Münzwurf gesprochen. Dass eine Münze in einer Überlagerung von Kopf und Zahl vorliegen kann während sie sich in der Luft dreht. Diesen Zustand haben wir Superpositionszustand genannt. Und in diesem Video werden wir darüber sprechen, wie wir so Superpositionszustände in einem Quantencomputer benutzen können.",
+      "section": "Superposition",
+      "subsection": "Einführung in Superpositionszustände",
+      "keywords": [
+        "Münzwurf",
+        "Überlagerung",
+        "Superpositionszustand",
+        "Quantencomputer"
+      ],
+      "concepts": [
+        "Superposition",
+        "Qubit"
+      ],
+      "relationships": [
+        "Superpositionszustände sind eine Anwendung von Qubits in Quantencomputern"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 0.9,
+      "end_seconds": 4.57
+    },
+    {
+      "id": "2",
+      "start_time": "00:00:26.350",
+      "end_time": "00:00:35.200",
+      "duration": 8.850000000000001,
+      "text": "Ein klassischer Computer arbeitet mit klassischen Bits und ein klassisches Bit kann vorliegen entweder im Basis Zustand null oder im Basis Zustand eins. Und ein Quantencomputer arbeitet jetzt einfach mit Quanten Bits oder wie wir es immer abkürzen mit Qubits. Ein Qubit kann ebenfalls in Basis Zustand null oder im Basis Zustand eins vorliegen. Wir schreiben hier die Zustände mit Klammern auf, um anzuzeigen, dass es sich hier um sogenannte Quanten Zustände handelt und nicht um klassische Zustände. Diese Art und Weise, einen Quantenzustand mit Klammern aufzuschreiben, nennt man auch Dirac-Notation oder die Bra-Ket-Schreibweise.",
+      "section": "Superposition",
+      "subsection": "Klassische Bits vs. Qubits",
+      "keywords": [
+        "klassische Bits",
+        "Basis Zustand",
+        "Qubits",
+        "Dirac-Notation"
+      ],
+      "concepts": [
+        "Klassische Bits",
+        "Qubits",
+        "Dirac-Notation"
+      ],
+      "relationships": [
+        "Qubits erweitern die Möglichkeiten klassischer Bits durch Überlagerung"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 26.35,
+      "end_seconds": 35.2
+    },
+    {
+      "id": "3",
+      "start_time": "00:01:24.150",
+      "end_time": "00:01:29.310",
+      "duration": 5.159999999999997,
+      "text": "Ein Qubit kann jetzt aber eben nicht nur wie ein klassisches Bit in den Basis Zuständen vorliegen, sondern auch in einer Überlagerung von beiden Basiszuständen. Das würde ich jetzt mit einer Formel aufschreiben, die ich euch hier rechts unten eingeblendet habe. Ich werde auf der nächsten Slide aber auch noch mal genauer darauf eingehen, was diese Formel im Einzelnen bedeutet. Das Wichtige ist aber, dass ein Qubit in den Basis Zuständen vorliegen kann, genauso wie das klassische Bit, aber ein Qubit kann auch in einer Überlagerung aller Basis Zustände vorliegen.",
+      "section": "Superposition",
+      "subsection": "Überlagerung von Zuständen",
+      "keywords": [
+        "Überlagerung",
+        "Basiszustände",
+        "Formel"
+      ],
+      "concepts": [
+        "Überlagerung",
+        "Basiszustände"
+      ],
+      "relationships": [
+        "Überlagerung ist der Schlüsselunterschied zwischen klassischen Bits und Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 84.15,
+      "end_seconds": 89.31
+    },
+    {
+      "id": "4",
+      "start_time": 29.31,
+      "end_time": 45.09,
+      "duration": 15.78,
+      "text": "Diese Formel repräsentiert einen allgemeinen Qubit-Zustand, also eine allgemeine Superposition. Was wir hier sehen ist alpha mal Basiszustand null plus beta mal Basiszustand eins. Das Pluszeichen ist nicht das normale Additionszeichen, sondern ein Platzhalter für ein und da steht im Prinzip alpha mal Basiszustand null und beta mal Basiszustand eins. Diese Amplituden, alpha und beta, sagen etwas über den Anteil der dazugehörigen Basiszustände aus.",
+      "section": "Mathematische Darstellung",
+      "subsection": "Formel für Qubit-Zustände",
+      "keywords": [
+        "Formel",
+        "Amplituden",
+        "Basiszustände"
+      ],
+      "concepts": [
+        "Qubit-Zustand",
+        "Amplituden"
+      ],
+      "relationships": [
+        "Amplituden bestimmen die Wahrscheinlichkeit der Messung der Basiszustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "5",
+      "start_time": 45.09,
+      "end_time": 58.029,
+      "duration": 12.94,
+      "text": "Je größer die Amplitude alpha ist, desto größer ist auch die Wahrscheinlichkeit, den dazugehörigen Basiszustand null zu messen. Das Gleiche gilt für die Amplitude beta, je größer die Amplitude beta ist, desto größer ist auch die Wahrscheinlichkeit, den dazugehörigen Basiszustand eins zu messen.",
+      "section": "Mathematische Darstellung",
+      "subsection": "Wahrscheinlichkeiten und Amplituden",
+      "keywords": [
+        "Wahrscheinlichkeit",
+        "Amplitude",
+        "Basiszustände"
+      ],
+      "concepts": [
+        "Wahrscheinlichkeit",
+        "Amplituden"
+      ],
+      "relationships": [
+        "Die Amplituden beeinflussen die Messwahrscheinlichkeit der Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "6",
+      "start_time": "00:03:26.759",
+      "end_time": "00:03:33.639",
+      "duration": 6.8799999999999955,
+      "text": "Ich möchte euch jetzt auch noch eine kurze grafische Intuition geben für diejenigen von euch, die noch nie was von komplexen Zahlen gehört haben.",
+      "section": "Grafische Intuition",
+      "subsection": "Einführung in komplexe Zahlen",
+      "keywords": [
+        "grafische Intuition",
+        "komplexe Zahlen"
+      ],
+      "concepts": [
+        "Komplexe Zahlen"
+      ],
+      "relationships": [
+        "Komplexe Zahlen erweitern das Verständnis von Qubit-Zuständen"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 206.75900000000001,
+      "end_seconds": 213.639
+    },
+    {
+      "id": "7",
+      "start_time": 1.1,
+      "end_time": 1.2,
+      "duration": 0.1,
+      "text": "Ihr könnt euch einen allgemeinen Qubit-Zustand als einen Pfeil im zweidimensionalen Raum vorstellen, der die Länge eins hat.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Pfeil",
+        "zweidimensionaler Raum"
+      ],
+      "concepts": [
+        "Qubit-Zustand"
+      ],
+      "relationships": [
+        "Visualisierung hilft beim Verständnis von Qubit-Zuständen"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "8",
+      "start_time": 1.2,
+      "end_time": 1.3,
+      "duration": 0.1,
+      "text": "Das bedeutet, dass wir die Länge eins haben und der Pfeil vom Ursprung auf den Einheitskreis zeigt.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Einheitskreis",
+        "Pfeil"
+      ],
+      "concepts": [
+        "Einheitskreis"
+      ],
+      "relationships": [
+        "Der Einheitskreis ist eine wichtige Visualisierung für Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "9",
+      "start_time": 1.3,
+      "end_time": 1.4,
+      "duration": 0.1,
+      "text": "Wir schreiben jetzt einfach auf die X-Achse oder der Pfeil, der in X-Richtung zeigt und die Länge eins hat, repräsentiert unseren Basiszustand null.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "X-Achse",
+        "Basiszustand null"
+      ],
+      "concepts": [
+        "Basiszustand null"
+      ],
+      "relationships": [
+        "Basiszustand null ist eine fundamentale Komponente des Qubit-Zustands"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "10",
+      "start_time": 1.4,
+      "end_time": 1.5,
+      "duration": 0.1,
+      "text": "Der Pfeil, der in Y-Richtung zeigt und die Länge eins hat, repräsentiert den Basiszustand eins.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Y-Richtung",
+        "Basiszustand eins"
+      ],
+      "concepts": [
+        "Basiszustand eins"
+      ],
+      "relationships": [
+        "Basiszustand eins ist eine fundamentale Komponente des Qubit-Zustands"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "11",
+      "start_time": 1.5,
+      "end_time": 2.0,
+      "duration": 0.1,
+      "text": "Eine allgemeine Superposition ist einfach irgendein Pfeil, der vom Ursprung ausgeht und auf dieser Bloch-Sphäre liegt.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Bloch-Sphäre",
+        "Superposition"
+      ],
+      "concepts": [
+        "Bloch-Sphäre"
+      ],
+      "relationships": [
+        "Die Bloch-Sphäre ist eine erweiterte Visualisierung für Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "12",
+      "start_time": 2.0,
+      "end_time": 2.1,
+      "duration": 0.1,
+      "text": "Das bedeutet, dass wir jetzt in den dreidimensionalen Raum übergehen.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "dreidimensionaler Raum"
+      ],
+      "concepts": [
+        "dreidimensionaler Raum"
+      ],
+      "relationships": [
+        "Der dreidimensionale Raum ist notwendig für die Darstellung komplexer Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "13",
+      "start_time": 2.1,
+      "end_time": 2.2,
+      "duration": 0.1,
+      "text": "Wir betrachten jetzt eine Einheitskugel mit Radius eins.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Einheitskugel"
+      ],
+      "concepts": [
+        "Einheitskugel"
+      ],
+      "relationships": [
+        "Die Einheitskugel ist eine zentrale Darstellung für Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "14",
+      "start_time": 2.2,
+      "end_time": 2.3,
+      "duration": 0.1,
+      "text": "Alpha und Beta können im allgemeinsten Fall nicht nur reelle Zahlenwerte annehmen, sondern auch komplexe Zahlenwerte.",
+      "section": "Grafische Intuition",
+      "subsection": "Komplexe Zahlen in Qubit-Zuständen",
+      "keywords": [
+        "Alpha",
+        "Beta",
+        "komplexe Zahlen"
+      ],
+      "concepts": [
+        "komplexe Zahlen"
+      ],
+      "relationships": [
+        "Komplexe Zahlen erweitern die Möglichkeiten der Amplituden in Qubit-Zuständen"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "15",
+      "start_time": 2.3,
+      "end_time": 2.4,
+      "duration": 0.1,
+      "text": "Die Amplituden geben immer noch den Anteil der Basiszustände in der Überlagerung an.",
+      "section": "Grafische Intuition",
+      "subsection": "Komplexe Zahlen in Qubit-Zuständen",
+      "keywords": [
+        "Amplituden",
+        "Basiszustände"
+      ],
+      "concepts": [
+        "Basiszustände"
+      ],
+      "relationships": [
+        "Amplituden sind entscheidend für die Beschreibung von Qubit-Zuständen"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "16",
+      "start_time": "00:05:52.050",
+      "end_time": "00:05:58.029",
+      "duration": 5.978999999999985,
+      "text": "Es ist jetzt vielleicht nicht mehr so ganz eindeutig zu sagen, dass eine Amplitude unbedingt größer ist als die andere.",
+      "section": "Grafische Intuition",
+      "subsection": "Komplexe Zahlen in Qubit-Zuständen",
+      "keywords": [
+        "Amplitude"
+      ],
+      "concepts": [
+        "Amplitude"
+      ],
+      "relationships": [
+        "Die Beziehung zwischen Amplituden ist komplexer in der Quantenmechanik"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 352.05,
+      "end_seconds": 358.029
+    },
+    {
+      "id": "17",
+      "start_time": 2.5,
+      "end_time": 3.0,
+      "duration": 0.1,
+      "text": "Ihr könnt euch jetzt einen allgemeinen Qubit-Zustand wieder als Pfeil vorstellen, der Länge eins, nur dieses Mal auf der Einheitskugel.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Pfeil",
+        "Einheitskugel"
+      ],
+      "concepts": [
+        "Einheitskugel"
+      ],
+      "relationships": [
+        "Die Einheitskugel ist eine erweiterte Visualisierung für Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "18",
+      "start_time": 3.0,
+      "end_time": 3.1,
+      "duration": 0.1,
+      "text": "Der Pfeil, der die Länge eins hat und in positiver Z-Richtung zeigt, repräsentiert unseren Basiszustand null.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Z-Richtung",
+        "Basiszustand null"
+      ],
+      "concepts": [
+        "Basiszustand null"
+      ],
+      "relationships": [
+        "Basiszustand null ist eine fundamentale Komponente des Qubit-Zustands"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "19",
+      "start_time": 3.1,
+      "end_time": 3.2,
+      "duration": 0.1,
+      "text": "Der Pfeil, der in negativer Z-Richtung zeigt und die Länge eins hat, repräsentiert den Basiszustand eins.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "negative Z-Richtung",
+        "Basiszustand eins"
+      ],
+      "concepts": [
+        "Basiszustand eins"
+      ],
+      "relationships": [
+        "Basiszustand eins ist eine fundamentale Komponente des Qubit-Zustands"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "20",
+      "start_time": 3.2,
+      "end_time": 3.3,
+      "duration": 0.1,
+      "text": "Eine allgemeine Superposition ist einfach irgendein Pfeil, der vom Ursprung ausgeht und auf dieser Bloch-Sphäre liegt.",
+      "section": "Grafische Intuition",
+      "subsection": "Visualisierung von Qubit-Zuständen",
+      "keywords": [
+        "Bloch-Sphäre",
+        "Superposition"
+      ],
+      "concepts": [
+        "Bloch-Sphäre"
+      ],
+      "relationships": [
+        "Die Bloch-Sphäre ist eine zentrale Darstellung für Qubit-Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "21",
+      "start_time": 3.3,
+      "end_time": 3.4,
+      "duration": 0.1,
+      "text": "Genau, also wir haben jetzt darüber gesprochen, dass ein Quantencomputer mit Qubits arbeitet und dass ein Qubit im Basis zwischen null oder im Basiszustand eins vorliegen kann und zusätzlich dazu eben auch noch im allgemeinsten Fall einer Überlagerung beider Zustände.",
+      "section": "Zusammenfassung",
+      "subsection": "Überblick über Qubits",
+      "keywords": [
+        "Quantencomputer",
+        "Qubits",
+        "Überlagerung"
+      ],
+      "concepts": [
+        "Qubits",
+        "Überlagerung"
+      ],
+      "relationships": [
+        "Qubits sind die Grundlage für die Funktionsweise von Quantencomputern"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "22",
+      "start_time": 3.4,
+      "end_time": 3.5,
+      "duration": 0.1,
+      "text": "Ich möchte euch jetzt eine kurze physikalische Intuition geben, wie man sich das vorstellen kann, was ein Qubit physikalisch bedeuten kann.",
+      "section": "Physikalische Intuition",
+      "subsection": "Einführung in das Bohrsche Atommodell",
+      "keywords": [
+        "physikalische Intuition",
+        "Bohrsche Atommodell"
+      ],
+      "concepts": [
+        "Bohrsche Atommodell"
+      ],
+      "relationships": [
+        "Das Bohrsche Atommodell hilft beim Verständnis von Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "23",
+      "start_time": 3.5,
+      "end_time": 4.0,
+      "duration": 0.1,
+      "text": "Das Bohrsche Atommodell beschreibt, wie ein Atom aufgebaut ist, mit einem positiven Kern und fixen Elektronenbahnen.",
+      "section": "Physikalische Intuition",
+      "subsection": "Bohrsche Atommodell",
+      "keywords": [
+        "Atom",
+        "positiver Kern",
+        "Elektronenbahnen"
+      ],
+      "concepts": [
+        "Atom",
+        "Elektronenbahnen"
+      ],
+      "relationships": [
+        "Das Bohrsche Atommodell ist ein klassisches Modell zur Beschreibung von Atomen"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "24",
+      "start_time": 4.0,
+      "end_time": 4.1,
+      "duration": 0.1,
+      "text": "Wir können uns ein Qubit als das gesamte System vorstellen, das aus einem Elektron besteht, das entweder auf der innersten Elektronenbahn oder auf der nächst äußeren Elektronenbahn liegt.",
+      "section": "Physikalische Intuition",
+      "subsection": "Qubit als Elektronensystem",
+      "keywords": [
+        "Qubit",
+        "Elektron",
+        "innerste Elektronenbahn"
+      ],
+      "concepts": [
+        "Qubit",
+        "Elektron"
+      ],
+      "relationships": [
+        "Ein Qubit kann als Zustand eines Elektrons in einem Atom beschrieben werden"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "25",
+      "start_time": 4.1,
+      "end_time": 4.2,
+      "duration": 0.1,
+      "text": "Der Basiszustand null wäre, wenn das Elektron auf der innersten Bahn liegt, und der Basiszustand eins wäre, wenn das Elektron auf der nächst äußeren Elektronenbahn liegt.",
+      "section": "Physikalische Intuition",
+      "subsection": "Basiszustände im Bohrschen Atommodell",
+      "keywords": [
+        "Basiszustand null",
+        "Basiszustand eins"
+      ],
+      "concepts": [
+        "Basiszustand null",
+        "Basiszustand eins"
+      ],
+      "relationships": [
+        "Basiszustände sind entscheidend für das Verständnis von Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "26",
+      "start_time": 4.2,
+      "end_time": 4.3,
+      "duration": 0.1,
+      "text": "Das Problem ist, dass das Bohrsche Atommodell nicht korrekt ist, da wir die Heisenbergsche Unschärferelation berücksichtigen müssen.",
+      "section": "Physikalische Intuition",
+      "subsection": "Korrektur des Bohrschen Atommodells",
+      "keywords": [
+        "Heisenbergsche Unschärferelation"
+      ],
+      "concepts": [
+        "Heisenbergsche Unschärferelation"
+      ],
+      "relationships": [
+        "Die Heisenbergsche Unschärferelation ist entscheidend für das Verständnis von Quantenmechanik"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "27",
+      "start_time": 4.3,
+      "end_time": 4.4,
+      "duration": 0.1,
+      "text": "Wir können nur noch von Aufenthaltswahrscheinlichkeiten sprechen, was unsere Superposition darstellt.",
+      "section": "Physikalische Intuition",
+      "subsection": "Superposition und Aufenthaltswahrscheinlichkeiten",
+      "keywords": [
+        "Aufenthaltswahrscheinlichkeiten",
+        "Superposition"
+      ],
+      "concepts": [
+        "Superposition"
+      ],
+      "relationships": [
+        "Superposition beschreibt die Unsicherheit in der Position eines Elektrons"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "28",
+      "start_time": 4.4,
+      "end_time": 4.5,
+      "duration": 0.1,
+      "text": "Das Elektron hat eine bestimmte Wahrscheinlichkeit, bei n gleich eins oder n gleich zwei zu sein, was unser Überlagerungszustand ist.",
+      "section": "Physikalische Intuition",
+      "subsection": "Überlagerungszustand",
+      "keywords": [
+        "Überlagerungszustand"
+      ],
+      "concepts": [
+        "Überlagerungszustand"
+      ],
+      "relationships": [
+        "Der Überlagerungszustand ist ein zentrales Konzept in der Quantenmechanik"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    }
+  ],
+  "key_takeaways": [
+    "Superpositionszustände sind ein zentrales Konzept im Quantencomputing, das die Überlagerung von Qubit-Zuständen beschreibt.",
+    "Ein Qubit kann sich in einem Zustand zwischen 0 und 1 befinden und auch in einer Überlagerung beider Zustände.",
+    "Die Dirac-Notation ist eine wichtige Methode zur Darstellung von Quanten-Zuständen.",
+    "Die Amplituden in der Formel für Qubit-Zustände bestimmen die Wahrscheinlichkeit, einen bestimmten Zustand zu messen.",
+    "Das Bohrsche Atommodell bietet eine physikalische Intuition für das Verständnis von Qubits, obwohl es in der Quantenmechanik durch die Heisenbergsche Unschärferelation ergänzt werden muss."
+  ]
+}

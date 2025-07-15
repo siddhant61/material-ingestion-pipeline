@@ -1,0 +1,170 @@
+---
+description: Structured I/O Guidelines
+globs: 
+---
+# Structured I/O Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document defines the detailed rules for structuring input and output data across all agents in the **step1_material_ingestion** project. Standardizing data formats ensures interoperability between modules and facilitates robust error handling, logging, and downstream processing.
+
+## 2. JSON Schema Enforcement
+
+- **Standard Schema Structure:**  
+  Every message exchanged between agents must include two primary sections:
+  - **Header:** Contains metadata such as:
+    - `source`: The name of the agent producing the output.
+    - `timestamp`: ISO 8601 formatted timestamp.
+    - `version`: Version information of the module or schema.
+    - `context`: Any additional contextual information.
+  - **Payload:** Contains the main data (text, image references, extracted details) along with processing metadata (e.g., confidence scores, processing time).
+
+- **Example JSON Structure:**
+  ```json
+  {
+    "header": {
+      "source": "AgentName",
+      "timestamp": "2025-02-24T12:00:00Z",
+      "version": "v1.0",
+      "context": "Optional contextual details"
+    },
+    "payload": {
+      "data": "Extracted or processed information",
+      "metadata": {
+        "confidence": 0.95,
+        "processingTime": "120ms"
+      }
+    }
+  }
+  ```
+
+## 3. Structured I/O for Each Agent
+
+### Document Loader Agent
+**Input:** File paths for PDF documents.  
+**Output:** A JSON object with a header and a payload that includes:
+- Extracted text from each page.
+- A list of image references with unique identifiers.
+
+**Additional Guidelines:**
+- Ensure all file and image metadata is clearly logged.
+
+### Transcript Agent
+**Input:** Transcript file paths (.vtt, .txt).  
+**Output:** A JSON object containing segmented transcript chunks, each with:
+- A unique `chunkId`.
+- The segmented text.
+
+**Additional Guidelines:**
+- Annotate each chunk with chain-of-thought reasoning if applicable.
+
+### Context Extraction Agent
+**Input:** Transcript chunks in JSON format.  
+**Output:** A JSON object with:
+- A `contextSummary` of the input text.
+- A list of extracted keywords and entities.
+
+**Additional Guidelines:**
+- Ensure that chain-of-thought logs for context extraction are stored separately in the payload metadata.
+
+### Vision Model Agent
+**Input:** Image paths along with contextual JSON data.  
+**Output:** A JSON object that includes:
+- The analyzed image identifier.
+- Detected regions with bounding boxes, descriptions, and confidence scores.
+
+**Additional Guidelines:**
+- Log fallback decisions in case of low confidence.
+
+### Targeted Image Extraction Agent
+**Input:** Image path and specific region coordinates.  
+**Output:** A JSON object that details:
+- The refined bounding box.
+- Extracted text from the specified region.
+
+**Additional Guidelines:**
+- Validate OCR outputs and include error fields if extraction fails.
+
+### Embedding Agent
+**Input:** Text or image data to be embedded.  
+**Output:** A JSON object containing:
+- The generated embedding vector.
+- Associated metadata such as dimensionality and processing time.
+
+**Additional Guidelines:**
+- Ensure numerical arrays are formatted correctly for downstream vector storage.
+
+### Vector Storage Agent
+**Input:** Embeddings along with source identifiers.  
+**Output:** A JSON confirmation that includes:
+- Status of the storage operation.
+- An updated index of stored identifiers.
+
+**Additional Guidelines:**
+- Log any inconsistencies or failures in storage operations.
+
+### Concept Extraction Agent
+**Input:** Combined text and image data in a structured JSON format.  
+**Output:** A JSON object that includes:
+- A list of extracted concepts, each with a unique identifier, name, aliases, and external links.
+
+**Additional Guidelines:**
+- Validate that all concepts conform to the expected data types and structure.
+
+### Graph Builder Agent
+**Input:** Concept data and hierarchical structure definitions.  
+**Output:** A JSON object representing the knowledge graph, including nodes and their relationships.
+
+**Additional Guidelines:**
+- Ensure the output graph preserves all node metadata and is formatted for easy traversal.
+
+### Coordinator Agent
+**Input:** Aggregated outputs from all other agents.  
+**Output:** A final JSON object that includes:
+- Metadata about the entire processing run (e.g., version, timestamp, course title).
+- The complete knowledge graph and associated data.
+
+**Additional Guidelines:**
+- Validate and reconcile data from all agents, ensuring consistency across the entire pipeline.
+
+## 4. Error Handling in Structured I/O
+
+### Error Fields:
+Every JSON output must include an error field within the payload if an issue is encountered.  
+The error field should capture:
+- An error code.
+- A descriptive error message.
+- Whether a fallback was used.
+
+### Example Error Structure:
+```json
+{
+  "header": {
+    "source": "AgentName",
+    "timestamp": "2025-02-24T12:00:00Z",
+    "version": "v1.0"
+  },
+  "payload": {
+    "error": {
+      "code": "OCR_FAILURE",
+      "message": "OCR failed to extract text from the provided region.",
+      "fallbackUsed": true
+    }
+  }
+}
+```
+
+## 5. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Standardize:** Use the predefined JSON schemas for all inter-agent communications.
+- **Validate:** Rigorously validate inputs and outputs against the schema before and after processing.
+- **Log:** Include comprehensive metadata and chain-of-thought logs in the headers and payloads.
+- **Document:** Clearly document any deviations or fallback mechanisms in the JSON output.
+
+### Don’t:
+- **Mix Formats:** Avoid using inconsistent or ad-hoc data formats that deviate from the schema.
+- **Skip Validation:** Do not process data without schema validation.
+- **Omit Metadata:** Never omit critical metadata that helps in debugging or tracing data flows.
+- **Ignore Errors:** Do not bypass error reporting; ensure all errors are captured in the structured output.
+

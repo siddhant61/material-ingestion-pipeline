@@ -1,0 +1,301 @@
+{
+  "original": {
+    "processed_count": 15,
+    "error_count": 0,
+    "transcripts": [
+      {
+        "filename": "1.1 Willkommen, Inhalte und Struktur des Kurses.txt",
+        "title": "Willkommen, Inhalte und Struktur des Kurses",
+        "module": "Woche 1",
+        "duration": "2:13",
+        "segments": 4,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.1 Willkommen, Inhalte und Struktur des Kurses_processed.json"
+      },
+      {
+        "filename": "1.2 Das Geburtstagsproblem oder warum wir Quantencomputer brauchen.txt",
+        "title": "Das Geburtstagsproblem oder warum wir Quantencomputer brauchen",
+        "module": "Woche 1",
+        "duration": "6:06",
+        "segments": 25,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.2 Das Geburtstagsproblem oder warum wir Quantencomputer brauchen_processed.json"
+      },
+      {
+        "filename": "1.3 Wie kann Quantenphysik genutzt werden, um einen Quantencomputer zu bauen.txt",
+        "title": "Wie kann Quantenphysik genutzt werden, um einen Quantencomputer zu bauen",
+        "module": "Woche 1",
+        "duration": "4:23",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.3 Wie kann Quantenphysik genutzt werden, um einen Quantencomputer zu bauen_processed.json"
+      },
+      {
+        "filename": "1.4 Superpositionszust\u00e4nde von Qubits.txt",
+        "title": "Superpositionszust\u00e4nde von Qubits",
+        "module": "Woche 1",
+        "duration": "09:29",
+        "segments": 28,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.4 Superpositionszust\u00e4nde von Qubits_processed.json"
+      },
+      {
+        "filename": "1.5 Beispiele f\u00fcr Superpositionszust\u00e4nde.txt",
+        "title": "Beispiele f\u00fcr Superpositionszust\u00e4nde",
+        "module": "Woche 1",
+        "duration": "4:28",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.5 Beispiele f\u00fcr Superpositionszust\u00e4nde_processed.json"
+      },
+      {
+        "filename": "1.6 Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits.txt",
+        "title": "Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits",
+        "module": "Woche 1",
+        "duration": "5:26",
+        "segments": 12,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.6 Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits_processed.json"
+      },
+      {
+        "filename": "1.7 Was ist Quantenverschr\u00e4nkung.txt",
+        "title": "Was ist Quantenverschr\u00e4nkung",
+        "module": "Woche 1",
+        "duration": "09:00",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.7 Was ist Quantenverschr\u00e4nkung_processed.json"
+      },
+      {
+        "filename": "1.8 Der aktuelle Stand der Technik und Anwendungsbereiche.txt",
+        "title": "Der aktuelle Stand der Technik und Anwendungsbereiche",
+        "module": "Woche 1",
+        "duration": "06:58",
+        "segments": 13,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.8 Der aktuelle Stand der Technik und Anwendungsbereiche_processed.json"
+      },
+      {
+        "filename": "2.1 Was ist der IBM Quantum Composer.txt",
+        "title": "Was ist der IBM Quantum Composer",
+        "module": "Woche 2",
+        "duration": "09:11",
+        "segments": 16,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.1 Was ist der IBM Quantum Composer_processed.json"
+      },
+      {
+        "filename": "2.2 Das NOT-Gate und das Hadamard-Gate.txt",
+        "title": "Das NOT-Gate und das Hadamard-Gate",
+        "module": "Woche 1",
+        "duration": "3:16",
+        "segments": 6,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.2 Das NOT-Gate und das Hadamard-Gate_processed.json"
+      },
+      {
+        "filename": "2.3 Die Simulation eines M\u00fcnzwurfes.txt",
+        "title": "Die Simulation eines M\u00fcnzwurfes",
+        "module": "Woche 1",
+        "duration": "4:32",
+        "segments": 12,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.3 Die Simulation eines M\u00fcnzwurfes_processed.json"
+      },
+      {
+        "filename": "2.4 Das CNOT-Gate.txt",
+        "title": "Das CNOT-Gate",
+        "module": "Woche 1",
+        "duration": "2:58",
+        "segments": 7,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.4 Das CNOT-Gate_processed.json"
+      },
+      {
+        "filename": "2.5 Quantum Hello World-1.txt",
+        "title": "Quantum Hello World",
+        "module": "Woche 1",
+        "duration": "04:49",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.5 Quantum Hello World-1_processed.json"
+      },
+      {
+        "filename": "2.6 Quantum Hello World-2.txt",
+        "title": "Quantum Hello World",
+        "module": "Woche 1",
+        "duration": "10:22",
+        "segments": 10,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.6 Quantum Hello World-2_processed.json"
+      },
+      {
+        "filename": "2.7 Was bisher geschah....txt",
+        "title": "Was bisher geschah....",
+        "module": "Woche 1",
+        "duration": "01:35",
+        "segments": 9,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.7 Was bisher geschah..._processed.json"
+      }
+    ]
+  },
+  "refined": {
+    "processed_count": 15,
+    "error_count": 0,
+    "transcripts": [
+      {
+        "filename": "1.1 Willkommen, Inhalte und Struktur des Kurses.txt",
+        "title": "Willkommen, Inhalte und Struktur des Kurses",
+        "module": "Woche 1",
+        "duration": "02:13",
+        "segments": 4,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.1 Willkommen, Inhalte und Struktur des Kurses_processed.json"
+      },
+      {
+        "filename": "1.2 Das Geburtstagsproblem oder warum wir Quantencomputer brauchen.txt",
+        "title": "Das Geburtstagsproblem oder warum wir Quantencomputer brauchen",
+        "module": "Woche 1",
+        "duration": "06:06",
+        "segments": 25,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.2 Das Geburtstagsproblem oder warum wir Quantencomputer brauchen_processed.json"
+      },
+      {
+        "filename": "1.3 Wie kann Quantenphysik genutzt werden, um einen Quantencomputer zu bauen.txt",
+        "title": "Wie kann Quantenphysik genutzt werden, um einen Quantencomputer zu bauen",
+        "module": "Woche 1",
+        "duration": "04:23",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.3 Wie kann Quantenphysik genutzt werden, um einen Quantencomputer zu bauen_processed.json"
+      },
+      {
+        "filename": "1.4 Superpositionszust\u00e4nde von Qubits.txt",
+        "title": "Superpositionszust\u00e4nde von Qubits",
+        "module": "Woche 1",
+        "duration": "09:29",
+        "segments": 28,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.4 Superpositionszust\u00e4nde von Qubits_processed.json"
+      },
+      {
+        "filename": "1.5 Beispiele f\u00fcr Superpositionszust\u00e4nde.txt",
+        "title": "Beispiele f\u00fcr Superpositionszust\u00e4nde",
+        "module": "Woche 1",
+        "duration": "04:28",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.5 Beispiele f\u00fcr Superpositionszust\u00e4nde_processed.json"
+      },
+      {
+        "filename": "1.6 Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits.txt",
+        "title": "Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits",
+        "module": "Woche 1",
+        "duration": "05:26",
+        "segments": 12,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.6 Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits_processed.json"
+      },
+      {
+        "filename": "1.7 Was ist Quantenverschr\u00e4nkung.txt",
+        "title": "Was ist Quantenverschr\u00e4nkung",
+        "module": "Woche 1",
+        "duration": "09:00",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.7 Was ist Quantenverschr\u00e4nkung_processed.json"
+      },
+      {
+        "filename": "1.8 Der aktuelle Stand der Technik und Anwendungsbereiche.txt",
+        "title": "Der aktuelle Stand der Technik und Anwendungsbereiche",
+        "module": "Woche 1",
+        "duration": "06:58",
+        "segments": 13,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\1.8 Der aktuelle Stand der Technik und Anwendungsbereiche_processed.json"
+      },
+      {
+        "filename": "2.1 Was ist der IBM Quantum Composer.txt",
+        "title": "Was ist der IBM Quantum Composer",
+        "module": "Woche 2",
+        "duration": "09:11",
+        "segments": 16,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.1 Was ist der IBM Quantum Composer_processed.json"
+      },
+      {
+        "filename": "2.2 Das NOT-Gate und das Hadamard-Gate.txt",
+        "title": "Das NOT-Gate und das Hadamard-Gate",
+        "module": "Woche 2",
+        "duration": "03:16",
+        "segments": 6,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.2 Das NOT-Gate und das Hadamard-Gate_processed.json"
+      },
+      {
+        "filename": "2.3 Die Simulation eines M\u00fcnzwurfes.txt",
+        "title": "Die Simulation eines M\u00fcnzwurfes",
+        "module": "Woche 2",
+        "duration": "04:32",
+        "segments": 12,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.3 Die Simulation eines M\u00fcnzwurfes_processed.json"
+      },
+      {
+        "filename": "2.4 Das CNOT-Gate.txt",
+        "title": "Das CNOT-Gate",
+        "module": "Woche 2",
+        "duration": "02:58",
+        "segments": 7,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.4 Das CNOT-Gate_processed.json"
+      },
+      {
+        "filename": "2.5 Quantum Hello World-1.txt",
+        "title": "Quantum Hello World",
+        "module": "Woche 2",
+        "duration": "04:49",
+        "segments": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.5 Quantum Hello World-1_processed.json"
+      },
+      {
+        "filename": "2.6 Quantum Hello World-2.txt",
+        "title": "Quantum Hello World",
+        "module": "Woche 2",
+        "duration": "10:22",
+        "segments": 10,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.6 Quantum Hello World-2_processed.json"
+      },
+      {
+        "filename": "2.7 Was bisher geschah....txt",
+        "title": "Was bisher geschah....",
+        "module": "Woche 2",
+        "duration": "01:35",
+        "segments": 9,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcripts\\2.7 Was bisher geschah..._processed.json"
+      }
+    ]
+  },
+  "refinement_plan": {
+    "needs_refinement": true,
+    "priority_issues": [
+      {
+        "type": "schema_consistency",
+        "severity": "high",
+        "description": "Schema Consistency is below acceptable threshold",
+        "details": "Score: 0.00, threshold: 0.90",
+        "source": "consistency"
+      },
+      {
+        "type": "educational_value",
+        "severity": "medium",
+        "description": "Educational Value is below acceptable threshold",
+        "details": "Score: 0.50, threshold: 0.70",
+        "source": "quality"
+      },
+      {
+        "type": "format_consistency",
+        "severity": "medium",
+        "description": "Format Consistency is below acceptable threshold",
+        "details": "Score: 0.80, threshold: 0.90",
+        "source": "consistency"
+      }
+    ],
+    "strategies": [
+      "Standardize the data structure",
+      "Ensure all required fields are present",
+      "Match schema with other outputs",
+      "Enhance explanations with examples",
+      "Add learning objectives or outcomes",
+      "Improve pedagogical structure",
+      "Standardize data formats"
+    ],
+    "sections_to_refine": [
+      "processed_count",
+      "error_count",
+      "transcripts"
+    ],
+    "estimated_improvement": 0.8,
+    "refinement_focus": "consistency"
+  },
+  "agent_name": "transcript_processor",
+  "metadata": {
+    "was_refined": true,
+    "refinement_timestamp": null
+  }
+}

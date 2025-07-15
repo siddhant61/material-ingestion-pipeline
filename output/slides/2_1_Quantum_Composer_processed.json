@@ -1,0 +1,688 @@
+{
+  "slide_deck_info": {
+    "title": "Quantencomputing Ferienkurs – Einführung für SchülerInnen",
+    "slide_count": 9,
+    "estimated_duration": "2 Wochen",
+    "main_topic": "Einführung in Quantencomputing und Programmierung mit IBM Quantum Composer"
+  },
+  "alignment": {
+    "course_module": "Woche 1 und Woche 2",
+    "module_position": "Woche 1 und Woche 2",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not provided"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Was ist der IBM Quantum Composer?",
+      "content": "Isabel Nha Minh Le\nIBM Quantum Community",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "IBM Quantum Composer"
+      ],
+      "concepts": [
+        "IBM Quantum Composer"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Quanten-Gates",
+      "content": "Quanten-Schaltung\nZustands-vektor",
+      "section": "Quanten-Gates",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "concepts": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "relationships": [
+        "Quanten-Gates beeinflussen den Zustand eines Qubits"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Quanten-Gates",
+      "content": "Quanten-Schaltung\nZustands-vektor",
+      "section": "Quanten-Gates",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "concepts": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "Superposition",
+      "content": "𝛼|0⟩+𝛽|1⟩\nDas Ergebnis der Messung eines Qubits wird als klassische Information (also 0 oder 1) in einem Bit gespeichert\nVisualisierung des Qubit-Zustands",
+      "section": "Superposition",
+      "has_image": true,
+      "image_description": "Visualisierung des Qubit-Zustands",
+      "keywords": [
+        "Superposition",
+        "Qubit",
+        "Zustandsvektor"
+      ],
+      "concepts": [
+        "Superposition",
+        "Qubit"
+      ],
+      "relationships": [
+        "Superposition ist ein Zustand, in dem ein Qubit sowohl 0 als auch 1 sein kann"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "Quanten-Gates",
+      "content": "Quanten-Schaltung\nZustands-vektor",
+      "section": "Quanten-Gates",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "concepts": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 6,
+      "slide_type": "content",
+      "title": "Quanten-Schaltung",
+      "content": "|0⟩ |1⟩\nQuanten-Gates\n• Quanten-Gates verändern den Zustand eines Qubits",
+      "section": "Quanten-Gates",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quanten-Gates",
+        "Quanten-Schaltung"
+      ],
+      "concepts": [
+        "Quanten-Gates",
+        "Zustandsveränderung"
+      ],
+      "relationships": [
+        "Quanten-Gates verändern den Zustand eines Qubits"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 7,
+      "slide_type": "content",
+      "title": "Quanten-Gates",
+      "content": "Quanten-Schaltung\nZustands-vektor",
+      "section": "Quanten-Gates",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "concepts": [
+        "Quanten-Gates",
+        "Quanten-Schaltung",
+        "Zustandsvektor"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 8,
+      "slide_type": "content",
+      "title": "Zustandsvektor (Amplituden)",
+      "content": "1 Qubit : 𝛼|0⟩+𝛽|1⟩\n𝛼|0⟩+𝛽|1⟩ =1∙|1⟩\nAmplituden",
+      "section": "Zustandsvektor",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Zustandsvektor",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Amplituden"
+      ],
+      "relationships": [
+        "Amplituden sind die Koeffizienten im Zustandsvektor"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 9,
+      "slide_type": "content",
+      "title": "Zustandsvektor (Amplituden)",
+      "content": "1 Qubit : 𝛼|0⟩+𝛽|1⟩\n2 Qubits: 𝛼|0⟩0+𝛽|0⟩1+γ|1⟩0+δ|1⟩1\n3 Qubits: Zustandsvektor (Amplituden)",
+      "section": "Zustandsvektor",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Zustandsvektor",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Amplituden"
+      ],
+      "relationships": [
+        "Zustandsvektoren für mehrere Qubits sind Kombinationen der Zustände"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Einführung in den IBM Quantum Composer",
+    "Quanten-Gates und deren Funktionsweise",
+    "Superposition und Zustandsvektoren"
+  ],
+  "visual_elements": [
+    {
+      "slide_number": 4,
+      "element_type": "image",
+      "description": "Visualisierung des Qubit-Zustands",
+      "concepts_illustrated": [
+        "Superposition",
+        "Qubit"
+      ]
+    }
+  ],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:34:29+02:00",
+    "page_count": 9,
+    "has_images": true,
+    "filename": "2_1_Quantum_Composer.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "55\n",
+          "Was ist der IBM Quantum \nComposer?\n",
+          "---\nIsabel Nha Minh Le\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "56\n",
+          "Quanten-\nGates\n",
+          "Quanten-\nSchaltung\n",
+          "Zustands-\nvektor\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "57\n",
+          "Quanten-\nGates\n",
+          "Quanten-\nSchaltung\n",
+          "Zustands-\nvektor\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 6,
+        "has_image": true,
+        "image_texts": [
+          "58\n",
+          "„Superposition“\n",
+          "𝛼| ۧ\n0 + 𝛽| ۧ\n1\n",
+          "0. Qubit\n1. Qubit\n2. Qubit\n",
+          "3 Qubits\n",
+          "3 Bits\n",
+          "Das Ergebnis der Messung eines Qubits wird als klassische \nInformation (also 0 oder 1) in einem Bit gespeichert\n",
+          "Quanten-Schaltung\n",
+          "Visualisierung des \nQubit-Zustands\n",
+          "| ۧ\n0\n| ۧ\n1\nۧ\n|0 + | ۧ\n1\n",
+          "2\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "59\n",
+          "Quanten-\nGates\n",
+          "Quanten-\nSchaltung\n",
+          "Zustands-\nvektor\n"
+        ]
+      },
+      {
+        "slide_number": 6,
+        "image_count": 8,
+        "has_image": true,
+        "image_texts": [
+          "60\n",
+          "Quanten-Schaltung\n",
+          "| ۧ\n0\n| ۧ\n1\nۧ\n|0 + | ۧ\n1\n",
+          "2\n3 Qubits\n",
+          "3 Bits\n",
+          "Quanten-Gates\n",
+          "•\nQuanten-Gates verändern den Zustand eines Qubits\n"
+        ]
+      },
+      {
+        "slide_number": 7,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "61\n",
+          "Quanten-\nGates\n",
+          "Quanten-\nSchaltung\n",
+          "Zustands-\nvektor\n"
+        ]
+      },
+      {
+        "slide_number": 8,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "62\n",
+          "1 Qubit: 𝛼| ۧ\n0 + 𝛽| ۧ\n1\n",
+          "𝛼| ۧ\n0 + 𝛽| ۧ\n1\n= 1 ∙| ۧ\n1\n",
+          "Zustandsvektor (Amplituden)\n",
+          "Amplituden\n",
+          "𝛼| ۧ\n0 + 𝛽| ۧ\n1\n= 1 ∙| ۧ\n0\n"
+        ]
+      },
+      {
+        "slide_number": 9,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "63\n",
+          "1 Qubit: 𝛼| ۧ\n0 + 𝛽| ۧ\n1\n",
+          "2 Qubits: 𝛼|\nۧ\n00 + 𝛽|\nۧ\n01 + γ|\nۧ\n10 + δ|\nۧ\n11\n",
+          "𝛼|\nۧ\n000 + 𝛽|\nۧ\n001 + γ|\nۧ\n010 + δ|\nۧ\n011 + ε|\nۧ\n100 + θ|\nۧ\n101 + 𝜗|\nۧ\n110 + 𝜇|\nۧ\n111\n3 Qubits:\n",
+          "Zustandsvektor (Amplituden)\n",
+          "1\n",
+          "2\n",
+          "ȁ\nۧ\n10 + 1\n",
+          "2\n",
+          "ȁ\nۧ\n11\n",
+          "1\n",
+          "2\n",
+          "|\nۧ\n010 + 1\n",
+          "2\n",
+          "|\nۧ\n101\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "IBM Quantum Composer",
+      "target_concept": "Quanten-Gates",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "source_concept": "IBM Quantum Composer",
+      "target_concept": "Quanten-Schaltung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2,
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "source_concept": "IBM Quantum Composer",
+      "target_concept": "Zustandsvektor",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "source_concept": "IBM Quantum Composer",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "IBM Quantum Composer",
+      "target_concept": "Qubit",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "IBM Quantum Composer",
+      "target_concept": "Zustandsveränderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "IBM Quantum Composer",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        8,
+        9
+      ]
+    },
+    {
+      "source_concept": "Quanten-Gates",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quanten-Gates",
+      "target_concept": "Qubit",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quanten-Gates",
+      "target_concept": "Zustandsveränderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Quanten-Gates",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "target_slides": [
+        8,
+        9
+      ]
+    },
+    {
+      "source_concept": "Quanten-Schaltung",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quanten-Schaltung",
+      "target_concept": "Qubit",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quanten-Schaltung",
+      "target_concept": "Zustandsveränderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Quanten-Schaltung",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "target_slides": [
+        8,
+        9
+      ]
+    },
+    {
+      "source_concept": "Zustandsvektor",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Zustandsvektor",
+      "target_concept": "Qubit",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Zustandsvektor",
+      "target_concept": "Zustandsveränderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Zustandsvektor",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        9
+      ],
+      "target_slides": [
+        8,
+        9
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Zustandsveränderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        8,
+        9
+      ]
+    },
+    {
+      "source_concept": "Qubit",
+      "target_concept": "Zustandsveränderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Qubit",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        8,
+        9
+      ]
+    },
+    {
+      "source_concept": "Zustandsveränderung",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        8,
+        9
+      ]
+    }
+  ]
+}

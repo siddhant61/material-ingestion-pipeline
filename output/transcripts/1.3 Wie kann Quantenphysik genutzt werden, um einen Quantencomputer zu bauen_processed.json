@@ -1,0 +1,202 @@
+{
+  "transcript_info": {
+    "title": "Wie kann Quantenphysik genutzt werden, um einen Quantencomputer zu bauen",
+    "duration": "4:23",
+    "word_count": 580,
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erste Woche - Einführung in Quantencomputing",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": "00:00:00.610",
+      "end_time": "00:00:07.650",
+      "duration": 7.04,
+      "text": "Im vorherigen Video hat Marcel mit euch schon darüber gesprochen, weswegen einige Probleme vor heutige Computer sehr schwierig sind, und in diesem Video werden wir jetzt darüber sprechen, wie die Quantenphysik genutzt werden kann, um einen Quantencomputer zu bauen.",
+      "section": "Einführung",
+      "subsection": "Quantenphysik und Quantencomputer",
+      "keywords": [
+        "Quantenphysik",
+        "Quantencomputer"
+      ],
+      "concepts": [
+        "Quantenphysik",
+        "Quantencomputer"
+      ],
+      "relationships": [],
+      "speaker": "Marcel",
+      "start_seconds": 0.61,
+      "end_seconds": 7.65
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:18.239",
+      "end_time": "00:00:24.969",
+      "duration": 6.73,
+      "text": "Zunächst einmal möchte ich mit euch kurz darüber reden, wie ein klassischer Computer spricht. Was wir hier sehen, ist eine Folge von Nullen und Einsen. Das ist aber keine zufällige Folge von Nullen Einsen, sondern dieses Stück Code Binärcode sagt eigentlich einfach nur Hallo ich spreche in Null und Einsen und das ist nämlich genau wie ein klassischer Computer sozusagen, spricht mit sogenannten klassischen Bits.",
+      "section": "Klassische Computer",
+      "subsection": "Bits und Binärcode",
+      "keywords": [
+        "klassischer Computer",
+        "Bits",
+        "Binärcode"
+      ],
+      "concepts": [
+        "klassische Bits",
+        "Binärcode"
+      ],
+      "relationships": [
+        "Klassische Bits repräsentieren Informationen in Form von Nullen und Einsen."
+      ],
+      "speaker": "Marcel",
+      "start_seconds": 18.239,
+      "end_seconds": 24.969
+    },
+    {
+      "id": "segment_3",
+      "start_time": 24.98,
+      "end_time": 39.66,
+      "duration": 14.68,
+      "text": "Ein klassisches Bit kann entweder den Basis Zustand null oder den Basis Zustand eins annehmen, und wenn wir zwei klassische Bits haben, dann kann jeweils jedes Bit eben entweder in null oder eins vorliegen. Das bedeutet Insgesamt haben wir für zwei Bits vier mögliche Basis Zustände, nämlich 00 01 10 oder 11.",
+      "section": "Klassische Bits",
+      "subsection": "Zustände von Bits",
+      "keywords": [
+        "Basis Zustand",
+        "Zustände",
+        "Bits"
+      ],
+      "concepts": [
+        "Basis Zustände",
+        "Zustände von Bits"
+      ],
+      "relationships": [
+        "Zwei Bits können vier verschiedene Zustände annehmen."
+      ],
+      "speaker": "Marcel"
+    },
+    {
+      "id": "segment_4",
+      "start_time": 39.66,
+      "end_time": 57.39,
+      "duration": 17.73,
+      "text": "Und das Ganze kann ich jetzt generalisieren für n Bits, wobei n einfach irgendeine positive ganze Zahl ist. n klassische Bits haben nämlich zwei hoch n mögliche Basis Zustände, aber sie können nur in einem dieser zwei hoch möglichen Basis Zuständen vorliegen und dementsprechend auch nur n Bit Informationen speichern.",
+      "section": "Generalisierung",
+      "subsection": "n Bits und deren Zustände",
+      "keywords": [
+        "n Bits",
+        "Basis Zustände",
+        "Information"
+      ],
+      "concepts": [
+        "n Bits",
+        "Basis Zustände"
+      ],
+      "relationships": [
+        "Die Anzahl der möglichen Zustände steigt exponentiell mit der Anzahl der Bits."
+      ],
+      "speaker": "Marcel"
+    },
+    {
+      "id": "segment_5",
+      "start_time": 57.39,
+      "end_time": 106.39,
+      "duration": 49,
+      "text": "Wie kommen wir jetzt zu diesen zwei hoch n möglichen Basis Zuständen? Stellt euch einfach vor, wir haben n Bits vorliegen, ich hab sie jetzt hier als blaue Kreise visualisiert und jetzt hat das erste Bit eben zwei Möglichkeiten entweder in null oder eins vorzulegen. Das zweite Bit hat ebenfalls zwei Möglichkeiten. Das heißt, die ersten 2 Bits haben zwei Mal zwei Möglichkeiten vorzulegen. Das dritte Bit hat wieder zwei Möglichkeiten. Heißt Die ersten 3 Bits haben zwei mal zwei mal zwei Möglichkeiten und das ganze können wir sofort führen, bis wir beim n-ten Bit angekommen sind, das heißt insgesamt haben wir zwei mal zwei mal zwei und so weiter bis zum n-ten bit mögliche Basis Zustände also zwei hoch n mögliche Basis Zustände.",
+      "section": "Zustände von Bits",
+      "subsection": "Visualisierung der Möglichkeiten",
+      "keywords": [
+        "Visualisierung",
+        "Zustände",
+        "Bits"
+      ],
+      "concepts": [
+        "Visualisierung von Bits",
+        "Möglichkeiten"
+      ],
+      "relationships": [
+        "Die Anzahl der Möglichkeiten verdoppelt sich mit jedem zusätzlichen Bit."
+      ],
+      "speaker": "Marcel"
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:02:43.659",
+      "end_time": "00:02:52.289",
+      "duration": 8.629999999999995,
+      "text": "Jetzt möchte ich mit euch einen kurzen Live Versuch durchführen, ich habe eine Münze mitgebracht und diese Münze lege ich auf meiner Handfläche während die Münze auf meiner Handfläche liegt, zeigt sie mir einen bestimmten Zustand an. In diesem Fall zeigt das gerade Zahl das heißt es ist in einem eindeutigen Zustand Zahl, dann flipp ich die Münze. Fange sie wieder auf lege sie wieder auf meiner Handfläche. Und jetzt zeigt sie in diesem Fall wieder Zahl an, ist also wieder in einem eindeutigen Basis Zustand.",
+      "section": "Live Versuch",
+      "subsection": "Münze und Zustände",
+      "keywords": [
+        "Live Versuch",
+        "Münze",
+        "Zustände"
+      ],
+      "concepts": [
+        "Zustände der Münze"
+      ],
+      "relationships": [
+        "Die Münze zeigt einen eindeutigen Zustand, wenn sie auf der Handfläche liegt."
+      ],
+      "speaker": "Marcel",
+      "start_seconds": 163.659,
+      "end_seconds": 172.289
+    },
+    {
+      "id": "segment_7",
+      "start_time": 152.29,
+      "end_time": 185.29,
+      "duration": 33,
+      "text": "Was war aber mit der Münze während sie in der Luft war und sich gleichmäßig gedreht hat? Während die Münze in der Luft war, lag sie in einer Art Überlagerungs-Zustand vor zwischen Kopf und Zahl. Fassen wir das alles noch mal auf einer Slide zusammen. Also ganz am Anfang lag die Münze auf meiner Handfläche und hatte einen eindeutigen Zustand Entweder Kopf oder Zahl, dann habe ich die Münze in die Luft geworfen. Die Münze hat sich in der Luft gleichmäßig gedreht und lag in einem Überlagerungszustand vor zwischen Kopf und Zahl.",
+      "section": "Überlagerungszustand",
+      "subsection": "Münze in der Luft",
+      "keywords": [
+        "Überlagerungszustand",
+        "Münze",
+        "Kopf",
+        "Zahl"
+      ],
+      "concepts": [
+        "Überlagerungszustand",
+        "Zustände der Münze"
+      ],
+      "relationships": [
+        "Die Münze zeigt einen Überlagerungszustand, wenn sie sich dreht."
+      ],
+      "speaker": "Marcel"
+    },
+    {
+      "id": "segment_8",
+      "start_time": 185.29,
+      "end_time": 223.29,
+      "duration": 38,
+      "text": "Wir nennen das in der Physiker Superpositionszustand und dann habe ich die Münze wieder aufgefangen und hab sie wieder auf meiner Handfläche gelegt. Habe also den Zustand der Münze sozusagen gemessen und nach der Messung lag die Münze wieder in einem eindeutigen Basis Zustand vor Zahl oder Kopf mit einer Wahrscheinlichkeit von jeweils 50 %, also gleich großer Wahrscheinlichkeit.",
+      "section": "Superpositionszustand",
+      "subsection": "Messung und Ergebnis",
+      "keywords": [
+        "Superpositionszustand",
+        "Messung",
+        "Wahrscheinlichkeit"
+      ],
+      "concepts": [
+        "Superpositionszustand",
+        "Messung"
+      ],
+      "relationships": [
+        "Nach der Messung nimmt die Münze einen eindeutigen Zustand an."
+      ],
+      "speaker": "Marcel"
+    }
+  ],
+  "key_takeaways": [
+    "Klassische Computer verwenden Bits, die entweder 0 oder 1 sein können, während Quantencomputer Qubits nutzen, die sich in Überlagerungszuständen befinden können.",
+    "Ein Überlagerungszustand ist ein Zustand, in dem ein Qubit mehrere Werte gleichzeitig annehmen kann, was die Rechenleistung von Quantencomputern erheblich erhöht.",
+    "Die Anzahl der möglichen Zustände eines Systems wächst exponentiell mit der Anzahl der verwendeten Bits oder Qubits."
+  ]
+}

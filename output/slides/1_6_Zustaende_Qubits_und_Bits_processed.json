@@ -1,0 +1,370 @@
+{
+  "slide_deck_info": {
+    "title": "Zustände mehrerer Qubits und mehrerer klassischer Bits",
+    "slide_count": 6,
+    "estimated_duration": "20 minutes",
+    "main_topic": "Zustände von Qubits und deren Superposition"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Lecture on Qubits and Superposition",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits"
+    ],
+    "transcript_alignment": "Not available"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Zustände mehrerer Qubits und mehrerer klassischer Bits",
+      "content": "Marcel Pfaffhauser\nIBM Quantum Community",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Zustände",
+        "Qubits",
+        "klassische Bits"
+      ],
+      "concepts": [],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Allgemeiner Zustand von n Qubits",
+      "content": "•nklassische Bits haben 2𝑛 mögliche Basis -Zustände\n•n Qubits können zusätzlich in einer Superposition von all diesen Basis -Zuständen sein\n1.Schreibe alle möglichen Basis -Zustände auf\n2.Füge vor jeden möglichen Basis -Zustand eine Amplitude ein\n3.Verbinde alles mit “+”",
+      "section": "Allgemeiner Zustand",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Basis-Zustände",
+        "Superposition",
+        "Amplitude"
+      ],
+      "concepts": [
+        "Basis-Zustände",
+        "Superposition"
+      ],
+      "relationships": [
+        "Qubits can exist in superposition of classical states"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Allgemeiner Zustand von n Qubits (Fortsetzung)",
+      "content": "•Basis -Zustände: |0⟩0,|0|1⟩,|1⟩0, |1|1⟩\n•Amplituden: 𝛼|0⟩0,𝛽|0|1⟩,𝛾|1|0⟩,𝛿|1⟩1\n•Allgemeine Superposition: 𝛼|0⟩0+𝛽|0|1⟩+𝛾|1|0⟩+𝛿|1⟩1",
+      "section": "Beispiel für 2 Qubits",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Amplituden",
+        "Qubits"
+      ],
+      "concepts": [
+        "Superposition",
+        "Amplituden"
+      ],
+      "relationships": [
+        "Superposition is a combination of basis states with amplitudes"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "Superposition von n Qubits",
+      "content": "n(Qu)Bits 2𝑛 mögliche Basis -Zustände\nSuperposition aller 2𝑛 Basis -Zustände\nkönnen nBit Infos speichern können2𝑛Bit Infos speichern",
+      "section": "Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Basis-Zustände",
+        "Information"
+      ],
+      "concepts": [
+        "Superposition",
+        "Information Storage"
+      ],
+      "relationships": [
+        "Superposition allows for more information storage than classical bits"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "Superposition von n Qubits (Wiederholung)",
+      "content": "n(Qu)Bits 2𝑛 mögliche Basis -Zustände\nSuperposition aller 2𝑛 Basis -Zustände\nkönnen nBit Infos speichern können2𝑛Bit Infos speichern",
+      "section": "Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Basis-Zustände",
+        "Information"
+      ],
+      "concepts": [
+        "Superposition",
+        "Information Storage"
+      ],
+      "relationships": [
+        "Superposition allows for more information storage than classical bits"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 6,
+      "slide_type": "content",
+      "title": "Beispiel: Ein Bild als Quantenzustand",
+      "content": "Ein 16 Pixel Bild in 4 Qubits:\n•Basis -Zustände: |0⟩000,|000|1⟩,...,|1⟩110, |1|1⟩11\n•Amplituden: 𝛼|0⟩000,𝛽|000|1⟩,𝛾|001|0⟩,𝛿|0⟩011, ...\n•Allgemeine Superposition: 𝛼|0⟩000+𝛽|000|1⟩+𝛾|001|0⟩+𝛿|0⟩011 + ....\n•Jede Amplitude steht für die Helligkeit eines Pixels",
+      "section": "Anwendung von Qubits",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Bild",
+        "Quantenzustand",
+        "Pixel"
+      ],
+      "concepts": [
+        "Quantenzustand",
+        "Pixel Representation"
+      ],
+      "relationships": [
+        "Each amplitude represents the brightness of a pixel in the image"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Zustände von Qubits",
+    "Superposition",
+    "Basis-Zustände",
+    "Amplituden"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:31:39+02:00",
+    "page_count": 6,
+    "has_images": true,
+    "filename": "1_6_Zustaende_Qubits_und_Bits.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "41\n",
+          "Zustände mehrerer Qubits und \nmehrerer klassischer Bits\n",
+          "---\nMarcel Pfaffhauser\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "44\n",
+          "n (Qu)Bits\n2𝑛mögliche Basis-Zustände\nSuperposition aller 2𝑛\nBasis-Zustände\n",
+          "können n Bit Infos speichern\nkönnen 2𝑛Bit Infos \nspeichern\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "45\n",
+          "n (Qu)Bits\n2𝑛mögliche Basis-Zustände\nSuperposition aller 2𝑛\nBasis-Zustände\n",
+          "können n Bit Infos speichern\nkönnen 2𝑛Bit Infos \nspeichern\n"
+        ]
+      },
+      {
+        "slide_number": 6,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "46\n",
+          "Beispiel: Ein Bild als Quantenzustand\n",
+          "Ein 16 Pixel Bild in 4 Qubits: \n• Basis-Zustände: |\nۧ\n0000 , |000 ۧ\n1 ,..., |\nۧ\n1110 , |1\nۧ\n111\n• Amplituden: 𝛼|\nۧ\n0000 , 𝛽|000 ۧ\n1 , 𝛾|001 ۧ\n0 , 𝛿|\nۧ\n0011 , ...\n• Allgemeine Superposition: \n",
+          "𝛼|\nۧ\n0000 + 𝛽|000 ۧ\n1 + 𝛾|001 ۧ\n0 + 𝛿|\nۧ\n0011 + ....\n• Jede Amplitude steht für die Helligkeit eines Pixels\n",
+          "0001\n",
+          "1001\n",
+          "0101\n0000\n",
+          "1101\n1000\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Basis-Zustände",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Basis-Zustände",
+      "target_concept": "Information Storage",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4,
+        5
+      ]
+    },
+    {
+      "source_concept": "Basis-Zustände",
+      "target_concept": "Quantenzustand",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Basis-Zustände",
+      "target_concept": "Pixel Representation",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Amplituden",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Information Storage",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "target_slides": [
+        4,
+        5
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Quantenzustand",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Pixel Representation",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Amplituden",
+      "target_concept": "Information Storage",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4,
+        5
+      ]
+    },
+    {
+      "source_concept": "Amplituden",
+      "target_concept": "Quantenzustand",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Amplituden",
+      "target_concept": "Pixel Representation",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Information Storage",
+      "target_concept": "Quantenzustand",
+      "relationship_type": "progression",
+      "source_slides": [
+        4,
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Information Storage",
+      "target_concept": "Pixel Representation",
+      "relationship_type": "progression",
+      "source_slides": [
+        4,
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    }
+  ]
+}

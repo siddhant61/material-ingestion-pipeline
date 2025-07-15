@@ -1,0 +1,304 @@
+{
+  "transcript_info": {
+    "title": "Die Simulation eines Münzwurfes",
+    "duration": "4:32",
+    "word_count": 749,
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erste Schritte im Programmieren eines Quantencomputers mit dem IBM Quantum Composer",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": 0,
+      "end_time": 8,
+      "duration": 8,
+      "text": "In diesem Video werden wir mit Hilfe des IBM Quantum Composers ein Münzwurf auf einem Quantencomputer simulieren.",
+      "section": "Einführung in die Simulation",
+      "subsection": null,
+      "keywords": [
+        "IBM Quantum Composer",
+        "Münzwurf",
+        "Simulation"
+      ],
+      "concepts": [
+        "Quantencomputer",
+        "Simulation"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:09.789",
+      "end_time": "00:00:17.070",
+      "duration": 7.281000000000001,
+      "text": "Im vorherigen Video haben wir bereits das Hadamard gate besprochen und wir haben gesehen, dass ein Qubit, das zuvor im Basis Zustand null war. Mit Hilfe des Hadamard gates in eine gleichmäßige super position versetzt werden kann und das ist einfach nur ein überlagerungs Zustand der zwei Basis zustände 0 1 mit gleich großer Amplitude beziehungsweise mit gleich großer Mess Wahrscheinlichkeit für die Messergebnisse null und eins, das heißt es ist im Prinzip genau dieselbe Situation wie eine Münze, die sich in der Luft befindet und gleichmäßig dreht.",
+      "section": "Theoretische Grundlagen",
+      "subsection": "Hadamard-Gatter und Superposition",
+      "keywords": [
+        "Hadamard gate",
+        "Qubit",
+        "Superposition",
+        "Münze"
+      ],
+      "concepts": [
+        "Qubit",
+        "Superposition",
+        "Hadamard-Gatter"
+      ],
+      "relationships": [
+        "Qubit wird durch Hadamard-Gatter in Superposition versetzt"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 9.789,
+      "end_seconds": 17.07
+    },
+    {
+      "id": "segment_3",
+      "start_time": "00:00:42.570",
+      "end_time": "00:00:49.390",
+      "duration": 6.82,
+      "text": "Was wir jetzt noch machen müssen, ist diese Münze tatsächlich aufzufangen und zu gucken und zu messen, in welchem Zustand die Münze nach dem auffangen ist dazu kopf oder zahl beziehungsweise. Null oder eins um das können wir im IBM Quantum Composer machen, indem wir diesen Block hier auf das Qubit ziehen.",
+      "section": "Messung des Qubits",
+      "subsection": null,
+      "keywords": [
+        "Messung",
+        "Qubit",
+        "IBM Quantum Composer"
+      ],
+      "concepts": [
+        "Messung",
+        "Zustand"
+      ],
+      "relationships": [
+        "Messung des Qubits führt zu einem Ergebnis von 0 oder 1"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 42.57,
+      "end_seconds": 49.39
+    },
+    {
+      "id": "segment_4",
+      "start_time": "00:01:02.009",
+      "end_time": "00:01:09.920",
+      "duration": 7.911000000000001,
+      "text": "Was hier passiert, ist einfach nur, dass wir das Qubit messen und das messergebnis also null oder eins dann hier unten im klassischen Bit C1 gespeichert wird.",
+      "section": "Ergebnis der Messung",
+      "subsection": null,
+      "keywords": [
+        "Klassisches Bit",
+        "Messung"
+      ],
+      "concepts": [
+        "Klassisches Bit",
+        "Messung"
+      ],
+      "relationships": [
+        "Das Messergebnis wird im klassischen Bit gespeichert"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 62.009,
+      "end_seconds": 69.92
+    },
+    {
+      "id": "segment_5",
+      "start_time": "00:01:13.409",
+      "end_time": "00:01:19.530",
+      "duration": 6.120999999999995,
+      "text": "Lasst uns das gemeinsam in meinem eigenen IBM Quantum Composer ausprobieren, also was wir hier sehen ist erst mal ein leerer schaltkreis. Wir haben ein Qubit, das im basis zustand null ist das sehen wir hier unten am zustands vektor, wo eben nur eine amplitude beim basis zustand null zu sehen ist.",
+      "section": "Praktische Anwendung",
+      "subsection": "Erstellung des Schaltkreises",
+      "keywords": [
+        "IBM Quantum Composer",
+        "Schaltkreis",
+        "Zustandsvektor"
+      ],
+      "concepts": [
+        "Schaltkreis",
+        "Zustandsvektor"
+      ],
+      "relationships": [
+        "Qubit im Basiszustand wird im Schaltkreis dargestellt"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 73.409,
+      "end_seconds": 79.53
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:01:29.879",
+      "end_time": "00:01:35.829",
+      "duration": 5.950000000000003,
+      "text": "Wir versetzen dieses Qubit mithilfe des hadamard gates in die gleichmäßige super position. Also die amplituden hier unten beim zustandsvektor für die basis zustände null und eins sind gleich groß und dann wie gerade besprochen messe ich das Qubit mithilfe dieses blocks.",
+      "section": "Superposition und Messung",
+      "subsection": null,
+      "keywords": [
+        "Hadamard gate",
+        "Superposition",
+        "Messung"
+      ],
+      "concepts": [
+        "Superposition",
+        "Messung"
+      ],
+      "relationships": [
+        "Qubit wird in Superposition versetzt und anschließend gemessen"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 89.879,
+      "end_seconds": 95.82900000000001
+    },
+    {
+      "id": "segment_7",
+      "start_time": "00:01:51.709",
+      "end_time": "00:01:59.989",
+      "duration": 8.280000000000001,
+      "text": "Das ganze kann ich jetzt auf dem quantencomputer ausführen, indem ich auf setup in run klicke aus dieser liste einen beliebigen quantencomputer auswähle.",
+      "section": "Ausführung des Experiments",
+      "subsection": null,
+      "keywords": [
+        "Quantencomputer",
+        "Ausführung",
+        "Setup"
+      ],
+      "concepts": [
+        "Quantencomputer",
+        "Setup"
+      ],
+      "relationships": [
+        "Experiment wird auf Quantencomputer ausgeführt"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 111.709,
+      "end_seconds": 119.989
+    },
+    {
+      "id": "segment_8",
+      "start_time": "00:02:02.159",
+      "end_time": "00:02:04.969",
+      "duration": 2.809999999999988,
+      "text": "Und was ich jetzt hier noch anpassen kann ist die anzahl an shots. Die anzahl an shots bedeutet einfach nur wie häufig ich den münzwurf simulieren, das heißt wenn ich hier jetzt eins eingebe dann werfe ich die münze genau ein einziges mal und messe sie ein einziges mal ich kann aber auch zehn eingeben, das heißt ich werfe die Münze zehn mal in Luft und messe jeweils nach diesen Würfen oder ich kann die Anzahl noch weiter erhöhen, auf über 1000 mal zB 1024 mal und dann würde das Münzwurf Experiment einfach über tausendmal wiederholt werden.",
+      "section": "Anpassung der Simulation",
+      "subsection": null,
+      "keywords": [
+        "Shots",
+        "Simulation",
+        "Münzwurf"
+      ],
+      "concepts": [
+        "Shots",
+        "Simulation"
+      ],
+      "relationships": [
+        "Anzahl der Shots beeinflusst die Häufigkeit der Ergebnisse"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 122.159,
+      "end_seconds": 124.969
+    },
+    {
+      "id": "segment_9",
+      "start_time": "00:02:39.909",
+      "end_time": "00:02:48.710",
+      "duration": 8.801000000000016,
+      "text": "Wenn ich jetzt die anzahl an shots fixiert habe, kann ich einfach auf run klicken und dann wird das ganze dann wird das ganze auf dem quanten computer ausgeführt. Ich hab das für euch bereits vorbereitet für unterschiedliche anzahl an shots ganz links seht ihr das ergebnis wenn ich die münze ein einziges mal in die luft werfe in diesem fall habe ich einmal den zustand null gemessen und wenn ich jetzt den münzwurf mehrfach wiederhole, dann würde ich ja davon ausgehen oder würde ich erwarten, dass in ungefähr 50 % der fällen null oder eins gemessen wird, weil die münze im sich gleichmäßig in der luft dreht.",
+      "section": "Ergebnisse der Simulation",
+      "subsection": null,
+      "keywords": [
+        "Ergebnisse",
+        "Münzwurf",
+        "Simulation"
+      ],
+      "concepts": [
+        "Ergebnisse",
+        "Simulation"
+      ],
+      "relationships": [
+        "Ergebnisse zeigen die Verteilung der Messungen"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 159.909,
+      "end_seconds": 168.71
+    },
+    {
+      "id": "segment_10",
+      "start_time": "00:03:25.629",
+      "end_time": "00:03:36.960",
+      "duration": 11.331000000000017,
+      "text": "und jetzt im fall von zehn shots von zehn münz würfen würde ich erwarten, dass in fünf fällen null herauskommen und in den anderen 5 fällen eins herauskommen. Wir sehen jetzt hier das ist nicht der Fall ist in meinem spezifischen Experiment. Das ist ein bisschen ungleich, aber das kann passieren. Das bedeutet die relative Häufigkeit Verteilung entspricht hier noch nicht der tatsächlichen erwarteten Wahrscheinlichkeits Verteilung.",
+      "section": "Analyse der Ergebnisse",
+      "subsection": null,
+      "keywords": [
+        "Häufigkeit",
+        "Verteilung",
+        "Wahrscheinlichkeit"
+      ],
+      "concepts": [
+        "Häufigkeit",
+        "Wahrscheinlichkeit"
+      ],
+      "relationships": [
+        "Ergebnisse weichen von der erwarteten Verteilung ab"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 205.629,
+      "end_seconds": 216.96
+    },
+    {
+      "id": "segment_11",
+      "start_time": "00:03:55.580",
+      "end_time": "00:04:02.504",
+      "duration": 6.924000000000007,
+      "text": "Aber was wir sehen können, ist Je höher die Anzahl an shots ist, das heißt hier je häufiger ich das Experiment wiederhole, desto eher nähert sich auch die relative Häufigkeits Verteilung der tatsächlichen Wahrscheinlichkeits Verteilung von 50 50 an. Das sehen wir ganz rechts bei dem Experiment, was tausendmal oder das über tausendmal wiederholt wurde. Da haben wir in 52 % der Fällen das Messergebnis null und in 48 % der Fällen das Messergebnis.",
+      "section": "Ergebnisse bei hoher Anzahl an Shots",
+      "subsection": null,
+      "keywords": [
+        "Shots",
+        "Wahrscheinlichkeitsverteilung",
+        "Ergebnisse"
+      ],
+      "concepts": [
+        "Wahrscheinlichkeitsverteilung",
+        "Ergebnisse"
+      ],
+      "relationships": [
+        "Höhere Anzahl an Shots führt zu einer genaueren Verteilung"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 235.57999999999998,
+      "end_seconds": 242.504
+    },
+    {
+      "id": "segment_12",
+      "start_time": 332,
+      "end_time": 352,
+      "duration": 20,
+      "text": "Ja, das war es auch schon für dieses Video. Wir haben also gerade gemeinsam ein Münzwurf auf einem richtigen Quantencomputer simuliert.",
+      "section": "Abschluss",
+      "subsection": null,
+      "keywords": [
+        "Abschluss",
+        "Münzwurf",
+        "Quantencomputer"
+      ],
+      "concepts": [
+        "Simulation",
+        "Quantencomputer"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le"
+    }
+  ],
+  "key_takeaways": [
+    "Die Simulation eines Münzwurfes auf einem Quantencomputer zeigt die Anwendung von Qubits und Superposition.",
+    "Das Hadamard-Gatter ermöglicht die Erzeugung von Superpositionszuständen.",
+    "Die Ergebnisse der Simulation variieren mit der Anzahl der durchgeführten Shots, was die Wahrscheinlichkeitsverteilung beeinflusst."
+  ]
+}

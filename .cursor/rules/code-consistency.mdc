@@ -1,0 +1,110 @@
+---
+description: Code Consistency & Standards
+globs: 
+---
+# Code Consistency & Standards for step1_material_ingestion
+
+## 1. Overview
+
+This document outlines the standards for writing and maintaining code in the **step1_material_ingestion** pipeline. Adherence to these standards ensures that the codebase remains uniform, maintainable, and of high quality, facilitating easier collaboration and future development.
+
+## 2. Naming Conventions
+
+- **Files & Directories:**
+  - Use lowercase letters with underscores (e.g., `document_loader.py`, `transcript_agent.py`).
+  - Directories should be clearly named to reflect their contents (e.g., `agents`, `utils`).
+
+- **Variables & Functions:**
+  - Use descriptive names in `snake_case` for variables and functions.
+  - Avoid abbreviations unless they are widely recognized within the project.
+
+- **Classes & Modules:**
+  - Use `PascalCase` for class names.
+  - Module names should be concise, descriptive, and follow the file naming conventions.
+
+## 3. File Organization
+
+- **Project Structure:**
+  - Organize the codebase with a clear directory structure, such as:
+    ```
+    step1_material_ingestion/
+    ├── agents/
+    ├── utils/
+    ├── tests/
+    └── README.md
+    ```
+  - Keep agents in their own modules under `agents/` and supporting utilities under `utils/`.
+
+- **Module Isolation:**
+  - Each agent should reside in its own Python module, encapsulating its logic and dependencies.
+  - Define clear interfaces for inter-module communication to avoid tight coupling.
+
+## 4. Documentation Standards
+
+- **Inline Documentation:**
+  - Use descriptive docstrings for all functions, classes, and modules.
+  - Comment non-trivial sections of code to explain the reasoning and logic behind them.
+  - Adopt a consistent docstring style (e.g., Google style or reStructuredText).
+
+- **External Documentation:**
+  - Maintain a comprehensive `README.md` that provides an architectural overview, setup instructions, and module responsibilities.
+  - Update documentation promptly as changes are made to ensure accuracy.
+
+## 5. Code Formatting
+
+- **PEP8 Compliance:**
+  - Adhere to PEP8 guidelines for Python code. This includes proper indentation, line length, and spacing.
+  - Use a code formatter (e.g., Black) to automatically enforce consistent formatting.
+
+- **Code Block Standards:**
+  - When including code blocks in documentation, tag them with the appropriate language (e.g., ```python).
+  - Begin code blocks with comments that indicate the file path (e.g., `# file: agents/document_loader.py`).
+
+## 6. Code Review Practices
+
+- **Peer Reviews:**
+  - Every code change must be reviewed by at least one team member to ensure adherence to coding standards.
+  - Reviewers should check for proper naming, documentation, and compliance with project standards.
+
+- **Automated Quality Checks:**
+  - Integrate linters (e.g., flake8) and static analysis tools (e.g., pylint) into the CI/CD pipeline.
+  - Code that does not pass automated checks should not be merged until issues are resolved.
+
+## 7. Version Control & Branching
+
+- **Commit Messages:**
+  - Write clear and descriptive commit messages that summarize the changes made.
+  - Follow a standardized format, such as using prefixes like `feat:`, `fix:`, or `docs:`.
+
+- **Branch Naming:**
+  - Use descriptive branch names (e.g., `feature/add-document-loader`, `bugfix/fix-ocr-issue`).
+  - Ensure branches are small and focused to simplify reviews and merging.
+
+- **Incremental Changes:**
+  - Commit changes incrementally and avoid large, monolithic commits.
+  - This practice facilitates easier debugging and code review.
+
+## 8. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Follow PEP8:**  
+  Adhere strictly to PEP8 guidelines for code formatting.
+- **Maintain Consistent Naming:**  
+  Use uniform naming conventions for files, variables, functions, and classes.
+- **Document Thoroughly:**  
+  Provide clear inline and external documentation for all modules and complex logic.
+- **Enforce Code Reviews:**  
+  Ensure all changes are peer-reviewed and pass automated quality checks.
+- **Use Automated Tools:**  
+  Integrate linters, formatters, and static analysis tools into your development workflow.
+
+### Don’t:
+- **Mix Conventions:**  
+  Avoid inconsistent naming, formatting, or file organization practices.
+- **Neglect Documentation:**  
+  Do not leave complex code sections without sufficient commentary or docstrings.
+- **Bypass Reviews:**  
+  Never merge code without proper peer review and successful automated tests.
+- **Ignore Warnings:**  
+  Address all linter and quality check warnings before finalizing code changes.
+

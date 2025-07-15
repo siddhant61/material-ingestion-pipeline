@@ -1,0 +1,585 @@
+{
+  "transcript_info": {
+    "title": "Das Geburtstagsproblem oder warum wir Quantencomputer brauchen",
+    "duration": "6:06",
+    "word_count": "1035",
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erster Teil",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": 0.92,
+      "end_time": 5.8,
+      "duration": 4.88,
+      "text": "Willkommen zum ersten Teil. Wir beginnen mit der Frage Warum sind einige Probleme so schwierig für heutige Computer zu lösen? Heute Computer haben eine starke Entwicklung durchgemacht, die nach dem Moore`s Law verläuft. Das besagt, dass alle 18 Monate in etwa die Rechen Power von Computern sich verdoppelt oder die Größe von diesem sich verkleinert um die Hälfte. Und so sieht man heute, dass man heute Laptops hat und Supercomputer, die viel stärker sind als noch vor 15 Jahren. Es geht sogar so weit, dass vor zehn Jahren, dass ich mein Informatikstudium begonnen habe, wir an unserer Hochschule einen alten Supercomputer hatten, der 15 Jahre alt war und wir benutzen diesen aus Sitzfläche und zwar aus diesem Grund war damals schon unsere Mobiltelefonen stärker waren als diese auch diese alte Supercomputer, einfach weil die Technik einen so starken Fortschritt gemacht hat insgesamt. Und als nächstes gibt Es ist Quantencomputer, die sie nicht einfach stärkere größere Computer sondern das ist eine ganz andere Art von Computer, die auf eine neue Art berechnet und deswegen müssen für diese Computer auch die Programme komplett neu geschrieben werden beziehungsweise. Andere Algorithmen Andere Programme sind überhaupt erst möglich. Und was hier ganz wichtiges zu erwähnen ist, dass Quantencomputer nicht klassische Computer ersetzen werden. Dies kann man sich so denken wie Grafikkarten, die jeder Computer wie mein letzter vor mit acht ring hat. So viele Mobiltelefone unterdessen die für bestimmte Berechnungen zum Beispiel vektoren die man realisiert sehr häufig berechnen muss, viel schneller ist als ein klassischer Prozessor weil er einfach anders gebaut ist. Dieses super für drei d grafiken wie zum beispiel computer spielen jedoch nicht nützlich, wenn ihr irgendwie ein Textverarbeitungsprogramm nutzen wollte oder e mail schreiben. Deswegen werden weiterhin die meisten normal programme ganz normal für Prozessoren entwickelt. Ähnlich wie im Quanten computer es wir spezielle probleme geben für diese Computer besser sind und dafür werden spezielle Algorithmen geschrieben werden müssen die nur auf Quantencomputern laufen.",
+      "section": "Einführung in Quantencomputing",
+      "subsection": "Warum Quantencomputer?",
+      "keywords": [
+        "Quantencomputer",
+        "Moore's Law",
+        "Rechenpower",
+        "klassische Computer",
+        "Grafikkarten"
+      ],
+      "concepts": [
+        "Moore's Law",
+        "Rechenpower von Computern",
+        "Unterschied zwischen klassischen und Quantencomputern"
+      ],
+      "relationships": [
+        "Quantencomputer sind nicht einfach stärkere Computer, sondern eine neue Art von Computer."
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_2",
+      "start_time": 5.8,
+      "end_time": 6.68,
+      "duration": 0.88,
+      "text": "Es kommen wir dazu. Was gibt es denn für probleme, die wir mit heutigen Quanten Supercomputer nicht lösen können, obwohl dieses so eine starke Power haben deshalb dank diesem wachstum des harten ein ganz simples Beispiel ist das eine Gewusst, dass Planung, sagen wir ich hatte gestern Geburtstag wurde Filmfreunde allen laden und wollte die an einem Tisch sitzen. Dann möchte ich eine Strategie finden, wie man die möglichst gut platzieren kann. Bestimmte Leute sitzen vielleicht nicht gern bestimmten den anderen. Die einen möchten den Fenster sitzen.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Ein Beispiel für komplexe Probleme",
+      "keywords": [
+        "Planung",
+        "Geburtstagsproblem",
+        "Tischplatzierung"
+      ],
+      "concepts": [
+        "Strategien zur Platzierung von Personen",
+        "Komplexität von Kombinationsproblemen"
+      ],
+      "relationships": [
+        "Das Geburtstagsproblem ist ein Beispiel für ein komplexes Problem, das Quantencomputer lösen könnten."
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_3",
+      "start_time": 6.68,
+      "end_time": 6.8,
+      "duration": 0.12,
+      "text": "Eine ganz simple Strategie hier ist einfach alle möglichen Kombinationen durch zu probieren und dann zur Aus zu werten. Wie gut ist diese Planen?",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Strategien zur Lösung",
+      "keywords": [
+        "Kombinationen",
+        "Auswertung"
+      ],
+      "concepts": [
+        "Kombinatorik",
+        "Auswertungsmethoden"
+      ],
+      "relationships": [
+        "Die Auswertung der Kombinationen ist entscheidend für die Lösung des Problems."
+      ],
+      "speaker": "Isabel Nha Minh Nha"
+    },
+    {
+      "id": "segment_4",
+      "start_time": "00:02:55.129",
+      "end_time": "00:02:57.569",
+      "duration": 2.440000000000026,
+      "text": "Die Frage ist jetzt wie viele Möglichkeiten gibt es Um fünf Personen ein Tisch platzieren.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Kombinationsmöglichkeiten",
+      "keywords": [
+        "Möglichkeiten",
+        "Tischplatzierung"
+      ],
+      "concepts": [
+        "Kombinationen von Personen",
+        "Platzierungsstrategien"
+      ],
+      "relationships": [
+        "Die Anzahl der Möglichkeiten ist entscheidend für die Komplexität des Problems."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 175.129,
+      "end_seconds": 177.56900000000002
+    },
+    {
+      "id": "segment_5",
+      "start_time": "00:03:00.120",
+      "end_time": "00:03:06.419",
+      "duration": 6.299000000000007,
+      "text": "Hier ist wichtig, dass man nicht nur interessiert ist wer neben wem sitzt, sondern wirklich und welche Position eine Person sitzt, sitzt in der Nähe des Fensters.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Details der Platzierung",
+      "keywords": [
+        "Position",
+        "Fenster"
+      ],
+      "concepts": [
+        "Einfluss der Position auf die Platzierung",
+        "Präferenzen der Gäste"
+      ],
+      "relationships": [
+        "Die Position beeinflusst die Zufriedenheit der Gäste."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 180.12,
+      "end_seconds": 186.419
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:03:11.069",
+      "end_time": "00:03:13.960",
+      "duration": 2.8910000000000196,
+      "text": "Deswegen die Frage an euch wie viele möglichkeiten gibt es fünf personen an einen Tisch zu platzieren?",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Frage an die Zuhörer",
+      "keywords": [
+        "Frage",
+        "Zuhörer"
+      ],
+      "concepts": [
+        "Interaktive Elemente",
+        "Zuhörer einbeziehen"
+      ],
+      "relationships": [
+        "Die Zuhörer werden aktiv in die Problemlösung einbezogen."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 191.069,
+      "end_seconds": 193.96
+    },
+    {
+      "id": "segment_7",
+      "start_time": "00:03:16.050",
+      "end_time": "00:03:25.250",
+      "duration": 9.199999999999989,
+      "text": "Es gibt entweder um die zehn um die 100 oder um die 1000 ganz kurz Zeit um nachzudenken.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Antwortmöglichkeiten",
+      "keywords": [
+        "Antwortmöglichkeiten",
+        "Zahlen"
+      ],
+      "concepts": [
+        "Multiple-Choice-Fragen",
+        "Zahlenverständnis"
+      ],
+      "relationships": [
+        "Die Zuhörer müssen ihr Wissen über Kombinationen anwenden."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 196.05,
+      "end_seconds": 205.25
+    },
+    {
+      "id": "segment_8",
+      "start_time": 7.2,
+      "end_time": 7.3,
+      "duration": 0.1,
+      "text": "Und die Antwort dafür ist um die 100 personen und das kann man ganz einfach nachprüfen wenn man sich überlegt wie kann ich die platzieren?",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Antwort und Erklärung",
+      "keywords": [
+        "Antwort",
+        "Erklärung"
+      ],
+      "concepts": [
+        "Kombinatorische Berechnungen",
+        "Prüfmöglichkeiten"
+      ],
+      "relationships": [
+        "Die Antwort kann durch einfache Berechnungen überprüft werden."
+      ],
+      "speaker": "Isabel Nha Minh Nha"
+    },
+    {
+      "id": "segment_9",
+      "start_time": "00:03:35.629",
+      "end_time": "00:03:42.789",
+      "duration": 7.159999999999997,
+      "text": "Ich nehme den ersten Stuhl, setze eine der fünf Personen hin, das heißt ich habe schon mal fünf Personen zur Auswahl.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Berechnung der Möglichkeiten",
+      "keywords": [
+        "Berechnung",
+        "Möglichkeiten"
+      ],
+      "concepts": [
+        "Platzierungsstrategien",
+        "Kombinatorik"
+      ],
+      "relationships": [
+        "Die Platzierung ist der erste Schritt zur Lösung des Problems."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 215.629,
+      "end_seconds": 222.789
+    },
+    {
+      "id": "segment_10",
+      "start_time": 7.4,
+      "end_time": 7.5,
+      "duration": 0.1,
+      "text": "Also 5 Möglichkeiten beim zweiten Stuhl habe ich nur noch vier Personen übrig.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Fortschritt der Berechnung",
+      "keywords": [
+        "Fortschritt",
+        "Berechnung"
+      ],
+      "concepts": [
+        "Fortschritt in der Berechnung",
+        "Kombinatorische Logik"
+      ],
+      "relationships": [
+        "Der Fortschritt in der Berechnung ist entscheidend für die Lösung."
+      ],
+      "speaker": "Isabel Nha Minh Nha"
+    },
+    {
+      "id": "segment_11",
+      "start_time": "00:03:47.509",
+      "end_time": "00:03:53.719",
+      "duration": 6.2099999999999795,
+      "text": "Entsprechend kann ich nur vier verschiedene Möglichkeiten dazu betrachten, am dritte Stuhl sind noch drei Personen übrig, dann zwei, am Schluss nur noch eine.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Fortschritt der Berechnung",
+      "keywords": [
+        "Möglichkeiten",
+        "Fortschritt"
+      ],
+      "concepts": [
+        "Kombinatorische Logik",
+        "Fortschritt in der Berechnung"
+      ],
+      "relationships": [
+        "Die Anzahl der Möglichkeiten verringert sich mit jeder Platzierung."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 227.50900000000001,
+      "end_seconds": 233.719
+    },
+    {
+      "id": "segment_12",
+      "start_time": "00:03:55.430",
+      "end_time": "00:04:04.020",
+      "duration": 8.590000000000003,
+      "text": "So haben wir insgesamt hundertzwanzig Möglichkeiten, und das ist einer von 100.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Ergebnis der Berechnung",
+      "keywords": [
+        "Ergebnis",
+        "Möglichkeiten"
+      ],
+      "concepts": [
+        "Kombinatorische Ergebnisse",
+        "Zahlenverständnis"
+      ],
+      "relationships": [
+        "Das Ergebnis zeigt die Komplexität des Problems."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 235.43,
+      "end_seconds": 244.02
+    },
+    {
+      "id": "segment_13",
+      "start_time": 7.7,
+      "end_time": 7.8,
+      "duration": 0.1,
+      "text": "Wenn jetzt sagen Okay, ich möchte mehr Personen einladen, ich möchte eine größere Geburtstagsparty haben.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Erweiterung des Problems",
+      "keywords": [
+        "Erweiterung",
+        "Geburtstagsparty"
+      ],
+      "concepts": [
+        "Erweiterung der Teilnehmerzahl",
+        "Komplexität"
+      ],
+      "relationships": [
+        "Die Erweiterung des Problems führt zu einer exponentiellen Zunahme der Möglichkeiten."
+      ],
+      "speaker": "Isabel Nha Minh Nha"
+    },
+    {
+      "id": "segment_14",
+      "start_time": "00:04:06.969",
+      "end_time": "00:04:12.270",
+      "duration": 5.301000000000016,
+      "text": "Ich lade statt nur fünf Personen 10 ein also nur fünf mehr, rund doppelt so viele.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Erweiterung des Problems",
+      "keywords": [
+        "Teilnehmer",
+        "Erweiterung"
+      ],
+      "concepts": [
+        "Zunahme der Teilnehmerzahl",
+        "Kombinatorische Logik"
+      ],
+      "relationships": [
+        "Die Zunahme der Teilnehmerzahl beeinflusst die Komplexität des Problems."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 246.969,
+      "end_seconds": 252.27
+    },
+    {
+      "id": "segment_15",
+      "start_time": "00:04:13.560",
+      "end_time": "00:04:21.199",
+      "duration": 7.63900000000001,
+      "text": "Es ist die Frage, wie viele Möglichkeiten es sich jetzt durch zu probieren, um herauszufinden, was die beste ist.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Frage zur Komplexität",
+      "keywords": [
+        "Frage",
+        "Möglichkeiten"
+      ],
+      "concepts": [
+        "Komplexität",
+        "Kombinatorik"
+      ],
+      "relationships": [
+        "Die Frage zeigt die Herausforderungen bei der Lösung des Problems."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 253.56,
+      "end_seconds": 261.199
+    },
+    {
+      "id": "segment_16",
+      "start_time": "00:04:21.620",
+      "end_time": "00:04:28.560",
+      "duration": 6.939999999999998,
+      "text": "Hier haben wir es vier Möglichkeiten um die 1000, um die zehntausend und die hunderttausend oder um die eine Million, Was denkt ihr?",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Antwortmöglichkeiten",
+      "keywords": [
+        "Antwortmöglichkeiten",
+        "Zahlen"
+      ],
+      "concepts": [
+        "Multiple-Choice-Fragen",
+        "Zahlenverständnis"
+      ],
+      "relationships": [
+        "Die Zuhörer müssen ihr Wissen über Kombinationen anwenden."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 261.62,
+      "end_seconds": 268.56
+    },
+    {
+      "id": "segment_17",
+      "start_time": "00:04:31.019",
+      "end_time": "00:04:38.060",
+      "duration": 7.040999999999997,
+      "text": "Und die Antwort Hier ist über eine Million so um die drei Millionen Möglichkeiten und das kann man nachprüfen, indem man einfach schaut, wie sich dieses zehn.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Antwort und Erklärung",
+      "keywords": [
+        "Antwort",
+        "Erklärung"
+      ],
+      "concepts": [
+        "Kombinatorische Berechnungen",
+        "Prüfmöglichkeiten"
+      ],
+      "relationships": [
+        "Die Antwort kann durch einfache Berechnungen überprüft werden."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 271.019,
+      "end_seconds": 278.06
+    },
+    {
+      "id": "segment_18",
+      "start_time": 8.2,
+      "end_time": 8.3,
+      "duration": 0.1,
+      "text": "Fakultät entwickelt. Zum einen haben wir es doppelt so viele Faktoren, wie vorher zum zweiten sind die Faktoren erbracht Größter vor hatten wir nur fünf mal vier mal drei zwei ist beginnen wir mit zehn neuen acht.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Fakultätsberechnung",
+      "keywords": [
+        "Fakultät",
+        "Faktoren"
+      ],
+      "concepts": [
+        "Fakultätsberechnung",
+        "Exponentielles Wachstum"
+      ],
+      "relationships": [
+        "Die Fakultätsberechnung zeigt das exponentielle Wachstum der Möglichkeiten."
+      ],
+      "speaker": "Isabel Nha Minh Nha"
+    },
+    {
+      "id": "segment_19",
+      "start_time": "00:04:54.610",
+      "end_time": "00:05:02.589",
+      "duration": 7.978999999999985,
+      "text": "Das heißt, wir haben mehr Faktoren und größte, so kriegt es ein wirklich exponentielles Wachstum und die Problem Größe steigt extrem an.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Exponentielles Wachstum",
+      "keywords": [
+        "Exponentielles Wachstum",
+        "Problemgröße"
+      ],
+      "concepts": [
+        "Wachstum von Kombinationsproblemen",
+        "Komplexität"
+      ],
+      "relationships": [
+        "Das exponentielle Wachstum führt zu einer drastischen Erhöhung der Problemgröße."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 294.61,
+      "end_seconds": 302.589
+    },
+    {
+      "id": "segment_20",
+      "start_time": 8.4,
+      "end_time": 8.5,
+      "duration": 0.1,
+      "text": "Vergleichen wir nochmal fünf Personen um die hundert Möglichkeiten zehn Personen schon um über die Millionen Möglichkeiten.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Vergleich der Möglichkeiten",
+      "keywords": [
+        "Vergleich",
+        "Möglichkeiten"
+      ],
+      "concepts": [
+        "Vergleich von Kombinationsmöglichkeiten",
+        "Exponentielles Wachstum"
+      ],
+      "relationships": [
+        "Der Vergleich zeigt die drastische Zunahme der Möglichkeiten."
+      ],
+      "speaker": "Isabel Nha Minh Nha"
+    },
+    {
+      "id": "segment_21",
+      "start_time": "00:05:13.680",
+      "end_time": "00:05:20.300",
+      "duration": 6.6200000000000045,
+      "text": "Das bedeutet, das ganze Problem skaliert extrem schnell, wenn wir die Anzahl Teilnehmer vergrößen und das ist es natürlich ein bisschen ein künstliches Problem.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Skalierung des Problems",
+      "keywords": [
+        "Skalierung",
+        "Teilnehmer"
+      ],
+      "concepts": [
+        "Skalierung von Problemen",
+        "Künstliche Probleme"
+      ],
+      "relationships": [
+        "Die Skalierung zeigt die Herausforderungen bei der Lösung."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 313.68,
+      "end_seconds": 320.3
+    },
+    {
+      "id": "segment_22",
+      "start_time": "00:05:22.060",
+      "end_time": "00:05:29.009",
+      "duration": 6.949000000000012,
+      "text": "Aber es gibt andere Probleme, wie Handelsrouten zu brechen, etc, die auf eine sehr ähnliche Weise funktionieren und genauso schnell skalieren.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Ähnliche Probleme",
+      "keywords": [
+        "Handelsrouten",
+        "Ähnliche Probleme"
+      ],
+      "concepts": [
+        "Komplexität von Handelsrouten",
+        "Skalierung"
+      ],
+      "relationships": [
+        "Die Skalierung ähnlicher Probleme zeigt die Notwendigkeit für Quantencomputer."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 322.06,
+      "end_seconds": 329.009
+    },
+    {
+      "id": "segment_23",
+      "start_time": 8.7,
+      "end_time": 8.8,
+      "duration": 0.1,
+      "text": "Und zu behaupten man zu viele Input orten hat zu viele Städte, die man verwenden möchte, geht das Problem so groß und so schwierig zum berechnen, wenn man es genau berechnen möchte, dass es auch auf Supercomputern nicht in einer vernünftigen Zeit gemacht werden kommen.",
+      "section": "Das Geburtstagsproblem",
+      "subsection": "Grenzen der Supercomputer",
+      "keywords": [
+        "Grenzen",
+        "Supercomputer"
+      ],
+      "concepts": [
+        "Grenzen der Berechnung",
+        "Supercomputer"
+      ],
+      "relationships": [
+        "Die Grenzen der Supercomputer zeigen die Notwendigkeit für Quantencomputer."
+      ],
+      "speaker": "Isabel Nha Minh Nha"
+    },
+    {
+      "id": "segment_24",
+      "start_time": "00:05:46.029",
+      "end_time": "00:05:54.529",
+      "duration": 8.5,
+      "text": "Aus diesem Grund möchten wir in der Zukunft eine andere Computer haben die Quanten Computer, die für bestimmte Probleme wie zum beispiel dieses besser sein kann und so schneller Erkenntnisse liefert.",
+      "section": "Zukunft der Quantencomputer",
+      "subsection": "Notwendigkeit für Quantencomputer",
+      "keywords": [
+        "Zukunft",
+        "Quantencomputer"
+      ],
+      "concepts": [
+        "Zukunft des Quantencomputings",
+        "Notwendigkeit für neue Technologien"
+      ],
+      "relationships": [
+        "Die Notwendigkeit für Quantencomputer ist evident durch die Grenzen der aktuellen Technologien."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 346.029,
+      "end_seconds": 354.529
+    },
+    {
+      "id": "segment_25",
+      "start_time": "00:05:59.709",
+      "end_time": "00:06:05.800",
+      "duration": 6.091000000000008,
+      "text": "Und ich hoffe, damit haben wir die Frage beantwortet Wieso gibt es überhaupt noch Probleme, die wir auch mit Supercomputern nicht lösen können?",
+      "section": "Zusammenfassung",
+      "subsection": "Abschluss der Diskussion",
+      "keywords": [
+        "Zusammenfassung",
+        "Fragen"
+      ],
+      "concepts": [
+        "Zusammenfassung der Diskussion",
+        "Offene Fragen"
+      ],
+      "relationships": [
+        "Die Diskussion zeigt die Herausforderungen und die Notwendigkeit für Quantencomputer."
+      ],
+      "speaker": "Isabel Nha Minh Nha",
+      "start_seconds": 359.709,
+      "end_seconds": 365.8
+    }
+  ],
+  "key_takeaways": [
+    "Quantencomputer sind nicht einfach stärkere Computer, sondern eine neue Art von Computer, die für bestimmte Probleme besser geeignet sind.",
+    "Das Geburtstagsproblem zeigt die Komplexität von Kombinationsproblemen und die Notwendigkeit für Quantencomputer.",
+    "Die Skalierung von Problemen wie Handelsrouten verdeutlicht die Grenzen der aktuellen Supercomputer."
+  ]
+}

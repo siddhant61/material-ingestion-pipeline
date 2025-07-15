@@ -1,0 +1,87 @@
+WEBVTT
+
+1
+00:00:00.630 --> 00:00:07.389 
+Hi und herzlich willkommen zum aller ersten Video in diesem Kurs In diesem Video werden wir mit euch besprechen, weswegen
+
+2
+00:00:07.389 --> 00:00:13.310 
+viele Leute Interesse haben an Quanten Computern, und wir werden darüber sprechen, was wir in den nächsten Wochen gemeinsam
+
+3
+00:00:13.310 --> 00:00:14.939 
+über Quantencomputer lernen werden.
+
+4
+00:00:15.490 --> 00:00:22.100 
+Morgen sind Quantencomputer interessant zum einen einfach weil sie sind neu und neue Dings sind immer interessant, aber diese
+
+5
+00:00:22.100 --> 00:00:30.129 
+Neuheit bringt auch eine neue Ort Algorithmne zu lösen eine neue Ort, wie man Probleme angehen kann und Dinge effizienten Machen
+
+6
+00:00:30.129 --> 00:00:37.390 
+kann, die zuvor gar nicht existiert hat und diese Ansicht teilen auch noch andere Leute Nicht nur Forscher wie wir, sondern
+
+7
+00:00:37.390 --> 00:00:46.240 
+nach Politiker, die Quanten Computer Forschung und in der Zukunft mit neuem Geld unterstützen möchten, so dass man mehrere
+
+8
+00:00:46.240 --> 00:00:53.159 
+von diesen hat und ganz viele Probleme angehen kann
+dies nicht nur in Deutschland davor, wie man hier sieht, sondern allenfalls
+
+9
+00:00:53.159 --> 00:00:59.700 
+in UK und anderen Teilen von Europa der Fall, so dass man in Zukunft wirklich viel mehr Quanten Computer sehen wird und ich
+
+10
+00:00:59.700 --> 00:01:07.379 
+möchte hier in diesem Kurs darüber am besten etwas beibringen
+Ihr wollt verstehen, wir Quanten Computer funktionieren, dann
+
+11
+00:01:07.379 --> 00:01:13.650 
+freut euch auf die nächsten Wochen, denn in einem ersten Teil werden wir erst mal ein wenig was über die Theorie der Quantencomputer
+
+12
+00:01:13.650 --> 00:01:14.129 
+lernen.
+
+13
+00:01:14.140 --> 00:01:21.010 
+Wir werden darüber sprechen, warum einige Probleme so schwierig sind für heutige Computer und wie wir die Quantenphysik benutzen
+
+14
+00:01:21.034 --> 00:01:25.405 
+können, um eine ganz neue Art von Computer, eben diese Quantencomputer, zu bauen.
+
+15
+00:01:25.415 --> 00:01:31.935 
+Wir werden darüber sprechen, welchen Herausforderungen wir uns stellen müssen im Bereich der Quanten Technologien, und wir
+
+16
+00:01:31.935 --> 00:01:37.245 
+werden darüber sprechen, wo Quantencomputer in Zukunft eingesetzt werden können.
+
+17
+00:01:37.849 --> 00:01:44.810 
+In einem zweiten Teil werden wir dann auch noch zusätzlich Quantencomputer programmieren, und zwar zunächst einmal mit Hilfe
+
+18
+00:01:44.810 --> 00:01:52.209 
+eines Tools, wofür wir keine Programmier Vorkenntnisse brauchen, und dann werden wir auch noch die Programmiersprache Python
+
+19
+00:01:52.209 --> 00:01:58.780 
+benutzen für diejenigen von euch, die bereits ein wenig programmieren können, und wir sehen, wenn wir verschiedene Folgen
+
+20
+00:01:58.780 --> 00:02:06.329 
+wir haben Blaue als klassische und Lila für alles neue für Quanten Computer und diese zwei Formen werden wir durchgehend
+
+21
+00:02:06.329 --> 00:02:13.460 
+auch bei allen anderen Videos benutzen und so freuen wir uns darauf, euch gemeinsam dieses beizubringen.

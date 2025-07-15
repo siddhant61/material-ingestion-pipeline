@@ -1,0 +1,16 @@
+Course Title: Introduction to Quantum Computing
+Instructor: Dr. Quantum Expert
+Description: This course introduces the basic concepts of quantum computing,
+including qubits, superposition, entanglement, and quantum algorithms.
+
+Learning Objectives:
+- Understand the principles of quantum mechanics relevant to computing
+- Learn about qubits and quantum gates
+- Explore quantum algorithms like Grover's and Shor's
+- Implement simple quantum circuits
+
+Modules:
+1. Quantum Mechanics Fundamentals
+2. Qubits and Quantum Gates
+3. Quantum Algorithms
+4. Quantum Circuit Implementation

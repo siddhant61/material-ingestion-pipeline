@@ -1,0 +1,192 @@
+{
+  "transcript_info": {
+    "title": "Beispiele für Superpositionszustände",
+    "duration": "4:28",
+    "word_count": "650",
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erste Woche - Einführung in Superposition",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": 0.81,
+      "end_time": 5.36,
+      "duration": 4.55,
+      "text": "Als Nächstes möchten wir uns ein paar Beispiele für die Superpositionszustände anschauen. Wir haben schon gesehen, was Superposition ist und wir möchten uns anschauen, wie können solche Zustände aussehen?",
+      "section": "Superposition",
+      "subsection": "Einführung in Superpositionszustände",
+      "keywords": [
+        "Superposition",
+        "Beispiele",
+        "Zustände"
+      ],
+      "concepts": [
+        "Superposition",
+        "Zustände"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:14.900",
+      "end_time": "00:00:24.789",
+      "duration": 9.889000000000001,
+      "text": "Superposition ist zum Beispiel alpha mal null plus beta mal eins sein typischer Zustand, wobei alpha und beta natürlich bestimmte Parameter sind. Wir haben gesehen das Beispiel eines Münzwurf, wo mir 50 % Wahrscheinlichkeit Kopf 50 % Wahrscheinlichkeit Zahl haben, das würde einer Superposition entsprechen.",
+      "section": "Superposition",
+      "subsection": "Mathematische Darstellung",
+      "keywords": [
+        "alpha",
+        "beta",
+        "Münzwurf",
+        "Wahrscheinlichkeit"
+      ],
+      "concepts": [
+        "Superposition",
+        "Wahrscheinlichkeit",
+        "Münzwurf"
+      ],
+      "relationships": [
+        "Münzwurf als Beispiel für Superposition"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 14.9,
+      "end_seconds": 24.789
+    },
+    {
+      "id": "segment_3",
+      "start_time": 36.17,
+      "end_time": 51.7,
+      "duration": 15.53,
+      "text": "Wo man 1/sqrt(2) als Parameter für sowohl alpha als auch beta haben würde, und wenn man das Ganze quadriert, weil es sind ja nur die Amplituden, das heißt das sind die Wurzeln der Wahrscheinlichkeiten, kriegt natürlich eins über zwei und eins über zwei fürs andere, das bedeutet man haut insgesamt 50, 50 % Wahrscheinlichkeit entweder Zahl oder Kopf zu bekommen.",
+      "section": "Superposition",
+      "subsection": "Wahrscheinlichkeiten",
+      "keywords": [
+        "Amplituden",
+        "Wurzeln",
+        "Wahrscheinlichkeiten"
+      ],
+      "concepts": [
+        "Amplituden",
+        "Wahrscheinlichkeiten"
+      ],
+      "relationships": [
+        "Amplituden und Wahrscheinlichkeiten sind verwandt"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_4",
+      "start_time": 51.8,
+      "end_time": 59.829,
+      "duration": 8.029,
+      "text": "Ein generalisierter Zustand sieht ein bisschen anders aus, hat immer noch die Parameter alpha beta für die Amplituden, aber man kann es andere Wahrscheinlichkeiten einsetzen.",
+      "section": "Superposition",
+      "subsection": "Generalisierte Zustände",
+      "keywords": [
+        "generalisierter Zustand",
+        "Wahrscheinlichkeiten"
+      ],
+      "concepts": [
+        "Generalisierte Zustände",
+        "Wahrscheinlichkeiten"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_5",
+      "start_time": 59.83,
+      "end_time": 1.28,
+      "duration": 28.17,
+      "text": "Wichtig ist hier die Gesamtwahrscheinlichkeit. Muss immer noch eins sein, wenn ich eine Münze werfen, auch wenn die irgendwie unfair ist und eine Seite schwer ist. Sie muss auf Kopf oder Zahl landen auf der Seite landen. Lassen wir mal weg, aber sie kann nicht einfach verschwinden. Das heißt, unsere Gesamtwahrscheinlichkeit muss wie immer auf 100 kommen, das heißt eins hier.",
+      "section": "Superposition",
+      "subsection": "Gesamtwahrscheinlichkeit",
+      "keywords": [
+        "Gesamtwahrscheinlichkeit",
+        "Münze",
+        "Kopf",
+        "Zahl"
+      ],
+      "concepts": [
+        "Gesamtwahrscheinlichkeit"
+      ],
+      "relationships": [
+        "Gesamtwahrscheinlichkeit muss 1 sein"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:01:39.560",
+      "end_time": "00:01:41.930",
+      "duration": 2.3700000000000045,
+      "text": "Das heißt, wir könnten zum Beispiel auf eine Münze nehmen. Auf beiden Seiten einfach Zahl drauf ist eine Trickmünze, wie sie von den Betrügern genutzt wird oder wir könnten, andere Münzen haben, die ganz andere Wahrscheinlichkeiten hat.",
+      "section": "Superposition",
+      "subsection": "Trickmünzen",
+      "keywords": [
+        "Trickmünze",
+        "Wahrscheinlichkeiten"
+      ],
+      "concepts": [
+        "Trickmünze",
+        "Wahrscheinlichkeiten"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 99.56,
+      "end_seconds": 101.93
+    },
+    {
+      "id": "segment_7",
+      "start_time": "00:01:56.650",
+      "end_time": "00:02:03.700",
+      "duration": 7.049999999999997,
+      "text": "Das ist die Superposition, wie schon angedeutet Es muss nicht immer 50 50 sein, wir können auch andere Parameter finden wie eins über sqrt(3) und zwei über drei uns ganz andere Wurzel, die insgesamt dann zu eins aufaddieren, das heißt, wir können hier alle Wahrscheinlichkeiten haben.",
+      "section": "Superposition",
+      "subsection": "Variationen der Wahrscheinlichkeiten",
+      "keywords": [
+        "Variationen",
+        "Parameter",
+        "Wahrscheinlichkeiten"
+      ],
+      "concepts": [
+        "Variationen der Wahrscheinlichkeiten"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 116.65,
+      "end_seconds": 123.7
+    },
+    {
+      "id": "segment_8",
+      "start_time": 3.01,
+      "end_time": 4.28,
+      "duration": 1.27,
+      "text": "Und mit diesem Beispiel möchte ich abschließen und wir gehen noch weiter und schauen uns noch weitere interessante Möglichkeiten und was man mit Quanten Zuständen machen, kommen, was vielleicht auch mit normalen Zuständen und Wahrscheinlichkeiten nicht möglich ist.",
+      "section": "Superposition",
+      "subsection": "Abschluss",
+      "keywords": [
+        "Abschluss",
+        "Quanten Zustände"
+      ],
+      "concepts": [
+        "Quanten Zustände"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le"
+    }
+  ],
+  "key_takeaways": [
+    "Superposition ist ein zentrales Konzept im Quantencomputing, das beschreibt, wie Qubits in mehreren Zuständen gleichzeitig existieren können.",
+    "Die Gesamtwahrscheinlichkeit der möglichen Zustände muss immer 1 betragen, unabhängig von den spezifischen Wahrscheinlichkeiten der einzelnen Zustände.",
+    "Praktische Beispiele wie Münzwürfe helfen, das Konzept der Superposition zu veranschaulichen."
+  ]
+}

@@ -1,0 +1,113 @@
+---
+description: Custom Tool Integration Guidelines
+globs: 
+---
+# Custom Tool Integration Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document outlines comprehensive guidelines for integrating external tools and custom utilities within the **step1_material_ingestion** pipeline. The goal is to ensure that each agent utilizes external tools (e.g., OCR, image processing, schema validators) in a standardized, reliable, and traceable manner.
+
+## 2. General Tool Integration Guidelines
+
+- **Standardized Invocation:**  
+  All external tool calls must use well-defined function signatures and JSON or dictionary-based parameter passing.
+
+- **Parameter Definitions:**  
+  - Clearly specify required parameters (e.g., file paths, bounding boxes, text snippets).  
+  - Optional parameters must include default values.
+  
+- **Pre- and Post-Processing:**  
+  - Validate inputs before tool invocation.  
+  - Process and structure outputs to match the defined JSON schemas.
+
+- **Logging and Monitoring:**  
+  - Log each tool invocation along with input parameters and response data.  
+  - Record chain-of-thought reasoning, especially when invoking fallback strategies.
+
+- **Fallback Mechanisms:**  
+  - Define clear triggers for fallback procedures when primary tool outputs are low-confidence or erroneous.  
+  - Log fallback decisions with detailed reasoning.
+
+## 3. Agent-Specific Custom Tool Integration
+
+### Document Loader Agent
+- **Tools & Libraries:**  
+  - **Primary:** PyMuPDF for PDF parsing and image extraction.  
+  - **Custom Utilities:** Image processing utilities for converting and saving images.
+- **Integration Guidelines:**  
+  - Ensure that each extracted image is saved with a unique identifier.  
+  - Validate image formats and resolution before saving.  
+  - Log any exceptions during PDF reading or image extraction.
+
+### Transcript Agent
+- **Tools & Libraries:**  
+  - **Primary:** spaCy for text segmentation and NLP-based analysis.
+- **Integration Guidelines:**  
+  - Use standardized functions to segment transcript files (.vtt, .txt) into chunks.  
+  - Integrate custom CoT prompts for improved segmentation where needed.  
+  - Ensure that error handling is in place for file reading and text processing.
+
+### Context Extraction Agent
+- **Tools & Libraries:**  
+  - **Primary:** spaCy for entity recognition and key phrase extraction.  
+  - **Supplementary:** OpenAI API (or similar) for advanced CoT-based context enrichment.
+- **Integration Guidelines:**  
+  - Structure extracted context as JSON with headers for chain-of-thought logs.  
+  - Validate that all context and keyword outputs match the predefined schema.
+
+### Vision Model Agent
+- **Tools & Libraries:**  
+  - **Primary:** OpenCV for image processing and pytesseract for OCR fallback.
+  - **Optional:** A fallback vision model (custom or third-party) for low-confidence scenarios.
+- **Integration Guidelines:**  
+  - Analyze images using primary vision models; if confidence is low, automatically invoke fallback tools.  
+  - Log image analysis outputs, including bounding boxes and confidence scores, in a structured JSON format.  
+  - Document fallback triggers and alternative processing paths.
+
+### Targeted Image Extraction Agent
+- **Tools & Libraries:**  
+  - **Primary:** OpenCV for image cropping and pytesseract for targeted OCR.
+- **Integration Guidelines:**  
+  - Use precise image region parameters (bounding boxes) to crop and process image regions.  
+  - Standardize the output to include both the refined bounding box and the extracted text.  
+  - Validate OCR outputs against expected text patterns where applicable.
+
+### Embedding Agent
+- **Tools & Libraries:**  
+  - **Primary:** Sentence Transformers (e.g., all-MiniLM-L6-v2) for text embeddings.  
+  - **Optional:** CLIP (or similar) for image embeddings.
+- **Integration Guidelines:**  
+  - Convert text and image data into high-dimensional embeddings following a standardized procedure.  
+  - Output embeddings in a JSON payload that includes metadata such as embedding dimensions and processing time.
+  
+### Vector Storage Agent
+- **Tools & Libraries:**  
+  - **Primary:** FAISS for indexing and similarity search.
+- **Integration Guidelines:**  
+  - Store embeddings along with unique source identifiers.  
+  - Ensure that each storage operation is logged and verified against the defined JSON schema for vector entries.
+
+### Concept Extraction Agent
+- **Tools & Libraries:**  
+  - **Primary:** Custom NLP modules and embedding similarity analysis for concept normalization.
+- **Integration Guidelines:**  
+  - Extract concepts from combined text and image data using standardized prompts.  
+  - Output each concept with unique identifiers and metadata (e.g., aliases, external links) in a consistent JSON format.
+  
+### Graph Builder Agent
+- **Tools & Libraries:**  
+  - **Primary:** networkx for graph construction.
+- **Integration Guidelines:**  
+  - Construct the hierarchical graph structure using clearly defined node types and relationships.  
+  - Export the graph as a nested JSON structure that preserves all node metadata and connection details.
+
+### Coordinator Agent
+- **Tools & Libraries:**  
+  - **Primary:** Orchestration logic integrating all sub-agent outputs.
+- **Integration Guidelines:**  
+  - Validate structured outputs from each agent using predefined JSON schemas.  
+  - Aggregate logs and chain-of-thought reasoning from all tool invocations for a comprehensive debug trail.  
+  - Manage error propagation and fallback strategies across agents.
+
+

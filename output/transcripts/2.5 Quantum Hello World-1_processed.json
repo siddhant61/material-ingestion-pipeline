@@ -1,0 +1,226 @@
+{
+  "transcript_info": {
+    "title": "Quantum Hello World",
+    "duration": "04:49",
+    "word_count": 738,
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erste Schritte im Programmieren eines Quantencomputers",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ]
+  },
+  "segments": [
+    {
+      "id": "1",
+      "start_time": "00:00:00.860",
+      "end_time": "00:00:06.690",
+      "duration": 5.83,
+      "text": "In den vorherigen Videos haben wir bereits das hadamard gate kennengelernt, das auf ein Qubit wirkt und das cnot gate, das auf zwei Qubits wirkt und in diesem Video werden wir diese zwei gates nutzen, um ein 1. Beispiel uns anzuschauen das nennen wir Quantum Hello World.",
+      "section": "Einführung in Quantenverschränkung",
+      "subsection": "Quantum Hello World",
+      "keywords": [
+        "Hadamard Gate",
+        "CNOT Gate",
+        "Qubit",
+        "Quantum Hello World"
+      ],
+      "concepts": [
+        "Hadamard Gate",
+        "CNOT Gate",
+        "Qubit",
+        "Quantenverschränkung"
+      ],
+      "relationships": [
+        "Hadamard Gate prepares the Qubit in superposition",
+        "CNOT Gate entangles two Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 0.86,
+      "end_seconds": 6.69
+    },
+    {
+      "id": "2",
+      "start_time": 6.69,
+      "end_time": 14.76,
+      "duration": 8.07,
+      "text": "Die Schaltung sieht folgendermaßen aus. Wir haben einen Schaltkreis mit zwei Qubits. Auf das Nullte Qubit wirkt das Hadamard gate, das bedeutet das nullte Qubit wird zunächst einmal in eine gleichmäßige Superposition versetzt und dann lassen wir das CNOT Gate auf beide Qubits wirken.",
+      "section": "Einführung in Quantenverschränkung",
+      "subsection": "Quantum Hello World",
+      "keywords": [
+        "Schaltkreis",
+        "Superposition",
+        "Qubits"
+      ],
+      "concepts": [
+        "Schaltkreis",
+        "Superposition",
+        "Qubits"
+      ],
+      "relationships": [
+        "Hadamard Gate creates superposition",
+        "CNOT Gate operates on both Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "3",
+      "start_time": 14.76,
+      "end_time": 40.21,
+      "duration": 25.45,
+      "text": "Nach dem Hadamard Gate und dem CNOT Gate befinden sich die zwei Qubits in einem Zustand, der durch den folgenden Zustandsvektor, der hier unten eingeblendet wird, repräsentiert wird. Was wir hier sehen, ist unten die Basis Zustände für 2 Qubits also 00 01 10 und 11. Was wir hier sehen, ist, dass wir 1 2-Qubit Zustand haben, wobei nur die Basis Zustände 00 und 11 vertreten sind, also die Amplituden für die Basis Zustände 00 und 11 sind gleich groß und die Amplituden für die anderen Basis Zustände sind nicht vorhanden.",
+      "section": "Einführung in Quantenverschränkung",
+      "subsection": "Quantum Hello World",
+      "keywords": [
+        "Zustandsvektor",
+        "Basis Zustände",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Basis Zustände",
+        "Amplituden"
+      ],
+      "relationships": [
+        "Basiszustände 00 und 11 sind gleich groß",
+        "Amplituden für 01 und 10 sind null"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "4",
+      "start_time": "00:01:15.650",
+      "end_time": "00:01:21.980",
+      "duration": 6.329999999999998,
+      "text": "Wenn wir uns das genauer anschauen, dann solltet ihr euch daran erinnern, dass wir diesen Zustand bereits gesehen hatten im Theorie teil und das ist genau dieser Zustand. 00 + 11, wobei die Amplituden eben eins durch Wurzel zwei sind, also gleich groß sind. Und das ist genau der Zustand, den wir besprochen hatten, als wir über das Quanten Phänomen Quanten Verschränkung gesprochen hatten.",
+      "section": "Einführung in Quantenverschränkung",
+      "subsection": "Quantum Hello World",
+      "keywords": [
+        "Quantenverschränkung",
+        "Zustand",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Quantenverschränkung",
+        "Zustand",
+        "Amplituden"
+      ],
+      "relationships": [
+        "Zustand 00 + 11 ist ein Beispiel für Quantenverschränkung"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 75.65,
+      "end_seconds": 81.98
+    },
+    {
+      "id": "5",
+      "start_time": "00:01:39.269",
+      "end_time": "00:01:41.870",
+      "duration": 2.600999999999999,
+      "text": "Das Ganze können wir jetzt auch auf einem Quantencomputer mit Hilfe des IBM Quantum Composers durchführen. Ich lasse auf das nullte Qubit, das Hadamard Gate wirken und lasse dann das CNOT Gate auf beide Qubits wirken. Dann sehen wir unten beim Zustandsvektor, dass wir eben diesen quanten verschränkten Zustand erzeugt haben. Aber um das Experiment jetzt tatsächlich durchzuführen, müssen wir beide Qubits auch noch messen, also wieder mit diesen Mess Block, den wir schon aus dem Münzwurf Experiment kennen.",
+      "section": "Programmierung mit IBM Quantum Composer",
+      "subsection": "Quantum Hello World",
+      "keywords": [
+        "IBM Quantum Composer",
+        "Mess Block",
+        "Experiment"
+      ],
+      "concepts": [
+        "IBM Quantum Composer",
+        "Mess Block",
+        "Experiment"
+      ],
+      "relationships": [
+        "Messung ist notwendig, um den Zustand zu verifizieren"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 99.269,
+      "end_seconds": 101.87
+    },
+    {
+      "id": "6",
+      "start_time": "00:02:18.389",
+      "end_time": "00:02:21.289",
+      "duration": 2.8999999999999773,
+      "text": "Um das Ganze durchzuführen, gehen wir einfach wieder auf set up and run. Eine Münze Experiment haben wir einen tatsächlichen Quantencomputer benutzt. Aber in dieser Liste existieren auch Simulatoren, und wir können dieses Experiment jetzt sowohl mit dem Quantencomputer als auch mit dem Simulator durchführen. Das habe ich für euch schon mal gemacht und hab euch die Ergebnisse hier eingeblendet.",
+      "section": "Programmierung mit IBM Quantum Composer",
+      "subsection": "Quantum Hello World",
+      "keywords": [
+        "Simulator",
+        "Quantencomputer",
+        "Ergebnisse"
+      ],
+      "concepts": [
+        "Simulator",
+        "Quantencomputer",
+        "Ergebnisse"
+      ],
+      "relationships": [
+        "Simulator ermöglicht das Testen ohne Hardwarefehler"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 138.389,
+      "end_seconds": 141.289
+    },
+    {
+      "id": "7",
+      "start_time": "00:02:47.229",
+      "end_time": "00:02:55.659",
+      "duration": 8.430000000000007,
+      "text": "Also links sehen wir das Ergebnis, wenn wir einen Simulator verwenden. Wir sehen, dass wie erwartet nur zwei Messergebnisse herauskommen können, nämlich entweder 00 oder 11. Und auf der rechten Seite sehen wir das Ergebnis, wenn wir einen tatsächlichen Quantencomputer benutzen. Aber da sehen wir etwas, was wir eigentlich nicht erwarten würden. Wir sehen nämlich auch wenige Messergebnisse für 01 und 10 als für diese Basis Zustände. Das würden wir eigentlich nicht erwarten, wenn wir uns im theoretischen Zustand der Zwei Qubits angeschaut hatten, dass wir diese Ergebnisse dennoch erhalten. In seltenen Fällen liegt daran, dass ein tatsächlicher Quantencomputer fehleranfällig ist, das heißt, es werden manchmal falsche Messergebnisse herauskommen, das heißt, wir müssen ein Ergebnis möglichst häufig durchführen, um eben zu vermeiden, dass wir zu häufig Fehler haben. Die meisten Messergebnisse werden wir immer noch für die zwei Basis Zustände erhalten, die korrekt sind: 00 und 11. Und was ich hier eigentlich einfach nur zeigen möchte, ist, dass man das Ganze simulieren kann, wobei wir eben die Fehlerrate oder die Fehleranfälligkeit der Hardware nicht mit berücksichtigen. Aber wenn wir das Ganze tatsächlich auf einem Quantencomputer durchführen, dann werden wir eben auch unerwartete Messergebnisse erhalten aufgrund der Fehleranfälligkeit der Hardware.",
+      "section": "Programmierung mit IBM Quantum Composer",
+      "subsection": "Quantum Hello World",
+      "keywords": [
+        "Simulator",
+        "Quantencomputer",
+        "Fehleranfälligkeit"
+      ],
+      "concepts": [
+        "Simulator",
+        "Quantencomputer",
+        "Fehleranfälligkeit"
+      ],
+      "relationships": [
+        "Fehleranfälligkeit beeinflusst Messergebnisse"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 167.22899999999998,
+      "end_seconds": 175.659
+    },
+    {
+      "id": "8",
+      "start_time": "00:04:24.720",
+      "end_time": "00:04:31.470",
+      "duration": 6.75,
+      "text": "Wir haben jetzt Quantum Hello World auf dem oder Mithilfe des IBM Quantum Composers durchgeführt. Im nächsten Video werden wir das Ganze mit Hilfe von Python machen, also eine Programmiersprache. Das ist allerdings nur für diejenigen, die sich dafür interessieren beziehungsweise schon Programmierkenntnisse haben. Das ist sozusagen ein freiwilliger, zusätzlicher Teil dieses Kurses.",
+      "section": "Ausblick auf weitere Programmierung",
+      "subsection": "Python für Quantencomputer",
+      "keywords": [
+        "Python",
+        "Programmiersprache",
+        "Quantum Hello World"
+      ],
+      "concepts": [
+        "Python",
+        "Programmiersprache",
+        "Quantum Hello World"
+      ],
+      "relationships": [
+        "Python wird als zusätzliche Programmiersprache eingeführt"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 264.72,
+      "end_seconds": 271.47
+    }
+  ],
+  "key_takeaways": [
+    "Das Hadamard Gate und das CNOT Gate sind grundlegende Quantenoperationen.",
+    "Der Zustand von zwei Qubits kann Quantenverschränkung darstellen.",
+    "Experimente können sowohl auf einem echten Quantencomputer als auch auf einem Simulator durchgeführt werden.",
+    "Fehleranfälligkeit von Quantencomputern kann zu unerwarteten Messergebnissen führen.",
+    "Python wird als zusätzliche Programmiersprache für Quantencomputing eingeführt."
+  ]
+}

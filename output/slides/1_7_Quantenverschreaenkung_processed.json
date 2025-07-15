@@ -1,0 +1,375 @@
+{
+  "slide_deck_info": {
+    "title": "Quantenverschränkung",
+    "slide_count": 5,
+    "estimated_duration": "15 minutes",
+    "main_topic": "Quantenverschränkung"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Quantenverschränkung",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not provided"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Was ist Quantenverschränkung?",
+      "content": "Isabel Nha Minh Le\nIBM Quantum Community",
+      "section": "Einführung in Quantenverschränkung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quantenverschränkung"
+      ],
+      "concepts": [
+        "Quantenverschränkung"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Zwei unabhängige Münzwürfe",
+      "content": "•Beide Münzen sind jeweils im Zustand  |0⟩+|1⟩\n•Der gemeinsame Zustand der zwei Qubits ist dann:\n|0⟩+|1⟩\n2⊗|0⟩+|1⟩\n2=|0⟩0+|0⟩1+|1⟩0+|1⟩1\n2\n•Wir messen beispielsweise das  linke Qubit in |0⟩:\n|0⟩⊗|0⟩+|1⟩\n2=|0⟩0+|0⟩1\n2\nDas rechte Qubit bleibt unverändert!",
+      "section": "Beispiel zur Quantenverschränkung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Münzwurf",
+        "Qubits",
+        "Zustand"
+      ],
+      "concepts": [
+        "Qubits",
+        "gemeinsamer Zustand",
+        "Messung"
+      ],
+      "relationships": [
+        "Messung des linken Qubits beeinflusst den Zustand des rechten Qubits"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Zwei unabhängige Münzwürfe?",
+      "content": "•Zwei Münzen (Qubits) im Zustand \nۧ|00+|1⟩1\n2\n•In welchem Zustand ist das rechte Qubit, wenn wir das linke Qubit in Zustand |0⟩messen? \nۧ|0⊗ۧ|0ۧ=|00",
+      "section": "Frage zur Quantenverschränkung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Zustand",
+        "Qubits",
+        "Messung"
+      ],
+      "concepts": [
+        "Zustand des rechten Qubits",
+        "Messung"
+      ],
+      "relationships": [
+        "Messung des linken Qubits bestimmt den Zustand des rechten Qubits"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "Quantenverschränkung",
+      "content": "",
+      "section": "Definition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quantenverschränkung"
+      ],
+      "concepts": [
+        "Quantenverschränkung"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "Manipulation von Qubits",
+      "content": "Bei zwei quantenverschränkten Qubits muss ich nur ein Qubit manipulieren, um den Zustand beider Qubits zu verändern!",
+      "section": "Eigenschaften der Quantenverschränkung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Manipulation",
+        "Zustandsänderung"
+      ],
+      "concepts": [
+        "Manipulation von Qubits",
+        "Zustandsänderung"
+      ],
+      "relationships": [
+        "Manipulation eines Qubits beeinflusst beide Qubits"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Quantenverschränkung",
+    "Zustände von Qubits",
+    "Einfluss der Messung auf Qubits"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:32:21+02:00",
+    "page_count": 5,
+    "has_images": true,
+    "filename": "1_7_Quantenverschreaenkung.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "47\n",
+          "Was ist \nQuantenverschränkung?\n",
+          "---\nIsabel Nha Minh Le\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "48\n",
+          "Zwei unabhängige Münzwürfe\n",
+          "• Beide Münzen sind jeweils im Zustand  \n",
+          "ۧ\nȁ0 +\nۧ\nȁ1\n2\n",
+          "• Der gemeinsame Zustand der zwei Qubits ist dann:\n",
+          "ۧ\nȁ0 +\nۧ\nȁ1\n",
+          "2\n",
+          "⊗\nۧ\nȁ0 +\nۧ\nȁ1\n",
+          "2\n",
+          "=\nۧ\nȁ00 +\nۧ\nȁ01 +\nۧ\nȁ10 +\nۧ\nȁ11\n2\n",
+          "• Wir messen beispielsweise das  linke Qubit in \nۧ\nȁ0 :\n",
+          "ۧ\nȁ0 ⊗\nۧ\nȁ0 +\nۧ\nȁ1\n",
+          "2\n",
+          "=\nۧ\nȁ00 +\nۧ\nȁ01\n",
+          "2\nDas rechte Qubit bleibt unverändert!\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "50\n",
+          "Quantenverschränkung\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        4
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "gemeinsamer Zustand",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        4
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Messung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        4
+      ],
+      "target_slides": [
+        2,
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Zustand des rechten Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        4
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Manipulation von Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Zustandsänderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Zustand des rechten Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Manipulation von Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Zustandsänderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "gemeinsamer Zustand",
+      "target_concept": "Zustand des rechten Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "gemeinsamer Zustand",
+      "target_concept": "Manipulation von Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "gemeinsamer Zustand",
+      "target_concept": "Zustandsänderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Messung",
+      "target_concept": "Zustand des rechten Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Messung",
+      "target_concept": "Manipulation von Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Messung",
+      "target_concept": "Zustandsänderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Zustand des rechten Qubits",
+      "target_concept": "Manipulation von Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Zustand des rechten Qubits",
+      "target_concept": "Zustandsänderung",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    }
+  ]
+}

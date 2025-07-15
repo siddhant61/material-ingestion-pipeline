@@ -1,0 +1,140 @@
+WEBVTT
+
+1
+00:00:01.149 --> 00:00:08.289 
+hi
+wir haben zuvor gesehen, wie man den IBM Quantum Composer bedient und heute möchten wir sehen wie man das not gate und das
+
+2
+00:00:08.289 --> 00:00:16.839 
+hadamard gate verwendet beziehungsweise was diese zwei gates machen das not gate wird häufig auch x gate genannt und es ist
+
+3
+00:00:16.839 --> 00:00:25.230 
+sehr ähnlich wie das klassische not in der booleschen logik, dass ein not sein eins und das eins ins null macht das es kehrt
+
+4
+00:00:25.230 --> 00:00:33.990 
+es um und genau dasselbe macht das not gate hier, wenn man es auf einen Qubit anwendet und das Qubit im zustand null ist geht
+
+5
+00:00:33.990 --> 00:00:38.950 
+es zu so stand eins über und in das ganze ein 2. mal anwendet geht es zurück
+
+6
+00:00:38.950 --> 00:00:45.500 
+in zustand null
+das gleiche als wenn man das ganze nicht angewendet hätte ist insofern reversible.
+
+7
+00:00:45.509 --> 00:00:50.369 
+Zweimal anwenden ist es gleich wie gar nicht anwenden
+
+8
+00:00:50.369 --> 00:00:52.140 
+und wie man gesehen hat.
+
+9
+00:00:52.140 --> 00:00:58.399 
+Das not gate ist ein gate das einfach ein einzelnes Qubit wirkt das ein Qubit gate und es kehrt in zustand und eben von
+
+10
+00:00:58.399 --> 00:01:06.739 
+null zu eins von eins zu null aber wenn das Qubit in super position ist wird das ganze auch umgekehrt
+angenommen das Qubit ist im zustand
+
+11
+00:01:06.739 --> 00:01:15.920 
+alpha mal null plus beta mal eins und wir wenden das x gate darauf an, was passiert ist, dass das gate um das Ganze umgekehrt
+
+12
+00:01:15.920 --> 00:01:23.730 
+wird, und danach im Zustand alpha mal eins plus beta mal null ist natürlich immer ein 2. Mal anwendet, das Ganze wieder zurück
+
+13
+00:01:23.739 --> 00:01:26.519 
+gemacht
+
+14
+00:01:26.519 --> 00:01:33.090 
+und das zweite gate dass wir uns anschauen möchten, ist das hadamard gate das ist dieses gate, das man braucht, um überhaupt
+
+15
+00:01:33.090 --> 00:01:36.959 
+eine super Position zu erzeugen, wie man sie vorher gesehen hat.
+
+16
+00:01:38.109 --> 00:01:44.239 
+Das bedeutet wenn wir ein Qubit im Ursprungszustand Null haben darauf ein hadamard gate
+
+17
+00:01:44.409 --> 00:01:48.239 
+anwenden haben wir nachher super position zwischen null und eins.
+
+18
+00:01:49.650 --> 00:01:57.950 
+Und auch hier, wenn es ein 2. mal anwenden würde, geht es wieder zurück zum Zustand null,
+
+19
+00:01:57.950 --> 00:01:59.250 
+wie wir hier sehen.
+
+20
+00:01:59.780 --> 00:02:06.420 
+Einmal auf das hadamard gate angewendeten haben wir zwei Amplituden aus nicht mehr nur eine, sondern wir haben einen Amplitude
+
+21
+00:02:06.420 --> 00:02:12.000 
+von ungefähr 0,7 außer eins über sqrt 2 und dasselbe bei eins.
+
+22
+00:02:12.879 --> 00:02:20.110 
+Und das ist genau das, was wir mit Super Positionen  nennen ist ein super Position.
+
+23
+00:02:21.430 --> 00:02:30.479 
+Es ist in diesem  verschrenktem Zustand und das verwenden wir später im zum Beispiel mit dem X gate, um dann andere Zustände
+
+24
+00:02:30.479 --> 00:02:31.169 
+auszudrücken.
+
+25
+00:02:31.259 --> 00:02:34.340 
+Wichtig ist hier noch Wir können, das hadamard gate
+
+26
+00:02:34.340 --> 00:02:35.659 
+sowohl auf zustand null
+
+27
+00:02:35.659 --> 00:02:37.120 
+als auch den zustand eins anwenden.
+
+28
+00:02:37.120 --> 00:02:39.610 
+In beiden Fällen haben wir danach eine Super Position.
+
+29
+00:02:39.759 --> 00:02:46.669 
+Der Unterschied ist dieses Pluszeichen das sie dort sehen, wenn wir das hadamard gate  auf Zustand null anwenden sie in
+
+30
+00:02:46.669 --> 00:02:56.639 
+den Zustand null plus eins mit werten 1/sqrt 2, falls wir auf den zustand eins anwenden stattdessen
+
+31
+00:02:56.639 --> 00:03:06.500 
+Zustand null minus eins und das kommt später eine sehr große Rolle spielen, Wenn wir komplexe Algorithmen betrachten, das
+
+32
+00:03:06.500 --> 00:03:08.349 
+werden wir in diese Serie nicht tun.
+
+33
+00:03:08.349 --> 00:03:12.930 
+Allerdings spielt ist später, hat eine sehr große Rolle und ist eines der wichtigen Teile .
+
+34
+00:03:12.930 --> 00:03:16.400 
+Mit Quantencomputer ganz neu ordnen, von Algorithmen machen können.

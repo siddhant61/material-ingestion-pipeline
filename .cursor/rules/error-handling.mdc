@@ -1,0 +1,88 @@
+---
+description: Error Handling & Fallback Strategies
+globs: 
+---
+# Error Handling & Fallback Strategies for step1_material_ingestion
+
+## 1. Overview
+
+Effective error handling and fallback strategies are critical to ensuring the robustness and reliability of the **step1_material_ingestion** pipeline. This document outlines the guidelines for validating inputs, managing exceptions, and triggering fallback mechanisms across all agents. Comprehensive logging, including chain-of-thought (CoT) reasoning, must be maintained to support debugging and system integrity.
+
+## 2. Input Validation & Exception Management
+
+- **Input Validation:**  
+  - Each agent must validate all incoming data against predefined JSON schemas before processing.
+  - Validate file paths, data types, and required parameters to catch potential issues early.
+
+- **Exception Handling:**  
+  - Implement try-except blocks around critical operations to catch and handle exceptions gracefully.
+  - When an exception is caught, log the error details, including the error type, message, and the specific context (e.g., the file or data segment causing the issue).
+
+- **Error Reporting:**  
+  - Incorporate a standardized error structure in the output JSON payload.  
+    Example:
+    ```json
+    {
+      "header": { "source": "AgentName", "timestamp": "2025-02-24T12:00:00Z", "version": "v1.0" },
+      "payload": {
+        "error": {
+          "code": "ERROR_CODE",
+          "message": "Detailed error description",
+          "fallbackUsed": false
+        }
+      }
+    }
+    ```
+  - Errors should be propagated to the Coordinator Agent for centralized handling and decision-making.
+
+## 3. Fallback Mechanisms
+
+- **Triggering Conditions:**  
+  - Fallback strategies must be activated when:
+    - Confidence scores fall below a defined threshold.
+    - Critical errors occur during tool invocation or data processing.
+    - Results deviate from expected formats or values.
+
+- **Fallback Procedures:**  
+  - Define and document alternate processing paths for each agent. For example:
+    - **Vision Model Agent:** If image analysis confidence is low, invoke a secondary OCR tool or a custom vision model.
+    - **Transcript Agent:** If text segmentation fails, revert to a more basic segmentation method.
+  - Log the fallback trigger and detail the alternative process in the chain-of-thought logs.
+
+- **Documentation in Output:**  
+  - When a fallback is used, include an updated `fallbackUsed` flag and a summary of the fallback decision in the JSON payload.
+
+## 4. Logging & Chain-of-Thought Integration
+
+- **Detailed Logging:**  
+  - Log every error occurrence along with contextual information such as timestamps, agent names, and input data that led to the error.
+  - Maintain a separate log for chain-of-thought reasoning to capture the rationale behind fallback triggers and error handling decisions.
+
+- **Traceability:**  
+  - Ensure that logs are structured, timestamped, and include identifiers that allow tracing back to the specific module and operation.
+  - Use standardized log messages to enable efficient searching and debugging across different agents.
+
+## 5. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Validate Inputs:**  
+  - Always validate incoming data against predefined schemas before processing.
+- **Implement Robust Exception Handling:**  
+  - Use try-except blocks and ensure that exceptions are logged with sufficient context.
+- **Document Fallbacks:**  
+  - Clearly document fallback triggers and the alternate procedures used.
+- **Log Chain-of-Thought Reasoning:**  
+  - Capture and log detailed CoT reasoning steps for every fallback or error scenario.
+- **Propagate Errors:**  
+  - Ensure that errors and fallback decisions are communicated to the Coordinator Agent for centralized management.
+
+### Don’t:
+- **Bypass Validation:**  
+  - Never process data without verifying that it conforms to the expected format.
+- **Suppress Exceptions:**  
+  - Do not ignore or silently handle errors; always log and report them.
+- **Omit Fallback Information:**  
+  - Avoid leaving fallback triggers undocumented or unlogged.
+- **Mix Error Formats:**  
+  - Use a consistent error structure across all agents to facilitate uniform error handling and reporting.
+

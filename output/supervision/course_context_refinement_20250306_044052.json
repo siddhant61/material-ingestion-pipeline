@@ -1,0 +1,283 @@
+{
+  "original": {
+    "title": "Quantencomputing Ferienkurs \u2013 Einf\u00fchrung f\u00fcr Sch\u00fclerInnen",
+    "description": "In diesem Kurs lernen wir zun\u00e4chst einige theoretische Grundlagen des Quantencomputings kennen und gehen dann gemeinsam die ersten Schritte im Programmieren eines Quantencomputers. Der Kurs richtet sich an Sch\u00fcler:innen ab der 9. Klasse und l\u00e4sst sich gut in den Physik- oder Informatikunterricht integrieren.",
+    "objectives": [
+      "Warum sind Quantencomputer interessant?",
+      "Was ist ein Qubit?",
+      "Superpositionszust\u00e4nde - ein Konzept aus der Quantenphysik",
+      "Quantenverschr\u00e4nkung - ein weiteres Konzept aus der Quantenphysik",
+      "Einige wichtige Quantengatter: NOT, Hadamard, CNOT",
+      "Erste Schritte im Programmieren eines Quantencomputers mit dem IBM Quantum Composer",
+      "Erste Schritte im Programmieren eines Quantencomputers mit Qiskit"
+    ],
+    "learning_outcomes": [
+      "Verst\u00e4ndnis der theoretischen Grundlagen des Quantencomputings",
+      "F\u00e4higkeit, grundlegende Quantenprogramme zu schreiben",
+      "Kenntnis der Konzepte von Qubits und Quantenverschr\u00e4nkung"
+    ],
+    "subject_domain": "Quantencomputing",
+    "sub_domains": [
+      "Physik",
+      "Informatik"
+    ],
+    "level": "Sch\u00fcler:innen ab der 9. Klasse",
+    "prerequisites": [
+      "Vorkenntnisse in der Programmierung sind hilfreich, aber nicht notwendig"
+    ],
+    "credits": "Not specified in document",
+    "duration": "2 Wochen",
+    "structure": [
+      {
+        "title": "Woche 1",
+        "description": "Wir starten mit ein paar spannenden Fakten zu Quantencomputern und befassen uns mit einem scheinbar einfachen Problem, das sich jedoch als h\u00f6chst komplex entpuppt. Wir arbeiten an dem \u00dcbergang zwischen klassischer Programmierung und dem Quantencomputing.",
+        "topics": [
+          "Qubits",
+          "Superposition",
+          "Quantenverschr\u00e4nkung",
+          "Aktueller Stand der Technik"
+        ],
+        "sub_sections": []
+      },
+      {
+        "title": "Woche 2",
+        "description": "In dieser Woche schauen wir uns ein Tool von IBM Quantum zur Programmierung von Quantencomputern genauer an und lernen einige Grundelemente des Visuellen Scriptings vom IBM Quantum Composer kennen.",
+        "topics": [
+          "Programmierung mit IBM Quantum Composer",
+          "Python f\u00fcr Quantencomputer"
+        ],
+        "sub_sections": []
+      },
+      {
+        "title": "Abschlusspr\u00fcfung",
+        "description": "Kleine Abschlusspr\u00fcfung vom 9. bis 23. August.",
+        "topics": [],
+        "sub_sections": []
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Isabel Nha Minh Le",
+        "title": "Forschungspraktikantin bei IBM Quantum",
+        "bio": "Isabel forscht im Bereich Quantum Algorithms und Quantum Machine Learning f\u00fcr Anwendungen in der Chemie und Materialwissenschaften. Zuvor hat sie Quantencomputing-Workshops an Schulen in Deutschland gegeben.",
+        "contact": "Not specified in document"
+      },
+      {
+        "name": "Marcel Pfaffhauser",
+        "title": "Not specified in document",
+        "bio": "Marcel hat Informatik an der ETH Z\u00fcrich studiert und arbeitet an Outreach-Aktivit\u00e4ten im Bereich Quantencomputing.",
+        "contact": "Not specified in document"
+      },
+      {
+        "name": "Manuel Wirth",
+        "title": "Not specified in document",
+        "bio": "Manuel ist Praktikant bei IBM Quantum und hat zuvor an Sekundarschulen unterrichtet.",
+        "contact": "Not specified in document"
+      }
+    ],
+    "teaching_methods": [
+      "Kurze Lernvideos",
+      "Multiple-Choice-Tests",
+      "Visuelles Scripting"
+    ],
+    "assessment_methods": [
+      "Multiple-Choice-Tests",
+      "Abschlusspr\u00fcfung"
+    ],
+    "materials": [
+      "Lernvideos",
+      "IBM Quantum Composer",
+      "Qiskit"
+    ],
+    "references": [
+      "Not specified in document"
+    ],
+    "keywords": [
+      "Quantencomputing",
+      "Qubit",
+      "Superposition",
+      "Quantenverschr\u00e4nkung",
+      "IBM Quantum Composer",
+      "Qiskit"
+    ],
+    "language": "Deutsch",
+    "certification": "Zertifikat bei erfolgreichem Abschluss der Abschlusspr\u00fcfung und Erreichen von mindestens 50% der maximalen Punkte.",
+    "target_audience": "Sch\u00fcler:innen ab der 9. Klasse, die sich f\u00fcr Quantencomputing interessieren.",
+    "institutional_context": {
+      "institution": "openHPI",
+      "department": "Not specified in document",
+      "program": "Not specified in document"
+    },
+    "metadata": {
+      "extraction_timestamp": "2025-03-06T04:26:08.621875",
+      "model_used": "gpt-4o-mini",
+      "document_source": "Unknown",
+      "document_type": "Unknown",
+      "extraction_confidence": 0.9,
+      "completeness_score": 0.9500000000000001
+    }
+  },
+  "refined": {
+    "title": "Quantencomputing Ferienkurs \u2013 Einf\u00fchrung f\u00fcr Sch\u00fcler:innen",
+    "description": "In diesem Kurs lernen wir zun\u00e4chst einige theoretische Grundlagen des Quantencomputings kennen und gehen dann gemeinsam die ersten Schritte im Programmieren eines Quantencomputers. Der Kurs richtet sich an Sch\u00fcler:innen ab der 9. Klasse und l\u00e4sst sich gut in den Physik- oder Informatikunterricht integrieren.",
+    "objectives": [
+      "Warum sind Quantencomputer interessant?",
+      "Was ist ein Qubit?",
+      "Superpositionszust\u00e4nde - ein Konzept aus der Quantenphysik",
+      "Quantenverschr\u00e4nkung - ein weiteres Konzept aus der Quantenphysik",
+      "Einige wichtige Quantengatter: NOT, Hadamard, CNOT",
+      "Erste Schritte im Programmieren eines Quantencomputers mit dem IBM Quantum Composer",
+      "Erste Schritte im Programmieren eines Quantencomputers mit Qiskit"
+    ],
+    "learning_outcomes": [
+      "Verst\u00e4ndnis der theoretischen Grundlagen des Quantencomputings",
+      "F\u00e4higkeit, grundlegende Quantenprogramme zu schreiben",
+      "Kenntnis der Konzepte von Qubits und Quantenverschr\u00e4nkung"
+    ],
+    "subject_domain": "Quantencomputing",
+    "sub_domains": [
+      "Physik",
+      "Informatik"
+    ],
+    "level": "Sch\u00fcler:innen ab der 9. Klasse",
+    "prerequisites": [
+      "Vorkenntnisse in der Programmierung sind hilfreich, aber nicht notwendig"
+    ],
+    "credits": "Nicht im Dokument angegeben",
+    "duration": "2 Wochen",
+    "structure": [
+      {
+        "title": "Woche 1",
+        "description": "Wir starten mit ein paar spannenden Fakten zu Quantencomputern und befassen uns mit einem scheinbar einfachen Problem, das sich jedoch als h\u00f6chst komplex entpuppt. Wir arbeiten an dem \u00dcbergang zwischen klassischer Programmierung und dem Quantencomputing.",
+        "topics": [
+          "Qubits",
+          "Superposition",
+          "Quantenverschr\u00e4nkung",
+          "Aktueller Stand der Technik"
+        ],
+        "sub_sections": []
+      },
+      {
+        "title": "Woche 2",
+        "description": "In dieser Woche schauen wir uns ein Tool von IBM Quantum zur Programmierung von Quantencomputern genauer an und lernen einige Grundelemente des visuellen Scriptings vom IBM Quantum Composer kennen.",
+        "topics": [
+          "Programmierung mit IBM Quantum Composer",
+          "Python f\u00fcr Quantencomputer"
+        ],
+        "sub_sections": []
+      },
+      {
+        "title": "Abschlusspr\u00fcfung",
+        "description": "Kleine Abschlusspr\u00fcfung vom 9. bis 23. August.",
+        "topics": [],
+        "sub_sections": []
+      }
+    ],
+    "instructors": [
+      {
+        "name": "Isabel Nha Minh Le",
+        "title": "Forschungspraktikantin bei IBM Quantum",
+        "bio": "Isabel forscht im Bereich Quantum Algorithms und Quantum Machine Learning f\u00fcr Anwendungen in der Chemie und Materialwissenschaften. Zuvor hat sie Quantencomputing-Workshops an Schulen in Deutschland gegeben.",
+        "contact": "Nicht im Dokument angegeben"
+      },
+      {
+        "name": "Marcel Pfaffhauser",
+        "title": "Nicht im Dokument angegeben",
+        "bio": "Marcel hat Informatik an der ETH Z\u00fcrich studiert und arbeitet an Outreach-Aktivit\u00e4ten im Bereich Quantencomputing.",
+        "contact": "Nicht im Dokument angegeben"
+      },
+      {
+        "name": "Manuel Wirth",
+        "title": "Nicht im Dokument angegeben",
+        "bio": "Manuel ist Praktikant bei IBM Quantum und hat zuvor an Sekundarschulen unterrichtet.",
+        "contact": "Nicht im Dokument angegeben"
+      }
+    ],
+    "teaching_methods": [
+      "Kurze Lernvideos",
+      "Multiple-Choice-Tests",
+      "Visuelles Scripting"
+    ],
+    "assessment_methods": [
+      "Multiple-Choice-Tests",
+      "Abschlusspr\u00fcfung"
+    ],
+    "materials": [
+      "Lernvideos",
+      "IBM Quantum Composer",
+      "Qiskit"
+    ],
+    "references": [
+      "Nicht im Dokument angegeben"
+    ],
+    "keywords": [
+      "Quantencomputing",
+      "Qubit",
+      "Superposition",
+      "Quantenverschr\u00e4nkung",
+      "IBM Quantum Composer",
+      "Qiskit"
+    ],
+    "language": "Deutsch",
+    "certification": "Zertifikat bei erfolgreichem Abschluss der Abschlusspr\u00fcfung und Erreichen von mindestens 50% der maximalen Punkte.",
+    "target_audience": "Sch\u00fcler:innen ab der 9. Klasse, die sich f\u00fcr Quantencomputing interessieren.",
+    "institutional_context": {
+      "institution": "openHPI",
+      "department": "Nicht im Dokument angegeben",
+      "program": "Nicht im Dokument angegeben"
+    },
+    "metadata": {
+      "extraction_timestamp": "2025-03-06T04:26:08.621875",
+      "model_used": "gpt-4o-mini",
+      "document_source": "Unbekannt",
+      "document_type": "Unbekannt",
+      "extraction_confidence": 0.9,
+      "completeness_score": 0.9500000000000001
+    }
+  },
+  "refinement_plan": {
+    "needs_refinement": true,
+    "priority_issues": [
+      {
+        "type": "schema_consistency",
+        "severity": "medium",
+        "description": "Schema Consistency is below acceptable threshold",
+        "details": "Score: 0.80, threshold: 0.90",
+        "source": "consistency"
+      },
+      {
+        "type": "format_consistency",
+        "severity": "medium",
+        "description": "Format Consistency is below acceptable threshold",
+        "details": "Score: 0.80, threshold: 0.90",
+        "source": "consistency"
+      },
+      {
+        "type": "reference_consistency",
+        "severity": "medium",
+        "description": "Reference Consistency is below acceptable threshold",
+        "details": "Score: 0.80, threshold: 0.85",
+        "source": "consistency"
+      }
+    ],
+    "strategies": [
+      "Standardize the data structure",
+      "Ensure all required fields are present",
+      "Match schema with other outputs",
+      "Standardize data formats",
+      "Use consistent date/number formats",
+      "Apply consistent formatting",
+      "Ensure consistent references"
+    ],
+    "sections_to_refine": [
+      "references"
+    ],
+    "estimated_improvement": 0.6000000000000001,
+    "refinement_focus": "consistency"
+  },
+  "agent_name": "course_context",
+  "metadata": {
+    "was_refined": true,
+    "refinement_timestamp": null
+  }
+}

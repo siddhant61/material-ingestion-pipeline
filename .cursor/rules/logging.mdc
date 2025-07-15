@@ -1,0 +1,87 @@
+---
+description: Logging, Debugging & Monitoring Guidelines
+globs: 
+---
+# Logging, Debugging & Monitoring Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document defines the standards for logging, debugging, and monitoring within the **step1_material_ingestion** pipeline. The goal is to ensure that every agent logs detailed information about its operations, facilitates efficient debugging, and supports ongoing system monitoring for performance and reliability.
+
+## 2. Logging
+
+- **Structured Logging:**  
+  - Every agent must produce structured log entries in a consistent JSON or plain-text format.
+  - Log entries should include essential metadata such as:
+    - Timestamp (ISO 8601 format)
+    - Agent name or module identifier
+    - Log level (e.g., INFO, DEBUG, WARN, ERROR)
+    - Contextual information (e.g., file names, processing step identifiers)
+    - Chain-of-thought (CoT) details when applicable
+
+- **Logging Levels:**  
+  - **INFO:** General operational messages and successful completions.
+  - **DEBUG:** Detailed diagnostic information including intermediate reasoning, fallback triggers, and internal state.
+  - **WARN:** Non-critical issues that might indicate potential problems.
+  - **ERROR:** Critical failures, exceptions, or fallback activations.
+
+- **Log Aggregation:**  
+  - All logs must be centralized (e.g., via a logging server or service) to support real-time analysis and post-mortem investigations.
+  - Use unique identifiers (e.g., request IDs) to correlate logs across different agents and processing stages.
+
+## 3. Debugging
+
+- **Chain-of-Thought (CoT) Debug Logs:**  
+  - In addition to standard logging, agents must log their chain-of-thought reasoning steps during critical processing points.
+  - CoT logs should be detailed enough to trace decision-making paths, fallback triggers, and error resolutions.
+  - These logs should be stored in a separate, searchable log stream to avoid cluttering the primary logs.
+
+- **Error Tracing:**  
+  - When an error occurs, log the exception details along with the input parameters and the context that led to the error.
+  - Use stack traces and detailed error messages to facilitate quick identification of root causes.
+
+- **Debugging Tools and Interfaces:**  
+  - Integrate with debugging tools (e.g., IDE debuggers, remote logging dashboards) to monitor live data.
+  - Provide clear documentation for reproducing common issues and for using debugging interfaces within each module.
+
+## 4. Monitoring
+
+- **Performance Metrics:**  
+  - Track key performance metrics such as processing time, success rates, error rates, and fallback usage.
+  - Use monitoring tools to visualize these metrics in real-time dashboards.
+
+- **Alerting:**  
+  - Set up automated alerts for conditions such as:
+    - High error rates or repeated fallback triggers.
+    - Unexpected increases in processing times.
+    - Unusual log patterns or missing expected log entries.
+  - Alerts should be actionable, with clear instructions on how to investigate and resolve issues.
+
+- **Health Checks:**  
+  - Implement periodic health checks for each agent to ensure that they are operational.
+  - Log the results of these health checks and integrate them with the monitoring dashboard.
+
+## 5. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Log comprehensively:**  
+  - Include detailed metadata and CoT reasoning in logs.
+  - Use consistent formatting and log levels across all agents.
+- **Aggregate logs:**  
+  - Centralize log storage for efficient search and correlation.
+- **Monitor continuously:**  
+  - Track key performance and error metrics.
+  - Set up alerts and health checks to proactively identify issues.
+- **Facilitate debugging:**  
+  - Ensure that all errors and exceptions are logged with sufficient context.
+  - Provide clear debug logs to trace the chain-of-thought behind decisions.
+
+### Don’t:
+- **Omit critical information:**  
+  - Do not log in an ad-hoc or inconsistent manner.
+  - Avoid suppressing errors or failing to capture CoT details during fallback events.
+- **Ignore monitoring needs:**  
+  - Do not rely solely on manual checks; integrate automated monitoring and alerting.
+- **Overload logs:**  
+  - Balance detail with readability; ensure that logs are structured and easily searchable without excessive verbosity.
+

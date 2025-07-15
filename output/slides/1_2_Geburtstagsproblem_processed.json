@@ -1,0 +1,1908 @@
+{
+  "slide_deck_info": {
+    "title": "Geburtstagsproblem",
+    "slide_count": 14,
+    "estimated_duration": "30 minutes",
+    "main_topic": "Einführung in Quantencomputing durch das Geburtstagsproblem"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Einführung in Quantencomputing",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ],
+    "transcript_alignment": "Not available"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "content",
+      "title": "Warum sind einige Probleme so schwierig für heutige Computer?",
+      "content": "Warum sind einige Probleme so schwierig für heutige Computer?",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Probleme",
+        "Computer"
+      ],
+      "concepts": [
+        "Schwierigkeit von Problemen",
+        "Klassische Computer"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Vom klassischen Computer …",
+      "content": "“unsere” Laptops Supercomputer",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "klassischer Computer",
+        "Supercomputer"
+      ],
+      "concepts": [
+        "Klassische Computer",
+        "Supercomputer"
+      ],
+      "relationships": [
+        "Klassische Computer sind nicht so leistungsfähig wie Supercomputer"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Vom klassischen Computer zum Quantencomputer …",
+      "content": "allerdings nur für bestimmte Bereiche!",
+      "section": "Einführung",
+      "has_image": true,
+      "image_description": "IBM Quantum System One",
+      "keywords": [
+        "Quantencomputer",
+        "IBM Quantum System One"
+      ],
+      "concepts": [
+        "Quantencomputer",
+        "Anwendungsbereiche"
+      ],
+      "relationships": [
+        "Quantencomputer sind spezialisiert auf bestimmte Probleme"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "Quantencomputer werden klassische Computer nicht vollständig ersetzen!!",
+      "content": "allerdings nur für bestimmte Bereiche!",
+      "section": "Einführung",
+      "has_image": true,
+      "image_description": "IBM Quantum System One",
+      "keywords": [
+        "Quantencomputer",
+        "Klassische Computer"
+      ],
+      "concepts": [
+        "Quantencomputer",
+        "Klassische Computer"
+      ],
+      "relationships": [
+        "Quantencomputer ergänzen klassische Computer, ersetzen sie aber nicht"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "exercise",
+      "title": "How to: Geburtstagsplanung",
+      "content": "Aufgabe: Finde die beste Sitzordnung für deinen Geburtstag",
+      "section": "Übung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Geburtstagsplanung",
+        "Sitzordnung"
+      ],
+      "concepts": [
+        "Optimierung",
+        "Sitzordnung"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 6,
+      "slide_type": "exercise",
+      "title": "How to: Geburtstagsplanung",
+      "content": "Strategie: Probiere jede mögliche Sitzordnung aus",
+      "section": "Übung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Strategie",
+        "Sitzordnung"
+      ],
+      "concepts": [
+        "Brute Force",
+        "Optimierung"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 7,
+      "slide_type": "exercise",
+      "title": "Frage: Wie viele Möglichkeiten gibt es, ...",
+      "content": "...fünf Personen um einen Tisch zu platzieren?",
+      "section": "Übung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Möglichkeiten",
+        "Personen"
+      ],
+      "concepts": [
+        "Permutationen",
+        "Kombinatorik"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 8,
+      "slide_type": "exercise",
+      "title": "Frage: Wie viele Möglichkeiten gibt es, ...",
+      "content": "...fünf Personen um einen Tisch zu platzieren? Es gibt 5!=5∙4∙3∙2∙1=120 Möglichkeiten",
+      "section": "Übung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Permutationen",
+        "Kombinatorik"
+      ],
+      "concepts": [
+        "Fakultät",
+        "Anzahl der Möglichkeiten"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 9,
+      "slide_type": "exercise",
+      "title": "Frage: Wie viele Möglichkeiten gibt es, ...",
+      "content": "... zehn Personen um einen Tisch zu platzieren?",
+      "section": "Übung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Möglichkeiten",
+        "Personen"
+      ],
+      "concepts": [
+        "Permutationen",
+        "Kombinatorik"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 10,
+      "slide_type": "exercise",
+      "title": "Frage: Wie viele Möglichkeiten gibt es, ...",
+      "content": "... zehn Personen um einen Tisch zu platzieren?",
+      "section": "Übung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Möglichkeiten",
+        "Personen"
+      ],
+      "concepts": [
+        "Permutationen",
+        "Kombinatorik"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 11,
+      "slide_type": "exercise",
+      "title": "Frage: Wie viele Möglichkeiten gibt es, ...",
+      "content": "... zehn Personen um einen Tisch zu platzieren? Es gibt 10! ≈ 3 Mio. Möglichkeiten",
+      "section": "Übung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Permutationen",
+        "Kombinatorik"
+      ],
+      "concepts": [
+        "Fakultät",
+        "Anzahl der Möglichkeiten"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 12,
+      "slide_type": "content",
+      "title": "5 Personen Input 10 Personen",
+      "content": "5 Personen Input 10 Personen",
+      "section": "Zusammenfassung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Input",
+        "Output"
+      ],
+      "concepts": [
+        "Eingabe",
+        "Ausgabe"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 13,
+      "slide_type": "content",
+      "title": "5 Personen Input 10 Personen",
+      "content": "≈ 100 Möglichkeiten Output ≈ 3 Mio. Möglichkeiten",
+      "section": "Zusammenfassung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Input",
+        "Output"
+      ],
+      "concepts": [
+        "Eingabe",
+        "Ausgabe"
+      ],
+      "relationships": [
+        "Die Anzahl der Möglichkeiten wächst exponentiell"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 14,
+      "slide_type": "content",
+      "title": "schnelle Skalierung des Problems",
+      "content": "→schnelle Skalierung des Problems",
+      "section": "Zusammenfassung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Skalierung",
+        "Probleme"
+      ],
+      "concepts": [
+        "Skalierung",
+        "Komplexität"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Schwierigkeit von Problemen für Computer",
+    "Klassische vs. Quantencomputer",
+    "Optimierung von Sitzordnungen",
+    "Kombinatorik und Permutationen"
+  ],
+  "visual_elements": [
+    {
+      "slide_number": 3,
+      "element_type": "image",
+      "description": "IBM Quantum System One",
+      "concepts_illustrated": [
+        "Quantencomputer"
+      ]
+    },
+    {
+      "slide_number": 4,
+      "element_type": "image",
+      "description": "IBM Quantum System One",
+      "concepts_illustrated": [
+        "Quantencomputer"
+      ]
+    }
+  ],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:27:01+02:00",
+    "page_count": 14,
+    "has_images": true,
+    "filename": "1_2_Geburtstagsproblem.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "6\n",
+          "Warum sind einige Probleme so \nschwierig für heutige Computer?\n",
+          "---\nMarcel Pfaffhauser\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "7\n",
+          "“unsere” Laptops\nSupercomputer\n",
+          "Vom klassischen Computer \n…\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "8\n",
+          "allerdings nur für \n",
+          "bestimmte Bereiche!\n“unsere” Laptops\nSupercomputer\n",
+          "Vom klassischen Computer \nzum Quantencomputer\n…\n",
+          "IBM Quantum System One\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "9\n",
+          "allerdings nur für \n",
+          "bestimmte Bereiche!\n“unsere” Laptops\nSupercomputer\n",
+          "Vom klassischen Computer \nzum Quantencomputer\n…\n",
+          "Quantencomputer werden klassische Computer nicht vollständig ersetzen!\n!\n!\n",
+          "IBM Quantum System One\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "10\n",
+          "How to: Geburtstagsplanung\n",
+          "• Aufgabe: Finde die beste Sitzordnung für deinen \n",
+          "Geburtstag\n"
+        ]
+      },
+      {
+        "slide_number": 6,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "11\n",
+          "How to: Geburtstagsplanung\n",
+          "• Aufgabe: Finde die beste Sitzordnung für deinen \n",
+          "Geburtstag\n• Strategie: Probiere jede mögliche Sitzordnung \n",
+          "aus\n"
+        ]
+      },
+      {
+        "slide_number": 7,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "12\n",
+          "Frage: Wie viele Möglichkeiten gibt es, ...\n",
+          "...fünf Personen um einen Tisch zu platzieren?\na)\n≈10\nb)\n≈ 100\nc)\n≈ 1000\n",
+          "How to: Geburtstagsplanung\n",
+          "• Aufgabe: Finde die beste Sitzordnung für deinen \n",
+          "Geburtstag\n• Strategie: Probiere jede mögliche Sitzordnung aus\n"
+        ]
+      },
+      {
+        "slide_number": 8,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "13\n",
+          "Frage: Wie viele Möglichkeiten gibt es, ...\n",
+          "...fünf Personen um einen Tisch zu platzieren?\na)\n≈10\nb)\n≈ 100: Es gibt 5! = 5 ∙4 ∙3 ∙2 ∙1 = 120 Möglichkeiten\nc)\n≈ 1000\n",
+          "How to: Geburtstagsplanung\n",
+          "• Aufgabe: Finde die beste Sitzordnung für deinen \n",
+          "Geburtstag\n• Strategie: Probiere jede mögliche Sitzordnung aus\n"
+        ]
+      },
+      {
+        "slide_number": 9,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "14\n",
+          "How to: Geburtstagsplanung\n",
+          "• Aufgabe: Finde die beste Sitzordnung für deinen \n",
+          "Geburtstag\n• Strategie: Probiere jede mögliche Sitzordnung \n",
+          "aus\n",
+          "Frage: \nWie viele Möglichkeiten gibt es, ...\n... zehn Personen um einen Tisch zu \nplatzieren?\n"
+        ]
+      },
+      {
+        "slide_number": 10,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "15\n",
+          "How to: Geburtstagsplanung\n",
+          "• Aufgabe: Finde die beste Sitzordnung für deinen \n",
+          "Geburtstag\n• Strategie: Probiere jede mögliche Sitzordnung aus\n",
+          "Frage: Wie viele Möglichkeiten gibt es, ...\n",
+          "... zehn Personen um einen Tisch zu \nplatzieren?\n",
+          "a)\n≈1 000\nb)\n≈ 10 000\nc)\n≈ 100 000\nd)\n> 1 Mio.\n"
+        ]
+      },
+      {
+        "slide_number": 11,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "16\n",
+          "How to: Geburtstagsplanung\n",
+          "• Aufgabe: Finde die beste Sitzordnung für deinen \n",
+          "Geburtstag\n• Strategie: Probiere jede mögliche Sitzordnung aus\n",
+          "Frage: Wie viele Möglichkeiten gibt es, ...\n",
+          "... zehn Personen um einen Tisch zu \nplatzieren?\n",
+          "a)\n≈1 000\nb)\n≈ 10 000\nc)\n≈ 100 000\nd) > 1 Mio.: Es gibt 10! ≈ 3 Mio. Möglichkeiten\n"
+        ]
+      },
+      {
+        "slide_number": 12,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "17\n",
+          "How to: Geburtstagsplanung\n",
+          "5 Personen\nInput\n10 \nPersonen\n"
+        ]
+      },
+      {
+        "slide_number": 13,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "18\n",
+          "How to: Geburtstagsplanung\n",
+          "5 Personen\nInput\n10 \nPersonen\n",
+          "≈ 100 Möglichkeiten\nOutput\n≈ 3 Mio. \nMöglichkeiten\n"
+        ]
+      },
+      {
+        "slide_number": 14,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "19\n",
+          "How to: Geburtstagsplanung\n",
+          "5 Personen\nInput\n10 \nPersonen\n",
+          "≈ 100 Möglichkeiten\nOutput\n≈ 3 Mio. \nMöglichkeiten\n",
+          "schnelle Skalierung des Problems\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Supercomputer",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Quantencomputer",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3,
+        4
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Anwendungsbereiche",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Sitzordnung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Brute Force",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Schwierigkeit von Problemen",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Supercomputer",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Quantencomputer",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        3,
+        4
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Anwendungsbereiche",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Sitzordnung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Brute Force",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Klassische Computer",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        4
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Quantencomputer",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3,
+        4
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Anwendungsbereiche",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Sitzordnung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Brute Force",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Supercomputer",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Sitzordnung",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Brute Force",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Sitzordnung",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Brute Force",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Brute Force",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Optimierung",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        5,
+        6
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Brute Force",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Sitzordnung",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Permutationen",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Kombinatorik",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Brute Force",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        6
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Permutationen",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Permutationen",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Permutationen",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Permutationen",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Permutationen",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Permutationen",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Kombinatorik",
+      "target_concept": "Fakultät",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Kombinatorik",
+      "target_concept": "Anzahl der Möglichkeiten",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        8,
+        11
+      ]
+    },
+    {
+      "source_concept": "Kombinatorik",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Kombinatorik",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Kombinatorik",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Kombinatorik",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        7,
+        9,
+        10
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Fakultät",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Fakultät",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Fakultät",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Fakultät",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Anzahl der Möglichkeiten",
+      "target_concept": "Eingabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Anzahl der Möglichkeiten",
+      "target_concept": "Ausgabe",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        12,
+        13
+      ]
+    },
+    {
+      "source_concept": "Anzahl der Möglichkeiten",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Anzahl der Möglichkeiten",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        8,
+        11
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Eingabe",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        12,
+        13
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Eingabe",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        12,
+        13
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Ausgabe",
+      "target_concept": "Skalierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        12,
+        13
+      ],
+      "target_slides": [
+        14
+      ]
+    },
+    {
+      "source_concept": "Ausgabe",
+      "target_concept": "Komplexität",
+      "relationship_type": "progression",
+      "source_slides": [
+        12,
+        13
+      ],
+      "target_slides": [
+        14
+      ]
+    }
+  ]
+}

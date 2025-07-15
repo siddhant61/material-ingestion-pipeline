@@ -1,0 +1,94 @@
+---
+description: Security, Performance & Best Practices Guidelines
+globs: 
+---
+# Security, Performance & Best Practices Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document outlines the guidelines to ensure that the **step1_material_ingestion** pipeline meets high standards for security and performance while following industry best practices. These guidelines address risk mitigation, resource efficiency, and the continual monitoring and improvement of the system.
+
+## 2. Security Requirements
+
+- **Authentication & Authorization:**  
+  - Ensure that all external API calls and data exchanges are authenticated using secure tokens or credentials.
+  - Implement role-based access control (RBAC) to restrict agent functions and data access to authorized personnel only.
+
+- **Data Protection:**  
+  - Encrypt sensitive data both at rest and in transit using industry-standard encryption protocols (e.g., TLS, AES).
+  - Sanitize all inputs to prevent injection attacks and other common vulnerabilities.
+
+- **Sensitive Data Handling:**  
+  - Avoid logging sensitive information such as personal data or API keys.
+  - Ensure that error messages do not expose internal system details.
+
+- **Security Testing:**  
+  - Regularly perform vulnerability assessments and penetration testing.
+  - Integrate automated security scanning into the CI/CD pipeline to catch security issues early.
+
+- **Compliance & Audit:**  
+  - Adhere to relevant data protection regulations and industry standards.
+  - Maintain an audit trail of access logs and system changes for accountability.
+
+## 3. Performance Requirements
+
+- **Benchmarking & Monitoring:**  
+  - Define clear performance benchmarks (e.g., processing time per document, image analysis latency).
+  - Use performance monitoring tools to track resource usage, throughput, and latency in real-time.
+
+- **Optimization Strategies:**  
+  - Optimize algorithms and data structures for efficiency, particularly in critical processing paths (e.g., image processing, embedding generation).
+  - Utilize asynchronous processing and parallel execution where tasks are independent to improve overall throughput.
+
+- **Load & Stress Testing:**  
+  - Conduct regular load and stress testing to ensure the system performs reliably under peak conditions.
+  - Identify performance bottlenecks and address them with scalable solutions (e.g., caching, horizontal scaling).
+
+- **Resource Management:**  
+  - Monitor memory and CPU usage, and optimize resource allocation to prevent performance degradation.
+  - Use profiling tools to continuously evaluate and optimize critical code sections.
+
+## 4. Best Practices
+
+- **Trade-off Analysis:**  
+  - Evaluate and document trade-offs between security, performance, and maintainability.
+  - When making decisions, prioritize long-term sustainability and system robustness.
+
+- **Code Quality & Reviews:**  
+  - Adhere to coding standards and guidelines (e.g., PEP8) to ensure maintainable and high-quality code.
+  - Include comprehensive inline documentation and code reviews to catch potential issues early.
+
+- **Regular Updates & Patching:**  
+  - Keep all dependencies and libraries up-to-date to minimize exposure to known vulnerabilities.
+  - Schedule regular maintenance windows to apply patches and improvements.
+
+- **Continuous Improvement:**  
+  - Encourage iterative performance tuning and refactoring to address new challenges and opportunities.
+  - Gather and analyze system metrics to inform future enhancements.
+
+## 5. Summary of Do’s and Don’ts
+
+### Do:
+- **Enforce Security:**  
+  - Implement strong authentication, authorization, and data encryption mechanisms.
+  - Regularly test for vulnerabilities and remediate any identified issues.
+- **Optimize Performance:**  
+  - Monitor and benchmark performance, using asynchronous and parallel processing where applicable.
+  - Continuously profile and optimize critical paths in the pipeline.
+- **Document Trade-offs:**  
+  - Clearly document design trade-offs and the rationale behind decisions.
+- **Adhere to Best Practices:**  
+  - Follow coding standards, conduct regular code reviews, and maintain comprehensive documentation.
+- **Monitor & Update:**  
+  - Use automated tools for performance monitoring and security scanning, and update dependencies promptly.
+
+### Don’t:
+- **Ignore Vulnerabilities:**  
+  - Do not expose sensitive data in logs or error messages.
+- **Overlook Performance Issues:**  
+  - Avoid neglecting performance bottlenecks; ensure regular testing and monitoring.
+- **Compromise Quality for Speed:**  
+  - Do not sacrifice code quality or security for short-term performance gains.
+- **Delay Updates:**  
+  - Avoid postponing necessary security patches or performance optimizations.
+

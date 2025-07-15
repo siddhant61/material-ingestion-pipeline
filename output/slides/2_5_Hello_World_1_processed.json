@@ -1,0 +1,183 @@
+{
+  "slide_deck_info": {
+    "title": "Quantum Hello World!",
+    "slide_count": 3,
+    "estimated_duration": "10 minutes",
+    "main_topic": "Introduction to Quantum Computing"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "introduction",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not available"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Quantum Hello World!",
+      "content": "Isabel Nha Minh Le\nIBM Quantum Community",
+      "section": "Introduction",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quantum Hello World",
+        "Isabel Nha Minh Le",
+        "IBM Quantum Community"
+      ],
+      "concepts": [],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "“Quantum Hello World”",
+      "content": "Wir messen Qubit 0:\n1. Qubit 0 entscheidet sich für |0⟩\n→Qubit 1 ist auch in |0⟩\n2. Qubit 0 entscheidet sich für |1⟩\n→Qubit 1 ist auch in |1⟩\nQuantenverschränkung!\nۧ|00+|1⟩1\n2",
+      "section": "Qubits and Entanglement",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Qubit",
+        "Quantenverschränkung",
+        "Superposition"
+      ],
+      "concepts": [
+        "Qubit",
+        "Quantenverschränkung"
+      ],
+      "relationships": [
+        "Qubit states influence each other due to entanglement"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Quantencomputer vs. Simulator",
+      "content": "ۧ|00+|1⟩1\n2\nSimulatorQuantencomputer\nFehleranfälligkeit der Hardware",
+      "section": "Comparison of Quantum Computers and Simulators",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quantencomputer",
+        "Simulator",
+        "Fehleranfälligkeit"
+      ],
+      "concepts": [
+        "Quantum Computer",
+        "Simulator"
+      ],
+      "relationships": [
+        "Quantum computers are more error-prone compared to simulators"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Introduction to Quantum Computing",
+    "Qubits and their states",
+    "Quantum entanglement",
+    "Comparison between quantum computers and simulators"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:45:00+02:00",
+    "page_count": 3,
+    "has_images": true,
+    "filename": "2_5_Hello_World_1.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "83\n",
+          "Quantum Hello World!\n",
+          "---\nIsabel Nha Minh Le\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "84\n",
+          "“Quantum Hello World”\n",
+          "Wir messen Qubit 0:\n",
+          "1.\nQubit 0 entscheidet sich für | ۧ\n0\n",
+          "Qubit 1 ist auch in | ۧ\n0\n",
+          "2.\nQubit 0 entscheidet sich für | ۧ\n1\n",
+          "Qubit 1 ist auch in | ۧ\n1\n",
+          "Quantenverschränkung!\n",
+          "ۧ\n|00 + |\nۧ\n11\n",
+          "2\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "85\n",
+          "Quantencomputer vs. Simulator\n",
+          "ۧ\n|00 + |\nۧ\n11\n",
+          "2\n",
+          "Simulator\nQuantencomputer\n",
+          "Fehleranfälligkeit \nder Hardware\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Qubit",
+      "target_concept": "Quantum Computer",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubit",
+      "target_concept": "Simulator",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Quantum Computer",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Simulator",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    }
+  ]
+}

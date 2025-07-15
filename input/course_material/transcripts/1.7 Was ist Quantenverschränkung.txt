@@ -1,0 +1,343 @@
+WEBVTT
+
+1
+00:00:00.430 --> 00:00:01.000 
+hi.
+
+2
+00:00:01.010 --> 00:00:08.779 
+In den vorherigen Videos haben wir über Super Positions Zustände gesprochen, ein Phänomen aus der Physik, und in diesem Video
+
+3
+00:00:08.779 --> 00:00:13.980 
+sprechen wir über ein weiteres Phänomen aus der Quantenphysik, der sogenannten Quanten Verschränkung.
+
+4
+00:00:16.199 --> 00:00:22.910 
+Wir stellen uns jetzt einfach mal vor, dass wir zwei Münzen haben, die wir unabhängig voneinander in die Luft werfen, und
+
+5
+00:00:22.920 --> 00:00:29.500 
+wir nehmen jetzt einfach mal in diesem Gedankenexperiment an, dass beide Münzen so lange in der Luft bleiben und sich drehen
+
+6
+00:00:29.500 --> 00:00:33.700 
+können, wie wir wollen, dass sie nicht nach einer gewissen Zeit einfach so auf den Boden fallen.
+
+7
+00:00:34.619 --> 00:00:41.969 
+Beide Münzen befinden sich, während sie in der Luft sind, jeweils in einem gleichmäßigen Super Positions Zustand.
+
+8
+00:00:42.579 --> 00:00:50.789 
+Diesen Zustand haben wir bereits als Quanten Zustand aufschreiben können für eine Münze und zwar können wir eine Münze, die
+
+9
+00:00:50.789 --> 00:00:59.950 
+in der Luft ist mit Hilfe dieses Super Positions Zustandes repräsentieren, also einen Zustand, wobei der Basiszustand null
+
+10
+00:00:59.950 --> 00:01:04.920 
+und der Basiszustand eins gleichgroße Amplituden haben, also eins durch Wurzel zwei.
+
+11
+00:01:06.549 --> 00:01:14.810 
+Wenn wir jetzt den Zustand beider Münzen beschreiben möchten mit so einer Formel, dann können wir das folgendermaßen machen
+
+12
+00:01:15.840 --> 00:01:18.420 
+Wir schauen uns erst mal die linke Seite der Gleichung an.
+
+13
+00:01:18.790 --> 00:01:27.049 
+Was wir hier sehen, ist die linke Münze befindet sich in diesem gleichmäßigen Super Positions Zustand, dann haben wir hier
+
+14
+00:01:27.069 --> 00:01:29.590 
+dieses Symbol ein Kreuz mit einem Kreis.
+
+15
+00:01:29.739 --> 00:01:32.140 
+Das ist das sogenannte Chroniker Produkt.
+
+16
+00:01:33.040 --> 00:01:42.209 
+Das müssen wir erstmal so akzeptieren, dass das symbolisiert das wir jetzt hier einen Zustand von mehreren Münzen beschreiben
+
+17
+00:01:42.219 --> 00:01:47.829 
+und auf der rechten Seite haben wir den Zustand von der rechten Münze.
+
+18
+00:01:47.829 --> 00:01:54.189 
+Also wieder genau die gleiche Super Position mit gleichgroßen Amplituden also Was hier auf der linken Seite der Gleichung
+
+19
+00:01:54.189 --> 00:01:58.930 
+eigentlich steht, ist die linke Münze befindet sich in einer gleichmäßigen Super Positionen.
+
+20
+00:01:58.930 --> 00:02:01.280 
+während Sie sich in der Luft gleichmäßig dreht
+
+21
+00:02:02.140 --> 00:02:08.020 
+Chroniker Produkt Tensor Produkt Entschuldigung
+
+22
+00:02:08.020 --> 00:02:11.680 
+und die Rechte befindet sich eben im selben Zustand.
+
+23
+00:02:14.159 --> 00:02:24.189 
+Das Ganze können wir jetzt auch anders aufschreiben, und zwar wie hier gegeben, auf der rechten Seite der Gleichung Wir können
+
+24
+00:02:24.189 --> 00:02:30.759 
+nicht so wirklich ins Detail gehen, was die Mathematik angeht, aber um so ein bisschen Gefühl zu bekommen, wie das funktioniert
+
+25
+00:02:30.759 --> 00:02:34.360 
+oder wie wir auf diese rechte Seite kommen
+
+26
+00:02:34.360 --> 00:02:39.419 
+wir können hier von der linken Münze den Null Basis Zustand nehmen.
+
+27
+00:02:39.729 --> 00:02:48.219 
+Also Basis Zustand null Tensor Produkt Basis Zustand null von der rechten Münze ergibt den Basis Zustand 00
+
+28
+00:02:48.219 --> 00:02:53.960 
+Basis Zustand null von der linken Münze Tensor Produkt Basis Zustand eins von der rechten Münster ergibt den Basis Zustand
+
+29
+00:02:53.960 --> 00:02:56.539 
+01
+Basis Zustand
+
+30
+00:02:56.539 --> 00:03:04.830 
+Eins von der linken Münze Tensor Produkt Basis Zustand null von der rechten Münze ergibt den Basis zwischen 10 und der Basis
+
+31
+00:03:04.830 --> 00:03:11.819 
+Zustand eins von der linken Münze Tensorprodukt Basis Zustand eins von der rechten Münze ergibt basis zustand 11
+Dieser
+
+32
+00:03:11.819 --> 00:03:20.949 
+faktor hier also ein halb ist einfach nur die multiplikation von den jeweils jeweiligen amplituden eins durch wurzel zwei
+
+33
+00:03:20.949 --> 00:03:30.530 
+mal eins durch Wurzel zwei
+okay und jetzt stellen wir uns vor, dass wir die linke münze auffangen und messen und gucken in
+
+34
+00:03:30.530 --> 00:03:35.340 
+welchem zustand sich die münze befindet und wir nehmen jetzt einfach mal an die münze befindet sich nach der messung im
+
+35
+00:03:35.340 --> 00:03:36.150 
+zustand null.
+
+36
+00:03:37.250 --> 00:03:41.580 
+Wir wollen jetzt herausfinden wie in welchem zustand befindet sich dieses System
+
+37
+00:03:41.580 --> 00:03:46.990 
+Zwei münzen wobei die rechte Münze immer noch in der luft ist und sich dreht oder beziehungsweise
+
+38
+00:03:46.990 --> 00:03:52.509 
+Wir machen nichts mit dieser münze und haben nur die linke münze gemessen
+
+39
+00:03:52.509 --> 00:04:00.590 
+wir schauen uns die rechte Seite der Gleichung an und müssen jetzt im Prinzip einfach nur alle Basis Zustände wegstreichen, wo die linke
+
+40
+00:04:00.590 --> 00:04:07.620 
+Münze eben nicht im Zustand null vorliegt, weil wir annehmen, dass die linke Münze im Zustand Null gemessen wurde.
+
+41
+00:04:08.020 --> 00:04:17.310 
+Das ist in diesem Beispiel einfach der Basis Zustand 11 weil hier die linke Münze eben im Basiszustand 11 vorliegt und der
+
+42
+00:04:17.310 --> 00:04:24.569 
+Basiszustand 10 weil hier eben genau das Gleiche ist, nämlich dass die linke Münze im Basiszustand eins vorliegt.
+
+43
+00:04:24.579 --> 00:04:28.519 
+Das heißt wir streichen diese zwei Anteile weg
+
+44
+00:04:28.519 --> 00:04:37.649 
+und dann bleiben nur noch die Basis Zustände 00 und 01 über
+das Ganze können wir wieder mit Hilfe des Tensor Produkts aufschreiben
+
+45
+00:04:39.600 --> 00:04:43.259 
+Das ist hier durch die linke seite der Gleichung gegeben.
+
+46
+00:04:43.620 --> 00:04:50.540 
+Also nochmal so damit man ungefähr sieht, wie das funktioniert oder warum man das auch schreiben kann hier würde man das
+
+47
+00:04:50.810 --> 00:04:58.290 
+so ausrechnen, dass der Basiszustand null von der Linken Münze Tensor Produkt Basiszustand null von der rechten und dem Basis Zustand
+
+48
+00:04:58.290 --> 00:04:59.110 
+00 ergibt.
+
+49
+00:04:59.139 --> 00:05:05.639 
+Und der Basis zustand null von der linken Münze Tensor Produkt Basiszustand eins von der rechten Münze ergibt dann im
+
+50
+00:05:05.639 --> 00:05:07.660 
+Basis Zustand 01 auf der rechten Seite.
+
+51
+00:05:08.660 --> 00:05:15.850 
+Und das heißt was wir hier jetzt eigentlich sehen, ist, dass die linke Münze eben nur im Zustand null vorliegt.
+
+52
+00:05:15.850 --> 00:05:25.379 
+Es haben wir angenommen, dass wir eben den Zustand null gemessen haben für die linke Münze, aber die rechte münze hat sich
+
+53
+00:05:25.379 --> 00:05:29.980 
+nicht verändert, das heißt der zustand von der rechten Münze ist immer noch diese gleichmäßige super Position.
+
+54
+00:05:30.779 --> 00:05:34.449 
+Das bedeutet die Münze ist im Prinzip immer noch in der Luft und dreht sich gleichmäßig.
+
+55
+00:05:38.610 --> 00:05:41.639 
+Okay, jetzt habe ich euch ein weiteres beispiel mitgebracht.
+
+56
+00:05:41.649 --> 00:05:48.649 
+Also wir haben wieder zwei münzen und diese münzen sind wieder in einem super positions zustand dieses meister super positions
+
+57
+00:05:48.649 --> 00:05:51.959 
+zustand aber durch diesen term hier gegeben.
+
+58
+00:05:52.220 --> 00:05:58.069 
+Also Basiszustand 00 plus basis zustand 11
+
+59
+00:05:58.069 --> 00:06:05.259 
+und jetzt möchten wir herausfinden wie sich das gesamte system verhält wenn ich wieder das linke die linke münze messe und
+
+60
+00:06:05.259 --> 00:06:12.310 
+wieder den zustand null herausbekomme und was ich hier machen muss ist einfach wieder genauso wie auf der vorheriges slide
+
+61
+00:06:12.879 --> 00:06:20.930 
+Ich muss einfach die basis zustände wegstreichen, wo die linke münze eben nicht im zustand null ist was wir annehmen das
+
+62
+00:06:20.930 --> 00:06:28.779 
+bedeutet in diesem fall müssten wir den Basiszustand 11 wegstreichen weil die linke münzen hier eben im Basiszustand eins
+
+63
+00:06:28.779 --> 00:06:29.160 
+wäre.
+
+64
+00:06:29.899 --> 00:06:37.089 
+Was dann übrig bleibt ist nur noch der basis zustand 00 das können wir wieder mit Hilfe des Tensor Produkts ausschreiben
+
+65
+00:06:37.319 --> 00:06:44.370 
+nämlich Basis zustand null von der linken Münze Tensor Produkt Basis Zustand null von der rechten Münze Was wir jetzt hier
+
+66
+00:06:44.370 --> 00:06:48.420 
+sehen ist, dass die linke Münze im basis zustand null ist.
+
+67
+00:06:48.420 --> 00:06:50.970 
+Das haben wir angenommen, das verwundert uns nicht.
+
+68
+00:06:50.980 --> 00:06:58.399 
+Aber die rechte münze ist jetzt auch im basis zustand null das heißt die rechte münze ist nicht mehr in einer super position
+
+69
+00:06:58.399 --> 00:07:05.759 
+wie sie es davor war, sondern der Zustand von der rechten Münze wurde direkt beeinflusst dadurch dass wir nur die linke
+
+70
+00:07:05.759 --> 00:07:07.060 
+Münze gemessen haben
+
+71
+00:07:09.779 --> 00:07:18.379 
+Wir haben hierfür noch eine Animation für euch mitgebracht, also wir haben hier zwei Münzen die gleich in die luft gehen
+
+72
+00:07:18.379 --> 00:07:25.689 
+werden und während sie in der Luft sind befinden sie sich in einem Super Positions Zustand, der durch diese Formel hier gegeben
+
+73
+00:07:25.689 --> 00:07:31.110 
+ist als 00 plus Basiszustand 11
+
+74
+00:07:31.110 --> 00:07:35.170 
+Die Münzen sind jetzt in der Luft, befinden sich in diesem Super Positions Zustand.
+
+75
+00:07:35.810 --> 00:07:46.290 
+Und wenn wir die Münzen messen, werden sie immer dasselbe Messergebnis zeigen, nämlich zum Beispiel hier 11
+Es gibt auch
+
+76
+00:07:46.300 --> 00:07:53.040 
+Super Positions Zustände, wo die Münzen immer unterschiedliche Seiten zeigen.
+
+77
+00:07:53.129 --> 00:07:59.810 
+Also wenn wir jetzt hier die linke Münze messen und die linke Münze zeigt aus dem Zustand null an.
+
+78
+00:07:59.810 --> 00:08:07.079 
+Dann wissen wir sofort ohne die rechte Münze gemessen zu haben, dass die rechte Münze eben den anderen Zustand, also in
+
+79
+00:08:07.079 --> 00:08:15.060 
+diesem Fall eins anzeigt und dieses Phänomen, dass mehrere also jetzt in der Quantenphysik nicht münzen, aber jetzt z.B.
+
+80
+00:08:15.060 --> 00:08:23.589 
+Qubits Quanten Teilchen im generellen, dass deren Zustände voneinander abhängig sind das nennen wir in der Quantenphysik
+
+81
+00:08:23.600 --> 00:08:33.529 
+Quanten Verschränkung
+das Interessante Hierbei ist eben dass Quantenverschränkte Teilchen Quantenverschränkte QuBits so
+
+82
+00:08:33.529 --> 00:08:42.600 
+voneinander abhängen, dass ich nur ein Teilchen verändern oder manipulieren muss oder messen muss, aber zeitgleich simultan
+
+83
+00:08:42.600 --> 00:08:52.929 
+alle anderen Teilchen ebenfalls manipulieren kann, so wie ich das möchte ich hab davor jetzt immer nur von zwei Qubits oder
+
+84
+00:08:52.929 --> 00:09:00.159 
+zwei Münzen gesprochen, im generellen kann man das aber mit beliebig vielen Teilchen machen.

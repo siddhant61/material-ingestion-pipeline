@@ -1,0 +1,339 @@
+{
+  "transcript_info": {
+    "title": "Der aktuelle Stand der Technik und Anwendungsbereiche",
+    "duration": "06:58",
+    "word_count": 1300,
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Erste Woche",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": "00:00:01.270",
+      "end_time": "00:00:07.929",
+      "duration": 6.659000000000001,
+      "text": "Jetzt möchten wir uns mit der Frage beschäftigen, wo ist der momentane Stand der Technik und was mögliche Anwendungsbereiche. Wobei hier ist auch wichtig, nicht nur zuschauen, was man genau jetzt Moment kommt, so was wird nach ein paar Jahren kommen, deswegen ist es auch noch ein kurzer Ausblick, wie sich das Ganze entwickeln könnte. Mit Quanten Computern der Status Quo ist, wo im Moment ist dass sehr viele verschiedene Firmen, Forschungseinrichtungen und teilweise sogar kleine Gruppen sich damit beschäftigen Quanten Computern beziehungsweise. QuBits so machen herzustellen und zwar auf ganz verschiedene Orten. Es geht supraleitender Ansatz, das Super Conducting Qubit, den man bei IBM findet es gibt Ionenfallen den man an der Universität Innsbruck häufig verwendet. Es gibt photonischer Ansatz und Halbleiter Ansatz und ich bin sicher, es gibt auch noch andere.",
+      "section": "Aktueller Stand der Technik",
+      "subsection": "Quantencomputer und Qubits",
+      "keywords": [
+        "Quantencomputer",
+        "Anwendungsbereiche",
+        "Qubits",
+        "supraleitender Ansatz",
+        "Ionenfallen",
+        "photonischer Ansatz",
+        "Halbleiter Ansatz"
+      ],
+      "concepts": [
+        "Quantencomputer",
+        "Qubits",
+        "Technologische Ansätze"
+      ],
+      "relationships": [
+        "Verschiedene Ansätze zur Herstellung von Qubits",
+        "Unterschiedliche Technologien in der Quantencomputing-Forschung"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 1.27,
+      "end_seconds": 7.929
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:57.390",
+      "end_time": "00:01:07.829",
+      "duration": 10.438999999999993,
+      "text": "Und dennoch Ansatz hat man verschiedene Vorteile und Nachteile, mit dem man technische Limitation übergehen könnte. Im Moment Die meisten QuBiTS hat man mit dem supraleitenden Ansatz Neue Computer von IBM Osprey hat 433 QuBiTS, und nächsten Jahres sollten ein neuer Computer Condor mit über 1000 Qubits, das heißt Hier sieht man nicht nur das Muschel lassen, sondern man hat sogar mehr als eine Verdopplung In diesem Jahr hatte man fast eine Verdreifachung. Das heißt, man sieht die Anzahl Qubits war auch sehr schnell. Allerdings ist hier wichtig sagen nicht, dass nicht nur die Anzahl Qubits wichtig ist, sondern halt auch noch viele andere Dinge.",
+      "section": "Technologische Entwicklungen",
+      "subsection": "Qubit-Anzahl und Herausforderungen",
+      "keywords": [
+        "Qubit-Anzahl",
+        "IBM Osprey",
+        "Condor",
+        "Technologische Limitationen"
+      ],
+      "concepts": [
+        "Qubit-Anzahl",
+        "Technologische Herausforderungen"
+      ],
+      "relationships": [
+        "Zunahme der Qubit-Anzahl korreliert mit technologischen Fortschritten"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 57.39,
+      "end_seconds": 67.829
+    },
+    {
+      "id": "segment_3",
+      "start_time": "00:01:43.629",
+      "end_time": "00:01:49.700",
+      "duration": 6.071000000000012,
+      "text": "Die größte Herausforderung Moment ist die Fehleranfälligkeit der Hardware. Qubits sind extrem empfindlich sind empfindlich gegen Licht, Wärme, Strahlung, Elektromagnetismus und auch noch anderes entsprechend muss man das Ganze davon abschirmen und man muss in der Zukunft an einen Ort Fehlerkorrektur einbauen Quanten Fehlerkorrektur die im Moment noch nicht ganz möglich ist, weil man noch nicht genug Qubits hat. Das heißt, man hat noch einige Herausforderungen, die man lösen möchte.",
+      "section": "Herausforderungen",
+      "subsection": "Fehleranfälligkeit der Qubits",
+      "keywords": [
+        "Fehleranfälligkeit",
+        "Hardware",
+        "Fehlerkorrektur",
+        "Qubits"
+      ],
+      "concepts": [
+        "Fehleranfälligkeit",
+        "Fehlerkorrektur"
+      ],
+      "relationships": [
+        "Fehleranfälligkeit beeinflusst die Leistung von Quantencomputern"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 103.62899999999999,
+      "end_seconds": 109.7
+    },
+    {
+      "id": "segment_4",
+      "start_time": "00:02:15.759",
+      "end_time": "00:02:23.349",
+      "duration": 7.589999999999975,
+      "text": "Und das heißt eben auch, dass nicht nur die Qubit Anzahl steigen muss und wird, was ganz klar Plan ist, sondern auch die Fehlerrate wird drastische untergehen in den nächsten Jahren Moment können wir Fehler von zehn hoch minus drei bis zehn hoch minus vier erreichen, was jetzt noch nicht so viel klingt, das irgendwie ein Tausendstel bis ein zehntausendstel Fehler. Aber wenn man sich überlegt, dass man halt nicht auch nur eine einzelne Operationen auf Qubits machen muss, sondern vielleicht 1000, dann skalieren diese Fehler halt hoch und am Schluss haben nur noch Rauschen. Deswegen ist es wichtig, die Sache unterzubringen sowie Ansätze zu entwickeln um die ganzen Fehler zu verbessern.",
+      "section": "Zukunftsausblick",
+      "subsection": "Fehlerkorrektur und Fehlerrate",
+      "keywords": [
+        "Fehlerrate",
+        "Fehlerkorrektur",
+        "Operationen",
+        "Rauschen"
+      ],
+      "concepts": [
+        "Fehlerrate",
+        "Fehlerkorrektur"
+      ],
+      "relationships": [
+        "Hohe Fehlerrate führt zu Rauschen in Quantenoperationen"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 135.75900000000001,
+      "end_seconds": 143.349
+    },
+    {
+      "id": "segment_5",
+      "start_time": "00:02:56.889",
+      "end_time": "00:03:01.879",
+      "duration": 4.989999999999981,
+      "text": "Deswegen ist es auch wichtig zu sehen, dass genau das passiert. Neue Ansätze für die Fehlerkorrektur, statistische Methoden und auch Hardware Methoden. Dass man zum beispiel nicht Qubits sortiert das nicht so schnell zerfallen werden angewendet, so dass die fehlerrate weiter und weiter untergeht. Jedes jahr gibt es bessere Qubits und das wird auch in den nächsten jahren so weiter gehen.",
+      "section": "Technologische Fortschritte",
+      "subsection": "Fehlerkorrekturmethoden",
+      "keywords": [
+        "Fehlerkorrektur",
+        "statistische Methoden",
+        "Hardware Methoden"
+      ],
+      "concepts": [
+        "Fehlerkorrekturmethoden",
+        "Technologische Fortschritte"
+      ],
+      "relationships": [
+        "Fortschritte in der Fehlerkorrektur verbessern die Qubit-Leistung"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 176.889,
+      "end_seconds": 181.879
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:03:25.289",
+      "end_time": "00:03:30.229",
+      "duration": 4.939999999999998,
+      "text": "Ist so ein paar anwendungsbereichen allgemein wie auch supercomputer. Wenn quanten computer dort angewendet? Muss halt wichtig ist für industrie und für die welt wichtiges beispiel qunaten chemie neue batterien chemie passiert auf sehr kleinen teilchen atomen, die miteinander oft auch in einem quanten bereich miteinander austauschen. Entsprechend macht es sinn mit dem quanten computer das ganze probieren zu simulieren, weil man dort schon diese ganzen quanten Effekte hat und sie nicht einfach simulieren muss.",
+      "section": "Anwendungsbereiche",
+      "subsection": "Quantenchemie und Simulation",
+      "keywords": [
+        "Anwendungsbereiche",
+        "Quantenchemie",
+        "Simulation",
+        "Batterien"
+      ],
+      "concepts": [
+        "Quantenchemie",
+        "Simulation"
+      ],
+      "relationships": [
+        "Quantencomputer ermöglichen realistische Simulationen in der Quantenchemie"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 205.289,
+      "end_seconds": 210.22899999999998
+    },
+    {
+      "id": "segment_7",
+      "start_time": "00:04:04.349",
+      "end_time": "00:04:10.770",
+      "duration": 6.421000000000021,
+      "text": "So erhofft man sich, dass man auf diesen Bereich mit Quanten Computern bessere Ergebnisse erreichen kann. In der Zukunft dann Optimierungs Probleme allgemein Reisende Handels Personen ist ein sehr Bekanntes. Worum es hier geht, ist einfach, dass man viele Probleme hat, wie zum Beispiel das Geburtstags Problem, das ich erwähnt hatte, die sehr schnell sehr groß werden, extrem schnell skalieren und man nicht genau lösen kann, weil man eine riesige Menge an möglichen Lösungen hat und daraus die Beste suchen muss.",
+      "section": "Zukunftsausblick",
+      "subsection": "Optimierungsprobleme",
+      "keywords": [
+        "Optimierungsprobleme",
+        "Reisende Handels Personen",
+        "Geburtstags Problem"
+      ],
+      "concepts": [
+        "Optimierungsprobleme",
+        "Skalierung"
+      ],
+      "relationships": [
+        "Quantencomputer können große Optimierungsprobleme effizienter lösen"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 244.349,
+      "end_seconds": 250.77
+    },
+    {
+      "id": "segment_8",
+      "start_time": 43.0,
+      "end_time": 49.0,
+      "duration": 6.0,
+      "text": "Das sind Quanten Algorithm wie zum beispiel das Groover Algorithmus, bekannt dafür, dass sie in bestimmten Mengen gut Lösungen rausfinden können beziehungsweise. Raussuchen und zu hoffen, dass sich erhofft man sich dort bessere Ergebnisse mit Quanten Computern dann als nächstes gibt es auch noch kommt Machine Learning. Machine Learning ist heute sehr wichtig für viele verschiedene Dinge.",
+      "section": "Anwendungsbereiche",
+      "subsection": "Quantenalgorithmen und Machine Learning",
+      "keywords": [
+        "Quantenalgorithmen",
+        "Groover Algorithmus",
+        "Machine Learning"
+      ],
+      "concepts": [
+        "Quantenalgorithmen",
+        "Machine Learning"
+      ],
+      "relationships": [
+        "Quantenalgorithmen bieten Vorteile bei der Lösung bestimmter Probleme"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_9",
+      "start_time": "00:05:05.689",
+      "end_time": "00:05:14.529",
+      "duration": 8.839999999999975,
+      "text": "Und bei Machine Learning gibt es unter anderem den uns Ansatz von den Neuronalen Netzwerken, und diese Ansatz ist viel versprechend für Quantencomputer, weil man heute Neuronale Netzwerke, also Hirnzellen simulieren möchte, die miteinander interagieren, und nach dort macht es durchaus Sinn, diesen physikalischen Prozess auf eine physikalische Weise zu simulieren und nicht nur auf einen digitalen Computer das Ganze zu machen.",
+      "section": "Anwendungsbereiche",
+      "subsection": "Neuronale Netzwerke und Quantencomputing",
+      "keywords": [
+        "Neuronale Netzwerke",
+        "Machine Learning",
+        "Simulation"
+      ],
+      "concepts": [
+        "Neuronale Netzwerke",
+        "Simulation"
+      ],
+      "relationships": [
+        "Quantencomputing kann neuronale Netzwerke effizient simulieren"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 305.689,
+      "end_seconds": 314.529
+    },
+    {
+      "id": "segment_10",
+      "start_time": 55.0,
+      "end_time": 61.0,
+      "duration": 6.0,
+      "text": "Quantum Games Es ist es nicht so wichtig, aber Quanten kann als Inspiration für Game mechaniken taugen oder Auch gibt es Computerspiele, die für einen pädagogischen Zweck eingesetzt werden können zum Beispiel Puzzles mit Quanten Zuständen, die Spaß machen können, und einem helfen, Quanten Computing besser zu verstehen.",
+      "section": "Anwendungsbereiche",
+      "subsection": "Quantencomputing in Spielen",
+      "keywords": [
+        "Quantum Games",
+        "Puzzles",
+        "Quanten Zustände"
+      ],
+      "concepts": [
+        "Quantencomputing",
+        "Pädagogische Spiele"
+      ],
+      "relationships": [
+        "Quantencomputing kann in der Bildung durch Spiele vermittelt werden"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_11",
+      "start_time": "00:05:54.800",
+      "end_time": "00:05:59.949",
+      "duration": 5.149000000000001,
+      "text": "Und als letztes wird es ganz sicher auch bei Finanzen Einsatz finden. Zum einen war es einfach allgemein für Optimieren gut ist und zum anderen meist Finanz Modelle gibt, die sehr stark auf physikalischen Grundlagen bassieren. Das heißt, auch wenn das Finanzsystem selbst nicht physikalisch ist, hat man ein Modell dafür entwickelt, das auf eine Art physikalischen System entspricht.",
+      "section": "Anwendungsbereiche",
+      "subsection": "Quantencomputing in der Finanzwelt",
+      "keywords": [
+        "Finanzen",
+        "Optimierung",
+        "Finanz Modelle"
+      ],
+      "concepts": [
+        "Quantencomputing",
+        "Finanzmodelle"
+      ],
+      "relationships": [
+        "Quantencomputing kann zur Optimierung von Finanzmodellen eingesetzt werden"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 354.8,
+      "end_seconds": 359.949
+    },
+    {
+      "id": "segment_12",
+      "start_time": "00:06:29.810",
+      "end_time": "00:06:36.850",
+      "duration": 7.0400000000000205,
+      "text": "Es geht natürlich noch ganz viele andere Anwendungsbereiche einige von den Zuschauern Hier werden vielleicht auch neue dafür finden oder neue Chemie. deswegen ist es wichtig, neue Algorithmen zu entwickeln und auch in Zukunft ja mehr und mehr Dinge lösen zu können.",
+      "section": "Zukunftsausblick",
+      "subsection": "Entwicklung neuer Algorithmen",
+      "keywords": [
+        "Anwendungsbereiche",
+        "Algorithmen",
+        "Zukunft"
+      ],
+      "concepts": [
+        "Entwicklung neuer Algorithmen",
+        "Zukunft des Quantencomputings"
+      ],
+      "relationships": [
+        "Neue Algorithmen sind entscheidend für die Weiterentwicklung des Quantencomputings"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 389.81,
+      "end_seconds": 396.85
+    },
+    {
+      "id": "segment_13",
+      "start_time": "00:06:48.160",
+      "end_time": "00:06:56.620",
+      "duration": 8.460000000000036,
+      "text": "Und mit dem gesagt werden wir noch im praktischen Teil noch etwas mehr sehen in die Richtung, wie man Quanten denn wirklich sich unterscheidet von klassischen Computing.",
+      "section": "Praktische Anwendung",
+      "subsection": "Unterschiede zwischen Quanten- und klassischem Computing",
+      "keywords": [
+        "praktische Anwendung",
+        "klassisches Computing"
+      ],
+      "concepts": [
+        "Unterschiede zwischen Quanten- und klassischem Computing"
+      ],
+      "relationships": [
+        "Praktische Anwendungen verdeutlichen die Unterschiede zwischen Quanten- und klassischem Computing"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 408.15999999999997,
+      "end_seconds": 416.62
+    }
+  ],
+  "key_takeaways": [
+    "Der aktuelle Stand der Technik in der Quantencomputing-Forschung zeigt eine rasante Entwicklung in der Qubit-Anzahl.",
+    "Fehleranfälligkeit der Qubits bleibt eine der größten Herausforderungen.",
+    "Quantencomputer haben vielversprechende Anwendungsbereiche in der Quantenchemie, Optimierungsproblemen, Machine Learning und Finanzmodellen."
+  ]
+}

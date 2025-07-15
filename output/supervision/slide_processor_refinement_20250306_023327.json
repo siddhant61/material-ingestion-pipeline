@@ -1,0 +1,271 @@
+{
+  "original": {
+    "processed_count": 15,
+    "error_count": 0,
+    "slides": [
+      {
+        "filename": "1_1_Intro.pdf",
+        "title": "Quantencomputing Ferienkurs \u2013 Einf\u00fchrung f\u00fcr Sch\u00fclerInnen",
+        "module": "Woche 1",
+        "slide_count": 5,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_1_Intro_processed.json"
+      },
+      {
+        "filename": "1_2_Geburtstagsproblem.pdf",
+        "title": "Geburtstagsproblem",
+        "module": "Woche 1",
+        "slide_count": 14,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_2_Geburtstagsproblem_processed.json"
+      },
+      {
+        "filename": "1_3_Nutzen_und_Muenze.pdf",
+        "title": "Nutzen und M\u00fcnze",
+        "module": "Woche 1",
+        "slide_count": 6,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_3_Nutzen_und_Muenze_processed.json"
+      },
+      {
+        "filename": "1_4_Superpositionszustaende.pdf",
+        "title": "Superpositionszust\u00e4nde von Qubits",
+        "module": "Woche 1",
+        "slide_count": 5,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_4_Superpositionszustaende_processed.json"
+      },
+      {
+        "filename": "1_5_Beispiele_Superpositionszustaende.pdf",
+        "title": "Beispiele f\u00fcr Superpositionszust\u00e4nde",
+        "module": "Woche 1",
+        "slide_count": 10,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_5_Beispiele_Superpositionszustaende_processed.json"
+      },
+      {
+        "filename": "1_6_Zustaende_Qubits_und_Bits.pdf",
+        "title": "Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits",
+        "module": "Woche 1",
+        "slide_count": 6,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_6_Zustaende_Qubits_und_Bits_processed.json"
+      },
+      {
+        "filename": "1_7_Quantenverschreaenkung.pdf",
+        "title": "Quantenverschr\u00e4nkung",
+        "module": "Woche 1",
+        "slide_count": 5,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_7_Quantenverschreaenkung_processed.json"
+      },
+      {
+        "filename": "1_8_Stand_der_Technik.pdf",
+        "title": "Stand der Technik",
+        "module": "Woche 1",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_8_Stand_der_Technik_processed.json"
+      },
+      {
+        "filename": "2_1_Quantum_Composer.pdf",
+        "title": "Quantencomputing Ferienkurs \u2013 Einf\u00fchrung f\u00fcr Sch\u00fclerInnen",
+        "module": "Woche 2",
+        "slide_count": 9,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_1_Quantum_Composer_processed.json"
+      },
+      {
+        "filename": "2_2_Not-_und_H-Gate.pdf",
+        "title": "Das NOT -Gate und das Hadamard -Gate",
+        "module": "Woche 1",
+        "slide_count": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_2_Not-_und_H-Gate_processed.json"
+      },
+      {
+        "filename": "2_3_Muenzwurfsimulation.pdf",
+        "title": "M\u00fcnzwurf-Simulation mit Quantencomputern",
+        "module": "Woche 1",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_3_Muenzwurfsimulation_processed.json"
+      },
+      {
+        "filename": "2_4_CNot-Gate.pdf",
+        "title": "CNOT-Gate",
+        "module": "Woche 1",
+        "slide_count": 7,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_4_CNot-Gate_processed.json"
+      },
+      {
+        "filename": "2_5_Hello_World_1.pdf",
+        "title": "Quantum Hello World!",
+        "module": "Woche 1",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_5_Hello_World_1_processed.json"
+      },
+      {
+        "filename": "2_6_Hello_World_2.pdf",
+        "title": "Quantum Hello World II!",
+        "module": "Woche 1",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_6_Hello_World_2_processed.json"
+      },
+      {
+        "filename": "2_7_Was_bisher_geschah.pdf",
+        "title": "Was bisher geschah ...",
+        "module": "Woche 1",
+        "slide_count": 2,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_7_Was_bisher_geschah_processed.json"
+      }
+    ]
+  },
+  "refined": {
+    "processed_count": 15,
+    "error_count": 0,
+    "slides": [
+      {
+        "filename": "1_1_Intro.pdf",
+        "title": "Quantencomputing Ferienkurs \u2013 Einf\u00fchrung f\u00fcr Sch\u00fclerInnen",
+        "module": "Woche 1",
+        "slide_count": 5,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_1_Intro_processed.json"
+      },
+      {
+        "filename": "1_2_Geburtstagsproblem.pdf",
+        "title": "Geburtstagsproblem",
+        "module": "Woche 1",
+        "slide_count": 14,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_2_Geburtstagsproblem_processed.json"
+      },
+      {
+        "filename": "1_3_Nutzen_und_Muenze.pdf",
+        "title": "Nutzen und M\u00fcnze",
+        "module": "Woche 1",
+        "slide_count": 6,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_3_Nutzen_und_Muenze_processed.json"
+      },
+      {
+        "filename": "1_4_Superpositionszustaende.pdf",
+        "title": "Superpositionszust\u00e4nde von Qubits",
+        "module": "Woche 1",
+        "slide_count": 5,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_4_Superpositionszustaende_processed.json"
+      },
+      {
+        "filename": "1_5_Beispiele_Superpositionszustaende.pdf",
+        "title": "Beispiele f\u00fcr Superpositionszust\u00e4nde",
+        "module": "Woche 1",
+        "slide_count": 10,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_5_Beispiele_Superpositionszustaende_processed.json"
+      },
+      {
+        "filename": "1_6_Zustaende_Qubits_und_Bits.pdf",
+        "title": "Zust\u00e4nde mehrerer Qubits und mehrerer klassischer Bits",
+        "module": "Woche 1",
+        "slide_count": 6,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_6_Zustaende_Qubits_und_Bits_processed.json"
+      },
+      {
+        "filename": "1_7_Quantenverschreaenkung.pdf",
+        "title": "Quantenverschr\u00e4nkung",
+        "module": "Woche 1",
+        "slide_count": 5,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_7_Quantenverschreaenkung_processed.json"
+      },
+      {
+        "filename": "1_8_Stand_der_Technik.pdf",
+        "title": "Stand der Technik",
+        "module": "Woche 1",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\1_8_Stand_der_Technik_processed.json"
+      },
+      {
+        "filename": "2_1_Quantum_Composer.pdf",
+        "title": "Quantencomputing Ferienkurs \u2013 Einf\u00fchrung f\u00fcr Sch\u00fclerInnen",
+        "module": "Woche 2",
+        "slide_count": 9,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_1_Quantum_Composer_processed.json"
+      },
+      {
+        "filename": "2_2_Not-_und_H-Gate.pdf",
+        "title": "Das NOT-Gate und das Hadamard-Gate",
+        "module": "Woche 2",
+        "slide_count": 8,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_2_Not-_und_H-Gate_processed.json"
+      },
+      {
+        "filename": "2_3_Muenzwurfsimulation.pdf",
+        "title": "M\u00fcnzwurf-Simulation mit Quantencomputern",
+        "module": "Woche 2",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_3_Muenzwurfsimulation_processed.json"
+      },
+      {
+        "filename": "2_4_CNot-Gate.pdf",
+        "title": "CNOT-Gate",
+        "module": "Woche 2",
+        "slide_count": 7,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_4_CNot-Gate_processed.json"
+      },
+      {
+        "filename": "2_5_Hello_World_1.pdf",
+        "title": "Quantum Hello World!",
+        "module": "Woche 2",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_5_Hello_World_1_processed.json"
+      },
+      {
+        "filename": "2_6_Hello_World_2.pdf",
+        "title": "Quantum Hello World II!",
+        "module": "Woche 2",
+        "slide_count": 3,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_6_Hello_World_2_processed.json"
+      },
+      {
+        "filename": "2_7_Was_bisher_geschah.pdf",
+        "title": "Was bisher geschah ...",
+        "module": "Woche 2",
+        "slide_count": 2,
+        "output_file": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slides\\2_7_Was_bisher_geschah_processed.json"
+      }
+    ]
+  },
+  "refinement_plan": {
+    "needs_refinement": true,
+    "priority_issues": [
+      {
+        "type": "schema_consistency",
+        "severity": "high",
+        "description": "Schema Consistency is below acceptable threshold",
+        "details": "Score: 0.25, threshold: 0.90",
+        "source": "consistency"
+      },
+      {
+        "type": "educational_value",
+        "severity": "medium",
+        "description": "Educational Value is below acceptable threshold",
+        "details": "Score: 0.50, threshold: 0.70",
+        "source": "quality"
+      },
+      {
+        "type": "reference_consistency",
+        "severity": "medium",
+        "description": "Reference Consistency is below acceptable threshold",
+        "details": "Score: 0.80, threshold: 0.85",
+        "source": "consistency"
+      }
+    ],
+    "strategies": [
+      "Standardize the data structure",
+      "Ensure all required fields are present",
+      "Match schema with other outputs",
+      "Enhance explanations with examples",
+      "Add learning objectives or outcomes",
+      "Improve pedagogical structure",
+      "Ensure consistent references"
+    ],
+    "sections_to_refine": [
+      "processed_count",
+      "error_count",
+      "slides"
+    ],
+    "estimated_improvement": 0.7,
+    "refinement_focus": "consistency"
+  },
+  "agent_name": "slide_processor",
+  "metadata": {
+    "was_refined": true,
+    "refinement_timestamp": null
+  }
+}

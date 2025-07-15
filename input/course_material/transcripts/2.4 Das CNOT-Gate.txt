@@ -1,0 +1,122 @@
+WEBVTT
+
+1
+00:00:01.300 --> 00:00:01.940 
+willkommen.
+
+2
+00:00:01.950 --> 00:00:09.839 
+Nachdem wir uns die zwei gates X und hadamard angeschaut haben und auch einen Quanten Münzwurf Experiment gemacht haben
+
+3
+00:00:09.839 --> 00:00:13.820 
+möchten wir uns noch ein 2. ähh 3. gate anschauen, das cnot gate.
+
+4
+00:00:14.199 --> 00:00:17.429 
+Dass cnot gate, ist das erste gate, das wir anschauen.
+
+5
+00:00:17.429 --> 00:00:22.920 
+Und auch das Letzte, das zwei Qubits miteinander verbindet, das heißt, hat das Input nicht nur eine Qubit sondern
+
+6
+00:00:22.920 --> 00:00:23.500 
+Zwei.
+
+7
+00:00:23.769 --> 00:00:28.050 
+Es kann entsprechend verwendet werden, um mit zwei miteinander zu verknüpfen.
+
+8
+00:00:28.710 --> 00:00:37.340 
+Es heißt cnot gate für controlled not, die männlichen, kontrolliertes not fällt, das heißt das erste Qubit da q Null
+
+9
+00:00:37.750 --> 00:00:41.170 
+wird hier verwendet, um das ganze Operation zu kontrollieren.
+
+10
+00:00:41.369 --> 00:00:49.700 
+Und das zweite Qubit q eins wird geflippt mit einem not gate, wenn das erste Qubit im Zustand eins ist, das heißt
+
+11
+00:00:49.700 --> 00:00:56.009 
+wir haben hier etwas ähnliches wie eine if Bedingungen nur, es ist ein bisschen komplexer wie wir gleich sehen werden
+
+12
+00:00:57.270 --> 00:01:04.989 
+Das heißt, prinzipiell wird schon einfach das not angewendet wenn das erste Qubit im Zustand null ist das bedeutet, wie man
+
+13
+00:01:04.989 --> 00:01:09.980 
+hier sehen kann, wenn zB am Anfang alle Qubits im Zustand null sind passiert.
+
+14
+00:01:09.980 --> 00:01:11.359 
+Er macht gar nichts, Das wäre dasselbe.
+
+15
+00:01:11.359 --> 00:01:18.750 
+Werden wir gar nichts anwenden würden, wenn wir aber im Zustand eins null sind aus einem Qubit in dem Zustand eins das andere
+
+16
+00:01:18.750 --> 00:01:25.769 
+im Zustand null und dann das kontrollierte not anwenden wird das zweite Qubit
+
+17
+00:01:25.769 --> 00:01:29.780 
+geflippt das erst im Zustand eins war das heißt das not wird angewendet.
+
+18
+00:01:29.900 --> 00:01:36.969 
+Es kommt auf genaus Gleiche raus wie man aber auf zweite Qubit ein Not angewendet hätte
+
+19
+00:01:36.969 --> 00:01:44.260 
+was ist aber speziell ist ist, dass wenn dieses gate angewendet wird und das erste Qubit nicht im Zustand null oder eins ist
+
+20
+00:01:44.260 --> 00:01:51.340 
+sondern stattdessen eine super Position ist dann wird das zweite Qubit auch in die Superposition gesetzt und nicht nur das
+
+21
+00:01:51.340 --> 00:01:59.739 
+es wird sogar in eine Entanglement mit dem ersten Qubit gesetzt das heißt die beiden werden miteinander verschränkt und um dies
+
+22
+00:01:59.739 --> 00:02:08.439 
+zu erklären können wir uns ganz einfach anschauen
+Angenommen, das Qubit 0 ist im Zustand null +1 die wir als eins durch Wurzel
+
+23
+00:02:08.439 --> 00:02:17.439 
+zwei als Amplituden das heißt mit 50 % Wahrscheinlichkeit null, mit 50 % Wahrscheinlichkeit ist es eins und das wird verwendet
+
+24
+00:02:17.439 --> 00:02:19.599 
+um das die Operation zu kontrollieren.
+
+25
+00:02:19.610 --> 00:02:27.120 
+Angenommen, das erste Qubit ist im Zustand null und dann passiert nichts, weil kein not angewendet wird und das zweite Qubit
+
+26
+00:02:27.120 --> 00:02:30.340 
+bleibt im Zustand null, wenn es aber das erste Qubit
+
+27
+00:02:30.340 --> 00:02:36.990 
+Stattdessen im Zustand eins ist, wird das not angewendet, das zweite Qubit wird geflippt, auch in Zustand eins gesetzt
+
+28
+00:02:37.069 --> 00:02:45.750 
+und so haben wir das entweder beides Qubits noch null sind oder beide Qubits noch eins und somit haben wir Entanglement und
+
+29
+00:02:45.939 --> 00:02:52.919 
+cnot gate ist die einfachste Ort um dieses Entanglement zu erzeugen, und nachdem wir es uns diese drei Basis gates
+
+30
+00:02:52.919 --> 00:02:58.169 
+angeschaut haben, werden wir unser erstes Programm programmieren, nämlich ein Quantum Hello World.

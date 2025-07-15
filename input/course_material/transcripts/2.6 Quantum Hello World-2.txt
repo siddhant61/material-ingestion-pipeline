@@ -1,0 +1,386 @@
+WEBVTT
+
+1
+00:00:00.510 --> 00:00:07.790 
+hi Im vorherigen Video haben wir mit Hilfe des IBM Quantum Composers Zwei Qubits in einen quanten verschränkten Zustand
+
+2
+00:00:07.790 --> 00:00:08.429 
+gebracht.
+
+3
+00:00:08.439 --> 00:00:13.660 
+Und in diesem Video wollen wir das Ganze jetzt mit Hilfe von Python, der Programmiersprache, machen.
+
+4
+00:00:15.089 --> 00:00:23.570 
+Gehen wir noch mal kurz zurück in den IBM Quantum composer
+wir hatten das beispiel Quantum Hello World im composer auf diese
+
+5
+00:00:23.570 --> 00:00:30.640 
+Art und Weise durchgeführt, also wir haben zwei QuBits und lassen zunächst einmal ein Hadamard gate auf das nullte Qubit
+
+6
+00:00:30.640 --> 00:00:36.979 
+wirken, um dann einen cnot gate auf beide Qubits und im Anschluss messen wir beide Qubits
+Das Messergebnis wird in zwei
+
+7
+00:00:36.979 --> 00:00:44.409 
+klassischen Bits gespeichert Und das Coole am IBM Quantum Composer ist dass wir uns direkt in Python Code erzeugen lassen
+
+8
+00:00:44.409 --> 00:00:54.979 
+können, und zwar hier rechts das können wir jetzt einfach Copy Paste und dann in einem Python Skript einfügen also pasten.
+
+9
+00:00:56.689 --> 00:01:02.460 
+Wir können uns dabei das Quantum Lab zur Hilfe nehmen.
+
+10
+00:01:03.090 --> 00:01:09.719 
+Da können wir nämlich dann den Code auch direkt in einem jupyter notebook ausführen.
+
+11
+00:01:09.719 --> 00:01:14.849 
+Also ich hab das jetzt schon mal für euch gemacht, ich hab diesen Code, den wir gerade im IBM Quantum Composer gesehen haben
+
+12
+00:01:14.859 --> 00:01:22.079 
+in diese Zelle vom jupyter notebook eingefügt und die ersten 3 Zeilen
+
+13
+00:01:22.790 --> 00:01:29.680 
+Hier importieren wir eigentlich einfach nur die nötigen Funktionen aus dem Python
+
+14
+00:01:29.680 --> 00:01:37.040 
+package Qiskit
+Qiskit ist es Python package, das wir benutzen, um einen Quantencomputer eben tatsächlich mit Hilfe eines
+
+15
+00:01:37.040 --> 00:01:38.819 
+Skripts zu programmieren.
+
+16
+00:01:40.840 --> 00:01:48.579 
+So, jetzt haben wir die ganzen Funktionen importiert, jetzt müssen wir dem Programm noch sagen, was für eine Art von Schaltkreis
+
+17
+00:01:48.579 --> 00:01:55.909 
+wir haben also wir wollen für Quantum Hello World jetzt zwei QuBits haben und zwei klassische Bits wo wir wieder die Messergebnisse
+
+18
+00:01:55.909 --> 00:01:56.879 
+einfügen können.
+
+19
+00:01:56.890 --> 00:02:01.170 
+Und das passiert in diesen Zeilen
+
+20
+00:02:01.170 --> 00:02:10.199 
+hier rufen wir erst einmal ein Quanten Register auf und sagen dem Programm, das wir in diesem Quanten Register zwei QuBits
+
+21
+00:02:10.199 --> 00:02:19.919 
+haben wollen deswegen hier die zwei und in der darauf folgenden Zeile rufen wir dann erstmal ein klassisches Register auf
+
+22
+00:02:20.379 --> 00:02:28.340 
+und sagen, dass wir zwei klassische Bits haben wollen, deswegen hier die zwei, und dann sagen wir dem Programm noch dass wir
+
+23
+00:02:28.340 --> 00:02:34.250 
+eben eine Quanten Schaltung haben wollen mit diesen zwei Registern, also zwei Qubits und zwei klassische Bits.
+
+24
+00:02:34.250 --> 00:02:35.110 
+Das passiert hier.
+
+25
+00:02:37.409 --> 00:02:43.379 
+Was wir jetzt haben, ist im Prinzip erst mal eine leere Quanten Schaltung mit zwei Qubits und zwei klassischen
+
+26
+00:02:43.379 --> 00:02:48.460 
+Bits und jetzt können wir anfangen, die Gates auf die QuBits wirken zu lassen.
+
+27
+00:02:48.469 --> 00:02:51.979 
+Und wir fangen an mit dem Hadamard gate das auf das nullte
+
+28
+00:02:51.979 --> 00:02:59.560 
+Qubit wirkt
+Wie wir das machen, ist, dass wir erst einmal sagen welche Schaltung wir benutzen nämlich die Schaltung, die
+
+29
+00:02:59.560 --> 00:03:09.000 
+wir oben circuit genannt haben und dann rufen wir das hadamard gate mit Hilfe von H auf und sagen auf welches Qubit dieses
+
+30
+00:03:09.000 --> 00:03:14.419 
+Hadamard gate wirken soll also auf das nullte Qubit aus unserem Quanten Register
+
+31
+00:03:14.419 --> 00:03:18.879 
+und dann wollen wir auch noch das cnot gate auf beide Qubits wirken lassen.
+
+32
+00:03:18.879 --> 00:03:25.340 
+Also auf das nullte und auf das erste Qubit und das passiert in dieser Zeile also wir sagen wieder wir wollen in unserem
+
+33
+00:03:25.340 --> 00:03:31.979 
+Schaltkreis circuit ein cnot gate haben das eben auf das nullte Qubit, aus dem Quanten Register wirkt.
+
+34
+00:03:32.020 --> 00:03:34.719 
+Und auf das erste Qubit, aus dem Quanten Register.
+
+35
+00:03:35.599 --> 00:03:38.860 
+Und zu guter Letzt wollen wir beide Qubits messen.
+
+36
+00:03:38.870 --> 00:03:46.319 
+Das können wir machen, indem wir einfach wieder sagen Ok, in unserem Schaltkreis circuit messen wir measure, das zunächst einmal
+
+37
+00:03:46.319 --> 00:03:51.680 
+das nullte Qubit speichern das Messergebnis im Nullten
+
+38
+00:03:51.689 --> 00:03:59.250 
+Klassischen Bit deswegen hier diese Referenz, und dann, in der nächsten Zeile machen wir genau das Gleiche, aber eben
+
+39
+00:03:59.250 --> 00:04:01.240 
+für das erste Qubit.
+
+40
+00:04:01.240 --> 00:04:08.099 
+Also wir sagen wieder in diesem schaltkreis circuit wollen wir das erste Qubit messen und dieses Mal wollen wir das Messergebnis
+
+41
+00:04:08.110 --> 00:04:10.400 
+im ersten klassischen bit speichern.
+
+42
+00:04:12.030 --> 00:04:20.980 
+Das ganze können wir uns jetzt auch noch mal in der Ansicht des quantum composers anschauen, den wir hier den circuit composer
+
+43
+00:04:21.290 --> 00:04:22.160 
+aufrufen.
+
+44
+00:04:22.350 --> 00:04:32.069 
+Wenn ich diese Zelle ausführen, dann erhalten wir genau die Ansicht die wir auch zuvor im IBM Quantum Composer
+
+45
+00:04:32.069 --> 00:04:40.170 
+hatten das sagt uns einfach nur, dass diese Zelle mit dem python code, den wir gerade geschrieben haben, genau das
+
+46
+00:04:40.170 --> 00:04:45.629 
+quantum hello world beispiel reproduziert das wir vorhin im IBM Quantum Composer besprochen hatten.
+
+47
+00:04:47.540 --> 00:04:54.269 
+Ich möchte dieses Quantum Hello World beispiel ein wenig erweitern und zwar haben wir bisher zwei Qubits miteinander verschränkt
+
+48
+00:04:54.569 --> 00:05:01.209 
+ich möchte jetzt aber noch mehr Qubits miteinander verschränken und zwar möchte ich zum Beispiel fünf Qubits miteinander verschränken
+
+49
+00:05:02.139 --> 00:05:11.519 
+das kann ich im Python Code ganz einfach machen die Idee ist, dass wir einen Schaltkreis erzeugen mit fünf Qubits, wobei
+
+50
+00:05:11.519 --> 00:05:18.230 
+auf das nullte Qubit eben wieder ein Hadamard gate wirken wird und dann lasse ich einfach versetzt auf die restlichen Qubits
+
+51
+00:05:18.240 --> 00:05:22.810 
+cnots gates wirken,
+
+52
+00:05:22.810 --> 00:05:28.660 
+das habe ich unten für euch schon mal vorbereitet in dieser Zeile lass uns auch mal von oben nach unten durchgehen.
+
+53
+00:05:28.670 --> 00:05:38.319 
+Die ersten 2 Zeilen sagen einfach wieder dem Programm, welche Funktionen es aus dem Modul Qiskit
+
+54
+00:05:38.319 --> 00:05:43.430 
+importieren soll also, welche Funktion wir benötigen,
+
+55
+00:05:43.430 --> 00:05:51.769 
+dann erzeugen wir einen Quanten Register, aber dieses Mal mit fünf Qubits da wir dieses Mal fünf Qubits verschränken wollen und
+
+56
+00:05:51.769 --> 00:06:00.170 
+dementsprechend auch ein klassisches Register mit fünf klassischen Bits, weil wir dieses Mal fünf Qubits messen und dementsprechend
+
+57
+00:06:00.230 --> 00:06:11.589 
+fünf Bit Informationen speichern wollen und dann erzeugen wir unsere leere Quanten Schaltung mit dieser Zeile, wobei wir
+
+58
+00:06:11.589 --> 00:06:18.060 
+eben sagen, dass wir dieses Mal das neue Quanten Register mit den fünf Qubits benutzen das neue klassische Register mit den
+
+59
+00:06:18.060 --> 00:06:20.970 
+fünf klassischen Bits
+
+60
+00:06:20.970 --> 00:06:26.699 
+Jetzt haben wir eine leere Quanten Schaltung mit fünf Qubits und fünf klassischen Bits, und was wir zu allererst machen,
+
+61
+00:06:26.699 --> 00:06:31.319 
+ist eben wieder das Hadamard gate auf das nullte Qubit wirken lassen.
+
+62
+00:06:31.560 --> 00:06:40.490 
+Das passiert in dieser Zeile, das ist genau dieselbe Zeile, wie wir zuvor schon im zwei Qubit Beispiel hatten und jetzt wollen
+
+63
+00:06:40.490 --> 00:06:47.750 
+wir aber eben das cnot gate auf zunächst mal das nullte und das erste Qubit wirken lassen, dann auf das erste und das
+
+64
+00:06:47.750 --> 00:06:52.819 
+Zweite Qubit und dann auf das zweite und das dritte Qubit und auf das dritte und das Vierte Qubit.
+
+65
+00:06:52.980 --> 00:07:00.819 
+Und statt das jetzt jeweils immer in einer Zeile code zu schreiben können wir das Ganze abkürzen, indem wir eine for loop benutzen
+
+66
+00:07:01.209 --> 00:07:08.480 
+Das ist auch eines der Vorteile, wenn man eben ein Quantencomputer mit Hilfe so eine Scripts programmiert.
+
+67
+00:07:08.480 --> 00:07:12.240 
+Statt das Quantum Composers
+
+68
+00:07:12.240 --> 00:07:23.649 
+das passiert in diesen zwei Zeilen das sagt einfach nur aus, dass wir für die verschiedenen Kombinationen an Qubit Paaren
+
+69
+00:07:23.660 --> 00:07:25.870 
+ein cnot gate wirken lassen wollen.
+
+70
+00:07:27.240 --> 00:07:32.829 
+Diese Zeile Code sagt einfach nur aus, dass wir eine Art Visualisierungs Hilfe haben wollen.
+
+71
+00:07:32.829 --> 00:07:38.149 
+Das können wir später sehen, wenn wir das Ganze im IBM Quantum Composer Modus wieder anzeigen lassen wollen.
+
+72
+00:07:38.149 --> 00:07:44.480 
+Es ist jetzt hier nicht so ganz interessant, dann wollen wir auch noch alle Qubits messen und hier können wir eben wieder
+
+73
+00:07:44.480 --> 00:07:50.949 
+eine for loop benutzen statt fünf mal aufzuschreiben, das wir das nullte, das erste, das zweite, das dritte und das vierte
+
+74
+00:07:50.949 --> 00:08:00.339 
+Qubit messen wollen können wir jetzt hier wieder diese for loop benutzen und das ganze abkürzen in zwei Zeilen Code, wenn
+
+75
+00:08:00.339 --> 00:08:06.839 
+ich das Ganze jetzt wieder im IBM Quantum Composer anzeigen lassen möchte, einfach nur, um zu sehen, wie es aussehen würde
+
+76
+00:08:06.839 --> 00:08:16.230 
+Wenn ich das eben im Composer zusammen klicken würde, dann sieht das Ganze folgendermaßen aus
+
+77
+00:08:16.230 --> 00:08:22.279 
+Wie Besprochen haben wir eben einen Schaltkreis von fünf Qubits auf das nullte Qubit wirkt das Hadamarв gate und dann immer
+
+78
+00:08:22.279 --> 00:08:30.980 
+versetzt auf Paaren von zwei Qubits wird zum cnot gate also noch mal zur Erinnerung der Zustand, der erzeugt wird
+
+79
+00:08:30.980 --> 00:08:39.409 
+wenn wir eben zwei QuBits verschränken, sah so aus
+Also wir hatten nur die zwei basis zustände 00 und 11 und jetzt auf
+
+80
+00:08:39.409 --> 00:08:46.620 
+der rechten Seite habe ich euch den Zustand eingeblendet, der erzeugt wird wenn wir das Ganze erweitern auf fünf QuBits
+
+81
+00:08:46.870 --> 00:08:57.350 
+dann haben wir eben einen Zustand nur mit den Basis Zuständen 00000 und 11111
+
+82
+00:08:57.350 --> 00:09:05.929 
+Das Ganze können wir jetzt wieder entweder auf den Simulator oder auf dem Quantencomputer ausführen und wie im zwei Qubit Beispiel
+
+83
+00:09:05.929 --> 00:09:12.639 
+haben können wir beobachtet, dass der Simulator nur Messergebnisse gibt, die wir eben auch erwarten
+
+84
+00:09:12.639 --> 00:09:17.899 
+Also 11111 oder 00000
+
+85
+00:09:17.899 --> 00:09:24.419 
+Wenn wir das Ganze auf einem richtigen Quantencomputer ausführen, dann sehen wir, dass aufgrund der Fehleranfälligkeit der
+
+86
+00:09:24.419 --> 00:09:31.200 
+Hardware auch Messergebnisse zustande kommen, die wir eigentlich so aus der Theorie nicht erwarten würden.
+
+87
+00:09:31.210 --> 00:09:42.740 
+Zum Beispiel können wir sehen, dass wir hier für den Zustand 11110 den wir nicht erwarten würden, auch paar Mal ein Messergebnis
+
+88
+00:09:42.740 --> 00:09:43.539 
+erhalten hatten.
+
+89
+00:09:43.870 --> 00:09:47.090 
+Das liegt eben, wie gesagt, an der Fehleranfälligkeit der Hardware.
+
+90
+00:09:48.470 --> 00:09:56.840 
+Das heißt, in diesem Video haben wir jetzt das zwie Qubit Beispiel von Quantum Hello World mit Hilfe eines Python Scripts
+
+91
+00:09:57.000 --> 00:10:00.110 
+durchgeführt und wir haben das Ganze auch noch erweitert
+
+92
+00:10:00.120 --> 00:10:01.190 
+Auf fünf Qubits.
+
+93
+00:10:01.190 --> 00:10:09.294 
+Das heißt, wir haben fünf Qubits miteinander verschränkt und dabei gesehen, dass es manchmal oder dass es häufig tatsächlich einfacher
+
+94
+00:10:09.294 --> 00:10:16.465 
+ist, ein python Skript zu schreiben, weil der IBM Quanten Composer in seiner Funktionalität einfach beschränkt ist und eben
+
+95
+00:10:16.465 --> 00:10:22.184 
+für schwierigere Beispiele bzw die Algorithmen nicht immer geeignet ist.

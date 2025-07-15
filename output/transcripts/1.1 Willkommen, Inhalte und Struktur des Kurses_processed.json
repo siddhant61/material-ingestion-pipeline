@@ -1,0 +1,118 @@
+{
+  "transcript_info": {
+    "title": "Willkommen, Inhalte und Struktur des Kurses",
+    "duration": "2:13",
+    "word_count": "292",
+    "speaker_count": "1"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Einführung",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings"
+    ]
+  },
+  "segments": [
+    {
+      "id": "1",
+      "start_time": "00:00:00.630",
+      "end_time": "00:00:07.389",
+      "duration": 6.759,
+      "text": "Hi und herzlich willkommen zum aller ersten Video in diesem Kurs In diesem Video werden wir mit euch besprechen, weswegen viele Leute Interesse haben an Quanten Computern, und wir werden darüber sprechen, was wir in den nächsten Wochen gemeinsam über Quantencomputer lernen werden.",
+      "section": "Einführung",
+      "subsection": "Interesse an Quantencomputern",
+      "keywords": [
+        "Willkommen",
+        "Quantencomputer",
+        "Interesse"
+      ],
+      "concepts": [
+        "Quantencomputing",
+        "Kursstruktur"
+      ],
+      "relationships": [
+        "Einführung in das Thema Quantencomputing"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 0.63,
+      "end_seconds": 7.389
+    },
+    {
+      "id": "2",
+      "start_time": "00:00:15.490",
+      "end_time": "00:00:22.100",
+      "duration": 6.610000000000001,
+      "text": "Morgen sind Quantencomputer interessant zum einen einfach weil sie sind neu und neue Dings sind immer interessant, aber diese Neuheit bringt auch eine neue Ort Algorithmne zu lösen eine neue Ort, wie man Probleme angehen kann und Dinge effizienten Machen kann, die zuvor gar nicht existiert hat und diese Ansicht teilen auch noch andere Leute Nicht nur Forscher wie wir, sondern nach Politiker, die Quanten Computer Forschung und in der Zukunft mit neuem Geld unterstützen möchten, so dass man mehrere von diesen hat und ganz viele Probleme angehen kann.",
+      "section": "Einführung",
+      "subsection": "Warum Quantencomputer interessant sind",
+      "keywords": [
+        "Neuheit",
+        "Algorithmen",
+        "Effizienz"
+      ],
+      "concepts": [
+        "Interesse an Quantencomputern",
+        "Zukunft der Quantenforschung"
+      ],
+      "relationships": [
+        "Quantencomputer als neue Lösung für komplexe Probleme"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 15.49,
+      "end_seconds": 22.1
+    },
+    {
+      "id": "3",
+      "start_time": "00:01:14.140",
+      "end_time": "00:01:21.010",
+      "duration": 6.8700000000000045,
+      "text": "Wir werden darüber sprechen, warum einige Probleme so schwierig sind für heutige Computer und wie wir die Quantenphysik benutzen können, um eine ganz neue Art von Computer, eben diese Quantencomputer, zu bauen. Wir werden darüber sprechen, welchen Herausforderungen wir uns stellen müssen im Bereich der Quanten Technologien, und wir werden darüber sprechen, wo Quantencomputer in Zukunft eingesetzt werden können.",
+      "section": "Einführung",
+      "subsection": "Theoretische Grundlagen",
+      "keywords": [
+        "Quantenphysik",
+        "Herausforderungen",
+        "Zukunft"
+      ],
+      "concepts": [
+        "Schwierigkeiten klassischer Computer",
+        "Quantencomputer"
+      ],
+      "relationships": [
+        "Quantenphysik als Grundlage für neue Computertechnologien"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 74.14,
+      "end_seconds": 81.01
+    },
+    {
+      "id": "4",
+      "start_time": "00:01:37.849",
+      "end_time": "00:01:44.810",
+      "duration": 6.961000000000013,
+      "text": "In einem zweiten Teil werden wir dann auch noch zusätzlich Quantencomputer programmieren, und zwar zunächst einmal mit Hilfe eines Tools, wofür wir keine Programmier Vorkenntnisse brauchen, und dann werden wir auch noch die Programmiersprache Python benutzen für diejenigen von euch, die bereits ein wenig programmieren können, und wir sehen, wenn wir verschiedene Folgen haben Blaue als klassische und Lila für alles neue für Quanten Computer und diese zwei Formen werden wir durchgehend auch bei allen anderen Videos benutzen und so freuen wir uns darauf, euch gemeinsam dieses beizubringen.",
+      "section": "Programmierung",
+      "subsection": "Einführung in die Programmierung von Quantencomputern",
+      "keywords": [
+        "Programmierung",
+        "Python",
+        "Tools"
+      ],
+      "concepts": [
+        "Quantenprogrammierung",
+        "Tools für Quantencomputing"
+      ],
+      "relationships": [
+        "Einführung in Programmierwerkzeuge für Quantencomputer"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 97.84899999999999,
+      "end_seconds": 104.81
+    }
+  ],
+  "key_takeaways": [
+    "Quantencomputer sind neu und bieten neue Lösungsansätze für komplexe Probleme.",
+    "Die Quantenphysik ist entscheidend für das Verständnis und die Entwicklung von Quantencomputern.",
+    "Der Kurs wird sowohl theoretische Grundlagen als auch praktische Programmierung mit Tools und Python abdecken."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "slide_deck_info": {
+    "title": "Was bisher geschah ...",
+    "slide_count": 2,
+    "estimated_duration": "5 minutes",
+    "main_topic": "Phänomene der Quantenphysik"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "introduction",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings"
+    ],
+    "transcript_alignment": "Not available"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "content",
+      "title": "Was bisher geschah ...",
+      "content": "Phänomene der Quantenphysik\nSuperposition (Münzwurf)\nQuantenverschränkung\nMessungen\nQuanten-Gates\nX-gate\nH-gate →Superposition!\nCNOT-gate →Quantenverschränkung!",
+      "section": "Einführung in Quantenphänomene",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quantenphysik",
+        "Superposition",
+        "Quantenverschränkung",
+        "Quanten-Gates",
+        "X-gate",
+        "H-gate",
+        "CNOT-gate"
+      ],
+      "concepts": [
+        "Superposition",
+        "Quantenverschränkung",
+        "Quanten-Gates"
+      ],
+      "relationships": [
+        "H-gate führt zu Superposition",
+        "CNOT-gate führt zu Quantenverschränkung"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Online-Lehrbuch über Quantum Computing",
+      "content": "https://qiskit.org/\nIhr wollt noch mehr lernen?\nWas bisher geschah ...\nPhänomene der Quantenphysik\nSuperposition (Münzwurf)\nQuantenverschränkung\nMessungen\nQuanten-Gates\nX-gate\nH-gate →Superposition!\nCNOT-gate →Quantenverschränkung!",
+      "section": "Ressourcen",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Qiskit",
+        "Online-Lehrbuch",
+        "Quantenphysik"
+      ],
+      "concepts": [
+        "Quantenphysik",
+        "Superposition",
+        "Quantenverschränkung",
+        "Quanten-Gates"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Phänomene der Quantenphysik",
+    "Superposition",
+    "Quantenverschränkung",
+    "Quanten-Gates"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:46:19+02:00",
+    "page_count": 2,
+    "has_images": true,
+    "filename": "2_7_Was_bisher_geschah.pdf",
+    "image_info": [
+      {
+        "slide_number": 2,
+        "image_count": 6,
+        "has_image": true,
+        "image_texts": [
+          "90\n",
+          "Online-Lehrbuch über Quantum Computing\n",
+          "https://qiskit.org/\n",
+          "Ihr wollt noch mehr lernen?\nWas bisher geschah...\n",
+          "Phänomene der Quantenphysik\n",
+          "Superposition (Münzwurf)\n",
+          "Quantenverschränkung \n",
+          "Messungen\n",
+          "Quanten-Gates\n",
+          "X-gate\n",
+          "H-gate Superposition!\n",
+          "CNOT-gate Quanten-\nverschränkung!\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Quantenphysik",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantenverschränkung",
+      "target_concept": "Quantenphysik",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quanten-Gates",
+      "target_concept": "Quantenphysik",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        2
+      ]
+    }
+  ]
+}

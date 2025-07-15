@@ -1,0 +1,378 @@
+{
+  "transcript_info": {
+    "title": "Was ist der IBM Quantum Composer",
+    "duration": "09:11",
+    "word_count": "1,800",
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 2",
+    "module_position": "Programmierung mit IBM Quantum Composer",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": "00:00:00.660",
+      "end_time": "00:00:01.179",
+      "duration": 0.519,
+      "text": "Hi.",
+      "section": "Einführung",
+      "subsection": null,
+      "keywords": [
+        "Einführung"
+      ],
+      "concepts": [],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 0.66,
+      "end_seconds": 1.179
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:01.260",
+      "end_time": "00:00:05.690",
+      "duration": 4.430000000000001,
+      "text": "Im ersten Teil haben wir schon einiges über die Theorie der Quantencomputer gelernt und jetzt in diesem zweiten Teil, werden wir gemeinsam einen Quantencomputer programmieren.",
+      "section": "Einführung",
+      "subsection": "Ziel des Teils",
+      "keywords": [
+        "Quantencomputer",
+        "Programmieren"
+      ],
+      "concepts": [
+        "Quantencomputing"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 1.26,
+      "end_seconds": 5.69
+    },
+    {
+      "id": "segment_3",
+      "start_time": "00:00:09.640",
+      "end_time": "00:00:13.560",
+      "duration": 3.92,
+      "text": "Zunächst einmal werden wir auf einen Tool zurückgreifen, das IBM Quantum Composer heißt und mit Hilfe des IBM Quantum composers können wir den Quantencomputer programmieren, ohne tatsächlich großartig Vorkenntnisse in der Programmierung zu benötigen.",
+      "section": "IBM Quantum Composer",
+      "subsection": "Einführung in das Tool",
+      "keywords": [
+        "IBM Quantum Composer",
+        "Programmierung",
+        "Vorkenntnisse"
+      ],
+      "concepts": [
+        "Quantencomputing",
+        "Programmierung"
+      ],
+      "relationships": [
+        "IBM Quantum Composer ermöglicht Programmierung ohne Vorkenntnisse"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 9.64,
+      "end_seconds": 13.56
+    },
+    {
+      "id": "segment_4",
+      "start_time": "00:00:23.620",
+      "end_time": "00:00:29.980",
+      "duration": 6.359999999999999,
+      "text": "Ich werde euch in den folgenden Slides erst mal ein wenig zeigen was der IBM Quantum Composer ist und was die einzelnen bestandteile sind, damit wir nicht überfordert sind.",
+      "section": "IBM Quantum Composer",
+      "subsection": "Überblick über die Bestandteile",
+      "keywords": [
+        "Bestandteile",
+        "Überblick"
+      ],
+      "concepts": [
+        "IBM Quantum Composer"
+      ],
+      "relationships": [],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 23.62,
+      "end_seconds": 29.98
+    },
+    {
+      "id": "segment_5",
+      "start_time": "00:00:33.609",
+      "end_time": "00:00:41.479",
+      "duration": 7.869999999999997,
+      "text": "Wenn wir den composer öffnen, dann werden wir eine übersicht sehen, die ungefähr so aussieht diese ansicht besteht im prinzip aus drei Teilen hier in grün habe ich euch die sogenannten quanten gates eingerahmt dann haben wir da drunter die sogenannte quanten schaltung, die ich euch in lila eingerahmt habe, dass es sozusagen das Herzstück unseres Programms und dann ganz unten haben wir eine Art Säulen Diagramm, was den Zustandsvektor der QuBits visualisieren soll.",
+      "section": "IBM Quantum Composer",
+      "subsection": "Visualisierung der Benutzeroberfläche",
+      "keywords": [
+        "Übersicht",
+        "Quanten Gates",
+        "Quanten Schaltung",
+        "Zustandsvektor"
+      ],
+      "concepts": [
+        "Quanten Gates",
+        "Quanten Schaltung",
+        "Zustandsvektor"
+      ],
+      "relationships": [
+        "Quanten Gates und Schaltung sind Bestandteile des IBM Quantum Composer"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 33.609,
+      "end_seconds": 41.479
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:01:07.280",
+      "end_time": "00:01:15.359",
+      "duration": 8.078999999999994,
+      "text": "Ich werde jetzt Schritt für Schritt durch diese drei Teile durchgehen, und so fangen wir jetzt erst mal an mit diesem Herzstück des Programms mit der Quanten Schaltung. Was wir hier sehen, sind im Prinzip drei Linien Q null, Q eins und Q zwei. Und diese Linien sind einfach nur die Visualisierung von drei QuBits, die Linien, die eben hinter der oder die Linie, die hinter Q null stehen, die gehört eben zum Nulltem Qubit, weil wir bei null anfangen zu zählen. Die Linie, die hinter q eins steht das ist unser erstes Qubit und dann die Linie die hunter q 2 ist unser zweites Qubit.",
+      "section": "Quanten Schaltung",
+      "subsection": "Visualisierung der Qubits",
+      "keywords": [
+        "Qubits",
+        "Visualisierung"
+      ],
+      "concepts": [
+        "Qubits",
+        "Quanten Schaltung"
+      ],
+      "relationships": [
+        "Qubits werden in der Quanten Schaltung visualisiert"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 67.28,
+      "end_seconds": 75.359
+    },
+    {
+      "id": "segment_7",
+      "start_time": "02:35",
+      "end_time": "03:02",
+      "duration": 27,
+      "text": "Zusätzlich dazu haben wir jetzt auch noch eine Doppel Linie. Diese Doppel Linie visualisiert einfach nur unsere drei Bits, wir brauchen diese drei Bits, um später Messergebnisse zu speichern als klassische Informationen. Also jedes Qubit können wir später messen, um dann die Information des Messergebnis ist also entweder null oder eins können wir dann jeweils in einem klassischen Bit speichern.",
+      "section": "Quanten Schaltung",
+      "subsection": "Klassische Bits",
+      "keywords": [
+        "Doppel Linie",
+        "Klassische Bits",
+        "Messergebnisse"
+      ],
+      "concepts": [
+        "Klassische Bits",
+        "Qubits"
+      ],
+      "relationships": [
+        "Qubits werden in klassische Bits umgewandelt"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_8",
+      "start_time": "03:02",
+      "end_time": "03:36",
+      "duration": 34,
+      "text": "Ganz am Ende der Quanten Schaltung haben wir jeweils hinter jedem Qubit so ein kreis und dieser Kreis ist einfach nur eine Visualisierung des jeweiligen Qubit Zustandes. Und zwar haben wir schon im Theorie Teil darüber gesprochen, dass ein Quantencomputer mit Qubit arbeitet und dass ein Qubit nicht nur in den Basis zuständen null oder eins vorliegen kann, sondern zusätzlich dazu auch noch in einem Superpositionszustand.",
+      "section": "Quanten Schaltung",
+      "subsection": "Visualisierung des Qubit Zustands",
+      "keywords": [
+        "Qubit Zustand",
+        "Superpositionszustand"
+      ],
+      "concepts": [
+        "Qubit Zustand",
+        "Superposition"
+      ],
+      "relationships": [
+        "Qubit Zustand kann in Superposition sein"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_9",
+      "start_time": "03:36",
+      "end_time": "04:02",
+      "duration": 26,
+      "text": "Diese Kreise visualisieren jetzt eben in welchem Zustand das Qubit jeweils vorliegt je nachdem, welche Färbung die Kreise haben der Basis zustand null wird durch ein grau gefärbten kreis repräsentiert der Basis zustand eins wird durch einen blau gefärbten Kreis visualisiert und dann kann man eben auch noch sogenannte superpositions zustände haben, also die Überlagerung von null und eins.",
+      "section": "Quanten Schaltung",
+      "subsection": "Zustandsvisualisierung",
+      "keywords": [
+        "Zustandsvisualisierung",
+        "Färbung",
+        "Basiszustände"
+      ],
+      "concepts": [
+        "Basiszustände",
+        "Superposition"
+      ],
+      "relationships": [
+        "Färbung zeigt den Zustand des Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_10",
+      "start_time": "00:06:44.439",
+      "end_time": "00:06:50.649",
+      "duration": 6.2099999999999795,
+      "text": "Das Coole am Zustands Vektor ist, dass wir eben nicht nur den Zustand von einem Qubit visualisieren können, sondern auch den Zustand von mehreren Qubits. Wir haben im Theorie Teil schon darüber gesprochen, dass zwei Qubits im Allgemeinen super Position in einer Superposition sein können, die durch diese Formel hier gegeben ist, die ich euch jetzt hier eingeblendet habe.",
+      "section": "Zustandsvektor",
+      "subsection": "Visualisierung mehrerer Qubits",
+      "keywords": [
+        "Zustandsvektor",
+        "Superposition"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Qubits"
+      ],
+      "relationships": [
+        "Zustandsvektor visualisiert mehrere Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 404.439,
+      "end_seconds": 410.649
+    },
+    {
+      "id": "segment_11",
+      "start_time": "04:49",
+      "end_time": "05:39",
+      "duration": 50,
+      "text": "Das bedeutet zwei Qubits können in einer Superposition von ihren vier Basis Zuständen sein, wobei Alpha, Beta, Gamma und Delta die jeweiligen Amplituden sind und das ganze können wir es natürlich ebenfalls mit Hilfe des Zustands Vektors darstellen.",
+      "section": "Zustandsvektor",
+      "subsection": "Superposition von Qubits",
+      "keywords": [
+        "Basis Zustände",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Superposition",
+        "Zustandsvektor"
+      ],
+      "relationships": [
+        "Zustandsvektor zeigt Superposition"
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_12",
+      "start_time": "00:07:23.730",
+      "end_time": "00:07:26.889",
+      "duration": 3.158999999999992,
+      "text": "Ich habe euch hier links unten ein Beispiel mitgebracht. Wir sehen wieder in diesem Diagramm, das auf der X Achse die vier Basis Zustände aufgetragen sind also 00 01 10 und 11 Und in diesem Beispiel sehen wir, dass die Amplituden, also die Säulen, zu den Basis zuständen 00 und 01 nicht vorhanden sind, also null groß sind und die Amplituden beziehungsweise die Säulen zu den Basis zuständen 10 und 11 sind gleich groß.",
+      "section": "Zustandsvektor",
+      "subsection": "Visualisierung der Amplituden",
+      "keywords": [
+        "Diagramm",
+        "Basis Zustände",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Basis Zustände"
+      ],
+      "relationships": [
+        "Diagramm visualisiert Amplituden"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 443.73,
+      "end_seconds": 446.889
+    },
+    {
+      "id": "segment_13",
+      "start_time": "00:07:57.019",
+      "end_time": "00:08:04.620",
+      "duration": 7.600999999999999,
+      "text": "Ich kann euch auch den ganz genauen Wert sagen, Das ist genau eins durch Wurzel zwei jeweils und das heißt dieses Diagramm dieser Zustands Vektor repräsentiert uns den zwei Qubit Zustand eins durch Wurzel zwei mal Basis Zustand 10 plus eins durch Wurzel zwei Mal Basis Zustand 11.",
+      "section": "Zustandsvektor",
+      "subsection": "Repräsentation von Qubit Zuständen",
+      "keywords": [
+        "Zustands Vektor",
+        "Repräsentation"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Qubits"
+      ],
+      "relationships": [
+        "Zustandsvektor repräsentiert Qubit Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 477.019,
+      "end_seconds": 484.62
+    },
+    {
+      "id": "segment_14",
+      "start_time": "00:08:19.899",
+      "end_time": "00:08:25.110",
+      "duration": 5.211000000000013,
+      "text": "Das Ganze können wir jetzt auch mit noch mehr Qubits machen ich habe euch jetzt noch ein Beispiel mitgebracht für drei Qubits, also drei Qubits können in einer Überlagerung von acht Basis Zuständen sein. Und ich habe euch hier jetzt ein Beispiel für den Zustand vektor von drei Qubits mitgebracht.",
+      "section": "Zustandsvektor",
+      "subsection": "Drei Qubits",
+      "keywords": [
+        "Überlagerung",
+        "Basis Zustände"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Qubits"
+      ],
+      "relationships": [
+        "Zustandsvektor zeigt Überlagerung von Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 499.899,
+      "end_seconds": 505.11
+    },
+    {
+      "id": "segment_15",
+      "start_time": "00:08:38.860",
+      "end_time": "00:08:48.350",
+      "duration": 9.490000000000009,
+      "text": "Wir sehen wieder auf der X Achse die acht möglichen Basis Zustände gegeben und wir sehen, dass hier wieder ziemlich viele Amplituden null groß sind, also nicht vorhanden sind, nur die Amplituden zu den Basis zuständen 010 und 101 Es sind wieder gleich groß.",
+      "section": "Zustandsvektor",
+      "subsection": "Visualisierung der Amplituden für drei Qubits",
+      "keywords": [
+        "Amplituden",
+        "Basis Zustände"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Qubits"
+      ],
+      "relationships": [
+        "Zustandsvektor zeigt Amplituden für drei Qubits"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 518.86,
+      "end_seconds": 528.35
+    },
+    {
+      "id": "segment_16",
+      "start_time": "00:08:57.009",
+      "end_time": "00:09:03.789",
+      "duration": 6.779999999999973,
+      "text": "Wieder eins durch Wurzel zwei Das heißt, dass dieser Zustand Vektor den drei Qubit Zustand eins durch Wurzel zwei mal 010 plus eins durch Wurzel zwei mal 101 repräsentiert.",
+      "section": "Zustandsvektor",
+      "subsection": "Abschluss der Visualisierung",
+      "keywords": [
+        "Zustands Vektor",
+        "Repräsentation"
+      ],
+      "concepts": [
+        "Zustandsvektor",
+        "Qubits"
+      ],
+      "relationships": [
+        "Zustandsvektor repräsentiert Qubit Zustände"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 537.009,
+      "end_seconds": 543.789
+    }
+  ],
+  "key_takeaways": [
+    "Der IBM Quantum Composer ermöglicht das Programmieren von Quantencomputern ohne tiefgehende Programmierkenntnisse.",
+    "Die Quanten Schaltung ist das Herzstück des Programms und visualisiert Qubits und deren Zustände.",
+    "Superpositionszustände sind ein zentrales Konzept im Quantencomputing, das die Überlagerung von Zuständen beschreibt."
+  ]
+}

@@ -1,0 +1,124 @@
+---
+description: Communication Protocol Guidelines
+globs: 
+---
+# Communication Protocol Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document outlines the communication protocols for the **step1_material_ingestion** pipeline. It defines how agents exchange information both internally and with external systems to ensure uniformity, clarity, and reliability across the entire workflow.
+
+## 2. Data Exchange Formats
+
+- **Standard Format:**  
+  All inter-agent and external communications must use JSON. This standardization ensures consistency and ease of parsing across different modules.
+
+- **Message Structure:**  
+  Each message should contain two primary sections:
+  - **Header:**  
+    - `source`: Name of the sending agent.
+    - `timestamp`: ISO 8601 formatted timestamp.
+    - `version`: Module or schema version.
+    - `context`: Additional contextual information if applicable.
+  - **Payload:**  
+    - `data`: The main content (text, image references, extracted details, etc.).
+    - `metadata`: Supplementary information such as confidence scores, processing time, and chain-of-thought (CoT) logs.
+    - `error` (optional): Structured error information if any issues occurred.
+
+- **Example JSON Message:**
+  ```json
+  {
+    "header": {
+      "source": "VisionModelAgent",
+      "timestamp": "2025-02-24T12:00:00Z",
+      "version": "v1.0",
+      "context": "Image analysis for page 1 of document A"
+    },
+    "payload": {
+      "data": {
+        "imageId": "page1_img_abc123.png",
+        "detectedRegions": [
+          {
+            "regionId": "r1",
+            "type": "diagram",
+            "description": "Diagram of phospholipid bilayer",
+            "boundingBox": [120, 160, 380, 340],
+            "confidence": 0.87
+          }
+        ]
+      },
+      "metadata": {
+        "processingTime": "150ms",
+        "chainOfThought": "Initial region detection succeeded; fallback not required."
+      }
+    }
+  }
+  ```
+
+## 3. Synchronous vs. Asynchronous Handling
+
+### Synchronous Communication
+- **Usage:** For operations that require an immediate response (e.g., validation, initial API calls).
+- **Characteristics:** Sequential execution where one agent waits for the result before proceeding.
+- **Example:** A Transcript Agent waiting for a context extraction response before segmenting further.
+
+### Asynchronous Communication
+- **Usage:** For tasks that can run in parallel (e.g., processing multiple images or transcripts simultaneously, background logging).
+- **Characteristics:** Utilizes message queues or event-driven triggers, allowing agents to continue processing while awaiting responses.
+- **Guidelines:**
+  - Include correlation IDs in the message header to track asynchronous responses.
+  - Ensure proper timeout and retry mechanisms are in place.
+
+## 4. Error Propagation & Handling
+
+### Error Reporting
+- Any error encountered must be included in the JSON payload under an `error` field.
+- The error structure should include:
+  - `code`: A standardized error code.
+  - `message`: A descriptive error message.
+  - `fallbackUsed`: A boolean indicating whether a fallback mechanism was invoked.
+
+### Consistent Propagation
+- Errors must be communicated upstream to the Coordinator Agent with full contextual details (including chain-of-thought logs) to aid debugging and decision-making.
+
+### Fallback and Retry
+- Define clear fallback mechanisms in the event of low-confidence results or failures.
+- Log all fallback decisions along with error details in the structured message.
+
+## 5. Logging and Chain-of-Thought Integration
+
+### Structured Logging
+- Each message should incorporate chain-of-thought (CoT) details as part of the metadata to document critical decisions, fallback triggers, and intermediate reasoning.
+- Maintain separate log entries for CoT steps to aid in debugging without cluttering the primary output.
+
+### Debug and Audit Trails
+- Ensure that every message is logged with sufficient context, allowing for full traceability of the decision-making process across agents.
+
+## 6. Communication Between Agents
+
+### Clear Interfaces
+- Each agent must expose well-defined interfaces for receiving and sending messages, with clearly documented input and output expectations.
+
+### Versioning and Compatibility
+- Always include version information in the header to ensure that agents can handle backward-compatible changes.
+- Document all endpoints, expected message formats, and error codes for each agent.
+
+### Validation
+- Validate every incoming and outgoing message against predefined JSON schemas.
+- Log and reject any message that does not conform to the schema to prevent downstream errors.
+
+## 7. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Standardize Formats:** Use JSON as the exclusive format for all communications.
+- **Include Comprehensive Metadata:** Always add complete header details including source, timestamp, version, and context.
+- **Differentiate Communication Modes:** Clearly delineate when to use synchronous versus asynchronous communication.
+- **Log Errors and Chain-of-Thought:** Ensure that all errors, decisions, and fallback triggers are documented and included in the logs.
+- **Validate Messages:** Rigorously check each message against the schema before processing.
+
+### Don’t:
+- **Mix Data Formats:** Avoid using inconsistent or ad-hoc formats that deviate from the defined JSON structure.
+- **Omit Critical Metadata:** Do not leave out essential details like versioning, source identifiers, or contextual information.
+- **Suppress Errors:** Never ignore errors or fallback information; ensure transparency in all communications.
+- **Overcomplicate Communication:** Keep the structure clear and concise to maintain ease of debugging and integration.
+

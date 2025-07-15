@@ -1,0 +1,494 @@
+{
+  "slide_deck_info": {
+    "title": "Stand der Technik im Quantencomputing",
+    "slide_count": 3,
+    "estimated_duration": "15 Minuten",
+    "main_topic": "Aktueller Stand der Technik im Quantencomputing"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Vorlesung über den aktuellen Stand der Technik",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not available"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "content",
+      "title": "Was ist der momentane Stand der Technik?",
+      "content": "Was sind mögliche Anwendungsbereiche?",
+      "section": "Aktueller Stand der Technik",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Stand der Technik",
+        "Anwendungsbereiche"
+      ],
+      "concepts": [
+        "Quantencomputing",
+        "Anwendungsbereiche"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Anzahl an Qubits",
+      "content": "• 433 (IBM Osprey) • > 1000 in 2023 (IBM Condor) Status Quo\n• supraleitender Ansatz\n• Halbleiter-Ansatz\n• Ionenfallen-Ansatz\n• photonischer Ansatz\nHerausforderungen\n• Fehleranfälligkeit der Hardware (z.B. Qubits)\n• Quanten-Fehler-Korrektur",
+      "section": "Hardware-Realisierung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Qubits",
+        "Hardware",
+        "Fehleranfälligkeit"
+      ],
+      "concepts": [
+        "Qubits",
+        "Hardware-Ansätze",
+        "Fehlerkorrektur"
+      ],
+      "relationships": [
+        "Qubits sind die grundlegenden Einheiten der Quantencomputer, die verschiedene Hardware-Ansätze erfordern."
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Anwendungbereiche",
+      "content": "Quanten-Chemie (z.B. Simulation neuer Batterien)\nOptimierung (z.B. reisender Handelsmann)\nFinanzen (z.B. Risikoanalyse)\nQuantum Games (z.B. für pädagogische Zwecke)\nQuantum Machine Learning (Künstliche Intelligenz)",
+      "section": "Anwendungsbereiche",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Anwendung",
+        "Quanten-Chemie",
+        "Optimierung",
+        "Finanzen"
+      ],
+      "concepts": [
+        "Quanten-Chemie",
+        "Optimierung",
+        "Finanzen",
+        "Quantum Games",
+        "Quantum Machine Learning"
+      ],
+      "relationships": [
+        "Anwendungsmöglichkeiten zeigen die Vielseitigkeit von Quantencomputern in verschiedenen Bereichen."
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Aktueller Stand der Technik im Quantencomputing",
+    "Anzahl und Arten von Qubits",
+    "Anwendungsbereiche von Quantencomputern"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:32:54+02:00",
+    "page_count": 3,
+    "has_images": true,
+    "filename": "1_8_Stand_der_Technik.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "52\n",
+          "Was ist der momentane Stand der \nTechnik?\n",
+          "Was sind mögliche \nAnwendungsbereiche?\n",
+          "---\nMarcel Pfaffhauser\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 4,
+        "has_image": true,
+        "image_texts": [
+          "53\n",
+          "Anzahl an Qubits\n• 433 (IBM Osprey)\n• > 1000 in 2023 (IBM Condor)\n",
+          "Status Quo\n",
+          "IEEE Spectrum\n",
+          "Universität Innsbruck\n",
+          "IBM Research\n",
+          "RWTH Aachen\n",
+          "• supraleitender \n",
+          "Ansatz\n",
+          "• Halbleiter-Ansatz\n",
+          "• Ionenfallen-Ansatz\n",
+          "• photonischer \n",
+          "Ansatz\n",
+          "Hardware-Realisierung\n",
+          "Herausforderungen\n",
+          "• Fehleranfälligkeit der Hardware \n",
+          "(z.B. Qubits)\n",
+          "• Quanten-Fehler-Korrektur\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 5,
+        "has_image": true,
+        "image_texts": [
+          "54\n",
+          "Anwendungbereiche\n",
+          "Quanten-Chemie\n(z.B. Simulation \nneuer Batterien)\n",
+          "Optimierung\n(z.B. reisender \nHandelsmann)\n",
+          "Finanzen\n(z.B. Risikoanalyse)\nQuantum Games\n(z.B. für pädagogische Zwecke)\nQuantum Machine Learning\n(Künstliche Intelligenz)\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Hardware-Ansätze",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Fehlerkorrektur",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Quanten-Chemie",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Finanzen",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Quantum Games",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantencomputing",
+      "target_concept": "Quantum Machine Learning",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Qubits",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Hardware-Ansätze",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Fehlerkorrektur",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Quanten-Chemie",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Finanzen",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Quantum Games",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Anwendungsbereiche",
+      "target_concept": "Quantum Machine Learning",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Quanten-Chemie",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Finanzen",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Quantum Games",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubits",
+      "target_concept": "Quantum Machine Learning",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Hardware-Ansätze",
+      "target_concept": "Quanten-Chemie",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Hardware-Ansätze",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Hardware-Ansätze",
+      "target_concept": "Finanzen",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Hardware-Ansätze",
+      "target_concept": "Quantum Games",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Hardware-Ansätze",
+      "target_concept": "Quantum Machine Learning",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Fehlerkorrektur",
+      "target_concept": "Quanten-Chemie",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Fehlerkorrektur",
+      "target_concept": "Optimierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Fehlerkorrektur",
+      "target_concept": "Finanzen",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Fehlerkorrektur",
+      "target_concept": "Quantum Games",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Fehlerkorrektur",
+      "target_concept": "Quantum Machine Learning",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    }
+  ]
+}

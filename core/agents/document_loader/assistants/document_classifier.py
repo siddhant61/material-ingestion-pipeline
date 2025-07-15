@@ -1,0 +1,116 @@
+"""
+Document Classifier Assistant
+
+This module provides an AI-powered assistant for classifying educational documents
+into different types (course info, slides, reference material, etc.) to enable
+more specialized processing strategies.
+"""
+
+import os
+import logging
+from typing import Dict, List, Any, Optional
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import JsonOutputParser
+
+from core.assistants.base_assistant import BaseAssistant
+
+# Configure logging
+logger = logging.getLogger(__name__)
+
+# Document type definitions
+DOCUMENT_TYPES = {"course_info": "General course information, syllabus, overview","lecture_slides": "Slide deck from lecture presentations","lecture_notes": "Detailed notes supplementing lectures","academic_paper": "Research paper or journal article","textbook_excerpt": "Excerpt from a textbook","assignment": "Homework, project description, or problem set","reference_material": "Additional study materials or reference guides","unknown": "Cannot determine document type"
+}
+
+class DocumentClassifierAssistant(BaseAssistant):
+    """
+    Assistant for classifying educational documents into different types.
+    
+    This assistant analyzes document content and metadata to determine the type
+    of educational material, enabling more specialized processing strategies.
+    """
+    
+    def _init_prompts(self):
+        """Initialize prompt templates for the document classifier."""
+        
+        # System prompt for document classification
+        self.classification_system_prompt = """
+        You are an expert document classifier specializing in educational materials.
+        
+        You will be given excerpts from a document and metadata. Your task is to:
+        1. Analyze the content to determine what type of educational document it is
+        2. Provide a confidence score for your classification
+        3. Identify key metadata from the document
+        
+        DOCUMENT TYPES:
+        {document_types}
+        
+        FORMAT YOUR RESPONSE AS A JSON OBJECT with the following structure:
+        {{"document_type": "one of the document types listed above","confidence": float between 0-1,"reasoning": "brief explanation of your classification","extracted_metadata": {{"title": "document title if found","author": "document author if found","date": "document date if found","course": "course name/number if found","topics": ["list","of","main","topics"]
+            }}
+        }}
+        
+        Focus on identifying the document structure, typical elements, and formatting patterns
+        to make your classification. Be thorough yet precise in your reasoning.
+        """
+        
+        # Prompt template for classification
+        self.classification_prompt = ChatPromptTemplate.from_messages([
+            ("system", self.classification_system_prompt),
+            ("human", """DOCUMENT METADATA:
+Filename: {{filename}}
+Page Count: {{page_count}}
+
+DOCUMENT EXCERPT:
+{{content}}
+
+Please classify this document and extract relevant metadata.""")
+        ])
+        
+        # Initialize the parser
+        self.classification_parser = JsonOutputParser()
+        
+        # Build the classification chain
+        self.classification_chain = self.build_chain_of_thought_chain(
+            self.classification_prompt,
+            self.classification_parser
+        )
+        
+        logger.info("Initialized document classification prompts and chains")
+    
+    def classify_document(self, content: str, metadata: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Classify a document based on its content and metadata.
+        
+        Args:
+            content (str): Excerpt from the document text
+            metadata (Dict[str, Any]): Document metadata (filename, page count, etc.)
+            
+        Returns:
+            Dict[str, Any]: Classification results including document type and metadata
+        """
+        logger.info(f"Classifying document: {metadata.get('filename', 'unnamed')}")
+        
+        # Prepare limited content sample (first 2000 characters)
+        content_sample = content[:2000] + "..." if len(content) > 2000 else content
+        
+        # Prepare input for the classification chain
+        input_data = {"document_types": "\n".join([f"- {k}: {v}" for k, v in DOCUMENT_TYPES.items()]),"filename": metadata.get("filename","unnamed"),"page_count": metadata.get("page_count","unknown"),"content": content_sample
+        }
+        
+        # Run the classification chain with error handling
+        try:
+            result = self.run_with_error_handling(self.classification_chain, input_data)
+            
+            if result.get("status") =="success":
+                classification = result["result"]
+                logger.info(f"Document classified as: {classification.get('document_type')} "
+                          f"with confidence: {classification.get('confidence')}")
+                return classification
+            else:
+                logger.error(f"Error classifying document: {result.get('error_message')}")
+                return {"document_type":"unknown","confidence": 0.0,"reasoning": "Classification failed due to an error","error": result.get("error_message", "Unknown error"),"extracted_metadata": {}
+                }
+        except Exception as e:
+            logger.error(f"Exception in document classification: {str(e)}")
+            return {"document_type":"unknown","confidence": 0.0,"reasoning": "Classification failed due to an exception","error": str(e),"extracted_metadata": {}
+            } 

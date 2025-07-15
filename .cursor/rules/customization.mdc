@@ -1,0 +1,70 @@
+---
+description: Project-Specific Customization Guidelines
+globs: 
+---
+# Project-Specific Customization Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+These guidelines provide project-specific customizations for the **step1_material_ingestion** pipeline. They are intended to tailor the generic rules to the unique requirements and constraints of this project, including handling additional file types, accommodating unique architectural nuances, and ensuring that customization guidelines remain up-to-date as the project evolves.
+
+## 2. Tailored Instructions
+
+- **Additional File Types:**  
+  - In addition to PDFs and transcript files (.vtt, .txt), support for other document formats (e.g., DOCX, HTML) should be considered where applicable.  
+  - Clearly document any extensions or modifications made to support additional file types.
+
+- **Unique Architectural Constraints:**  
+  - Adapt the modular architecture to handle custom processing pipelines, such as specialized image processing modules or extended context extraction logic tailored for domain-specific content.
+  - Ensure that any customizations do not compromise the separation of concerns, maintainability, or interoperability with standard modules.
+
+- **Customization of Prompts & CoT:**  
+  - Customize chain-of-thought (CoT) prompt templates to reflect domain-specific language and problem contexts.
+  - Update fallback triggers and decision criteria within each agent to accommodate any nuances in the source material unique to this project.
+
+## 3. Documentation & Maintenance
+
+- **Rule File Updates:**  
+  - Maintain a versioned changelog for customization guidelines to track modifications and rationale behind each change.
+  - Update the guidelines promptly whenever new project requirements or constraints are identified.
+
+- **Customization Documentation:**  
+  - Document all project-specific customizations in a dedicated section within the project README or in separate documentation files.
+  - Provide examples and use cases to illustrate how customizations impact agent behavior and pipeline processing.
+
+- **Developer Collaboration:**  
+  - Encourage team members to propose customizations through the established code review and pull request process.
+  - Review proposed customizations for consistency with overall project architecture and standards before integration.
+
+## 4. Integration with Generic Guidelines
+
+- **Harmonization:**  
+  - Ensure that any project-specific customizations remain aligned with the overarching guidelines on code consistency, modular design, error handling, and communication protocols.
+  - Regularly review both the generic and customized rule sets to identify and resolve any conflicts or redundancies.
+
+- **Flexibility:**  
+  - Allow for flexible implementation where necessary, but document deviations clearly and justify them with project-specific requirements.
+  - Use configuration files or environment variables to enable or disable certain customizations, facilitating easier updates and testing.
+
+## 5. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Customize Thoughtfully:**  
+  - Tailor the generic guidelines to address specific project needs without compromising core architectural principles.
+- **Document Changes:**  
+  - Clearly document all project-specific modifications, including rationale and implementation details.
+- **Maintain Alignment:**  
+  - Ensure that customizations integrate seamlessly with existing modular, error handling, and communication standards.
+- **Iterate & Review:**  
+  - Regularly review and update customization guidelines to reflect new insights or changes in project scope.
+
+### Don’t:
+- **Overcomplicate the Design:**  
+  - Avoid adding unnecessary complexity that could hinder maintainability or scalability.
+- **Ignore Consistency:**  
+  - Do not implement customizations that conflict with the established guidelines or that result in disparate design patterns.
+- **Neglect Documentation:**  
+  - Never introduce project-specific changes without thorough documentation and team communication.
+- **Bypass Reviews:**  
+  - Ensure that any customization is peer-reviewed and tested for compatibility with the standard pipeline.
+

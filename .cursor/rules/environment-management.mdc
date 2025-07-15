@@ -1,0 +1,66 @@
+---
+description: Environment & Dependency Management Guidelines
+globs: 
+---
+# Environment & Dependency Management Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document outlines the practices and tools for managing environments and dependencies in the **step1_material_ingestion** pipeline. Consistent and controlled dependency management is crucial for ensuring that all agents run reliably, facilitating smooth development, testing, and production deployments.
+
+## 2. Version Specifications
+
+- **Language & Framework Versions:**  
+  - Specify the Python version (e.g., Python 3.9 or higher) required for the project.
+  - Document required versions for key frameworks and libraries (e.g., PyMuPDF, spaCy, OpenCV, FAISS, networkx, etc.).
+  
+- **Dependency Version Pinning:**  
+  - Use version pinning in configuration files (e.g., `requirements.txt` or `Pipfile`) to avoid unexpected changes.
+  - Regularly update these files and document any upgrades with clear release notes.
+
+## 3. Dependency Updates & Lockfile Maintenance
+
+- **Lockfiles:**  
+  - Maintain a lockfile (`requirements.txt.lock`, `Pipfile.lock`, or similar) to ensure consistent dependency resolution across environments.
+  - Commit the lockfile to version control to prevent discrepancies between development, testing, and production.
+
+- **Update Procedures:**  
+  - Schedule periodic reviews of dependencies to check for security updates and performance improvements.
+  - Use automated tools (e.g., Dependabot, pip-tools) to monitor and suggest dependency updates.
+  - Validate updates through the full CI/CD pipeline before merging changes.
+
+## 4. Virtual Environments & Containerization
+
+- **Virtual Environments:**  
+  - Use virtual environments (e.g., `venv`, `virtualenv`, or Conda) for local development to isolate project dependencies.
+  - Provide clear instructions in the project documentation for setting up the virtual environment.
+
+- **Containerization:**  
+  - Consider using containerization (e.g., Docker) to package the application with its dependencies, ensuring consistency across different systems.
+  - Include a Dockerfile with the project that specifies the base image, dependency installation, and runtime configuration.
+  - Document container usage for both development and production environments.
+
+## 5. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Pin Versions:**  
+  - Always pin the versions of dependencies to maintain consistency.
+- **Maintain Lockfiles:**  
+  - Use and commit lockfiles to your version control system.
+- **Automate Updates:**  
+  - Utilize tools to monitor dependency updates and perform automated testing when changes occur.
+- **Isolate Environments:**  
+  - Use virtual environments and consider containerization to avoid conflicts between projects.
+- **Document Setup:**  
+  - Provide detailed instructions for environment setup and dependency installation in the project README.
+
+### Don’t:
+- **Avoid Version Ambiguity:**  
+  - Do not use unpinned dependency versions, as they can lead to unexpected behavior.
+- **Neglect Updates:**  
+  - Avoid ignoring dependency update alerts; outdated dependencies can lead to security vulnerabilities.
+- **Mix Environments:**  
+  - Do not run the project without proper isolation of dependencies; always use virtual environments or containers.
+- **Omit Documentation:**  
+  - Do not leave environment setup instructions undocumented; clear guidance is essential for onboarding and reproducibility.
+

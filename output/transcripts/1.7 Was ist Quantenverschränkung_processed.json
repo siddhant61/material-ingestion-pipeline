@@ -1,0 +1,207 @@
+{
+  "transcript_info": {
+    "title": "Was ist Quantenverschränkung",
+    "duration": "09:00",
+    "word_count": "1,680",
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Einführung in Quantenverschränkung",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": "00:00:00.430",
+      "end_time": "00:00:08.779",
+      "duration": 8.349,
+      "text": "In den vorherigen Videos haben wir über Superpositionszustände gesprochen, ein Phänomen aus der Physik, und in diesem Video sprechen wir über ein weiteres Phänomen aus der Quantenphysik, der sogenannten Quantenverschränkung.",
+      "section": "Quantenverschränkung",
+      "subsection": null,
+      "keywords": [
+        "Superpositionszustände",
+        "Quantenphysik",
+        "Quantenverschränkung"
+      ],
+      "concepts": [
+        "Superposition",
+        "Quantenverschränkung"
+      ],
+      "relationships": [
+        "Superposition ist ein Konzept, das Quantenverschränkung voraussetzt."
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:16.199",
+      "end_time": "00:00:22.910",
+      "duration": 6.7109999999999985,
+      "text": "Wir stellen uns jetzt einfach mal vor, dass wir zwei Münzen haben, die wir unabhängig voneinander in die Luft werfen, und wir nehmen jetzt einfach mal in diesem Gedankenexperiment an, dass beide Münzen so lange in der Luft bleiben und sich drehen können, wie wir wollen, dass sie nicht nach einer gewissen Zeit einfach so auf den Boden fallen. Beide Münzen befinden sich, während sie in der Luft sind, jeweils in einem gleichmäßigen Superpositionszustand.",
+      "section": "Quantenverschränkung",
+      "subsection": "Gedankenexperiment",
+      "keywords": [
+        "Münzen",
+        "Gedankenexperiment",
+        "Superpositionszustand"
+      ],
+      "concepts": [
+        "Superpositionszustand",
+        "Unabhängigkeit"
+      ],
+      "relationships": [
+        "Die Münzen sind unabhängig, aber in einem gemeinsamen Zustand."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 16.199,
+      "end_seconds": 22.91
+    },
+    {
+      "id": "segment_3",
+      "start_time": "00:00:42.579",
+      "end_time": "00:00:50.789",
+      "duration": 8.21,
+      "text": "Diesen Zustand haben wir bereits als Quanten Zustand aufschreiben können für eine Münze und zwar können wir eine Münze, die in der Luft ist mit Hilfe dieses Superpositionszustandes repräsentieren, also einen Zustand, wobei der Basiszustand null und der Basiszustand eins gleichgroße Amplituden haben, also eins durch Wurzel zwei. Wenn wir jetzt den Zustand beider Münzen beschreiben möchten mit so einer Formel, dann können wir das folgendermaßen machen.",
+      "section": "Mathematische Darstellung",
+      "subsection": "Superpositionszustände",
+      "keywords": [
+        "Quanten Zustand",
+        "Basiszustand",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Superpositionszustand",
+        "Mathematische Repräsentation"
+      ],
+      "relationships": [
+        "Der Zustand einer Münze wird mathematisch beschrieben."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 42.579,
+      "end_seconds": 50.789
+    },
+    {
+      "id": "segment_4",
+      "start_time": "00:01:15.840",
+      "end_time": "00:01:18.420",
+      "duration": 2.5799999999999983,
+      "text": "Wir schauen uns erst mal die linke Seite der Gleichung an. Was wir hier sehen, ist die linke Münze befindet sich in diesem gleichmäßigen Superpositionszustand, dann haben wir hier dieses Symbol ein Kreuz mit einem Kreis. Das ist das sogenannte Chroniker Produkt. Das müssen wir erstmal so akzeptieren, dass das symbolisiert, dass wir jetzt hier einen Zustand von mehreren Münzen beschreiben und auf der rechten Seite haben wir den Zustand von der rechten Münze. Also wieder genau die gleiche Superposition mit gleichgroßen Amplituden.",
+      "section": "Mathematische Darstellung",
+      "subsection": "Chroniker Produkt",
+      "keywords": [
+        "Chroniker Produkt",
+        "Zustand",
+        "Gleichung"
+      ],
+      "concepts": [
+        "Chroniker Produkt",
+        "Zustandsbeschreibung"
+      ],
+      "relationships": [
+        "Das Chroniker Produkt beschreibt den Zustand mehrerer Münzen."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 75.84,
+      "end_seconds": 78.42
+    },
+    {
+      "id": "segment_5",
+      "start_time": "00:02:14.159",
+      "end_time": "00:02:24.189",
+      "duration": 10.030000000000001,
+      "text": "Das Ganze können wir jetzt auch anders aufschreiben, und zwar wie hier gegeben, auf der rechten Seite der Gleichung. Wir können hier von der linken Münze den Null Basiszustand nehmen. Also Basiszustand null Tensor Produkt Basiszustand null von der rechten Münze ergibt den Basiszustand 00. Basiszustand null von der linken Münze Tensor Produkt Basiszustand eins von der rechten Münze ergibt den Basiszustand 01. Basiszustand eins von der linken Münze Tensor Produkt Basiszustand null von der rechten Münze ergibt den Basiszustand 10 und der Basiszustand eins von der linken Münze Tensorprodukt Basiszustand eins von der rechten Münze ergibt Basiszustand 11.",
+      "section": "Mathematische Darstellung",
+      "subsection": "Tensor Produkt",
+      "keywords": [
+        "Tensor Produkt",
+        "Basiszustände",
+        "Zustandsbeschreibung"
+      ],
+      "concepts": [
+        "Tensor Produkt",
+        "Basiszustände"
+      ],
+      "relationships": [
+        "Die Kombination von Zuständen wird durch Tensor Produkte beschrieben."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 134.159,
+      "end_seconds": 144.189
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:02:56.539",
+      "end_time": "00:04:28.519",
+      "duration": 91.98,
+      "text": "Jetzt stellen wir uns vor, dass wir die linke Münze auffangen und messen und gucken in welchem Zustand sich die Münze befindet und wir nehmen jetzt einfach mal an die Münze befindet sich nach der Messung im Zustand null. Wir wollen jetzt herausfinden, in welchem Zustand befindet sich dieses System zwei Münzen, wobei die rechte Münze immer noch in der Luft ist und sich dreht. Wir schauen uns die rechte Seite der Gleichung an und müssen jetzt im Prinzip einfach nur alle Basiszustände wegstreichen, wo die linke Münze eben nicht im Zustand null vorliegt, weil wir annehmen, dass die linke Münze im Zustand Null gemessen wurde. Das ist in diesem Beispiel einfach der Basiszustand 11, weil hier die linke Münze eben im Basiszustand 11 vorliegt und der Basiszustand 10, weil hier eben genau das Gleiche ist, nämlich dass die linke Münze im Basiszustand eins vorliegt. Das heißt wir streichen diese zwei Anteile weg und dann bleiben nur noch die Basiszustände 00 und 01 über.",
+      "section": "Messung",
+      "subsection": "Einfluss der Messung",
+      "keywords": [
+        "Messung",
+        "Zustände",
+        "Einfluss"
+      ],
+      "concepts": [
+        "Messung",
+        "Zustandsänderung"
+      ],
+      "relationships": [
+        "Die Messung einer Münze beeinflusst den Zustand der anderen."
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_7",
+      "start_time": "00:04:28.519",
+      "end_time": "00:06:50.759",
+      "duration": 142.24,
+      "text": "Das Ganze können wir wieder mit Hilfe des Tensor Produkts aufschreiben. Das ist hier durch die linke Seite der Gleichung gegeben. Also nochmal so damit man ungefähr sieht, wie das funktioniert oder warum man das auch schreiben kann hier würde man das so ausrechnen, dass der Basiszustand null von der linken Münze Tensor Produkt Basiszustand null von der rechten und dem Basiszustand 00 ergibt. Und der Basiszustand null von der linken Münze Tensor Produkt Basiszustand eins von der rechten Münze ergibt dann im Basiszustand 01 auf der rechten Seite. Und das heißt was wir hier jetzt eigentlich sehen, ist, dass die linke Münze eben nur im Zustand null vorliegt. Es haben wir angenommen, dass wir eben den Zustand null gemessen haben für die linke Münze, aber die rechte Münze hat sich nicht verändert, das heißt der Zustand von der rechten Münze ist immer noch diese gleichmäßige Superposition.",
+      "section": "Messung",
+      "subsection": "Ergebnisse der Messung",
+      "keywords": [
+        "Ergebnisse",
+        "Zustandsbeschreibung",
+        "Superposition"
+      ],
+      "concepts": [
+        "Messung",
+        "Superposition"
+      ],
+      "relationships": [
+        "Die rechte Münze bleibt in Superposition, während die linke Münze gemessen wird."
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    },
+    {
+      "id": "segment_8",
+      "start_time": "00:06:50.759",
+      "end_time": "00:09:00.159",
+      "duration": 129.4,
+      "text": "Jetzt habe ich euch ein weiteres Beispiel mitgebracht. Also wir haben wieder zwei Münzen und diese Münzen sind wieder in einem Superpositionszustand, dieser Meister Superpositionszustand aber durch diesen Term hier gegeben. Also Basiszustand 00 plus Basiszustand 11 und jetzt möchten wir herausfinden, wie sich das gesamte System verhält, wenn ich wieder die linke Münze messe und wieder den Zustand null herausbekomme und was ich hier machen muss, ist einfach wieder genauso wie auf der vorherigen Folie. Ich muss einfach die Basiszustände wegstreichen, wo die linke Münze eben nicht im Zustand null ist, was wir annehmen. Das bedeutet in diesem Fall müssten wir den Basiszustand 11 wegstreichen, weil die linke Münze hier eben im Basiszustand eins wäre. Was dann übrig bleibt ist nur noch der Basiszustand 00, das können wir wieder mit Hilfe des Tensor Produkts ausschreiben, nämlich Basiszustand null von der linken Münze Tensor Produkt Basiszustand null von der rechten Münze. Was wir jetzt hier sehen, ist, dass die linke Münze im Basiszustand null ist. Das haben wir angenommen, das verwundert uns nicht. Aber die rechte Münze ist jetzt auch im Basiszustand null, das heißt die rechte Münze ist nicht mehr in einer Superposition, wie sie es davor war, sondern der Zustand von der rechten Münze wurde direkt beeinflusst, dadurch dass wir nur die linke Münze gemessen haben.",
+      "section": "Beispiel",
+      "subsection": "Einfluss der Messung auf beide Münzen",
+      "keywords": [
+        "Beispiel",
+        "Einfluss",
+        "Zustandsänderung"
+      ],
+      "concepts": [
+        "Messung",
+        "Zustandsänderung"
+      ],
+      "relationships": [
+        "Die Messung der linken Münze beeinflusst den Zustand der rechten Münze."
+      ],
+      "speaker": "Isabel Nha Minh Le"
+    }
+  ],
+  "key_takeaways": [
+    "Quantenverschränkung beschreibt die Abhängigkeit von Zuständen zwischen Quantenobjekten.",
+    "Die Messung eines Teilchens beeinflusst den Zustand eines anderen, selbst wenn sie räumlich getrennt sind.",
+    "Superpositionszustände sind entscheidend für das Verständnis von Quantenverschränkung."
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "transcript_info": {
+    "title": "Quantum Hello World",
+    "duration": "10:22",
+    "word_count": "1895",
+    "speaker_count": 1
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "first lecture",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ]
+  },
+  "segments": [
+    {
+      "id": "1",
+      "start_time": "00:00:00.510",
+      "end_time": "00:00:07.790",
+      "duration": 7.28,
+      "text": "hi Im vorherigen Video haben wir mit Hilfe des IBM Quantum Composers Zwei Qubits in einen quanten verschränkten Zustand gebracht.",
+      "section": "Einführung in Quantenverschränkung",
+      "subsection": null,
+      "keywords": [
+        "IBM Quantum Composer",
+        "Qubits",
+        "Quantenverschränkung"
+      ],
+      "concepts": [
+        "Quantenverschränkung",
+        "Qubits"
+      ],
+      "relationships": [
+        "Zwei Qubits werden in einen verschränkten Zustand gebracht"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 0.51,
+      "end_seconds": 7.79
+    },
+    {
+      "id": "2",
+      "start_time": "00:00:08.439",
+      "end_time": "00:00:13.660",
+      "duration": 5.221,
+      "text": "Und in diesem Video wollen wir das Ganze jetzt mit Hilfe von Python, der Programmiersprache, machen.",
+      "section": "Einführung in Python für Quantencomputing",
+      "subsection": null,
+      "keywords": [
+        "Python",
+        "Programmiersprache"
+      ],
+      "concepts": [
+        "Python",
+        "Quantencomputing"
+      ],
+      "relationships": [
+        "Python wird verwendet, um Quantenprogramme zu schreiben"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 8.439,
+      "end_seconds": 13.66
+    },
+    {
+      "id": "3",
+      "start_time": "00:00:15.089",
+      "end_time": "00:00:23.570",
+      "duration": 8.481,
+      "text": "Gehen wir noch mal kurz zurück in den IBM Quantum composer wir hatten das beispiel Quantum Hello World im composer auf diese Art und Weise durchgeführt, also wir haben zwei QuBits und lassen zunächst einmal ein Hadamard gate auf das nullte Qubit wirken, um dann einen cnot gate auf beide Qubits und im Anschluss messen wir beide Qubits. Das Messergebnis wird in zwei klassischen Bits gespeichert. Und das Coole am IBM Quantum Composer ist dass wir uns direkt in Python Code erzeugen lassen können, und zwar hier rechts das können wir jetzt einfach Copy Paste und dann in einem Python Skript einfügen also pasten.",
+      "section": "Programmierung mit IBM Quantum Composer",
+      "subsection": null,
+      "keywords": [
+        "Hadamard gate",
+        "CNOT gate",
+        "Messergebnis",
+        "klassische Bits"
+      ],
+      "concepts": [
+        "Hadamard gate",
+        "CNOT gate",
+        "Messen"
+      ],
+      "relationships": [
+        "Zwei Qubits werden gemessen und Ergebnisse in klassischen Bits gespeichert"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 15.089,
+      "end_seconds": 23.57
+    },
+    {
+      "id": "4",
+      "start_time": "00:00:56.689",
+      "end_time": "00:01:02.460",
+      "duration": 5.771000000000001,
+      "text": "Wir können uns dabei das Quantum Lab zur Hilfe nehmen. Da können wir nämlich dann den Code auch direkt in einem jupyter notebook ausführen. Also ich hab das jetzt schon mal für euch gemacht, ich hab diesen Code, den wir gerade im IBM Quantum Composer gesehen haben in diese Zelle vom jupyter notebook eingefügt und die ersten 3 Zeilen.",
+      "section": "Einführung in Jupyter Notebook",
+      "subsection": null,
+      "keywords": [
+        "Quantum Lab",
+        "Jupyter Notebook"
+      ],
+      "concepts": [
+        "Jupyter Notebook",
+        "Code Ausführung"
+      ],
+      "relationships": [
+        "Code aus IBM Quantum Composer wird in Jupyter Notebook eingefügt"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 56.689,
+      "end_seconds": 62.46
+    },
+    {
+      "id": "5",
+      "start_time": "00:01:22.790",
+      "end_time": "00:01:29.680",
+      "duration": 6.890000000000015,
+      "text": "Hier importieren wir eigentlich einfach nur die nötigen Funktionen aus dem Python package Qiskit. Qiskit ist es Python package, das wir benutzen, um einen Quantencomputer eben tatsächlich mit Hilfe eines Skripts zu programmieren.",
+      "section": "Einführung in Qiskit",
+      "subsection": null,
+      "keywords": [
+        "Qiskit",
+        "Python package"
+      ],
+      "concepts": [
+        "Qiskit",
+        "Quantencomputer Programmierung"
+      ],
+      "relationships": [
+        "Qiskit wird verwendet, um Quantencomputer zu programmieren"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 82.78999999999999,
+      "end_seconds": 89.68
+    },
+    {
+      "id": "6",
+      "start_time": "00:01:40.840",
+      "end_time": "00:01:48.579",
+      "duration": 7.739000000000004,
+      "text": "So, jetzt haben wir die ganzen Funktionen importiert, jetzt müssen wir dem Programm noch sagen, was für eine Art von Schaltkreis wir haben also wir wollen für Quantum Hello World jetzt zwei QuBits haben und zwei klassische Bits wo wir wieder die Messergebnisse einfügen können. Und das passiert in diesen Zeilen hier rufen wir erst einmal ein Quanten Register auf und sagen dem Programm, das wir in diesem Quanten Register zwei QuBits haben wollen deswegen hier die zwei und in der darauf folgenden Zeile rufen wir dann erstmal ein klassisches Register auf und sagen, dass wir zwei klassische Bits haben wollen, deswegen hier die zwei, und dann sagen wir dem Programm noch dass wir eben eine Quanten Schaltung haben wollen mit diesen zwei Registern, also zwei Qubits und zwei klassische Bits.",
+      "section": "Erstellung eines Quanten Schaltkreises",
+      "subsection": null,
+      "keywords": [
+        "Quanten Register",
+        "klassisches Register",
+        "Quanten Schaltung"
+      ],
+      "concepts": [
+        "Quanten Register",
+        "klassisches Register",
+        "Quanten Schaltung"
+      ],
+      "relationships": [
+        "Zwei Qubits und zwei klassische Bits werden definiert"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 100.84,
+      "end_seconds": 108.57900000000001
+    },
+    {
+      "id": "7",
+      "start_time": "00:02:37.409",
+      "end_time": "00:02:43.379",
+      "duration": 5.969999999999999,
+      "text": "Was wir jetzt haben, ist im Prinzip erst mal eine leere Quanten Schaltung mit zwei Qubits und zwei klassischen Bits und jetzt können wir anfangen, die Gates auf die QuBits wirken zu lassen. Und wir fangen an mit dem Hadamard gate das auf das nullte Qubit wirkt. Wie wir das machen, ist, dass wir erst einmal sagen welche Schaltung wir benutzen nämlich die Schaltung, die wir oben circuit genannt haben und dann rufen wir das hadamard gate mit Hilfe von H auf und sagen auf welches Qubit dieses Hadamard gate wirken soll also auf das nullte Qubit aus unserem Quanten Register und dann wollen wir auch noch das cnot gate auf beide Qubits wirken lassen.",
+      "section": "Anwendung von Quanten-Gattern",
+      "subsection": null,
+      "keywords": [
+        "Hadamard gate",
+        "CNOT gate",
+        "Quanten-Gatter"
+      ],
+      "concepts": [
+        "Hadamard gate",
+        "CNOT gate"
+      ],
+      "relationships": [
+        "Gates werden auf Qubits angewendet"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 157.409,
+      "end_seconds": 163.379
+    },
+    {
+      "id": "8",
+      "start_time": "00:03:35.599",
+      "end_time": "00:03:38.860",
+      "duration": 3.261000000000024,
+      "text": "Und zu guter Letzt wollen wir beide Qubits messen. Das können wir machen, indem wir einfach wieder sagen Ok, in unserem Schaltkreis circuit messen wir measure, das zunächst einmal das nullte Qubit speichern das Messergebnis im Nullten Klassischen Bit deswegen hier diese Referenz, und dann, in der nächsten Zeile machen wir genau das Gleiche, aber eben für das erste Qubit. Also wir sagen wieder in diesem schaltkreis circuit wollen wir das erste Qubit messen und dieses Mal wollen wir das Messergebnis im ersten klassischen bit speichern.",
+      "section": "Messen von Qubits",
+      "subsection": null,
+      "keywords": [
+        "Messen",
+        "Messergebnis",
+        "klassisches Bit"
+      ],
+      "concepts": [
+        "Messen von Qubits"
+      ],
+      "relationships": [
+        "Messergebnisse werden in klassischen Bits gespeichert"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 215.599,
+      "end_seconds": 218.86
+    },
+    {
+      "id": "9",
+      "start_time": "00:04:12.030",
+      "end_time": "00:04:20.980",
+      "duration": 8.950000000000017,
+      "text": "Das ganze können wir uns jetzt auch noch mal in der Ansicht des quantum composers anschauen, den wir hier den circuit composer aufrufen. Wenn ich diese Zelle ausführen, dann erhalten wir genau die Ansicht die wir auch zuvor im IBM Quantum Composer hatten das sagt uns einfach nur, dass diese Zelle mit dem python code, den wir gerade geschrieben haben, genau das quantum hello world beispiel reproduziert das wir vorhin im IBM Quantum Composer besprochen hatten.",
+      "section": "Visualisierung im Quantum Composer",
+      "subsection": null,
+      "keywords": [
+        "Quantum Composer",
+        "Visualisierung"
+      ],
+      "concepts": [
+        "Visualisierung von Quanten Schaltungen"
+      ],
+      "relationships": [
+        "Python Code wird im Quantum Composer visualisiert"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 252.03,
+      "end_seconds": 260.98
+    },
+    {
+      "id": "10",
+      "start_time": "00:04:47.540",
+      "end_time": "00:04:54.269",
+      "duration": 6.728999999999985,
+      "text": "Ich möchte dieses Quantum Hello World beispiel ein wenig erweitern und zwar haben wir bisher zwei Qubits miteinander verschränkt ich möchte jetzt aber noch mehr Qubits miteinander verschränken und zwar möchte ich zum Beispiel fünf Qubits miteinander verschränken. Das kann ich im Python Code ganz einfach machen die Idee ist, dass wir einen Schaltkreis erzeugen mit fünf Qubits, wobei auf das nullte Qubit eben wieder ein Hadamard gate wirken wird und dann lasse ich einfach versetzt auf die restlichen Qubits cnots gates wirken, das habe ich unten für euch schon mal vorbereitet in dieser Zeile lass uns auch mal von oben nach unten durchgehen. Die ersten 2 Zeilen sagen einfach wieder dem Programm, welche Funktionen es aus dem Modul Qiskit importieren soll also, welche Funktion wir benötigen, dann erzeugen wir einen Quanten Register, aber dieses Mal mit fünf Qubits da wir dieses Mal fünf Qubits verschränken wollen und dementsprechend auch ein klassisches Register mit fünf klassischen Bits, weil wir dieses Mal fünf Qubits messen und dementsprechend fünf Bit Informationen speichern wollen und dann erzeugen wir unsere leere Quanten Schaltung mit dieser Zeile, wobei wir eben sagen, dass wir dieses Mal das neue Quanten Register mit den fünf Qubits benutzen das neue klassische Register mit den fünf klassischen Bits. Jetzt haben wir eine leere Quanten Schaltung mit fünf Qubits und fünf klassischen Bits, und was wir zu allererst machen, ist eben wieder das Hadamard gate auf das nullte Qubit wirken lassen. Das passiert in dieser Zeile, das ist genau dieselbe Zeile, wie wir zuvor schon im zwei Qubit Beispiel hatten und jetzt wollen wir aber eben das cnot gate auf zunächst mal das nullte und das erste Qubit wirken lassen, dann auf das erste und das Zweite Qubit und dann auf das zweite und das dritte Qubit und auf das dritte und das Vierte Qubit. Und statt das jetzt jeweils immer in einer Zeile code zu schreiben können wir das Ganze abkürzen, indem wir eine for loop benutzen. Das ist auch eines der Vorteile, wenn man eben ein Quantencomputer mit Hilfe so eine Scripts programmiert. Statt das Quantum Composers das passiert in diesen zwei Zeilen das sagt einfach nur aus, dass wir für die verschiedenen Kombinationen an Qubit Paaren ein cnot gate wirken lassen wollen. Diese Zeile Code sagt einfach nur aus, dass wir eine Art Visualisierungs Hilfe haben wollen. Das können wir später sehen, wenn wir das Ganze im IBM Quantum Composer Modus wieder anzeigen lassen wollen. Es ist jetzt hier nicht so ganz interessant, dann wollen wir auch noch alle Qubits messen und hier können wir eben wieder eine for loop benutzen statt fünf mal aufzuschreiben, das wir das nullte, das erste, das zweite, das dritte und das vierte Qubit messen wollen können wir jetzt hier wieder diese for loop benutzen und das ganze abkürzen in zwei Zeilen Code, wenn ich das Ganze jetzt wieder im IBM Quantum Composer anzeigen lassen möchte, einfach nur, um zu sehen, wie es aussehen würde Wenn ich das eben im Composer zusammen klicken würde, dann sieht das Ganze folgendermaßen aus. Wie Besprochen haben wir eben einen Schaltkreis von fünf Qubits auf das nullte Qubit wirkt das Hadamard gate und dann immer versetzt auf Paaren von zwei Qubits wird zum cnot gate also noch mal zur Erinnerung der Zustand, der erzeugt wird wenn wir eben zwei QuBits verschränken, sah so aus. Also wir hatten nur die zwei basis zustände 00 und 11 und jetzt auf der rechten Seite habe ich euch den Zustand eingeblendet, der erzeugt wird wenn wir das Ganze erweitern auf fünf QuBits dann haben wir eben einen Zustand nur mit den Basis Zuständen 00000 und 11111. Das Ganze können wir jetzt wieder entweder auf den Simulator oder auf dem Quantencomputer ausführen und wie im zwei Qubit Beispiel haben können wir beobachtet, dass der Simulator nur Messergebnisse gibt, die wir eben auch erwarten. Also 11111 oder 00000. Wenn wir das Ganze auf einem richtigen Quantencomputer ausführen, dann sehen wir, dass aufgrund der Fehleranfälligkeit der Hardware auch Messergebnisse zustande kommen, die wir eigentlich so aus der Theorie nicht erwarten würden. Zum Beispiel können wir sehen, dass wir hier für den Zustand 11110 den wir nicht erwarten würden, auch paar Mal ein Messergebnis erhalten hatten. Das liegt eben, wie gesagt, an der Fehleranfälligkeit der Hardware. Das heißt, in diesem Video haben wir jetzt das zwie Qubit Beispiel von Quantum Hello World mit Hilfe eines Python Scripts durchgeführt und wir haben das Ganze auch noch erweitert Auf fünf Qubits. Das heißt, wir haben fünf Qubits miteinander verschränkt und dabei gesehen, dass es manchmal oder dass es häufig tatsächlich einfacher ist, ein python Skript zu schreiben, weil der IBM Quanten Composer in seiner Funktionalität einfach beschränkt ist und eben für schwierigere Beispiele bzw die Algorithmen nicht immer geeignet ist.",
+      "section": "Erweiterung des Quantum Hello World Beispiels",
+      "subsection": null,
+      "keywords": [
+        "Erweiterung",
+        "Fehleranfälligkeit",
+        "Quantencomputer"
+      ],
+      "concepts": [
+        "Erweiterung auf fünf Qubits",
+        "Fehleranfälligkeit der Hardware"
+      ],
+      "relationships": [
+        "Fünf Qubits werden miteinander verschränkt und Fehleranfälligkeit wird diskutiert"
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 287.54,
+      "end_seconds": 294.269
+    }
+  ],
+  "key_takeaways": [
+    "Quantenverschränkung kann einfach mit Python und Qiskit durchgeführt werden.",
+    "IBM Quantum Composer ermöglicht die Visualisierung von Quanten Schaltungen.",
+    "Die Programmierung von Quantencomputern mit Python bietet mehr Flexibilität als visuelle Tools."
+  ]
+}

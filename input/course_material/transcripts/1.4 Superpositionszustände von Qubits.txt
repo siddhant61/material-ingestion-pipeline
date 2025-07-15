@@ -1,0 +1,325 @@
+WEBVTT
+
+1
+00:00:00.900 --> 00:00:04.570 
+Im vorherigen Video haben wir über den Münzwurf gesprochen.
+
+2
+00:00:04.820 --> 00:00:11.769 
+Dass eine Münze in einer Überlagerung von Kopf und Zahl vorliegen kann  während sie sich in der Luft dreht.
+
+3
+00:00:12.449 --> 00:00:16.059 
+Diesen Zustand haben wir Super Positions Zustand genannt.
+
+4
+00:00:16.059 --> 00:00:23.589 
+Und in diesem Video werden wir darüber sprechen, wie wir so Superpositions Zustände in einem Quantencomputer benutzen kann
+
+5
+00:00:26.350 --> 00:00:35.200 
+Ein klassischer Computer arbeitet mit klassischen Bits und ein klassisches Bit kann vorliegen entweder im Basis Zustand null
+
+6
+00:00:35.210 --> 00:00:37.340 
+oder im Basis Zustand eins.
+
+7
+00:00:38.630 --> 00:00:46.920 
+Und ein Quantencomputer arbeitet jetzt einfach mit Quanten Bits oder wie wir es immer abkürzen mit QuBits eins Qubit
+
+8
+00:00:46.929 --> 00:00:52.100 
+kann ebenfalls in Basis Zustand null oder im Basis Zustand eins vorliegen.
+
+9
+00:00:52.630 --> 00:01:02.049 
+Wir schreiben hier bei die Zustände mit so Klammern auf, um anzuzeigen oder um anzudeuten, dass es sich hier um sogenannte
+
+10
+00:01:02.049 --> 00:01:05.670 
+Quanten Zustände handelt und nicht um klassische Zustände.
+
+11
+00:01:06.219 --> 00:01:12.810 
+Und diese Art und Weise, einen Quantenzustand mit Klammern aufzuschreiben, nennt man auch Dirac-Notation oder die Bra-Ket-
+
+12
+00:01:12.810 --> 00:01:13.650 
+Schreibweise.
+
+13
+00:01:14.930 --> 00:01:21.099 
+Das werden wir jetzt im weiteren Verlauf des Videos nicht benötigen, aber falls ihr euch dafür interessiert, könnt ihr das gerne
+
+14
+00:01:21.099 --> 00:01:21.840 
+nachschauen.
+
+15
+00:01:24.150 --> 00:01:29.310 
+Ein Qubit kann jetzt aber eben nicht nur wie ein klassisches Bit in den Basis Zuständen vorliegen.
+
+16
+00:01:29.319 --> 00:01:33.420 
+sondern eben auch in einer Überlagerung von beiden Basiszuständen.
+
+17
+00:01:33.810 --> 00:01:38.890 
+Das würde ich jetzt mit einer Formel aufschreiben, die ich euch hier rechts unten eingeblendet habe.
+
+18
+00:01:38.890 --> 00:01:45.090 
+Ich werde auf der nächsten Slide aber auch noch mal genauer darauf eingehen, was diese Formel im Einzelnen bedeutet.
+
+19
+00:01:45.340 --> 00:01:52.650 
+Das wichtige ist aber auf jeden fall, dass ein Qubit eben in den Basis Zuständen vorliegen kann, genauso wie das klassische
+
+20
+00:01:52.650 --> 00:02:00.659 
+Bit aber und das ist der große Unterschied ein Qubit kann auch in einer Überlagerung aller Basis Zustände vorliegen.
+
+21
+00:02:04.329 --> 00:02:08.960 
+So, und jetzt möchte ich noch genauer erklären, was diese Formel eigentlich aussagt.
+
+22
+00:02:09.490 --> 00:02:17.030 
+Also diese Formel die ich euch eingeblendet hab, das repräsentiert ein allgemein Qubit zustand, also eine allgemeine super
+
+23
+00:02:17.030 --> 00:02:29.009 
+position und was wir hier sehen ist alpha mal basis zustand null plus beta mal basis zustand eins und zunächst einmal dieses
+
+24
+00:02:29.009 --> 00:02:34.979 
+pluszeichen ist nicht das normale additions plus zeichen das wir so kennen.
+
+25
+00:02:35.590 --> 00:02:43.430 
+Das heißt basis zustand null plus basis zustand eins ist nicht gleich eins, sondern das ist einfach eine art platzhalter
+
+26
+00:02:43.430 --> 00:02:53.750 
+für ein und da steht im prinzip alpha mal basis zustand null und beta mal basis zustand eins dieses Alpha und dieses Beta
+
+27
+00:02:54.240 --> 00:03:03.069 
+das sind Variablen in unserer Formel Das sind sogenannte Amplituden, die etwas über den Anteil der dazugehörigen Basis Zustände
+
+28
+00:03:03.069 --> 00:03:03.680 
+aussagen.
+
+29
+00:03:04.210 --> 00:03:11.939 
+Ihr könnt euch das so vorstellen, dass je größer die Amplitude alpha ist, desto größer ist auch die Wahrscheinlichkeit
+
+30
+00:03:12.229 --> 00:03:20.129 
+den dazugehörigen Basiszustand null zu messen und genaues gleiche für die Amplitude Beta also je größer die Amplitude
+
+31
+00:03:20.129 --> 00:03:25.360 
+Beta ist, desto größer ist auch die Wahrscheinlichkeit den dazugehörigen Basiszustand eins zu messen.
+
+32
+00:03:26.759 --> 00:03:33.639 
+Ich möchte euch jetzt auch noch eine kurze grafische Intuition geben für diejenigen von euch, die noch nie was von komplexen
+
+33
+00:03:33.639 --> 00:03:42.870 
+Zahlen gehört haben, dass diese Erklärung ist korrekt, aber nicht vollständig diejenigen von euch, die schon wissen was komplexe
+
+34
+00:03:42.870 --> 00:03:51.599 
+oder imaginäre Zahlen sind für die habe ich auch noch eine vollständigere Erklärung auf der nächstens Slide
+
+35
+00:03:51.599 --> 00:04:01.110 
+ihr könnt euch aber zunächst einmal so ein allgemein Qubit Zustand einfach als einen Pfeil im zweidimensionalen Raum vorstellen
+
+36
+00:04:01.120 --> 00:04:05.800 
+der die Länge eins hat, also wie hier auf dieses Slide der Lila Pfeil.
+
+37
+00:04:05.800 --> 00:04:10.939 
+Das heißt einfach nur ein Pfeil, der vom Ursprung auf den Einheits Kreis zeigt.
+
+38
+00:04:12.069 --> 00:04:20.750 
+Und wir schreiben jetzt einfach auf die X Achse oder der Pfeil, der in X Achse in X Richtung zeigt und die Länge eins hat
+
+39
+00:04:21.220 --> 00:04:30.144 
+der repräsentiert unseren basis zustand null und der Pfeil der in y richtung zeigt und die Länge eins hat der repräsentiert
+
+40
+00:04:30.144 --> 00:04:39.634 
+uns den Basiszustand eins und jetzt können wir so ein allgemeine super position oder so ein allgemein Qubit zustand eben
+
+41
+00:04:39.644 --> 00:04:50.514 
+als den vektor alpha beta darstellen, also einen pfeil, der in x richtung eine projektion von alpha hat, also ein anteil
+
+42
+00:04:50.514 --> 00:04:54.735 
+alpha hat und in y richtung eine projektion beziehungsweise
+
+43
+00:04:54.785 --> 00:05:01.910 
+Anteil beta das wichtige ist hierbei nur, dass eben dieser pfeil dieser allgemeine Qubit zustand immer die länge eins hat
+
+44
+00:05:01.920 --> 00:05:11.389 
+weswegen darauf werden wir später noch mal eingehen aber das ist schon mal hier vorwegzunehmen
+
+45
+00:05:11.389 --> 00:05:18.579 
+für diejenigen von euch, die wissen was komplexe zahl sind möchte ich das ganze bild erweitern und zwar bleiben wir nicht
+
+46
+00:05:18.579 --> 00:05:22.699 
+nur im zwei d raum sondern gehen über in den dreidimensionalen raum.
+
+47
+00:05:22.709 --> 00:05:30.800 
+Das bedeutet anstatt eines einheits kreises betrachten wir jetzt hier eine einheits kugel eine kugel mit radius eins.
+
+48
+00:05:31.860 --> 00:05:40.050 
+Alpha und beta können nämlich im allgemeinsten fall nicht nur reelle zahlen werte annehmen sollen können komplexe zahlen
+
+49
+00:05:40.050 --> 00:05:48.930 
+werte annehmen und dann gilt eigentlich trotzdem genau das gleiche also die Amplituden gehen immer noch den anteil der basis
+
+50
+00:05:48.930 --> 00:05:50.779 
+zustände in der Überlagerung an.
+
+51
+00:05:52.050 --> 00:05:58.029 
+Es ist jetzt vielleicht nicht mehr so ganz eindeutig zu sagen, dass eine Amplitude unbedingt größer ist als die andere, bei
+
+52
+00:05:58.029 --> 00:06:01.420 
+komplexe Zahlen nicht immer miteinander verglichen werden können.
+
+53
+00:06:01.430 --> 00:06:09.720 
+So direkt aber ihr könnt euch jetzt einen allgemeinen Qubit zustand wieder als pfeil vorstellen der länge eins nur dieses
+
+54
+00:06:09.720 --> 00:06:18.254 
+mal eben kein pfeil der auf dem einheitskreis liegt jetzt auf der einheits kugel und diese einheits kugel nennen wir im quanten
+
+55
+00:06:18.254 --> 00:06:28.165 
+computing bloch sphere  und wie das ganze funktioniert ist, dass wir dieses mal einfach uns die z achse anschauen und der
+
+56
+00:06:28.165 --> 00:06:36.699 
+pfeil der die länge eins hat und in positive z richtung zeigt der repräsentiert unseren basis zustand null und der pfeil
+
+57
+00:06:36.699 --> 00:06:47.259 
+der in negative z richtung zeigt und die länge eins hat der repräsentiert den basis zustand eins und eine allgemeine super
+
+58
+00:06:47.259 --> 00:06:54.319 
+position ist einfach irgendeinen pfeil der vom ursprung ausgeht und eben auf dieser bloch sphäre liegt.
+
+59
+00:06:58.720 --> 00:07:04.699 
+Genau also wir haben jetzt darüber gesprochen, dass ein quantencomputer mit Quanten bits arbeit mit Qubits arbeitet und
+
+60
+00:07:04.699 --> 00:07:11.959 
+dass ein Qubit eben im basis zwischen null oder im basis zustand eins vorliegen kann und zusätzlich dazu eben auch noch
+
+61
+00:07:11.959 --> 00:07:20.110 
+im allgemeinsten fall einer überlagerung beider zustände und ich möchte euch jetzt eine kurze physikalische Intuition geben
+
+62
+00:07:20.110 --> 00:07:24.250 
+wie man sich das vorstellen kann, was ein Qubit physikalisch bedeuten kann.
+
+63
+00:07:25.079 --> 00:07:31.800 
+Und zwar möchte ich hier für mit euch ganz kurz das Bohrsche atommodell durchgehen beziehungsweise.
+
+64
+00:07:31.939 --> 00:07:35.709 
+Ich gehe davon aus, dass ihr schon mal was vom Bohrschen atommodell gehört habt.
+
+65
+00:07:35.709 --> 00:07:46.129 
+Das war ein ansatz um zu beschreiben wie ein atom aufgebaut ist und zwar sagt dass Bohrsche atommodell aus, dass ein atom
+
+66
+00:07:46.129 --> 00:07:57.279 
+in der Mitte einen positiven Kern hat und dann fixe Elektronen bahn hat, die um diesen positiven kern liegen
+
+67
+00:07:57.279 --> 00:08:01.959 
+und diese Elektronen Bahn assoziieren wir mit diskreten Energie Niveaus.
+
+68
+00:08:02.290 --> 00:08:11.949 
+Wenn wir jetzt die innersten Zwei Elektronen Bahn nehmen, dann können wir uns ein Qubit einfach als das gesamte System vorstellen
+
+69
+00:08:11.949 --> 00:08:20.680 
+Das besteht aus einem Elektron, das entweder auf der innersten Elektronen Bahn liegt oder auf der nächst äußeren Elektron
+
+70
+00:08:20.680 --> 00:08:20.910 
+Bahn.
+
+71
+00:08:20.910 --> 00:08:28.129 
+Und ich bezeichne diese bahn jetzt einfach mit n gleich eins und n gleich zwei und der basis zustand null wäre jetzt einfach
+
+72
+00:08:28.129 --> 00:08:36.360 
+wenn das Elektron auf der innersten Bahn liegt also n gleich eins und der Basiszustand eins wäre jetzt einfach wenn das Elektron
+
+73
+00:08:36.360 --> 00:08:40.649 
+auf der nächst äußeren Elektronen Bahn liegt also n gleich zwei.
+
+74
+00:08:41.639 --> 00:08:48.750 
+Das Problem hier war jetzt nur das rausgefunden wurde, dass das Bohrsche Atommodell eben nicht korrekt ist.
+
+75
+00:08:49.009 --> 00:08:56.750 
+Wir müssen nämlich in der Quantenphysik die Heisenbergsche Unschärferelation mit betrachten und die sagt aus, dass wir jetzt
+
+76
+00:08:56.750 --> 00:09:04.190 
+nicht mehr ganz eindeutig aussagen können, wo das Elektron sich befindet, sondern wir können nur noch von Aufenthalts Wahrscheinlichkeiten
+
+77
+00:09:04.190 --> 00:09:04.980 
+sprechen.
+
+78
+00:09:06.679 --> 00:09:10.450 
+Das Ganze können wir uns jetzt als unsere superposition vorstellen.
+
+79
+00:09:10.840 --> 00:09:18.029 
+Das Elektron ist jetzt nicht immer nur mit 100 prozentiger Wahrscheinlichkeit auf der Elektronen bahn n gleich eins beziehungsweise
+
+80
+00:09:18.029 --> 00:09:25.860 
+N gleich zwei sondern es hat eine bestimmte Wahrscheinlichkeit, bei n gleich eins oder n gleich zwei zu sein und
+
+81
+00:09:25.860 --> 00:09:29.230 
+das ist dann sozusagen unser Überlagerungszustand.

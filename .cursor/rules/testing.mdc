@@ -1,0 +1,96 @@
+---
+description: Testing & Quality Assurance Guidelines
+globs: 
+---
+# Testing & Quality Assurance Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document outlines the testing and quality assurance (QA) protocols for the **step1_material_ingestion** pipeline. The goal is to ensure that every module and integration point is rigorously tested, validated, and continuously monitored to maintain high quality, reliability, and performance throughout the development lifecycle.
+
+## 2. Testing Levels
+
+### 2.1 Unit Testing
+- **Scope:**  
+  Test individual functions, methods, and classes within each agent.
+- **Best Practices:**  
+  - Use frameworks like `pytest` for Python unit tests.
+  - Write tests that cover normal cases, edge cases, and error handling.
+  - Isolate dependencies using mocking where necessary.
+- **Coverage:**  
+  Ensure that all critical paths, input validations, and fallback mechanisms are tested.
+
+### 2.2 Integration Testing
+- **Scope:**  
+  Verify that interactions between multiple agents or modules work as expected.
+- **Best Practices:**  
+  - Simulate inter-agent communications using the standardized JSON schemas.
+  - Test the proper propagation of errors and fallback triggers between agents.
+  - Validate that the structured input/output flows correctly from one agent to the next.
+- **Coverage:**  
+  Include tests that mimic real-world workflows and interdependencies among agents.
+
+### 2.3 End-to-End Testing
+- **Scope:**  
+  Validate the complete workflow of the pipeline, from document ingestion to knowledge graph generation.
+- **Best Practices:**  
+  - Use realistic sample data (e.g., actual PDFs, transcripts, images) to simulate production environments.
+  - Ensure that the entire process—from loading to final output—operates correctly under various conditions.
+- **Coverage:**  
+  Confirm that all components integrate seamlessly and that the final output meets expected quality standards.
+
+### 2.4 Regression Testing
+- **Scope:**  
+  Re-run existing tests whenever new changes are introduced to ensure that no previously working functionality is broken.
+- **Best Practices:**  
+  - Maintain a comprehensive test suite that is automatically executed as part of the CI/CD pipeline.
+  - Incorporate version control to track changes and quickly revert to stable versions if issues arise.
+- **Coverage:**  
+  Regularly update test cases to cover new features or modifications in existing functionalities.
+
+## 3. Quality Assurance Tools & Practices
+
+- **Automated Testing Frameworks:**  
+  - Utilize `pytest` for unit and integration testing.
+  - Leverage CI/CD tools (e.g., GitHub Actions, Jenkins) to automate test execution on each commit.
+- **Code Coverage:**  
+  - Use tools like `coverage.py` to measure test coverage and ensure critical code paths are tested.
+- **Linting & Static Analysis:**  
+  - Employ linters (e.g., flake8) and static analysis tools (e.g., pylint) to enforce code quality and style guidelines.
+- **Continuous Integration:**  
+  - Integrate testing into CI/CD pipelines to automatically run tests on each code push.
+  - Ensure that failing tests block code merges to prevent regression.
+
+## 4. Documentation & Test Artifacts
+
+- **Test Documentation:**  
+  - Maintain detailed documentation of test cases, expected outcomes, and testing procedures.
+  - Document any known issues or limitations and their impact on the pipeline.
+- **Artifacts:**  
+  - Archive test logs, coverage reports, and build statuses for audit and review purposes.
+  - Use version-controlled repositories to manage and update test cases alongside the codebase.
+
+## 5. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Write Comprehensive Tests:**  
+  - Cover unit, integration, end-to-end, and regression scenarios.
+- **Automate Testing:**  
+  - Integrate tests into CI/CD pipelines to ensure continuous quality checks.
+- **Monitor Code Coverage:**  
+  - Aim for high test coverage and continuously improve tests as the project evolves.
+- **Document Thoroughly:**  
+  - Provide clear documentation for all tests and QA processes.
+- **Review & Update Regularly:**  
+  - Continuously update tests to reflect new features and changes in the codebase.
+
+### Don’t:
+- **Neglect Edge Cases:**  
+  - Do not ignore testing for unusual or edge-case scenarios.
+- **Skip Automation:**  
+  - Avoid manual testing as the sole method of quality assurance.
+- **Ignore Failures:**  
+  - Do not merge code that fails any test cases or reduces overall test coverage.
+- **Overcomplicate Tests:**  
+  - Ensure that tests remain maintainable and clearly understandable by the team.
+

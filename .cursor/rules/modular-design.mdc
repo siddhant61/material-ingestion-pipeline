@@ -1,0 +1,100 @@
+---
+description: Modular Design & Architectural Principles
+globs: 
+---
+# Modular Design & Architectural Principles for step1_material_ingestion
+
+## 1. Overview
+
+This document outlines the modular design principles and architectural guidelines for the **step1_material_ingestion** pipeline. It is intended to ensure that all components remain well-encapsulated, maintain a clear separation of concerns, and interact through well-defined interfaces, thereby enhancing maintainability, scalability, and ease of debugging.
+
+## 2. Separation of Concerns
+
+- **Single Responsibility Principle:**  
+  Each agent must focus on a single, clearly defined task (e.g., document loading, transcript segmentation, image analysis, etc.).
+- **Isolation:**  
+  Agents should operate independently and only communicate through standardized interfaces to avoid interdependencies.
+- **Decoupling:**  
+  Business logic, error handling, and logging should be managed within each agent without spilling over into other modules.
+
+## 3. Directory Structure & Interface Definitions
+
+- **Logical Organization:**  
+  - Use a clear directory structure (e.g., `step1_material_ingestion/agents/`, `step1_material_ingestion/utils/`) to group related functionalities.
+  - Maintain a dedicated README for architectural overviews and module responsibilities.
+- **Interface Contracts:**  
+  - Define input and output interfaces for each agent using standardized JSON schemas.
+  - Document the APIs and expected data formats (headers, payloads, metadata) to ensure consistent communication across modules.
+
+## 4. Agent Encapsulation
+
+- **Module Isolation:**  
+  Each agent must reside in its own Python module, encapsulating its logic, dependencies, and error handling.
+- **Well-Defined Boundaries:**  
+  Agents should not access the internal state of other agents directly. They must interact only via their exposed interfaces.
+- **Reusability:**  
+  Encapsulated agents promote reusability across projects and simplify testing and maintenance.
+
+## 5. Dependency Management
+
+- **Version Locking:**  
+  Use tools like `requirements.txt` or `Pipfile` to maintain consistent dependency versions.
+- **Documentation:**  
+  Clearly document external libraries and tools required by each module.
+- **Isolation:**  
+  Where possible, use virtual environments or containerization to manage dependencies and prevent conflicts.
+
+## 6. Integration with Custom Tools & Structured I/O
+
+- **Custom Tool Integration:**  
+  - Standardize the invocation of external tools (OCR, image processing, schema validators) with clear function signatures and parameter formats.
+  - Implement robust error handling and fallback mechanisms to ensure continuity of operations.
+- **Structured I/O:**  
+  - Enforce a uniform JSON schema for all inputs and outputs to guarantee compatibility between agents.
+  - Validate all exchanged data against predefined schemas before processing to catch errors early.
+
+## 7. Documentation & Logging
+
+- **Inline Documentation:**  
+  Every module must include comprehensive inline comments, especially around complex logic and chain-of-thought processes.
+- **External Documentation:**  
+  Maintain external documentation (e.g., README files, API docs) to describe module responsibilities, interfaces, and integration points.
+- **Logging Practices:**  
+  - Implement consistent logging across agents to capture key events, errors, and chain-of-thought reasoning.
+  - Logs should be structured, timestamped, and easily traceable back to specific modules and processes.
+
+## 8. Versioning & Continuous Integration
+
+- **Version Control:**  
+  Use Git with clear commit messages, branch naming conventions, and tagged releases to manage changes.
+- **Automated Testing:**  
+  Integrate unit, integration, and end-to-end tests (using frameworks like pytest) to ensure code quality and catch regressions.
+- **CI/CD Pipelines:**  
+  Set up automated pipelines to enforce testing standards and code reviews before integration.
+
+## 9. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Encapsulate Functionality:**  
+  Ensure that each agent is responsible for a single, well-defined task.
+- **Define Clear Interfaces:**  
+  Use standardized communication protocols and JSON schemas for all inter-agent interactions.
+- **Maintain Modularity:**  
+  Keep modules decoupled to facilitate independent development, testing, and scalability.
+- **Document Thoroughly:**  
+  Provide detailed inline and external documentation for every module, including dependencies and interfaces.
+- **Enforce Version Control:**  
+  Use Git and CI/CD pipelines to manage changes and ensure robust integration.
+
+### Don’t:
+- **Mix Responsibilities:**  
+  Avoid having a single module perform tasks beyond its defined role.
+- **Create Tight Coupling:**  
+  Prevent direct dependencies between agents; instead, use well-defined interfaces for communication.
+- **Neglect Documentation:**  
+  Do not leave modules without sufficient inline or external documentation.
+- **Overlook Error Handling:**  
+  Always incorporate robust error handling and logging to facilitate debugging.
+- **Skip Testing:**  
+  Ensure that every module is covered by comprehensive tests to verify functionality and prevent regressions.
+

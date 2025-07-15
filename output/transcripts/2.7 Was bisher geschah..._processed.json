@@ -1,0 +1,211 @@
+{
+  "transcript_info": {
+    "title": "Was bisher geschah....",
+    "duration": "01:35",
+    "word_count": "250",
+    "speaker_count": "2"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Zusammenfassung der ersten Woche",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ]
+  },
+  "segments": [
+    {
+      "id": "1",
+      "start_time": "00:00:00.830",
+      "end_time": "00:00:03.089",
+      "duration": 2.259,
+      "text": "Herzlichen Glückwunsch, ihr habt es geschafft!",
+      "section": "Einführung",
+      "subsection": null,
+      "keywords": [
+        "Herzlichen Glückwunsch"
+      ],
+      "concepts": [],
+      "relationships": [],
+      "speaker": "Marcel",
+      "start_seconds": 0.83,
+      "end_seconds": 3.089
+    },
+    {
+      "id": "2",
+      "start_time": "00:00:03.089",
+      "end_time": "00:00:09.960",
+      "duration": 6.871,
+      "text": "In den vergangenen Wochen haben wir richtig viel über Quantencomputer gelernt. Was haben wir alles so aus der Quantenphysik kennengelernt?",
+      "section": "Rückblick auf das Gelernte",
+      "subsection": null,
+      "keywords": [
+        "Quantencomputer",
+        "Quantenphysik"
+      ],
+      "concepts": [],
+      "relationships": [],
+      "speaker": "Marcel",
+      "start_seconds": 3.089,
+      "end_seconds": 9.96
+    },
+    {
+      "id": "3",
+      "start_time": "00:00:11.619",
+      "end_time": "00:00:14.359",
+      "duration": 2.74,
+      "text": "In der Theorie haben die mehrere Phänomenen angeschaut aus der Quantenphysik, unter anderem ist die Super Position. Und wir haben das mit Hilfe eines Münzwurfs gezeigt.",
+      "section": "Superposition",
+      "subsection": null,
+      "keywords": [
+        "Superposition",
+        "Münzwurf"
+      ],
+      "concepts": [
+        "Superposition"
+      ],
+      "relationships": [
+        "Superposition ist ein Konzept, das mit dem Zustand eines Qubits verbunden ist."
+      ],
+      "speaker": "Marcel",
+      "start_seconds": 11.619,
+      "end_seconds": 14.359
+    },
+    {
+      "id": "4",
+      "start_time": "00:00:20.530",
+      "end_time": "00:00:27.239",
+      "duration": 6.709,
+      "text": "Die Super Position ist, wenn ein Qubit nicht nur im Zustand null und dem Zustand eins sein kann, sondern stattdessen auch irgendwo dazwischen sein kann, ähnlich wie eine Münze in der Luft ist, wenn noch nicht klar ist, wo sie landet.",
+      "section": "Superposition",
+      "subsection": null,
+      "keywords": [
+        "Qubit",
+        "Zustand",
+        "Münze"
+      ],
+      "concepts": [
+        "Qubit",
+        "Superposition"
+      ],
+      "relationships": [
+        "Ein Qubit kann sich in einem Zustand zwischen 0 und 1 befinden, was die Superposition beschreibt."
+      ],
+      "speaker": "Marcel",
+      "start_seconds": 20.53,
+      "end_seconds": 27.239
+    },
+    {
+      "id": "5",
+      "start_time": "00:00:32.850",
+      "end_time": "00:00:35.630",
+      "duration": 2.780000000000001,
+      "text": "Danach haben wir auch die Quanten Verschränkungen angeschaut, wo zwei oder mehr Qubits miteinander verschränkt sind und eine Art Verbindung eingehen, sodass eines die anderen beeinflussen können und dann haben wir auch noch angeschaut, wie Messungen sich mit dem ganzen Verhalten und was wir damit machen können.",
+      "section": "Quantenverschränkung",
+      "subsection": null,
+      "keywords": [
+        "Quantenverschränkung",
+        "Messungen"
+      ],
+      "concepts": [
+        "Quantenverschränkung"
+      ],
+      "relationships": [
+        "Quantenverschränkung beschreibt die Verbindung zwischen Qubits."
+      ],
+      "speaker": "Marcel",
+      "start_seconds": 32.85,
+      "end_seconds": 35.63
+    },
+    {
+      "id": "6",
+      "start_time": "00:00:52.969",
+      "end_time": "00:00:59.320",
+      "duration": 6.350999999999999,
+      "text": "In einem zweiten Teil haben wir gemeinsam den Quantencomputer programmiert und im Prinzip genau diese Phänomene, die du gerade angesprochen hast, reproduziert.",
+      "section": "Programmierung",
+      "subsection": null,
+      "keywords": [
+        "Quantencomputer",
+        "Programmierung"
+      ],
+      "concepts": [
+        "Programmierung von Quantencomputern"
+      ],
+      "relationships": [
+        "Die Programmierung des Quantencomputers ermöglicht die Reproduktion quantenphysikalischer Phänomene."
+      ],
+      "speaker": "Marcel",
+      "start_seconds": 52.969,
+      "end_seconds": 59.32
+    },
+    {
+      "id": "7",
+      "start_time": "59.320",
+      "end_time": "36.590",
+      "duration": "37.270",
+      "text": "Wir haben zum Beispiel das X gate kennengelernt. Oder auch das Hadamard gate, mit dem Hadamard gate, haben wir die Super Position von Qubits Zuständen reproduziert, und dann haben wir zu guter Letzt auch noch, dass CNot gate kennengelernt und damit Quanten Verschränkung erzeugen können.",
+      "section": "Quantengatter",
+      "subsection": null,
+      "keywords": [
+        "X gate",
+        "Hadamard gate",
+        "CNot gate"
+      ],
+      "concepts": [
+        "X gate",
+        "Hadamard gate",
+        "CNot gate"
+      ],
+      "relationships": [
+        "Das Hadamard gate erzeugt Superposition, während das CNot gate Quantenverschränkung erzeugt."
+      ],
+      "speaker": "Marcel"
+    },
+    {
+      "id": "8",
+      "start_time": "00:01:17.409",
+      "end_time": "00:01:23.609",
+      "duration": 6.200000000000017,
+      "text": "Und wenn euch das ganz gefallen habt und ich noch mehr wissen wollt, wie man mit dem Quanten Computer programmiert, könnte man Qiskit textbook nachschauen oder auf dem Qiskit Youtube Channel, wo ihr weitere Informationen dazu finden werdet.",
+      "section": "Ressourcen",
+      "subsection": null,
+      "keywords": [
+        "Qiskit",
+        "Youtube Channel"
+      ],
+      "concepts": [
+        "Qiskit"
+      ],
+      "relationships": [
+        "Qiskit bietet Ressourcen zur Programmierung von Quantencomputern."
+      ],
+      "speaker": "Marcel",
+      "start_seconds": 77.40899999999999,
+      "end_seconds": 83.60900000000001
+    },
+    {
+      "id": "9",
+      "start_time": "00:01:30.079",
+      "end_time": "00:01:35.450",
+      "duration": 5.370999999999995,
+      "text": "Ich glaube, wir haben richtig viel Spaß, wir hoffen, ihr hattet genauso viel Spaß und wir wünschen euch ganz viel Erfolg bei der Abschlussprüfung.",
+      "section": "Abschluss",
+      "subsection": null,
+      "keywords": [
+        "Abschlussprüfung",
+        "Erfolg"
+      ],
+      "concepts": [],
+      "relationships": [],
+      "speaker": "Marcel",
+      "start_seconds": 90.07900000000001,
+      "end_seconds": 95.45
+    }
+  ],
+  "key_takeaways": [
+    "Die Teilnehmer haben grundlegende Konzepte des Quantencomputings wie Superposition und Quantenverschränkung kennengelernt.",
+    "Die Programmierung von Quantencomputern wurde durch die Verwendung von Quantengattern wie X, Hadamard und CNot vermittelt.",
+    "Ressourcen wie das Qiskit textbook und der Qiskit Youtube Channel wurden empfohlen, um weiteres Wissen zu erlangen."
+  ]
+}

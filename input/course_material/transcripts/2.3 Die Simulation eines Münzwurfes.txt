@@ -1,0 +1,186 @@
+WEBVTT
+
+1
+00:00:00.280 --> 00:00:08.640 
+hi
+In diesem Video werden wir mit Hilfe des IBM Quantum Composers ein Münzwurf auf einem Quantencomputer simulieren.
+
+2
+00:00:09.789 --> 00:00:17.070 
+Im vorherigen Video haben wir bereits das Hadamard gate besprochen und wir haben gesehen, dass ein Qubit, das zuvor im Basis
+
+3
+00:00:17.070 --> 00:00:17.929 
+Zustand null war.
+
+4
+00:00:17.940 --> 00:00:25.469 
+Mit Hilfe des Hadamard gates in eine gleichmäßige super position versetzt werden kann und das ist einfach nur ein überlagerungs
+
+5
+00:00:25.469 --> 00:00:26.100 
+Zustand der zwei.
+
+6
+00:00:26.100 --> 00:00:29.620 
+Basis zustände 0 1 mit gleich großer Amplitude beziehungsweise.
+
+7
+00:00:29.620 --> 00:00:36.960 
+Mit gleich großer Mess Wahrscheinlichkeit für die Messergebnisse null und eins, das heißt es ist im Prinzip genau dieselbe
+
+8
+00:00:36.960 --> 00:00:41.219 
+Situation wie eine Münze, die sich in der Luft befindet und gleichmäßig dreht.
+
+9
+00:00:42.570 --> 00:00:49.390 
+Was wir jetzt noch machen müssen, ist diese Münze tatsächlich aufzufangen und zu gucken und zu messen, in welchem Zustand
+
+10
+00:00:49.390 --> 00:00:53.539 
+die Münze nach dem auffangen ist dazu kopf oder zahl beziehungsweise.
+
+11
+00:00:53.539 --> 00:01:01.409 
+Null oder eins um das können wir im IBM Quantum Composer machen, indem wir diesen Block hier auf das Qubit ziehen.
+
+12
+00:01:02.009 --> 00:01:09.920 
+Was hier passiert, ist einfach nur, dass wir das Qubit messen und das messergebnis also null oder eins dann hier unten
+
+13
+00:01:09.920 --> 00:01:12.150 
+im klassischen Bit C1 gespeichert wird.
+
+14
+00:01:13.409 --> 00:01:19.530 
+Lasst uns das gemeinsam in meinem eigenen IBM Quantum Composer ausprobieren, also was wir hier sehen ist erst mal ein leerer schaltkreis
+
+15
+00:01:19.530 --> 00:01:27.680 
+Wir haben ein Qubit, das im basis zustand null ist das sehen wir hier unten am zustands vektor, wo eben nur eine amplitude
+
+16
+00:01:27.680 --> 00:01:29.870 
+beim basis zustand null zu sehen ist.
+
+17
+00:01:29.879 --> 00:01:35.829 
+Wir versetzen dieses Qubit mithilfe des hadamard gates in die gleichmäßige super position.
+
+18
+00:01:36.189 --> 00:01:44.120 
+Also die amplituden hier unten beim zustandsvektor für die basis zustände null und eins sind gleich groß
+
+19
+00:01:44.120 --> 00:01:50.510 
+und dann wie gerade besprochen messe ich das Qubit mithilfe dieses blocks.
+
+20
+00:01:51.709 --> 00:01:59.989 
+Das ganze kann ich jetzt auf dem quantencomputer ausführen, indem ich auf setup in run klicke aus dieser liste einen beliebigen
+
+21
+00:01:59.989 --> 00:02:01.640 
+quantencomputer auswähle.
+
+22
+00:02:02.159 --> 00:02:04.969 
+Und was ich jetzt hier noch anpassen kann ist die anzahl an shots.
+
+23
+00:02:05.329 --> 00:02:13.180 
+Die anzahl an shots bedeutet einfach nur wie häufig ich den münzwurf simulieren, das heißt wenn ich hier jetzt eins eingebe
+
+24
+00:02:13.800 --> 00:02:20.719 
+dann werfe ich die münze genau ein einziges mal und messe sie ein einziges mal ich kann aber auch zehn eingeben, das heißt
+
+25
+00:02:20.729 --> 00:02:29.599 
+ich werfe die Münze zehn mal in Luft und messe jeweils nach diesen Würfen oder ich kann die Anzahl noch weiter erhöhen,
+
+26
+00:02:29.599 --> 00:02:37.550 
+auf über 1000 mal zB 1024 mal und dann würde das Münzwurf Experiment einfach über tausendmal wiederholt werden.
+
+27
+00:02:39.909 --> 00:02:48.710 
+Wenn ich jetzt die anzahl an shots fixiert habe, kann ich einfach auf run klicken und dann wird das ganze
+
+28
+00:02:48.710 --> 00:02:51.240 
+dann wird das ganze auf dem quanten computer ausgeführt.
+
+29
+00:02:51.449 --> 00:02:58.430 
+Ich hab das für euch bereits vorbereitet für unterschiedliche anzahl an shots
+
+30
+00:02:58.430 --> 00:03:06.370 
+ganz links seht ihr  das ergebnis wenn ich die münze ein einziges mal in die luft werfe in diesem fall habe ich einmal den
+
+31
+00:03:06.370 --> 00:03:14.370 
+zustand null gemessen und wenn ich jetzt den münzwurf mehrfach wiederhole, dann würde ich ja davon ausgehen oder würde ich
+
+32
+00:03:14.370 --> 00:03:25.219 
+erwarten, dass in ungefähr 50 % der fällen null oder eins gemessen wird, weil die münze im sich gleichmäßig in der luft dreht
+
+33
+00:03:25.629 --> 00:03:36.960 
+und jetzt im fall von zehn shots von zehn münz würfen  würde ich erwarten, dass in fünf fällen null herauskommen und in
+
+34
+00:03:36.960 --> 00:03:38.729 
+den anderen 5 fällen eins herauskommen
+
+35
+00:03:38.740 --> 00:03:43.000 
+Wir sehen jetzt hier das ist nicht der Fall ist in meinem spezifischen Experiment.
+
+36
+00:03:43.360 --> 00:03:47.680 
+Das ist ein bisschen ungleich, aber das kann passieren.
+
+37
+00:03:48.000 --> 00:03:54.759 
+Das bedeutet die relative Häufigkeit Verteilung entspricht hier noch nicht der tatsächlichen erwarteten Wahrscheinlichkeits
+
+38
+00:03:54.759 --> 00:03:55.539 
+Verteilung.
+
+39
+00:03:55.580 --> 00:04:02.504 
+Aber was wir sehen können, ist Je höher die Anzahl an shots ist, das heißt hier je häufiger ich das Experiment wiederhole,
+
+40
+00:04:02.685 --> 00:04:09.685 
+desto eher nähert sich auch die relative Häufigkeits Verteilung der tatsächlichen Wahrscheinlichkeits Verteilung von 50 50
+
+41
+00:04:09.685 --> 00:04:09.995 
+an.
+
+42
+00:04:10.175 --> 00:04:16.175 
+Das sehen wir ganz rechts bei dem Experiment, was tausendmal oder das über tausendmal wiederholt wurde.
+
+43
+00:04:16.375 --> 00:04:23.625 
+Da haben wir in 52 % der Fällen das Messergebnis null und in 48 % der Fällen das Messergebnis.
+
+44
+00:04:23.625 --> 00:04:24.064 
+Eins.
+
+45
+00:04:25.240 --> 00:04:27.170 
+Ja, das war es auch schon für dieses Video.
+
+46
+00:04:27.180 --> 00:04:32.050 
+Wir haben also gerade gemeinsam ein Münzwurf auf einem richtigen Quantencomputer simuliert.

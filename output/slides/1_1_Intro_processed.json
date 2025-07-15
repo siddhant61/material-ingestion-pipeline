@@ -1,0 +1,317 @@
+{
+  "slide_deck_info": {
+    "title": "Quantencomputing Ferienkurs – Einführung für SchülerInnen",
+    "slide_count": 5,
+    "estimated_duration": "2 Wochen",
+    "main_topic": "Einführung in Quantencomputing"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Einführung",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Fähigkeit, grundlegende Quantenprogramme zu schreiben"
+    ],
+    "transcript_alignment": "Not available"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Warum sind Quantencomputer interessant?",
+      "content": "Was werden wir in diesem Kurs lernen?",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quantencomputer",
+        "Kursinhalt"
+      ],
+      "concepts": [
+        "Interesse an Quantencomputern",
+        "Kursziele"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "",
+      "content": "",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [],
+      "concepts": [],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "",
+      "content": "",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [],
+      "concepts": [],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "Herausforderungen und Anwendungen",
+      "content": "Welchen Herausforderungen müssen wir uns stellen? Wo können Quantencomputer eingesetzt werden? Wie kann die Quantenphysik genutzt werden, um einen Computer zu bauen? Warum sind einige Probleme so schwierig für heutige Computer?",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Herausforderungen",
+        "Anwendungen",
+        "Quantenphysik"
+      ],
+      "concepts": [
+        "Herausforderungen im Quantencomputing",
+        "Anwendungen von Quantencomputern"
+      ],
+      "relationships": [
+        "Quantenphysik und Computerbau",
+        "Schwierigkeit klassischer Probleme"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "Programmierung von Quantencomputern",
+      "content": "Wie kann ich einen Quantencomputer ohne Programmierkenntnisse programmieren? Wie kann ich einen Quantencomputer mit Hilfe der Programmiersprache Python programmieren?",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Programmierung",
+        "Python",
+        "Quantencomputer"
+      ],
+      "concepts": [
+        "Programmierung ohne Vorkenntnisse",
+        "Programmierung mit Python"
+      ],
+      "relationships": [
+        "Quantencomputing und Programmierkenntnisse"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Interesse an Quantencomputern",
+    "Herausforderungen im Quantencomputing",
+    "Anwendungen von Quantencomputern",
+    "Programmierung von Quantencomputern"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:24:47+02:00",
+    "page_count": 5,
+    "has_images": true,
+    "filename": "1_1_Intro.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "1\n",
+          "Warum sind Quantencomputer \ninteressant?\n",
+          "Was werden wir in diesem Kurs \nlernen?\n",
+          "---\nIsabel Nha Minh Le\nMarcel Pfaffhauser\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 20,
+        "has_image": true,
+        "image_texts": [
+          "2\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 16,
+        "has_image": true,
+        "image_texts": [
+          "3\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 6,
+        "has_image": true,
+        "image_texts": [
+          "4\n",
+          "Welchen Herausforderungen \nmüssen wir uns stellen?\n",
+          "Wo können \nQuantencomputer \neingesetzt werden?\n",
+          "Wie kann die Quantenphysik\ngenutzt werden, um einen\nComputer zu bauen?\n",
+          "Warum sind einige \nProbleme so schwierig \nfür heutige Computer? \n",
+          "klassisch\n",
+          "quantum\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 9,
+        "has_image": true,
+        "image_texts": [
+          "5\n",
+          "Welchen Herausforderungen \nmüssen wir uns stellen?\n",
+          "Wo können \nQuantencomputer \neingesetzt werden?\n",
+          "Wie kann ich einen Quantencomputer ohne\nProgrammierkenntnisse programmieren?\n",
+          "Wie kann die Quantenphysik\ngenutzt werden, um einen\nComputer zu bauen?\n",
+          "Warum sind einige \nProbleme so schwierig \nfür heutige Computer? \n",
+          "Wie kann ich einen Quantencomputer mit Hilfe der \nProgrammiersprache Python programmieren?\n",
+          "klassisch\n",
+          "quantum\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Interesse an Quantencomputern",
+      "target_concept": "Herausforderungen im Quantencomputing",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Interesse an Quantencomputern",
+      "target_concept": "Anwendungen von Quantencomputern",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Interesse an Quantencomputern",
+      "target_concept": "Programmierung ohne Vorkenntnisse",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Interesse an Quantencomputern",
+      "target_concept": "Programmierung mit Python",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Kursziele",
+      "target_concept": "Herausforderungen im Quantencomputing",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Kursziele",
+      "target_concept": "Anwendungen von Quantencomputern",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Kursziele",
+      "target_concept": "Programmierung ohne Vorkenntnisse",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Kursziele",
+      "target_concept": "Programmierung mit Python",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Herausforderungen im Quantencomputing",
+      "target_concept": "Programmierung ohne Vorkenntnisse",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Herausforderungen im Quantencomputing",
+      "target_concept": "Programmierung mit Python",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Anwendungen von Quantencomputern",
+      "target_concept": "Programmierung ohne Vorkenntnisse",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Anwendungen von Quantencomputern",
+      "target_concept": "Programmierung mit Python",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    }
+  ]
+}

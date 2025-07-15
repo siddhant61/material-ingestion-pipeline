@@ -1,0 +1,117 @@
+{
+  "title": "Quantencomputing Ferienkurs – Einführung für SchülerInnen",
+  "description": "In diesem Kurs lernen wir zunächst einige theoretische Grundlagen des Quantencomputings kennen und gehen dann gemeinsam die ersten Schritte im Programmieren eines Quantencomputers. Der Kurs ist so gestaltet, dass die Teilnehmer die Videos jederzeit wieder anschauen können und die Selbsttests so oft wiederholen können, wie sie möchten.",
+  "objectives": [
+    "Warum sind Quantencomputer interessant?",
+    "Was ist ein Qubit?",
+    "Superpositionszustände - ein Konzept aus der Quantenphysik",
+    "Quantenverschränkung - ein weiteres Konzept aus der Quantenphysik",
+    "Einige wichtige Quantengatter: NOT, Hadamard, CNOT",
+    "Erste Schritte im Programmieren eines Quantencomputers mit dem IBM Quantum Composer",
+    "Erste Schritte im Programmieren eines Quantencomputers mit Qiskit"
+  ],
+  "learning_outcomes": [
+    "Verständnis der theoretischen Grundlagen des Quantencomputings",
+    "Fähigkeit, einfache Programme für Quantencomputer zu schreiben"
+  ],
+  "subject_domain": "Quantencomputing",
+  "sub_domains": [
+    "Physik",
+    "Informatik"
+  ],
+  "level": "Schüler:innen ab der 9. Klasse",
+  "prerequisites": [
+    "Vorkenntnisse in der Programmierung sind hilfreich, aber nicht notwendig"
+  ],
+  "credits": "Not specified in document",
+  "duration": "Zwei Wochen",
+  "structure": [
+    {
+      "title": "Woche 1",
+      "description": "Wir starten mit ein paar spannenden Fakten zu Quantencomputern und werfen einige wichtige Fragen in die Runde. Wir befassen uns mit einem scheinbar einfachen Problem, das sich jedoch als höchst komplex entpuppt. Wir arbeiten an dem Übergang zwischen klassischer Programmierung und dem Quantencomputing.",
+      "topics": [
+        "Qubits",
+        "Superposition",
+        "Quantenverschränkung",
+        "Aktueller Stand der Technik"
+      ],
+      "sub_sections": []
+    },
+    {
+      "title": "Woche 2",
+      "description": "In dieser Woche schauen wir uns ein Tool von IBM Quantum zur Programmierung von Quantencomputern genauer an und lernen einige Grundelemente des Visuellen Scriptings vom IBM Quantum Composer kennen.",
+      "topics": [
+        "Programmierung mit IBM Quantum Composer",
+        "Python für Quantencomputer"
+      ],
+      "sub_sections": []
+    },
+    {
+      "title": "Abschlussprüfung",
+      "description": "Eine kleine Abschlussprüfung findet vom 9. bis 23. August statt.",
+      "topics": [],
+      "sub_sections": []
+    }
+  ],
+  "instructors": [
+    {
+      "name": "Isabel Nha Minh Le",
+      "title": "Forschungspraktikantin bei IBM Quantum",
+      "bio": "Isabel forscht im Bereich Quantum Algorithms und Quantum Machine Learning für Anwendungen in der Chemie und Materialwissenschaften. Zuvor hat sie Quantencomputing-Workshops an Schulen in Deutschland gegeben.",
+      "contact": "Not specified in document"
+    },
+    {
+      "name": "Marcel Pfaffhauser",
+      "title": "Not specified in document",
+      "bio": "Marcel studierte Informatik an der ETH Zürich und hat einen Master in Theorie des Rechnens. Er hat in der Quanteninformationstheorie geforscht und arbeitet an Outreach-Aktivitäten bei IBM Research.",
+      "contact": "Not specified in document"
+    },
+    {
+      "name": "Manuel Wirth",
+      "title": "Not specified in document",
+      "bio": "Manuel ist Praktikant bei IBM Quantum und hat zuvor an Sekundarschulen unterrichtet. Er hat Game Design an der Zürcher Hochschule der Künste studiert.",
+      "contact": "Not specified in document"
+    }
+  ],
+  "teaching_methods": [
+    "Kurze Lernvideos",
+    "Multiple-Choice-Tests",
+    "Visuelles Scripting"
+  ],
+  "assessment_methods": [
+    "Multiple-Choice-Tests",
+    "Abschlussprüfung"
+  ],
+  "materials": [
+    "Lernvideos",
+    "IBM Quantum Composer",
+    "Qiskit"
+  ],
+  "references": [
+    "Not specified in document"
+  ],
+  "keywords": [
+    "Quantencomputing",
+    "Qubits",
+    "Superposition",
+    "Quantenverschränkung",
+    "IBM Quantum Composer",
+    "Qiskit"
+  ],
+  "language": "Deutsch",
+  "certification": "Teilnahmebestätigung bei Abschluss von mindestens 50% des Kurses, Zertifikat bei Erreichen von mindestens 50% der maximalen Punkte aus allen bewerteten Aufgaben.",
+  "target_audience": "Schüler:innen ab der 9. Klasse, auch für jüngere Interessierte geeignet.",
+  "institutional_context": {
+    "institution": "openHPI",
+    "department": "Not specified in document",
+    "program": "Not specified in document"
+  },
+  "metadata": {
+    "extraction_timestamp": "2025-03-06T02:20:54.181479",
+    "model_used": "gpt-4o-mini",
+    "document_source": "Unknown",
+    "document_type": "Unknown",
+    "extraction_confidence": 0.9,
+    "completeness_score": 0.9500000000000001
+  }
+}

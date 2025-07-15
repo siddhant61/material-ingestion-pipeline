@@ -1,0 +1,440 @@
+{
+  "slide_deck_info": {
+    "title": "CNOT-Gate",
+    "slide_count": 7,
+    "estimated_duration": "15 minutes",
+    "main_topic": "CNOT-Gate in Quantum Computing"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "lecture on Quantum Gates",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "not provided"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Das CNOT -Gate",
+      "content": "Marcel Pfaffhauser\nIBM Quantum Community",
+      "section": "Introduction to CNOT Gate",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "CNOT-Gate",
+        "Quantum Computing"
+      ],
+      "concepts": [
+        "CNOT-Gate",
+        "Quantum Gates"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "CNOT -gate",
+      "content": "Zwei Qubits! CNOT = controlled NOT (kontrolliertes NOT)\nKontrolle: abhängig vom Kontroll -Zustand\nNOT ( )",
+      "section": "Definition of CNOT Gate",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "CNOT",
+        "controlled NOT",
+        "Qubits"
+      ],
+      "concepts": [
+        "CNOT-Gate",
+        "Control Qubit"
+      ],
+      "relationships": [
+        "CNOT is dependent on the control state"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "CNOT -gate",
+      "content": "|0⟩ |0⟩ |0⟩ |0⟩",
+      "section": "CNOT Gate Example",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "CNOT",
+        "Qubit States"
+      ],
+      "concepts": [
+        "Qubit States",
+        "CNOT-Gate Operation"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "CNOT -gate",
+      "content": "|1⟩ |0⟩ |1⟩ |1⟩",
+      "section": "CNOT Gate Example",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "CNOT",
+        "Qubit States"
+      ],
+      "concepts": [
+        "Qubit States",
+        "CNOT-Gate Operation"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "CNOT -gate",
+      "content": "|0⟩ |1⟩ |ۧ? |ۧ?",
+      "section": "CNOT Gate Example",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "CNOT",
+        "Qubit States"
+      ],
+      "concepts": [
+        "Qubit States",
+        "CNOT-Gate Operation"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 6,
+      "slide_type": "content",
+      "title": "CNOT -gate",
+      "content": "|1⟩ |1⟩ |ۧ? |ۧ?",
+      "section": "CNOT Gate Example",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "CNOT",
+        "Qubit States"
+      ],
+      "concepts": [
+        "Qubit States",
+        "CNOT-Gate Operation"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 7,
+      "slide_type": "content",
+      "title": "CNOT -gate",
+      "content": "⚫Wirkt auf zwei Qubits\n⚫Erstes Qubit ist das „Kontroll -Qubit “: Zustand des zweiten Qubits wird flipped, falls Kontroll -Qubit in |1⟩",
+      "section": "CNOT Gate Functionality",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "CNOT",
+        "Control Qubit",
+        "Qubit States"
+      ],
+      "concepts": [
+        "CNOT-Gate Functionality",
+        "Control Qubit"
+      ],
+      "relationships": [
+        "The first qubit controls the state of the second qubit"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "CNOT-Gate",
+    "Control Qubit",
+    "Qubit States",
+    "Quantum Gates"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T11:27:17+02:00",
+    "page_count": 7,
+    "has_images": true,
+    "filename": "2_4_CNot-Gate.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "75\n",
+          "Das CNOT-Gate\n",
+          "---\nMarcel Pfaffhauser\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "76\n",
+          "CNOT-gate\n",
+          "Zwei Qubits!\n",
+          "CNOT = controlled NOT (kontrolliertes NOT)\n",
+          "Kontrolle: abhängig vom Kontroll-Zustand\n",
+          "NOT (        )\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "77\n",
+          "CNOT-gate\n",
+          "| ۧ\n0\n| ۧ\n0\n",
+          "| ۧ\n0\n| ۧ\n0\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "78\n",
+          "CNOT-gate\n",
+          "| ۧ\n1\n| ۧ\n0\n",
+          "| ۧ\n1\n| ۧ\n1\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "79\n",
+          "CNOT-gate\n",
+          "| ۧ\n0\n| ۧ\n1\n",
+          "| ۧ\n?\n| ۧ\n?\n"
+        ]
+      },
+      {
+        "slide_number": 6,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "80\n",
+          "CNOT-gate\n",
+          "| ۧ\n1\n| ۧ\n1\n",
+          "| ۧ\n?\n| ۧ\n?\n"
+        ]
+      },
+      {
+        "slide_number": 7,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "81\n",
+          "CNOT-gate\n",
+          "Wirkt auf zwei Qubits\n",
+          "Erstes Qubit ist das „Kontroll-Qubit“: Zustand des zweiten Qubits wird \n",
+          "geflippt, falls Kontroll-Qubit in | ۧ\n1\n",
+          "| ۧ\n0\n| ۧ\n0\n",
+          "| ۧ\n0\n| ۧ\n0\n",
+          "| ۧ\n0\n| ۧ\n1\n",
+          "| ۧ\n?\n| ۧ\n?\n",
+          "| ۧ\n1\n| ۧ\n0\n",
+          "| ۧ\n1\n| ۧ\n1\n",
+          "| ۧ\n1\n| ۧ\n1\n",
+          "| ۧ\n?\n| ۧ\n?\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "CNOT-Gate",
+      "target_concept": "Control Qubit",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        2,
+        7
+      ]
+    },
+    {
+      "source_concept": "CNOT-Gate",
+      "target_concept": "Qubit States",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "CNOT-Gate",
+      "target_concept": "CNOT-Gate Operation",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "CNOT-Gate",
+      "target_concept": "CNOT-Gate Functionality",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "Quantum Gates",
+      "target_concept": "Control Qubit",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2,
+        7
+      ]
+    },
+    {
+      "source_concept": "Quantum Gates",
+      "target_concept": "Qubit States",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Quantum Gates",
+      "target_concept": "CNOT-Gate Operation",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Quantum Gates",
+      "target_concept": "CNOT-Gate Functionality",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "Control Qubit",
+      "target_concept": "Qubit States",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        7
+      ],
+      "target_slides": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Control Qubit",
+      "target_concept": "CNOT-Gate Operation",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        7
+      ],
+      "target_slides": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "source_concept": "Control Qubit",
+      "target_concept": "CNOT-Gate Functionality",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        7
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "Qubit States",
+      "target_concept": "CNOT-Gate Functionality",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "CNOT-Gate Operation",
+      "target_concept": "CNOT-Gate Functionality",
+      "relationship_type": "progression",
+      "source_slides": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_slides": [
+        7
+      ]
+    }
+  ]
+}

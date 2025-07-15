@@ -1,0 +1,210 @@
+WEBVTT
+
+1
+00:00:00.160 --> 00:00:00.820 
+hi.
+
+2
+00:00:00.860 --> 00:00:06.690 
+In den vorherigen Videos haben wir bereits das hadamard gate kennengelernt, das auf ein Qubit wirkt und das cnot gate
+
+3
+00:00:06.690 --> 00:00:14.759 
+das auf zwei Qubits wirkt und in diesem Video werden wir diese zwei gates nutzen, um ein 1. Beispiel uns anzuschauen
+
+4
+00:00:14.759 --> 00:00:21.179 
+das nennen wir Quantum Hello World
+Die Schaltung sieht folgendermaßen aus
+Wir haben einen Schaltkreis mit zwei
+
+5
+00:00:21.179 --> 00:00:21.379 
+Qubits
+
+6
+00:00:21.379 --> 00:00:27.820 
+auf das Nullte Qubit wirkt das Hadamard gate das bedeutet das nullte Qubit wird zunächst einmal in eine gleichmäßige
+
+7
+00:00:27.820 --> 00:00:30.980 
+Super Position versetzt und dann lassen wir das cnot gate auf
+
+8
+00:00:30.980 --> 00:00:33.829 
+Beide Qubits wirken
+
+9
+00:00:33.829 --> 00:00:40.210 
+nach Nachdem das Hadamard gate und das cnot gate auf beide Qubits gewirkt haben, befinden sich die zwei.
+
+10
+00:00:40.210 --> 00:00:46.539 
+Qubits in einem Zustand, der durch den folgenden Zustands Vektor, der hier unten eingeblendet wird, repräsentiert wird
+
+11
+00:00:46.880 --> 00:00:59.649 
+Was wir hier sehen, ist unten die Basis Zustände für 2 Qubits also 00 01 10 und 11
+Was wir hier sehen, ist, das wir 1 2-Qubit Zustand haben
+
+12
+00:00:59.659 --> 00:01:10.819 
+Wobei nur die Basis Zustände 00 und 11 vertreten sind, also die Amplituden für die Basis Zustände 00 und 11 sind gleich groß
+
+13
+00:01:10.829 --> 00:01:14.870 
+und die Amplituden für die anderen Basis Zustände sind nicht vorhanden.
+
+14
+00:01:15.650 --> 00:01:21.980 
+Wenn wir uns das genauer anschauen, dann solltet ihr euch daran erinnern, dass wir diesen Zustand bereits gesehen hatten
+
+15
+00:01:21.980 --> 00:01:25.129 
+Im Theorie teil und das ist genau dieser Zustand.
+
+16
+00:01:25.129 --> 00:01:31.239 
+00 + 11 Wobei die Amplituden eben eins durch Wurzel zwei sind, also gleich groß sind.
+
+17
+00:01:31.650 --> 00:01:37.310 
+Und das ist genau der Zustand, den wir besprochen hatten, als wir über das Quanten Phänomen Quanten Verschränkung gesprochen
+
+18
+00:01:37.310 --> 00:01:37.769 
+hatten.
+
+19
+00:01:39.269 --> 00:01:41.870 
+Das Ganze können wir jetzt auch auf einem Quantencomputer
+
+20
+00:01:42.319 --> 00:01:48.859 
+Mit Hilfe des IBM Quantum Composers durchführen das können wir mal kurz machen,
+
+21
+00:01:48.859 --> 00:01:51.920 
+also wir haben hier eine leere Quanten Schaltung mit zwei Qubits.
+
+22
+00:01:52.049 --> 00:02:00.099 
+Ich lasse auf das nullte Qubit, das Hadamard gate wirken und lasse dann das cnot gate auf beide Qubits wirken
+
+23
+00:02:00.099 --> 00:02:06.629 
+dann sehen wir unten beim Zustandsvektor, das wir eben diesen quanten verschränkten Zustand erzeugt haben.
+
+24
+00:02:06.640 --> 00:02:12.680 
+Aber um das Experiment jetzt tatsächlich durchzuführen, müssen wir beide Qubits auch noch messen, also wieder mit diesen
+
+25
+00:02:12.689 --> 00:02:15.819 
+Mess Block, den wir schon aus dem Münzwurf Experiment kennen.
+
+26
+00:02:18.389 --> 00:02:21.289 
+Um das Ganze durchzuführen, gehen wir einfach wieder auf set up and run.
+
+27
+00:02:22.280 --> 00:02:26.400 
+Eine Münze Experiment Haben wir einen tatsächlichen Quantencomputer benutzt
+
+28
+00:02:26.409 --> 00:02:31.659 
+Aber in dieser Liste existieren auch Simulatoren,
+
+29
+00:02:31.659 --> 00:02:38.419 
+und wir können dieses Experiment jetzt sowohl mit dem Quantencomputer als auch mit dem Simulator durchführen.
+
+30
+00:02:38.430 --> 00:02:44.610 
+Das habe ich für euch schon mal gemacht
+
+31
+00:02:44.610 --> 00:02:47.199 
+und hab euch die Ergebnisse hier eingeblendet.
+
+32
+00:02:47.229 --> 00:02:55.659 
+Also links sehen wir das Ergebnis, wenn wir einen Simulator verwenden
+Wir sehen, dass wie erwartet nur zwei Messergebnisse
+
+33
+00:02:56.009 --> 00:03:03.650 
+herauskommen können, nämlich entweder 00 oder 11
+
+34
+00:03:03.650 --> 00:03:09.250 
+Und auf der rechten Seite sehen wir das Ergebnis, wenn wir einen tatsächlichen Quantencomputer benutzen.
+
+35
+00:03:10.189 --> 00:03:18.009 
+Aber da sehen wir etwas, was wir eigentlich nicht erwarten würden wir sehen nämlich auch wenige Messergebnisse für 01 und
+
+36
+00:03:18.009 --> 00:03:20.530 
+10 als für diese Basis
+
+37
+00:03:20.530 --> 00:03:22.650 
+Zustände, das würden wir eigentlich, oder
+
+38
+00:03:22.650 --> 00:03:29.110 
+Das hätten wir eigentlich nicht erwarten, wenn wir uns im theoretischen Zustand der Zwei Qubits angeschaut hatten, dass
+
+39
+00:03:29.110 --> 00:03:31.479 
+wir diese Ergebnisse dennoch erhalten
+
+40
+00:03:31.479 --> 00:03:40.000 
+In seltenen Fällen liegt daran, dass ein tatsächlicher Quantencomputer fehleranfällig ist, das heißt, es werden manchmal
+
+41
+00:03:40.000 --> 00:03:49.319 
+falsche Messergebnisse herauskommen, das heißt, wir müssen ein Ergebnis möglichst häufig durchführen, um eben zu vermeiden
+
+42
+00:03:49.319 --> 00:03:51.169 
+dass wir zu häufig Fehler haben.
+
+43
+00:03:52.520 --> 00:03:58.490 
+Die meisten Messergebnisse werden wir immer noch für die zwei Basis Zustände erhalten, die korrekt sind.
+
+44
+00:03:58.539 --> 00:04:05.770 
+00 und 11
+Und was ich hier eigentlich einfach nur zeigen möchte, ist, dass man das Ganze simulieren kann.
+
+45
+00:04:05.780 --> 00:04:11.530 
+wobei wir eben die Fehlerrate oder die Fehleranfälligkeit der Hardware nicht mit berücksichtigen.
+
+46
+00:04:12.009 --> 00:04:18.889 
+Aber wenn wir das Ganze tatsächlich auf einem Quantencomputer durchführen, dann werden wir eben auch unerwartete Messergebnisse
+
+47
+00:04:18.889 --> 00:04:23.139 
+erhalten aufgrund der Fehleranfälligkeit der Hardware.
+
+48
+00:04:24.720 --> 00:04:31.470 
+Wir haben jetzt Quantum Hello World auf dem oder Mithilfe des IBM Quantum Composers durchgeführt.
+
+49
+00:04:31.579 --> 00:04:38.149 
+Im nächsten Video werden wir das Ganze mit Hilfe von Python machen, also eine Programmiersprache.
+
+50
+00:04:38.480 --> 00:04:43.050 
+Das ist allerdings nur für diejenigen, die sich dafür interessieren beziehungsweise
+
+51
+00:04:43.050 --> 00:04:49.790 
+Schon Programmierkenntnisse haben das ist sozusagen ein freiwilliger, zusätzlicher Teil dieses Kurses.

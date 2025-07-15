@@ -1,0 +1,43 @@
+{
+  "run_id": "20250306_042550",
+  "timestamp": "2025-03-06T04:25:50.516297",
+  "status": "completed",
+  "steps": {
+    "course_context": {
+      "status": "completed",
+      "output": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\course_context"
+    },
+    "transcript_processing": {
+      "status": "completed",
+      "output": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\transcript_processing"
+    },
+    "slide_processing": {
+      "status": "completed",
+      "output": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\slide_processing"
+    },
+    "context_fusion": {
+      "status": "completed",
+      "output": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\fused_context"
+    },
+    "supervision": {
+      "status": "completed",
+      "output": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\supervision"
+    },
+    "knowledge_graph": {
+      "status": "completed",
+      "output": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\knowledge_graph"
+    },
+    "visualizations": {
+      "status": "completed",
+      "output": {
+        "interactive": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\visualizations\\knowledge_graph_interactive.html",
+        "static": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\visualizations\\knowledge_graph_static.png"
+      }
+    },
+    "embeddings": {
+      "status": "completed",
+      "output": "C:\\Users\\Siddhant.Gadamsetti\\Desktop\\Projects\\AI-AF\\material_ingestion\\output\\embeddings"
+    }
+  },
+  "completion_timestamp": "2025-03-06T04:57:41.905381"
+}

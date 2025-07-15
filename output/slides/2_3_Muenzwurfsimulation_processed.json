@@ -1,0 +1,220 @@
+{
+  "slide_deck_info": {
+    "title": "Münzwurfsimulation mit Quantencomputern",
+    "slide_count": 3,
+    "estimated_duration": "15 Minuten",
+    "main_topic": "Simulation eines Münzwurfs mit Quantencomputern"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Einführung in Quantencomputing",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not provided"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Wie kann ich einen Münzwurf mit Hilfe eines Quantencomputers simulieren?",
+      "content": "Isabel Nha Minh Le\nIBM Quantum Community",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Münzwurf",
+        "Quantencomputer",
+        "Simulation"
+      ],
+      "concepts": [],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Superposition",
+      "content": "𝛼|0⟩+𝛽|1⟩=1/√2|0+1⟩\nDas Qubit ist nun in Superposition, d.h. die Münze befindet sich in der Luft.\n→Wir müssen die Münze auf den Tisch fallen lassen, d.h. wir müssen das Qubit messen.\nMünzwurf mit Qiskit.\nDas Messergebnis (0 oder 1) wird in einem klassischen Bit gespeichert!",
+      "section": "Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Qubit",
+        "Messen",
+        "Münzwurf",
+        "Qiskit"
+      ],
+      "concepts": [
+        "Qubit",
+        "Superposition",
+        "Messung"
+      ],
+      "relationships": [
+        "Qubit in Superposition führt zu Messung",
+        "Messung gibt klassisches Bit"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Messung der Superposition",
+      "content": "→Welchen Zustand erhalten wir, wenn wir die Superposition messen? Münzwurf mit Qiskit simulieren.\n10 shots 1024 shots\n20%\n80%\n52%\n48%\n1 shot\n100%",
+      "section": "Simulationsergebnisse",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Messung",
+        "Simulation",
+        "Qiskit",
+        "Ergebnisse"
+      ],
+      "concepts": [
+        "Messung",
+        "Simulation",
+        "Ergebnisse"
+      ],
+      "relationships": [
+        "Anzahl der Shots beeinflusst die Ergebnisse der Messung"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Simulation eines Münzwurfs mit Quantencomputern",
+    "Superposition und Messung von Qubits",
+    "Ergebnisse der Simulation mit Qiskit"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:35:42+02:00",
+    "page_count": 3,
+    "has_images": true,
+    "filename": "2_3_Muenzwurfsimulation.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "72\n",
+          "Wie kann ich einen Münzwurf mit \nHilfe eines Quanten-computers \nsimulieren?\n",
+          "---\nIsabel Nha Minh Le\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "73\n",
+          "Superposition\n",
+          "𝛼| ۧ\n0 + 𝛽| ۧ\n1 =\n",
+          "1\n",
+          "2\n",
+          "ۧ\n|0 +\n",
+          "1\n",
+          "2\n",
+          "| ۧ\n1\n",
+          "Das Qubit ist nun in Superposition, d.h. die Münze befindet sich in der Luft\n",
+          "Wir müssen die Münze auf den Tisch fallen lassen,\n",
+          "d.h. wir müssen das Qubit messen\n",
+          "Münzwurf mit Qiskit\n",
+          "Das Messergebnis (0 oder 1) \nwird in einem klassischen Bit \ngespeichert!\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 4,
+        "has_image": true,
+        "image_texts": [
+          "74\n",
+          "Welchen Zustand erhalten wir, wenn wir die Superposition messen?\n",
+          "Münzwurf mit Qiskit simulieren\n",
+          "10 shots\n1024 shots\n",
+          "20%\n",
+          "80%\n",
+          "52%\n",
+          "48%\n",
+          "1 shot\n",
+          "100%\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Qubit",
+      "target_concept": "Simulation",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubit",
+      "target_concept": "Ergebnisse",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Simulation",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Ergebnisse",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Messung",
+      "target_concept": "Simulation",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Messung",
+      "target_concept": "Ergebnisse",
+      "relationship_type": "progression",
+      "source_slides": [
+        2,
+        3
+      ],
+      "target_slides": [
+        3
+      ]
+    }
+  ]
+}

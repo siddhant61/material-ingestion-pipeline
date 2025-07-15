@@ -1,0 +1,304 @@
+{
+  "transcript_info": {
+    "title": "Zustände mehrerer Qubits und mehrerer klassischer Bits",
+    "duration": "5:26",
+    "word_count": "1084",
+    "speaker_count": "1"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "erste Woche",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ]
+  },
+  "segments": [
+    {
+      "id": "segment_1",
+      "start_time": "00:00:01.330",
+      "end_time": "00:00:05.730",
+      "duration": 4.4,
+      "text": "Wir haben gesehen, wie eine Super Position mit einem Qubit aussieht jetzt möchten wir Quanten Zustände anschauen mit mehreren Qubits und sie vergleichen mit Zuständen mit mehreren Bits d.h. zum Beispiel ein 10-Bit String mit 10 Qubits Und anschauen, was die Unterschiede von diesen sind.",
+      "section": "Quanten Zustände",
+      "subsection": "Superposition und Vergleich",
+      "keywords": [
+        "Superposition",
+        "Qubits",
+        "Bits",
+        "Zustände"
+      ],
+      "concepts": [
+        "Superposition",
+        "Qubits",
+        "klassische Bits"
+      ],
+      "relationships": [
+        "Qubits können in Superposition sein, während klassische Bits nur einen Zustand annehmen können."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 1.33,
+      "end_seconds": 5.73
+    },
+    {
+      "id": "segment_2",
+      "start_time": "00:00:20.010",
+      "end_time": "00:00:27.460",
+      "duration": 7.449999999999999,
+      "text": "Ein allgemeiner Zustand von einem Qubits kann aus einem Superposition von diesem angeschaut werden Das ist im Gegensatz zu klassischen Bits, wo wir wenn es z.B. zehn Bits haben können wir so eine beliebige Zahl von eins bis 1024 darstellen aber wir können immer nur eine erstmal darstellen und diese zwei hoch zehn gleich 1024 möglichen Basis Zustände gibt es für Qubits eben auch.",
+      "section": "Zustände und Basiszustände",
+      "subsection": "Allgemeine Zustände",
+      "keywords": [
+        "Basiszustände",
+        "Zustände",
+        "Qubits",
+        "klassische Bits"
+      ],
+      "concepts": [
+        "Basiszustände",
+        "Zustände",
+        "Superposition"
+      ],
+      "relationships": [
+        "Die Anzahl der Basiszustände für Qubits ist exponentiell im Vergleich zu klassischen Bits."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 20.01,
+      "end_seconds": 27.46
+    },
+    {
+      "id": "segment_3",
+      "start_time": "00:00:48.850",
+      "end_time": "00:00:57.079",
+      "duration": 8.229,
+      "text": "Und wenn wir eine allgemeine Zustand anschauen von einem Quanten Zustand können wir den aufschreiben, indem wir zuerst der Basis Zustände definieren. Hier sind die Basis Zustände aufgeschrieben. Für zwei Qubits 00 01 10 und 11 und für die sie dann Amplituden setzen.",
+      "section": "Quanten Zustände",
+      "subsection": "Amplituden und Superposition",
+      "keywords": [
+        "Amplituden",
+        "Basiszustände",
+        "Qubits"
+      ],
+      "concepts": [
+        "Amplituden",
+        "Basiszustände",
+        "Superposition"
+      ],
+      "relationships": [
+        "Die Amplituden definieren die Wahrscheinlichkeiten der Basiszustände."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 48.85,
+      "end_seconds": 57.079
+    },
+    {
+      "id": "segment_4",
+      "start_time": "00:01:22.319",
+      "end_time": "00:01:30.170",
+      "duration": 7.850999999999999,
+      "text": "Wichtig ist hier wieder, wie zuvor dass die Quadrate dieser Amplituden aufsummiert eins ergeben müssen, weil insgesamt brauchen wir eine Wahrscheinlichkeit von eins nicht weniger nicht mehr und sonst macht das Ganze kein Sinn.",
+      "section": "Wahrscheinlichkeiten",
+      "subsection": "Normalisierung der Amplituden",
+      "keywords": [
+        "Wahrscheinlichkeit",
+        "Amplituden",
+        "Normalisierung"
+      ],
+      "concepts": [
+        "Wahrscheinlichkeit",
+        "Normalisierung"
+      ],
+      "relationships": [
+        "Die Summe der Quadrate der Amplituden muss gleich 1 sein."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 82.319,
+      "end_seconds": 90.17
+    },
+    {
+      "id": "segment_5",
+      "start_time": "00:01:35.549",
+      "end_time": "00:01:41.150",
+      "duration": 5.600999999999999,
+      "text": "Wichtig hier ist die Amplituden können alles annehmen, das heißt kann 0 sein. Das heißt, wir brauchen nicht alle Diese Basis Zustände für einen bestimmten Zustand, aber es können alle davon auftauchen.",
+      "section": "Amplituden",
+      "subsection": "Variabilität der Amplituden",
+      "keywords": [
+        "Amplituden",
+        "Basiszustände"
+      ],
+      "concepts": [
+        "Variabilität der Amplituden"
+      ],
+      "relationships": [
+        "Die Amplituden können verschiedene Werte annehmen, einschließlich 0."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 95.549,
+      "end_seconds": 101.15
+    },
+    {
+      "id": "segment_6",
+      "start_time": "00:01:49.109",
+      "end_time": "00:01:56.480",
+      "duration": 7.370999999999981,
+      "text": "Wenn man es vergleicht Wir haben n normaler Bits, haben wir zwei hoch n mögliche Basis Zustände, die wir mit n Bits speichern können, aber wir speichern immer nur eine, nicht verschiedene im Speicher ist eine bestimmte Zahl, die kann man zwar ändern, aber auf meist eine einzige.",
+      "section": "Vergleich zwischen Bits und Qubits",
+      "subsection": "Speicherfähigkeit",
+      "keywords": [
+        "Bits",
+        "Qubits",
+        "Basiszustände"
+      ],
+      "concepts": [
+        "Speicherfähigkeit von Bits und Qubits"
+      ],
+      "relationships": [
+        "Qubits können mehrere Zustände gleichzeitig speichern, während klassische Bits nur einen Zustand speichern können."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 109.10900000000001,
+      "end_seconds": 116.47999999999999
+    },
+    {
+      "id": "segment_7",
+      "start_time": "00:02:14.669",
+      "end_time": "00:02:22.819",
+      "duration": 8.149999999999977,
+      "text": "Das ist ein bisschen inkorrekt, aber für uns reicht es hier, weil es ein bisschen drauf kommt, Was für eine Anwendung wir haben ich werde noch etwas kurz zeigen, aber nur hier zum das Ganze darstellen, haben wir das bekannte Schach Problem, wo mir aufs Erste Schach Feld ein Reiskorn legen, das nächste zwei, das nächste 4 und so weiter.",
+      "section": "Anwendungen",
+      "subsection": "Schach Problem",
+      "keywords": [
+        "Schach Problem",
+        "Reiskorn"
+      ],
+      "concepts": [
+        "Exponentielles Wachstum"
+      ],
+      "relationships": [
+        "Das Schach Problem zeigt das exponentielle Wachstum von Zuständen."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 134.669,
+      "end_seconds": 142.819
+    },
+    {
+      "id": "segment_8",
+      "start_time": "00:02:44.120",
+      "end_time": "00:02:51.060",
+      "duration": 6.939999999999998,
+      "text": "Und genau diese Eigenschaft von Quanten Zuständen möchten Wir im Quanten Computing nachnutzen.",
+      "section": "Quanten Computing",
+      "subsection": "Nutzung von Quanten Zuständen",
+      "keywords": [
+        "Quanten Zustände",
+        "Quanten Computing"
+      ],
+      "concepts": [
+        "Nutzung von Quanten Zuständen"
+      ],
+      "relationships": [
+        "Quanten Zustände ermöglichen exponentielle Berechnungen."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 164.12,
+      "end_seconds": 171.06
+    },
+    {
+      "id": "segment_9",
+      "start_time": "00:02:53.310",
+      "end_time": "00:02:57.030",
+      "duration": 3.719999999999999,
+      "text": "Wieso ist es nicht einfach so, dass man alles beliebig speichern könnte? Ganz einfach Wir werden später sehen Wenn man die Qubits misst, wird man immer nur ein Bit Informationen rauskriegen.",
+      "section": "Messung",
+      "subsection": "Limitierungen der Messung",
+      "keywords": [
+        "Messung",
+        "Qubits",
+        "Information"
+      ],
+      "concepts": [
+        "Limitierungen bei der Messung von Qubits"
+      ],
+      "relationships": [
+        "Die Messung von Qubits gibt nur einen Zustand zurück."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 173.31,
+      "end_seconds": 177.03
+    },
+    {
+      "id": "segment_10",
+      "start_time": "00:03:08.879",
+      "end_time": "00:03:16.060",
+      "duration": 7.181000000000012,
+      "text": "Hier möchte ich ganz kurz am Beispiel zeigen, wie man ein Bild aus einem Quantenzustand sein könnte ich habe einen 16 Pixel Bild möchte das in vier QuBits abbilden.",
+      "section": "Anwendungen",
+      "subsection": "Bildkodierung",
+      "keywords": [
+        "Bild",
+        "Quantenzustand",
+        "Qubits"
+      ],
+      "concepts": [
+        "Kodierung von Bildern mit Qubits"
+      ],
+      "relationships": [
+        "Qubits können verwendet werden, um Bilder zu kodieren."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 188.879,
+      "end_seconds": 196.06
+    },
+    {
+      "id": "segment_11",
+      "start_time": "00:04:35.009",
+      "end_time": "00:04:41.839",
+      "duration": 6.829999999999984,
+      "text": "Man kann es noch nicht unbedingt abfragen, aber was man zum Beispiel machen könnte, ist es aus Input verwenden für eine ML zum Beispiel Bilderkennung, wie es vielleicht von online kennt, wenn ihr die Frage habt Auf welchem Bild ist ein Boot drauf?",
+      "section": "Anwendungen",
+      "subsection": "Maschinelles Lernen",
+      "keywords": [
+        "Maschinelles Lernen",
+        "Bilderkennung"
+      ],
+      "concepts": [
+        "Verwendung von Qubits in ML"
+      ],
+      "relationships": [
+        "Qubits können als Input für ML-Algorithmen verwendet werden."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 275.009,
+      "end_seconds": 281.839
+    },
+    {
+      "id": "segment_12",
+      "start_time": "00:04:18.930",
+      "end_time": "00:04:24.879",
+      "duration": 5.949000000000012,
+      "text": "Das heißt, man kann auch zuerst mal ein Bild kodieren mit den entsprechenden Verhältnissen und wenn man das gemacht hat hat man die Möglichkeit das Ganze zu normalisieren, sodass die Quadraten der Amplituden eins geben.",
+      "section": "Normalisierung",
+      "subsection": "Bildkodierung",
+      "keywords": [
+        "Normalisierung",
+        "Amplituden"
+      ],
+      "concepts": [
+        "Normalisierung von Amplituden"
+      ],
+      "relationships": [
+        "Die Normalisierung ist notwendig, um gültige Wahrscheinlichkeiten zu erhalten."
+      ],
+      "speaker": "Isabel Nha Minh Le",
+      "start_seconds": 258.93,
+      "end_seconds": 264.879
+    }
+  ],
+  "key_takeaways": [
+    "Qubits können in Superposition sein, was ihnen ermöglicht, mehrere Zustände gleichzeitig zu repräsentieren.",
+    "Die Anzahl der Basiszustände für Qubits ist exponentiell im Vergleich zu klassischen Bits.",
+    "Die Amplituden der Qubits müssen normalisiert werden, um gültige Wahrscheinlichkeiten zu gewährleisten.",
+    "Qubits können zur Kodierung von Informationen, wie Bildern, verwendet werden, was neue Möglichkeiten in der Datenverarbeitung eröffnet."
+  ]
+}

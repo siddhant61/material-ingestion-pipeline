@@ -1,0 +1,753 @@
+{
+  "slide_deck_info": {
+    "title": "Nutzen und Münze",
+    "slide_count": 6,
+    "estimated_duration": "10-15 Minuten",
+    "main_topic": "Quantencomputing und seine Grundlagen"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Einführung in Quantencomputing",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not available"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Wie kann die Quantenphysik genutzt werden, um einen Quantencomputer zu bauen?",
+      "content": "Isabel Nha Minh Le\nIBM Quantum Community",
+      "section": "Einführung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Quantenphysik",
+        "Quantencomputer"
+      ],
+      "concepts": [
+        "Quantenphysik",
+        "Quantencomputer"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "Wie spricht ein klassischer Computer?",
+      "content": "",
+      "section": "Klassische Computer",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "klassischer Computer"
+      ],
+      "concepts": [
+        "klassischer Computer"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Wie spricht ein klassischer Computer?",
+      "content": "https://www.gillmeister-software.de/online-tools/konvertierer/text-zu-binaer.aspx",
+      "section": "Klassische Computer",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Text zu Binär"
+      ],
+      "concepts": [
+        "Textkonvertierung",
+        "Binärsystem"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "Klassischer Computer : klassisches Bit",
+      "content": "1 Bit\n2 Bits\nnBits 2^n mögliche Basis-Zustände, aber können nur nBit Infos speichern\n1 0 oder oder oder0 0 . . . 0 1 1 0 1 1Basis-Zustände\n2 x 2 x 2 x ... ... ... x 2\nn-mal ⟹2^n",
+      "section": "Klassische Computer",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "klassisches Bit",
+        "Basis-Zustände"
+      ],
+      "concepts": [
+        "Bit",
+        "Basis-Zustände",
+        "Information"
+      ],
+      "relationships": [
+        "Ein Bit kann zwei Zustände annehmen"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "Live-Versuch: Münzwurf",
+      "content": "Was eine Münze mit der Quantenphysik zu tun hat",
+      "section": "Quantenphysik",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Münzwurf",
+        "Quantenphysik"
+      ],
+      "concepts": [
+        "Münzwurf",
+        "Quantenphysik"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 6,
+      "slide_type": "content",
+      "title": "Eindeutiger Zustand “Superposition”",
+      "content": "Superposition – Beispiel: Münzwurf\nNach Messung: Eindeutiger Zustand\nMünze auf der Hand Münze in der Luft Münze auf der Hand → →",
+      "section": "Quantenphysik",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Münzwurf"
+      ],
+      "concepts": [
+        "Superposition",
+        "Zustände"
+      ],
+      "relationships": [
+        "Superposition beschreibt mehrere Zustände vor der Messung"
+      ],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Quantenphysik",
+    "Klassische Computer",
+    "Superposition",
+    "Münzwurf als Beispiel für Quantenkonzepte"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:28:33+02:00",
+    "page_count": 6,
+    "has_images": true,
+    "filename": "1_3_Nutzen_und_Muenze.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "20\n",
+          "Wie kann die Quantenphysik \ngenutzt werden, um einen \nQuantencomputer zu \nbauen?\n",
+          "---\nIsabel Nha Minh Le\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "21\n",
+          "Wie spricht ein klassischer Computer?\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "22\n",
+          "Wie spricht ein klassischer Computer?\n",
+          "https://www.gillmeister-software.de/online-tools/konvertierer/text-zu-binaer.aspx\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 2,
+        "has_image": true,
+        "image_texts": [
+          "24\n",
+          "Live-Versuch: \nMünzwurf\n",
+          "Was eine Münze mit der \nQuantenphysik zu tun hat\n"
+        ]
+      },
+      {
+        "slide_number": 6,
+        "image_count": 3,
+        "has_image": true,
+        "image_texts": [
+          "25\n",
+          "Eindeutiger Zustand\n“Superposition”\n",
+          "Superposition – Beispiel: Münzwurf\n",
+          "Nach Messung: \nEindeutiger Zustand\n",
+          "Münze auf der Hand\nMünze in der Luft\nMünze auf der Hand\n\n\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "klassischer Computer",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Textkonvertierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Binärsystem",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Bit",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Basis-Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Information",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Quantenphysik",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "klassischer Computer",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Textkonvertierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Binärsystem",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Bit",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Basis-Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Information",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Quantencomputer",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        1
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Textkonvertierung",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Binärsystem",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Bit",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Basis-Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Information",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "klassischer Computer",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Textkonvertierung",
+      "target_concept": "Bit",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Textkonvertierung",
+      "target_concept": "Basis-Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Textkonvertierung",
+      "target_concept": "Information",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Textkonvertierung",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Textkonvertierung",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Textkonvertierung",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Binärsystem",
+      "target_concept": "Bit",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Binärsystem",
+      "target_concept": "Basis-Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Binärsystem",
+      "target_concept": "Information",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Binärsystem",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Binärsystem",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Binärsystem",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Bit",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Bit",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Bit",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Basis-Zustände",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Basis-Zustände",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Basis-Zustände",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Information",
+      "target_concept": "Münzwurf",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Information",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Information",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Münzwurf",
+      "target_concept": "Superposition",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    },
+    {
+      "source_concept": "Münzwurf",
+      "target_concept": "Zustände",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        6
+      ]
+    }
+  ]
+}

@@ -1,0 +1,624 @@
+{
+  "slide_deck_info": {
+    "title": "Beispiele für Superpositionszustände",
+    "slide_count": 10,
+    "estimated_duration": "15-20 minutes",
+    "main_topic": "Superposition in Quantencomputing"
+  },
+  "alignment": {
+    "course_module": "Woche 1",
+    "module_position": "Lecture on Superposition",
+    "learning_outcomes": [
+      "Verständnis der theoretischen Grundlagen des Quantencomputings",
+      "Kenntnis der Konzepte von Qubits und Quantenverschränkung"
+    ],
+    "transcript_alignment": "Not provided"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_type": "title",
+      "title": "Beispiele für Superpositionszustände",
+      "content": "Marcel Pfaffhauser\nIBM Quantum Community",
+      "section": "Einführung in Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Quantencomputing"
+      ],
+      "concepts": [
+        "Superposition"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 2,
+      "slide_type": "content",
+      "title": "„Superposition“",
+      "content": "𝛼|0⟩+𝛽|1⟩",
+      "section": "Definition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Superposition",
+        "Qubit"
+      ],
+      "concepts": [
+        "Superposition",
+        "Qubit state"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 3,
+      "slide_type": "content",
+      "title": "Beispiel: „Münzwurf (50:50)“",
+      "content": "„Superposition“ 𝛼|0⟩+𝛽|1⟩",
+      "section": "Praktisches Beispiel",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Münzwurf",
+        "Superposition"
+      ],
+      "concepts": [
+        "Superposition",
+        "Probability"
+      ],
+      "relationships": [
+        "Münzwurf illustrates the concept of superposition"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 4,
+      "slide_type": "content",
+      "title": "Wahrscheinlichkeit, Zustand |0⟩ zu messen:",
+      "content": "Wahrscheinlichkeit, Zustand |1⟩ zu messen: Beispiel: „Münzwurf (50:50)“",
+      "section": "Wahrscheinlichkeiten",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Wahrscheinlichkeit",
+        "Superposition"
+      ],
+      "concepts": [
+        "Measurement probabilities"
+      ],
+      "relationships": [
+        "Measurement relates to superposition states"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 5,
+      "slide_type": "content",
+      "title": "Generalisierung: allgemeiner Qubit-Zustand",
+      "content": "Wahrscheinlichkeit, Zustand |0⟩ zu messen: Wahrscheinlichkeit, Zustand |1⟩ zu messen:",
+      "section": "Allgemeine Konzepte",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Qubit",
+        "Superposition"
+      ],
+      "concepts": [
+        "General Qubit state"
+      ],
+      "relationships": [
+        "Generalization of superposition states"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 6,
+      "slide_type": "content",
+      "title": "Erinnerung",
+      "content": "„Superposition“ 𝛼|0⟩+𝛽|1⟩",
+      "section": "Wiederholung",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Erinnerung",
+        "Superposition"
+      ],
+      "concepts": [
+        "Superposition"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 7,
+      "slide_type": "content",
+      "title": "Muss es immer “50:50” sein?",
+      "content": "„Superposition“ 𝛼|0⟩+𝛽|1⟩",
+      "section": "Diskussion",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "50:50",
+        "Superposition"
+      ],
+      "concepts": [
+        "Superposition",
+        "Measurement"
+      ],
+      "relationships": [
+        "Questioning the nature of superposition"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 8,
+      "slide_type": "content",
+      "title": "Muss es immer “50:50” sein?",
+      "content": "„Superposition“ 𝛼|0⟩+𝛽|1⟩",
+      "section": "Diskussion",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "50:50",
+        "Superposition"
+      ],
+      "concepts": [
+        "Superposition"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 9,
+      "slide_type": "content",
+      "title": "Sind alle Amplituden erlaubt?",
+      "content": "„Superposition“ 𝛼|0⟩+𝛽|1⟩",
+      "section": "Fragen zur Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Amplituden",
+        "Superposition"
+      ],
+      "concepts": [
+        "Superposition",
+        "Amplitude"
+      ],
+      "relationships": [
+        "Exploring amplitude variations in superposition"
+      ],
+      "matching_transcript_segments": []
+    },
+    {
+      "slide_number": 10,
+      "slide_type": "content",
+      "title": "Muss es immer “50:50” sein?",
+      "content": "Sind alle Amplituden erlaubt? „Superposition“ 𝛼|0⟩+𝛽|1⟩",
+      "section": "Fragen zur Superposition",
+      "has_image": false,
+      "image_description": "",
+      "keywords": [
+        "Amplituden",
+        "Superposition"
+      ],
+      "concepts": [
+        "Superposition",
+        "Amplitude"
+      ],
+      "relationships": [],
+      "matching_transcript_segments": []
+    }
+  ],
+  "key_topics": [
+    "Superposition",
+    "Qubit-Zustände",
+    "Wahrscheinlichkeiten in Quantencomputing",
+    "Praktische Beispiele für Superposition"
+  ],
+  "visual_elements": [],
+  "extraction_metadata": {
+    "title": "PowerPoint Presentation",
+    "author": "Isabel Nha Minh Le",
+    "creation_date": "2023-04-26T10:30:31+02:00",
+    "page_count": 10,
+    "has_images": true,
+    "filename": "1_5_Beispiele_Superpositionszustaende.pdf",
+    "image_info": [
+      {
+        "slide_number": 1,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "31\n",
+          "Beispiele für Superpositions-\nzustände\n",
+          "---\nMarcel Pfaffhauser\nIBM Quantum Community\n"
+        ]
+      },
+      {
+        "slide_number": 2,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "32\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      },
+      {
+        "slide_number": 3,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "33\n",
+          "Beispiel: „Münzwurf (50:50)“\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      },
+      {
+        "slide_number": 4,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "34\n",
+          "Wahrscheinlichkeit, Zustand\nۧ\n|0 zu messen:\n",
+          "Wahrscheinlichkeit, Zustand\nۧ\n|1 zu messen:\n",
+          "Beispiel: „Münzwurf (50:50)“\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      },
+      {
+        "slide_number": 5,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "35\n",
+          "Wahrscheinlichkeit, Zustand\nۧ\n|0 zu messen:\n",
+          "Wahrscheinlichkeit, Zustand\nۧ\n|1 zu messen:\n",
+          "Wahrscheinlichkeit, Zustand\nۧ\n|0 zu messen:\n",
+          "Wahrscheinlichkeit, Zustand\nۧ\n|1 zu messen:\n",
+          "Beispiel: „Münzwurf (50:50)“\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n",
+          "Generalisierung: allgemeiner Qubit-Zustand\n"
+        ]
+      },
+      {
+        "slide_number": 6,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "36\n",
+          "Erinnerung\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      },
+      {
+        "slide_number": 7,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "37\n",
+          "Erinnerung\n",
+          "Muss es immer “50:50” sein?\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      },
+      {
+        "slide_number": 8,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "38\n",
+          "Erinnerung\n",
+          "Muss es immer “50:50” sein?\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      },
+      {
+        "slide_number": 9,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "39\n",
+          "Erinnerung\n",
+          "Muss es immer “50:50” sein?\n",
+          "Sind alle Amplituden erlaubt?\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      },
+      {
+        "slide_number": 10,
+        "image_count": 1,
+        "has_image": true,
+        "image_texts": [
+          "40\n",
+          "Erinnerung\n",
+          "Muss es immer “50:50” sein?\n",
+          "Sind alle Amplituden erlaubt?\n",
+          "„Superposition“\n𝛼\nۧ\nȁ0 + 𝛽\nۧ\nȁ1\n"
+        ]
+      }
+    ]
+  },
+  "cross_slide_relationships": [
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Qubit state",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "target_slides": [
+        2
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Probability",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Measurement probabilities",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "General Qubit state",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "Superposition",
+      "target_concept": "Amplitude",
+      "relationship_type": "progression",
+      "source_slides": [
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "target_slides": [
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Qubit state",
+      "target_concept": "Probability",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        3
+      ]
+    },
+    {
+      "source_concept": "Qubit state",
+      "target_concept": "Measurement probabilities",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Qubit state",
+      "target_concept": "General Qubit state",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Qubit state",
+      "target_concept": "Measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "Qubit state",
+      "target_concept": "Amplitude",
+      "relationship_type": "progression",
+      "source_slides": [
+        2
+      ],
+      "target_slides": [
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Probability",
+      "target_concept": "Measurement probabilities",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        4
+      ]
+    },
+    {
+      "source_concept": "Probability",
+      "target_concept": "General Qubit state",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Probability",
+      "target_concept": "Measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "Probability",
+      "target_concept": "Amplitude",
+      "relationship_type": "progression",
+      "source_slides": [
+        3
+      ],
+      "target_slides": [
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Measurement probabilities",
+      "target_concept": "General Qubit state",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        5
+      ]
+    },
+    {
+      "source_concept": "Measurement probabilities",
+      "target_concept": "Measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "Measurement probabilities",
+      "target_concept": "Amplitude",
+      "relationship_type": "progression",
+      "source_slides": [
+        4
+      ],
+      "target_slides": [
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "General Qubit state",
+      "target_concept": "Measurement",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        7
+      ]
+    },
+    {
+      "source_concept": "General Qubit state",
+      "target_concept": "Amplitude",
+      "relationship_type": "progression",
+      "source_slides": [
+        5
+      ],
+      "target_slides": [
+        9,
+        10
+      ]
+    },
+    {
+      "source_concept": "Measurement",
+      "target_concept": "Amplitude",
+      "relationship_type": "progression",
+      "source_slides": [
+        7
+      ],
+      "target_slides": [
+        9,
+        10
+      ]
+    }
+  ]
+}

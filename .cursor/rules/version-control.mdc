@@ -1,0 +1,79 @@
+---
+description: Version Control & Developer Collaboration Guidelines
+globs: 
+---
+# Version Control & Developer Collaboration Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document defines the version control practices and collaboration protocols for the **step1_material_ingestion** pipeline. These guidelines are designed to ensure a smooth, transparent, and efficient development process, promoting high code quality, clear communication, and effective teamwork throughout the project's lifecycle.
+
+## 2. Version Control Practices
+
+- **Repository Structure:**  
+  - Organize the project repository with a clear and logical structure (e.g., separate folders for agents, utilities, tests, and documentation).
+  - Maintain a well-documented `README.md` that outlines the project architecture, setup instructions, and contribution guidelines.
+
+- **Commit Messages:**  
+  - Write clear and descriptive commit messages that summarize the changes made.  
+  - Use a standardized format, for example:
+    - `feat:` for new features
+    - `fix:` for bug fixes
+    - `docs:` for documentation updates
+    - `refactor:` for code restructuring without changing functionality
+    - `test:` for adding or updating tests
+  - Include details about the reasoning behind changes when necessary.
+
+- **Branching Strategy:**  
+  - Use a consistent branch naming convention, such as:
+    - `feature/<short-description>` for new features
+    - `bugfix/<short-description>` for bug fixes
+    - `hotfix/<short-description>` for urgent fixes in production
+  - Keep branches focused on a single change to simplify reviews and merging.
+
+- **Pull Requests (PRs) & Code Reviews:**  
+  - Submit all changes via pull requests and ensure that each PR includes:
+    - A clear description of the changes and the rationale behind them.
+    - References to any related issues or tickets.
+  - Peer review is mandatory before merging. Reviewers should focus on adherence to coding standards, clarity, test coverage, and potential impacts on other modules.
+  - Use inline comments and suggestions during reviews to facilitate collaborative improvements.
+
+## 3. Collaborative Development Practices
+
+- **CI/CD Integration:**  
+  - Integrate automated testing, linting, and build processes using CI/CD pipelines (e.g., GitHub Actions, Jenkins).
+  - Ensure that all PRs pass the full suite of tests and quality checks before merging.
+  
+- **Documentation & Communication:**  
+  - Document major architectural changes, dependency updates, and new features in the project documentation.
+  - Use collaboration tools (e.g., Slack, GitHub Discussions, or equivalent) to discuss changes, coordinate tasks, and resolve issues.
+  - Maintain an updated changelog to record significant changes and version releases.
+
+- **Conflict Resolution:**  
+  - Address merge conflicts promptly and collaboratively.
+  - Communicate with team members to ensure that conflicting changes are resolved in a way that preserves functionality and project integrity.
+
+## 4. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Maintain Clear Commit History:**  
+  - Commit frequently with meaningful messages to create an easy-to-follow history.
+- **Use Feature Branches:**  
+  - Develop new features or fixes in isolated branches and keep the main branch stable.
+- **Enforce Code Reviews:**  
+  - Require at least one peer review for all changes before merging.
+- **Automate Quality Checks:**  
+  - Integrate automated tests and static analysis into the CI/CD pipeline.
+- **Document Changes:**  
+  - Update documentation, changelogs, and README files as necessary with every significant change.
+
+### Don’t:
+- **Make Large, Unfocused Commits:**  
+  - Avoid lumping multiple unrelated changes into a single commit.
+- **Bypass Reviews or Testing:**  
+  - Do not merge changes that have not been peer-reviewed or that fail automated tests.
+- **Ignore Conflicts:**  
+  - Do not postpone resolving merge conflicts; address them as soon as they arise.
+- **Overlook Documentation:**  
+  - Do not neglect updating documentation and communication channels when changes occur.
+

@@ -1,0 +1,116 @@
+{
+  "title": "Quantencomputing Ferienkurs – Einführung für SchülerInnen",
+  "description": "In diesem Kurs lernen wir zunächst einige theoretische Grundlagen des Quantencomputings kennen und gehen dann gemeinsam die ersten Schritte im Programmieren eines Quantencomputers. Der Kurs richtet sich an Schüler:innen ab der 9. Klasse und lässt sich gut in den Physik- oder Informatikunterricht integrieren.",
+  "objectives": [
+    "Warum sind Quantencomputer interessant?",
+    "Was ist ein Qubit?",
+    "Superpositionszustände - ein Konzept aus der Quantenphysik",
+    "Quantenverschränkung - ein weiteres Konzept aus der Quantenphysik",
+    "Einige wichtige Quantengatter: NOT, Hadamard, CNOT",
+    "Erste Schritte im Programmieren eines Quantencomputers mit dem IBM Quantum Composer",
+    "Erste Schritte im Programmieren eines Quantencomputers mit Qiskit"
+  ],
+  "learning_outcomes": [
+    "Verständnis der theoretischen Grundlagen des Quantencomputings",
+    "Fähigkeit, einfache Programme für Quantencomputer zu schreiben"
+  ],
+  "subject_domain": "Quantencomputing",
+  "sub_domains": [
+    "Physik",
+    "Informatik"
+  ],
+  "level": "Sekundarstufe",
+  "prerequisites": [
+    "Keine Vorkenntnisse in der Programmierung notwendig, aber hilfreich"
+  ],
+  "credits": "Not specified in document",
+  "duration": "Zwei Wochen",
+  "structure": [
+    {
+      "title": "Woche 1",
+      "description": "Wir starten mit ein paar spannenden Fakten zu Quantencomputern und werfen einige wichtige Fragen in die Runde. Es wird spannend: Wir befassen uns mit einem scheinbar einfachen Problem, das sich jedoch als höchst komplex entpuppt.",
+      "topics": [
+        "Übergang zwischen klassischer Programmierung und Quantencomputing",
+        "Gemeinsamkeiten und Unterschiede zwischen klassischen Bits und Qubits",
+        "Quantenverschränkung",
+        "Aktueller Stand der Technik und Anwendungsbereiche von Quantencomputern"
+      ],
+      "sub_sections": []
+    },
+    {
+      "title": "Woche 2",
+      "description": "In dieser Woche schauen wir uns ein Tool von IBM Quantum zur Programmierung von Quantencomputern genauer an und lernen einige Grundelemente des Visuellen Scriptings vom IBM Quantum Composer kennen.",
+      "topics": [
+        "Programmierung eines Quantencomputers mit IBM Quantum Composer",
+        "Klassisches Programmierbeispiel 'Hello World!' für Quantencomputer mit Python"
+      ],
+      "sub_sections": []
+    },
+    {
+      "title": "Abschlussprüfung",
+      "description": "Kleine Abschlussprüfung vom 9. bis 23. August.",
+      "topics": [],
+      "sub_sections": []
+    }
+  ],
+  "instructors": [
+    {
+      "name": "Isabel Nha Minh Le",
+      "title": "Forschungspraktikantin bei IBM Quantum",
+      "bio": "Isabel forscht im Bereich Quantum Algorithms und Quantum Machine Learning für Anwendungen in der Chemie und Materialwissenschaften. Zuvor hat sie Quantencomputing-Workshops an Schulen in Deutschland gegeben.",
+      "contact": "Not specified in document"
+    },
+    {
+      "name": "Marcel Pfaffhauser",
+      "title": "Software Engineer bei IBM Research",
+      "bio": "Marcel hat Informatik an der ETH Zürich studiert und arbeitet an Outreach-Aktivitäten im Bereich Quantencomputing.",
+      "contact": "Not specified in document"
+    },
+    {
+      "name": "Manuel Wirth",
+      "title": "Praktikant bei IBM Quantum",
+      "bio": "Manuel hat an diversen Sekundarschulen unterrichtet und Game Design an der Zürcher Hochschule der Künste studiert.",
+      "contact": "Not specified in document"
+    }
+  ],
+  "teaching_methods": [
+    "Kurze Lernvideos",
+    "Multiple-Choice-Tests",
+    "Visuelles Scripting"
+  ],
+  "assessment_methods": [
+    "Multiple-Choice-Tests",
+    "Abschlussprüfung"
+  ],
+  "materials": [
+    "Lernvideos",
+    "IBM Quantum Composer",
+    "Qiskit"
+  ],
+  "references": [
+    "Not specified in document"
+  ],
+  "keywords": [
+    "Quantencomputer",
+    "Qubit",
+    "Superposition",
+    "Quantenverschränkung",
+    "Quantengatter"
+  ],
+  "language": "Deutsch",
+  "certification": "Teilnahmebestätigung bei Abschluss von mindestens 50% des Kurses; Record of Achievement bei mindestens 50% der maximalen Punkte aus allen benoteten Aufgaben.",
+  "target_audience": "Schüler:innen ab der 9. Klasse, auch für jüngere Interessierte geeignet.",
+  "institutional_context": {
+    "institution": "openHPI",
+    "department": "Not specified in document",
+    "program": "Not specified in document"
+  },
+  "metadata": {
+    "extraction_timestamp": "2025-03-06T01:06:27.795242",
+    "model_used": "gpt-4o-mini",
+    "document_source": "Unknown",
+    "document_type": "Unknown",
+    "extraction_confidence": 0.9,
+    "completeness_score": 0.9500000000000001
+  }
+}

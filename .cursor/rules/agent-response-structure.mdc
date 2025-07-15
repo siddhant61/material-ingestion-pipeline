@@ -1,0 +1,89 @@
+---
+description: Response Structure & Formatting Guidelines
+globs: 
+---
+# Response Structure & Formatting Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document establishes the formatting standards and structured response guidelines for all AI agents involved in the **step1_material_ingestion** pipeline. It is designed to ensure that every piece of output—from planning documents to code implementations—is clear, consistent, and easily integrable.
+
+## 2. Step-by-Step Planning
+
+- **Initial Analysis:**  
+  - Every task must begin with a high-level analysis. This includes a review of input parameters, expected outputs, and key constraints.
+  - Agents should outline the intended approach, potential pitfalls, and fallback strategies before drafting any code.
+
+- **Sequential Breakdown:**  
+  - Break down the solution into a logical sequence of steps.
+  - Provide brief commentary or chain-of-thought notes for each step to explain the reasoning process.
+  
+- **Plan Before Implementation:**  
+  - Ensure that the planning phase is complete and documented before moving to code drafting. This approach promotes clarity and error reduction.
+
+## 3. Code Block Standards
+
+- **File Paths & Metadata:**  
+  - Each code block must begin with a comment indicating the file path (e.g., `# file: agents/document_loader.py`).
+  - File path annotations help maintain modularity and ease navigation.
+
+- **Language Tagging:**  
+  - All code blocks must include the correct language tag (e.g., use ` ```python ` for Python code) to enable syntax highlighting and readability.
+
+- **Inline Documentation:**  
+  - Include inline comments to explain complex logic, function purposes, and chain-of-thought steps.
+  - Comments should be concise yet descriptive, ensuring that any developer can follow the reasoning and structure of the code.
+
+- **Consistency & Readability:**  
+  - Maintain a uniform style across all modules.
+  - Use clear, hierarchical formatting such as headings, bullet points, and numbered lists where applicable.
+
+## 4. Verbosity Levels
+
+- **Code Golf Mode:**  
+  - Provides a minimal, highly optimized version of the code.
+  - Suitable for quick demonstrations where brevity is prioritized over detailed explanations.
+
+- **Concise Mode:**  
+  - Strikes a balance between brevity and clarity.
+  - Code includes essential inline comments and clear structure without excessive verbosity.
+  - This is the default mode for production code.
+
+- **Verbose Mode:**  
+  - Offers extensive detail, including comprehensive inline documentation and chain-of-thought reasoning.
+  - Ideal for debugging, development, or educational contexts where understanding every nuance is crucial.
+
+- **Dynamic Mode Selection:**  
+  - Agents should be capable of switching between verbosity modes based on task context and audience needs.
+  - The selected mode should be clearly stated or implied through context within the response.
+
+## 5. Best Practices & Constraints
+
+- **Structured Responses:**  
+  - All outputs must follow a clear, hierarchical structure that separates planning, code implementation, and commentary.
+  
+- **Uniformity Across Modules:**  
+  - Adhere to the established guidelines for code block formatting, file path annotations, and inline documentation.
+  
+- **Readability & Maintainability:**  
+  - Ensure that the response is easy to navigate and understand. Use proper headings, bullet lists, and numbering.
+  
+- **External Documentation:**  
+  - Supplement inline comments with external documentation (e.g., README files) that describe architecture, dependencies, and design rationales.
+
+## 6. Summary of Do’s and Don’ts
+
+### Do:
+- Begin each task with a clear and documented planning phase.
+- Annotate all code blocks with appropriate file paths and language tags.
+- Use inline comments to explain complex logic and chain-of-thought steps.
+- Select and clearly indicate the appropriate verbosity mode for the task.
+- Maintain consistent formatting across all agents and modules.
+
+### Don’t:
+- Skip the planning phase or omit the chain-of-thought reasoning process.
+- Use inconsistent formatting or omit file path annotations.
+- Overload code with unnecessary comments in production mode.
+- Compromise on readability and maintainability in pursuit of brevity.
+
+

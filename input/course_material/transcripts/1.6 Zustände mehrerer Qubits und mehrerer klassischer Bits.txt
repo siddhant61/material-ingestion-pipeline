@@ -1,0 +1,228 @@
+WEBVTT
+
+1
+00:00:01.330 --> 00:00:05.730 
+Wir haben gesehen, wie eine Super Position mit einem Qubit aussieht
+jetzt möchten.
+
+2
+00:00:05.730 --> 00:00:12.140 
+Wir Quanten Zustände anschauen mit mehreren Qubits und sie vergleichen mit Zuständen mit mehreren Bits
+d.h. zum Beispiel
+
+3
+00:00:12.140 --> 00:00:17.550 
+ein 10-Bit String mit 10 Qubits Und anschauen, was die Unterschiede von diesen sind.
+
+4
+00:00:20.010 --> 00:00:27.460 
+Ein allgemeiner Zustand von einem Qubits kann aus einem Superposition von diesem angeschaut werden Das ist im Gegensatz zu
+
+5
+00:00:27.460 --> 00:00:36.109 
+klassischen Bits, wo wir wenn es z.B. zehn Bits haben können wir so eine beliebige Zahl von eins bis 1024 darstellen
+
+6
+00:00:36.119 --> 00:00:41.340 
+aber wir können immer nur eine erstmal darstellen
+
+7
+00:00:41.340 --> 00:00:48.210 
+und diese zwei hoch zehn gleich 1024 möglichen Basis Zustände gibt es für Qubits eben auch.
+
+8
+00:00:48.850 --> 00:00:57.079 
+Und wenn wir eine allgemeine Zustand anschauen von einem Quanten Zustand können wir den aufschreiben, indem wir zuerst
+
+9
+00:00:57.079 --> 00:00:58.719 
+der Basis Zustände definieren.
+
+10
+00:00:58.729 --> 00:01:00.530 
+Hier sind die Basis Zustände aufgeschrieben.
+
+11
+00:01:00.530 --> 00:01:06.909 
+Für zwei Qubits 00 01 10 und 11 und für die sie dann Amplituden setzen.
+
+12
+00:01:06.909 --> 00:01:15.689 
+Es heißt wir brauchen Alpha Beta Gamma Theta und dann können wir eine allgemeine Superposition bilden **siehe Folie**
+
+13
+00:01:15.689 --> 00:01:16.500 
+-&gt;
+
+14
+00:01:16.510 --> 00:01:22.319 
+**liest Formel auf der Folie**
+
+15
+00:01:22.319 --> 00:01:30.170 
+Wichtig ist hier wieder, wie zuvor dass die Quadrate dieser Amplituden aufsummiert eins ergeben müssen, weil insgesamt brauchen wir
+
+16
+00:01:30.170 --> 00:01:34.790 
+eine Wahrscheinlichkeit von eins nicht weniger nicht mehr und sonst macht das Ganze kein Sinn.
+
+17
+00:01:35.549 --> 00:01:41.150 
+Wichtig hier ist die Amplituden können alles annehmen, das heißt kann 0 sein.
+
+18
+00:01:41.439 --> 00:01:42.650 
+Das heißt, wir brauchen nicht alle
+
+19
+00:01:42.650 --> 00:01:47.870 
+Diese Basis Zustände für einen bestimmten Zustand, aber es können alle davon auftauchen.
+
+20
+00:01:49.109 --> 00:01:56.480 
+Wenn man es vergleicht Wir haben n normaler Bits, haben wir zwei hoch n mögliche Basis Zustände, die wir mit n Bits
+
+21
+00:01:56.480 --> 00:02:03.290 
+speichern können, aber wir speichern immer nur eine, nicht verschiedene im Speicher ist eine bestimmte Zahl, die kann man
+
+22
+00:02:03.290 --> 00:02:05.590 
+zwar ändern, aber auf meist eine einzige
+
+23
+00:02:05.590 --> 00:02:09.750 
+Dort
+Bei Super Positionen von allen zwei hoch n Basis Zuständen
+
+24
+00:02:09.800 --> 00:02:11.620 
+Können wir
+
+25
+00:02:11.620 --> 00:02:14.069 
+2^n Bit Information speichern.
+
+26
+00:02:14.669 --> 00:02:22.819 
+Das ist ein bisschen inkorrekt, aber für uns reicht es hier, weil es ein bisschen drauf kommt, Was für eine Anwendung wir haben
+
+27
+00:02:22.819 --> 00:02:31.009 
+ich werde noch etwas kurz zeigen, aber nur hier zum das Ganze darstellen, haben wir das bekannte Schach Problem, wo mir
+
+28
+00:02:31.020 --> 00:02:36.590 
+aufs Erste Schach Feld ein Reiskorn legen, das nächste zwei, das nächste 4 und so weiter.
+
+29
+00:02:36.780 --> 00:02:43.849 
+Und wenn man es auf diesem Bild schön sehen kann, steigt die Anzahl Körner exponentiell, wächst extrem schnell.
+
+30
+00:02:44.120 --> 00:02:51.060 
+Und genau diese Eigenschaft von Quanten Zuständen möchten Wir im Quanten Computing nachnutzen.
+
+31
+00:02:53.310 --> 00:02:57.030 
+Wieso ist es nicht einfach so, dass man alles beliebig speichern könnte?
+
+32
+00:02:57.039 --> 00:03:02.750 
+Ganz einfach Wir werden später sehen Wenn man die Qubits misst, wird man immer nur ein Bit Informationen rauskriegen.
+
+33
+00:03:02.759 --> 00:03:07.530 
+Das heißt aber nicht, dass man unterdessen dazwischen mit den Berechnungen sehr vieles machen kann.
+
+34
+00:03:08.879 --> 00:03:16.060 
+Hier möchte ich ganz kurz am Beispiel zeigen, wie man ein Bild aus einem Quantenzustand sein könnte ich habe einen 16 Pixel
+
+35
+00:03:16.060 --> 00:03:17.520 
+Bild möchte das in vier
+
+36
+00:03:17.520 --> 00:03:18.229 
+QuBits.
+
+37
+00:03:18.360 --> 00:03:26.430 
+abbilden, wir haben mit vier Qubits  die Basis Zustände 0000  bis 1111 nicht alle aufgeschrieben,
+
+38
+00:03:26.430 --> 00:03:32.569 
+weil es zu viele sind und wir haben entsprechend auch 16 verschiedene Amplituden
+
+39
+00:03:32.569 --> 00:03:39.000 
+und wenn man die allgemeine Superposition bilden, werden wir ganz viele griechische Buchstaben brauchen hier nur die ersten 4 aufgeschrieben
+
+40
+00:03:39.009 --> 00:03:47.759 
+aber könnten Sie das Ganze vorstellen, und was man jetzt machen kann, ist, dass jede einzelne Amplitude für die Helligkeit eines
+
+41
+00:03:47.759 --> 00:03:53.539 
+Pixel Wertes von einem Bild spricht das bedeutet, ich kann sagen okay, der Pixel ganz links oben.
+
+42
+00:03:53.550 --> 00:04:02.370 
+steht für den Zustand 0000 der ist jetzt grau das heißt die Wahrscheinlichkeit ist so mittelmäßig.
+
+43
+00:04:02.460 --> 00:04:07.939 
+Wenn der Pixel schwarz wäre, wäre die Wahrscheinlichkeit null wenn der Pixel weiß wäre, wäre die Wahrscheinlichkeit zur
+
+44
+00:04:07.939 --> 00:04:17.970 
+Amplitude entsprechend größer und so kann man einen Zustand bilden, und wenn man das natürliche Weise macht, wird dennoch
+
+45
+00:04:17.970 --> 00:04:18.930 
+nicht normalisiert sein.
+
+46
+00:04:18.930 --> 00:04:24.879 
+Das heißt, man kann auch zuerst mal ein Bild kodieren mit den entsprechenden Verhältnissen und wenn man das gemacht hat
+
+47
+00:04:24.889 --> 00:04:30.000 
+hat man die Möglichkeit das Ganze zu normalisieren, sodass die Quadraten der Amplituden eins geben.
+
+48
+00:04:30.009 --> 00:04:34.560 
+Und so hat man nur mit vier Qubits ein 16 Pixel Bild codiert.
+
+49
+00:04:35.009 --> 00:04:41.839 
+Man kann es noch nicht unbedingt abfragen, aber was man zum Beispiel machen könnte, ist es aus Input verwenden für eine
+
+50
+00:04:41.850 --> 00:04:50.350 
+ML zum Beispiel Bilderkennung, wie es vielleicht von online kennt, wenn ihr die Frage habt Auf welchem Bild
+
+51
+00:04:50.350 --> 00:04:51.639 
+ist ein Boot drauf?
+
+52
+00:04:52.009 --> 00:04:55.399 
+Da kann man seinen Algorithmus fragen Okay, ist es ein Boot oder nicht?
+
+53
+00:04:55.399 --> 00:05:03.089 
+Dann brauche ich als Output nun einen einzelnen Pixel bzw ein einziges Bild aus Wert 031 es ist ein Boot oder nicht
+
+54
+00:05:03.500 --> 00:05:13.399 
+und das ist mit vier Qubits sehr wohlmöglich und das einfach so als kleine Ausschau, was man mit diesen Qubits anstellen kann
+
+55
+00:05:13.399 --> 00:05:21.540 
+wie man ausnutzen konnte, es mehr dort darin Inkodieren kann auch wenn man nicht so viele Daten herauslesen können und
+
+56
+00:05:21.730 --> 00:05:26.399 
+dann möchte ich abschließen bei diesem Teil und aus nächstes werden wir entanglement anschauen.

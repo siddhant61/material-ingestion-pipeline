@@ -1,0 +1,83 @@
+---
+description: Workflow & Orchestration Guidelines
+globs: 
+---
+# Workflow & Orchestration Guidelines for step1_material_ingestion
+
+## 1. Overview
+
+This document defines the principles and practices for managing workflow and orchestration in the **step1_material_ingestion** pipeline. The guidelines ensure that tasks are executed efficiently, either sequentially or in parallel, and that outputs from various agents are aggregated and processed in a consistent manner. The Coordinator Agent plays a central role in managing the workflow, error propagation, and response consolidation.
+
+## 2. Execution Order & Task Management
+
+- **Sequential Execution:**  
+  - Tasks that depend on the output of previous steps must be executed in a strict sequence.
+  - Examples include the progression from document loading to transcript segmentation, and then to context extraction.
+  - The Coordinator Agent should enforce sequential execution where data dependencies exist.
+
+- **Parallel Execution:**  
+  - Independent tasks, such as processing multiple images or transcripts simultaneously, can be executed in parallel.
+  - Leverage asynchronous processing, message queues, or parallel execution frameworks to improve throughput.
+  - Use correlation IDs in headers to track asynchronous tasks and ensure proper aggregation of results.
+
+## 3. Task Aggregation & Response Consolidation
+
+- **Aggregation Strategies:**  
+  - Collect outputs from various agents and validate them against the standardized JSON schemas.
+  - Merge data from parallel tasks into a coherent dataset for downstream processing.
+  - Consolidate chain-of-thought logs and error reports to provide a comprehensive view of the workflow execution.
+
+- **Response Consolidation:**  
+  - The final output should include metadata summarizing the entire processing run (e.g., version, timestamp, course title).
+  - Ensure that responses from all sub-agents are merged in a way that maintains clarity and traceability.
+  - Use the Coordinator Agent to compile the overall knowledge graph and structured outputs.
+
+## 4. Orchestration Strategies
+
+- **Coordinator Agent Role:**  
+  - Acts as the central orchestrator, managing the flow of tasks between agents.
+  - Validates outputs at each stage before proceeding to the next step.
+  - Implements fallback strategies and error propagation to ensure that the workflow is robust even in the presence of failures.
+  
+- **Workflow Configuration:**  
+  - Clearly define the dependencies and execution order of tasks in a configuration file or orchestration script.
+  - Use metadata in the JSON headers to determine the execution path and to log the processing status at each stage.
+
+- **Timeouts & Retries:**  
+  - Implement timeouts for long-running tasks and retries for transient failures.
+  - Log each retry attempt and the final outcome for transparency and debugging.
+
+## 5. Error Propagation & Fallback in Orchestration
+
+- **Centralized Error Handling:**  
+  - Errors from any sub-agent should be propagated to the Coordinator Agent for centralized handling.
+  - The final aggregated response must include error details and any fallback actions that were triggered.
+  
+- **Fallback Mechanisms:**  
+  - Define alternative processing paths if a primary task fails or returns low-confidence results.
+  - Document fallback decisions in the chain-of-thought logs and include this information in the final response.
+
+## 6. Best Practices & Summary of Do’s and Don’ts
+
+### Do:
+- **Design for Modularity:**  
+  - Clearly separate tasks that are dependent from those that can be executed in parallel.
+- **Use a Central Coordinator:**  
+  - Leverage the Coordinator Agent to manage task orchestration, error propagation, and response aggregation.
+- **Implement Robust Logging:**  
+  - Log each step of the workflow, including chain-of-thought reasoning, errors, and fallback triggers.
+- **Plan for Scalability:**  
+  - Design the workflow to accommodate parallel processing and efficient aggregation of results.
+- **Maintain Clear Metadata:**  
+  - Use consistent metadata in JSON headers to track task execution, versioning, and timing.
+
+### Don’t:
+- **Mix Execution Modes:**  
+  - Avoid running dependent tasks in parallel if their outputs are required for subsequent processing.
+- **Neglect Error Handling:**  
+  - Do not bypass centralized error propagation; ensure all errors are captured and managed by the Coordinator Agent.
+- **Overcomplicate Aggregation:**  
+  - Keep task aggregation straightforward and transparent, ensuring that the final output is easy to understand.
+- **Ignore Timeouts & Retries:**  
+  - Do not leave long-running tasks without defined timeouts or retry mechanisms, as this can block workflow progression.
+
