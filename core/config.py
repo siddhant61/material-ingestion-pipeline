@@ -80,6 +80,10 @@ class Settings:
         for directory in directories:
             directory.mkdir(parents=True, exist_ok=True)
     
+    def ensure_directories(self):
+        """Public method to ensure all necessary directories exist."""
+        self._ensure_directories()
+    
     def to_dict(self):
         """Convert settings to a dictionary for passing to agents."""
         return {
