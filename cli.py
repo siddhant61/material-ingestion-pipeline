@@ -142,13 +142,13 @@ def cli():
     "--input-dir",
     type=click.Path(exists=False, file_okay=False, dir_okay=True, resolve_path=True),
     required=True,
-    help="Path to the directory containing course materials (course_info, transcripts, slides)"
+    help="Path to the directory containing course materials. Will be created with sample files if it doesn't exist."
 )
 @click.option(
     "--output-dir",
     type=click.Path(exists=False, file_okay=False, dir_okay=True, resolve_path=True),
     required=True,
-    help="Path to the directory where pipeline outputs will be saved"
+    help="Path to the directory where pipeline outputs will be saved. Will be created if it doesn't exist."
 )
 def run_pipeline(input_dir, output_dir):
     """
@@ -175,9 +175,10 @@ def run_pipeline(input_dir, output_dir):
     logger.info("=" * 80)
     
     # Update settings with user-provided paths
+    # This also calls ensure_directories() which creates the required directory structure
     update_settings_paths(input_dir, output_dir)
     
-    # Setup sample files if needed
+    # Setup sample files if needed (directories are already created by update_settings_paths)
     setup_sample_files(settings.course_info_dir, settings.transcripts_dir)
     
     # Initialize the pipeline
