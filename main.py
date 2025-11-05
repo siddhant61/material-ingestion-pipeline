@@ -25,6 +25,8 @@ from core.agents.slide_agent import SlideAgent
 from core.agents.fusion_agent import FusionAgent
 from core.agents.supervision_orchestrator_agent import SupervisionOrchestratorAgent
 from core.agents.knowledge_graph_agent import KnowledgeGraphAgent
+from core.agents.visualization_agent import VisualizationAgent
+from core.agents.embedding_agent import EmbeddingAgent
 
 # Configure logging
 logging.basicConfig(
@@ -150,8 +152,18 @@ def main():
     pipeline.register_agent("knowledge_graph", knowledge_graph_agent)
     logger.info("Registered KnowledgeGraphAgent for stage: knowledge_graph")
     
+    # Register Visualization Agent
+    visualization_agent = VisualizationAgent()
+    pipeline.register_agent("visualize", visualization_agent)
+    logger.info("Registered VisualizationAgent for stage: visualize")
+    
+    # Register Embedding Agent
+    embedding_agent = EmbeddingAgent()
+    pipeline.register_agent("embeddings", embedding_agent)
+    logger.info("Registered EmbeddingAgent for stage: embeddings")
+    
     # Set execution plan
-    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion", "supervision", "knowledge_graph"]
+    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion", "supervision", "knowledge_graph", "visualize", "embeddings"]
     pipeline.set_execution_plan(execution_plan)
     logger.info(f"Execution plan: {' -> '.join(execution_plan)}")
     
