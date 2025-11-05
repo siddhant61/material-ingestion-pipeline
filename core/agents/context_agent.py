@@ -14,6 +14,8 @@ from pathlib import Path
 
 from core.agents.base_agent import BaseAgent
 from core.config import settings
+from core.agents.document_loader.tools.document_analyzer import DocumentAnalyzer
+from core.agents.course_context.course_context_extractor import CourseContextExtractor
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -64,10 +66,6 @@ class ContextAgent(BaseAgent):
     
     def _init_tools(self):
         """Initialize tools for context extraction."""
-        # Import components here to avoid circular imports
-        from core.agents.document_loader.tools.document_analyzer import DocumentAnalyzer
-        from core.agents.course_context.course_context_extractor import CourseContextExtractor
-        
         self.document_analyzer = DocumentAnalyzer()
         self.course_context_extractor = CourseContextExtractor()
     
@@ -166,10 +164,11 @@ class ContextAgent(BaseAgent):
             # Create a fallback context
             fallback_context = self._create_fallback_context(str(e), str(course_info_path))
             return {
-                "status": "success",
+                "status": "partial_success",
                 "output_type": "course_context",
                 "result": fallback_context,
-                "summary": "Using fallback course context due to missing file"
+                "summary": "Using fallback course context due to missing file",
+                "warning": f"File not found: {str(e)}"
             }
             
         except Exception as e:
@@ -177,10 +176,11 @@ class ContextAgent(BaseAgent):
             # Create a fallback context
             fallback_context = self._create_fallback_context(str(e), str(course_info_path))
             return {
-                "status": "success",
+                "status": "partial_success",
                 "output_type": "course_context",
                 "result": fallback_context,
-                "summary": "Using fallback course context due to extraction error"
+                "summary": "Using fallback course context due to extraction error",
+                "warning": f"Extraction failed: {str(e)}"
             }
     
     def _create_fallback_context(self, error_message: str, document_source: str) -> Dict[str, Any]:

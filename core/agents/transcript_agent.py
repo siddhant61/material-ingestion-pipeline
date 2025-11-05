@@ -14,6 +14,7 @@ from pathlib import Path
 
 from core.agents.base_agent import BaseAgent
 from core.config import settings
+from core.agents.transcript_processor import TranscriptProcessor
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -63,9 +64,6 @@ class TranscriptAgent(BaseAgent):
     
     def _init_tools(self):
         """Initialize tools for transcript processing."""
-        # Import components here to avoid circular imports
-        from core.agents.transcript_processor import TranscriptProcessor
-        
         self.transcript_processor = TranscriptProcessor()
     
     def run(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -110,8 +108,11 @@ class TranscriptAgent(BaseAgent):
                 from core.pipeline.pipeline_fixes import fix_transcript_templates
                 fix_transcript_templates()
                 logger.info("Transcript template fixes completed successfully")
-            except Exception as e:
+            except (ImportError, AttributeError) as e:
                 logger.warning(f"Warning: Transcript template fixes had issues: {str(e)}")
+            except Exception as e:
+                logger.error(f"Unexpected error in transcript template fixes: {str(e)}")
+                raise
             
             # Create output directory for processed transcripts
             transcript_output_dir = self.output_dir / "transcripts"
