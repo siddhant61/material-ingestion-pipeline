@@ -74,9 +74,10 @@ class SupervisionOrchestratorAgent(BaseAgent):
     
     def _init_tools(self):
         """Initialize the SupervisorAgent tool."""
-        # The SupervisorAgent will be instantiated in the run method
-        # to ensure it uses the latest configuration
-        pass
+        # Initialize the SupervisorAgent once for efficiency
+        self.supervisor = SupervisorAgent({
+            "output_dir": str(self.output_dir)
+        })
     
     def run(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -95,11 +96,6 @@ class SupervisionOrchestratorAgent(BaseAgent):
         logger.info("Starting supervision orchestration...")
         
         try:
-            # Initialize the SupervisorAgent
-            supervisor = SupervisorAgent({
-                "output_dir": str(self.output_dir)
-            })
-            
             # Gather all previous results from input_data
             agent_outputs = {}
             
@@ -140,6 +136,9 @@ class SupervisionOrchestratorAgent(BaseAgent):
                     logger.info(f"Supervising output from {agent_name}...")
                     
                     # Validate content is a dictionary
+                    # Note: Automatic wrapping of non-dictionary content is a defensive measure
+                    # to ensure supervision can proceed even with unexpected input formats.
+                    # This behavior matches the original supervise_outputs() implementation.
                     if not isinstance(content, dict):
                         logger.warning(f"Content from {agent_name} is not a dictionary, wrapping it")
                         if content is None:
@@ -147,8 +146,8 @@ class SupervisionOrchestratorAgent(BaseAgent):
                         else:
                             content = {"data": content}
                     
-                    # Supervise the agent output
-                    result = supervisor.supervise(
+                    # Supervise the agent output using the initialized supervisor
+                    result = self.supervisor.supervise(
                         agent_name=agent_name,
                         content=content,
                         auto_refine=True
@@ -162,7 +161,6 @@ class SupervisionOrchestratorAgent(BaseAgent):
                     
                 except json.JSONDecodeError as json_error:
                     logger.error(f"JSON parsing error supervising {agent_name}: {str(json_error)}")
-                    logger.error(f"This is likely due to a malformed response from the AI model")
                     refined_outputs[agent_name] = content  # Use original content on error
                     supervision_results[agent_name] = {
                         "error": f"JSON parsing error: {str(json_error)}",
@@ -186,7 +184,9 @@ class SupervisionOrchestratorAgent(BaseAgent):
                 "timestamp": datetime.now().isoformat()
             }
             
-            supervision_results_file = self.output_dir / "all_supervision_results.json"
+            # Use timestamp to avoid conflicts in concurrent executions
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            supervision_results_file = self.output_dir / f"supervision_results_{timestamp}.json"
             with open(supervision_results_file, 'w', encoding='utf-8') as f:
                 json.dump(combined_results, f, ensure_ascii=False, indent=2)
             
