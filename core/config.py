@@ -52,8 +52,8 @@ class Settings(BaseSettings):
     )
     
     # Directory Paths
-    base_dir: Path = Field(
-        default_factory=lambda: Path(__file__).parent.parent.absolute(),
+    base_dir: Optional[Path] = Field(
+        default=None,
         description="Base directory of the project"
     )
     
@@ -88,9 +88,21 @@ class Settings(BaseSettings):
         description="Base directory for data manager storage"
     )
     
-    def __init__(self, **kwargs):
-        """Initialize settings and resolve default paths."""
-        super().__init__(**kwargs)
+    def model_post_init(self, __context) -> None:
+        """Post-initialization hook to resolve default paths."""
+        # Auto-detect base_dir if not provided
+        if self.base_dir is None:
+            # Try to find project root by looking for marker files
+            current = Path(__file__).parent.parent.absolute()
+            # Look for common project markers
+            markers = ['.git', 'requirements.txt', 'pyproject.toml', 'setup.py']
+            for marker in markers:
+                if (current / marker).exists():
+                    self.base_dir = current
+                    break
+            else:
+                # Fallback to parent of core directory
+                self.base_dir = current
         
         # Set default paths if not provided
         if self.input_dir is None:

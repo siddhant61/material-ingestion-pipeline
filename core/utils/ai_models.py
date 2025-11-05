@@ -26,11 +26,17 @@ class AIModelFactory:
         Args:
             model_name (str, optional): Name of the model to create. 
                                        If not provided, uses the default from settings.
+                                       This parameter is now optional for convenience but
+                                       existing code passing a model_name will continue to work.
             config (Dict[str, Any], optional): Additional configuration for the model.
                                               Overrides settings values if provided.
             
         Returns:
             Any: An initialized model instance
+            
+        Note:
+            The model_name parameter is now optional (changed from required).
+            This is backward compatible as existing callers can still pass it explicitly.
         """
         if config is None:
             config = {}
