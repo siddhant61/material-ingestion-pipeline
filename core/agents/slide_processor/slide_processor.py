@@ -162,12 +162,13 @@ class SlideProcessor(BaseAssistant):
             JsonOutputParser()
         )
     
-    def extract_slide_content(self, slide_path: str) -> Tuple[str, Dict[str, Any]]:
+    def extract_slide_content(self, slide_path: str, output_dir: Optional[str] = None) -> Tuple[str, Dict[str, Any]]:
         """
         Extract content from a slide deck PDF file.
         
         Args:
             slide_path (str): Path to the slide deck PDF file
+            output_dir (Optional[str]): Directory to save extracted images
             
         Returns:
             Tuple[str, Dict[str, Any]]: Extracted text content and basic metadata
@@ -193,6 +194,12 @@ class SlideProcessor(BaseAssistant):
             # Extract images info with PyMuPDF for enhanced image processing
             doc = fitz.open(slide_path)
             image_info = []
+            extracted_images = []
+            
+            # Setup output directory for images if specified
+            if output_dir:
+                output_path = Path(output_dir)
+                os.makedirs(output_path, exist_ok=True)
             
             for i, page in enumerate(doc):
                 images = page.get_images()
@@ -203,8 +210,38 @@ class SlideProcessor(BaseAssistant):
                         "slide_number": i+1,
                         "image_count": len(images),
                         "has_image": True,
-                        "image_texts": []
+                        "image_texts": [],
+                        "image_paths": []
                     }
+                    
+                    # Save actual image files if output_dir is provided
+                    if output_dir:
+                        for img_index, img in enumerate(images):
+                            try:
+                                xref = img[0]
+                                base_image = doc.extract_image(xref)
+                                
+                                # Validate extracted image format
+                                if not base_image or "image" not in base_image or "ext" not in base_image:
+                                    logger.warning(f"Invalid image format for image {img_index+1} on slide {i+1}")
+                                    continue
+                                
+                                image_bytes = base_image["image"]
+                                image_ext = base_image["ext"]
+                                
+                                # Create filename
+                                image_filename = f"{slide_path.stem}_slide{i+1}_img{img_index+1}.{image_ext}"
+                                image_path = output_path / image_filename
+                                
+                                # Save image
+                                with open(image_path, "wb") as img_file:
+                                    img_file.write(image_bytes)
+                                
+                                image_details["image_paths"].append(str(image_path))
+                                extracted_images.append(str(image_path))
+                                logger.debug(f"Saved image: {image_path}")
+                            except Exception as img_save_err:
+                                logger.warning(f"Error saving image {img_index+1} from slide {i+1}: {str(img_save_err)}")
                     
                     # Basic OCR for image content when possible
                     try:
@@ -238,7 +275,8 @@ class SlideProcessor(BaseAssistant):
                 "page_count": num_pages,
                 "has_images": any(page.get_images() for page in doc),
                 "filename": slide_path.name,
-                "image_info": image_info
+                "image_info": image_info,
+                "extracted_images": extracted_images
             }
             
             # Close PyMuPDF document
@@ -416,7 +454,8 @@ class SlideProcessor(BaseAssistant):
         return relationships
     
     def process_slide_deck(self, slide_path: str, course_context: Dict[str, Any], 
-                          transcript_data: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+                          transcript_data: Optional[Dict[str, Any]] = None, 
+                          images_output_dir: Optional[str] = None) -> Dict[str, Any]:
         """
         Process a slide deck PDF and align it with course context and transcript data.
         
@@ -424,6 +463,7 @@ class SlideProcessor(BaseAssistant):
             slide_path (str): Path to the slide deck PDF file
             course_context (Dict[str, Any]): Previously extracted course context
             transcript_data (Optional[Dict[str, Any]]): Previously processed transcript data
+            images_output_dir (Optional[str]): Directory to save extracted images
             
         Returns:
             Dict[str, Any]: Structured slide deck data aligned with course context
@@ -433,7 +473,7 @@ class SlideProcessor(BaseAssistant):
         
         try:
             # Extract slide content
-            slide_content, slide_metadata = self.extract_slide_content(str(slide_path))
+            slide_content, slide_metadata = self.extract_slide_content(str(slide_path), images_output_dir)
             
             # Find matching transcript if available
             matching_transcript = None
@@ -646,12 +686,18 @@ class SlideProcessor(BaseAssistant):
         # Ensure output directory exists
         os.makedirs(output_dir, exist_ok=True)
         
+        # Create images output directory
+        images_dir = output_dir.parent / "slide_images"
+        os.makedirs(images_dir, exist_ok=True)
+        
         logger.info(f"Processing all slide decks in {slides_dir}")
+        logger.info(f"Saving extracted images to {images_dir}")
         
         results = {
             "processed_count": 0,
             "error_count": 0,
-            "slides": []
+            "slides": [],
+            "images_directory": str(images_dir)
         }
         
         # Process each slide deck file
@@ -661,7 +707,8 @@ class SlideProcessor(BaseAssistant):
                 slide_data = self.process_slide_deck(
                     str(slide_file), 
                     course_context,
-                    transcript_data
+                    transcript_data,
+                    str(images_dir)
                 )
                 
                 # Save the result with proper serialization

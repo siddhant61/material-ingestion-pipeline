@@ -45,12 +45,18 @@ class Settings:
         self.course_context_model = os.getenv("COURSE_CONTEXT_MODEL", self.default_model)
         self.transcript_model = os.getenv("TRANSCRIPT_MODEL", self.default_model)
         self.slide_model = os.getenv("SLIDE_MODEL", self.default_model)
+        self.vision_model = os.getenv("VISION_MODEL", "gpt-4o-mini")  # Vision-capable model
+        
+        # AI model settings for factory (backward compatibility)
+        self.ai_model_name = self.default_model
+        self.ai_model_temperature = float(os.getenv("MODEL_TEMPERATURE", "0.2"))
+        self.ai_fallback_model = os.getenv("FALLBACK_MODEL", "gpt-3.5-turbo")
         
         # OpenAI API settings
         self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
         
         # Model parameters
-        self.temperature = float(os.getenv("MODEL_TEMPERATURE", "0.2"))
+        self.temperature = self.ai_model_temperature
         self.max_tokens = int(os.getenv("MODEL_MAX_TOKENS", "4000"))
         
         # Pipeline settings

@@ -23,6 +23,7 @@ from core.pipeline.material_ingestion_pipeline import MaterialIngestionPipeline
 from core.agents.context_agent import ContextAgent
 from core.agents.transcript_agent import TranscriptAgent
 from core.agents.slide_agent import SlideAgent
+from core.agents.vision_agent import VisionAgent
 from core.agents.fusion_agent import FusionAgent
 from core.agents.supervision_orchestrator_agent import SupervisionOrchestratorAgent
 from core.agents.knowledge_graph_agent import KnowledgeGraphAgent
@@ -152,17 +153,18 @@ def cli():
 )
 def run_pipeline(input_dir, output_dir):
     """
-    Run the complete 8-stage Material Ingestion Pipeline.
+    Run the complete 9-stage Material Ingestion Pipeline.
     
     This command processes educational content through all pipeline stages:
     1. Course Context Extraction
     2. Transcript Processing
     3. Slide Processing
-    4. Context Fusion
-    5. Supervision
-    6. Knowledge Graph Generation
-    7. Visualization
-    8. Embeddings
+    4. Vision Analysis
+    5. Context Fusion
+    6. Supervision
+    7. Knowledge Graph Generation
+    8. Visualization
+    9. Embeddings
     
     Example:
         python cli.py run-pipeline --input-dir ./my_course/ --output-dir ./my_output/
@@ -206,6 +208,11 @@ def run_pipeline(input_dir, output_dir):
     pipeline.register_agent("process_slides", slide_agent)
     logger.info("Registered SlideAgent for stage: process_slides")
     
+    # Register Vision Agent
+    vision_agent = VisionAgent()
+    pipeline.register_agent("vision", vision_agent)
+    logger.info("Registered VisionAgent for stage: vision")
+    
     # Register Fusion Agent
     fusion_agent = FusionAgent()
     pipeline.register_agent("context_fusion", fusion_agent)
@@ -236,6 +243,7 @@ def run_pipeline(input_dir, output_dir):
         "course_context",
         "process_transcripts",
         "process_slides",
+        "vision",
         "context_fusion",
         "supervision",
         "knowledge_graph",
