@@ -10,6 +10,53 @@ The material ingestion pipeline processes course materials (PDFs, transcripts, s
 2. Interactive and static visualizations of the knowledge graph
 3. Vector embeddings for semantic search and retrieval
 
+## Configuration
+
+The pipeline uses a centralized configuration system that externalizes all settings through environment variables.
+
+### Setup
+
+1. **Copy the example environment file:**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Edit `.env` and add your configuration:**
+   ```bash
+   # Required: OpenAI API key
+   OPENAI_API_KEY=your_openai_api_key_here
+   
+   # Optional: AI model settings (defaults shown)
+   AI_MODEL_NAME=gpt-3.5-turbo
+   AI_MODEL_TEMPERATURE=0.2
+   AI_FALLBACK_MODEL=gpt-3.5-turbo
+   ```
+
+3. **Customize paths (optional):**
+   ```bash
+   # The pipeline uses sensible defaults, but you can override:
+   INPUT_DIR=/path/to/custom/input
+   OUTPUT_DIR=/path/to/custom/output
+   ```
+
+### Configuration Options
+
+All configuration is managed through `core/config.py` using Pydantic Settings:
+
+- **API Keys**: `OPENAI_API_KEY` - Required for AI model access
+- **AI Models**: 
+  - `AI_MODEL_NAME` - Primary model (default: `gpt-3.5-turbo`)
+  - `AI_MODEL_TEMPERATURE` - Response randomness 0.0-1.0 (default: `0.2`)
+  - `AI_FALLBACK_MODEL` - Backup model if primary fails (default: `gpt-3.5-turbo`)
+- **Directories**: All paths are auto-configured relative to the project root, but can be overridden via environment variables
+
+### Benefits
+
+- ✅ No hardcoded paths or secrets in code
+- ✅ Easy environment-specific configuration
+- ✅ Type-safe settings with Pydantic validation
+- ✅ Clear documentation via `.env.example`
+
 ## Enhanced Knowledge Graph Features
 
 ### Hierarchical Structure
