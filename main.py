@@ -24,6 +24,7 @@ from core.agents.transcript_agent import TranscriptAgent
 from core.agents.slide_agent import SlideAgent
 from core.agents.fusion_agent import FusionAgent
 from core.agents.supervision_orchestrator_agent import SupervisionOrchestratorAgent
+from core.agents.knowledge_graph_agent import KnowledgeGraphAgent
 
 # Configure logging
 logging.basicConfig(
@@ -144,8 +145,13 @@ def main():
     pipeline.register_agent("supervision", supervision_orchestrator_agent)
     logger.info("Registered SupervisionOrchestratorAgent for stage: supervision")
     
+    # Register Knowledge Graph Agent
+    knowledge_graph_agent = KnowledgeGraphAgent()
+    pipeline.register_agent("knowledge_graph", knowledge_graph_agent)
+    logger.info("Registered KnowledgeGraphAgent for stage: knowledge_graph")
+    
     # Set execution plan
-    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion", "supervision"]
+    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion", "supervision", "knowledge_graph"]
     pipeline.set_execution_plan(execution_plan)
     logger.info(f"Execution plan: {' -> '.join(execution_plan)}")
     
