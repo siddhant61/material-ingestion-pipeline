@@ -127,7 +127,29 @@ The static PNG visualization offers:
 
 ### Running the Pipeline
 
-To process educational materials and generate the knowledge graph:
+The Material Ingestion Pipeline is run through a production CLI that allows you to process any set of course materials:
+
+```bash
+# Run the complete 8-stage pipeline
+python cli.py run-pipeline --input-dir ./input --output-dir ./output
+
+# Use custom directories
+python cli.py run-pipeline --input-dir ./my_course --output-dir ./my_output
+```
+
+The CLI will:
+1. Extract course context
+2. Process transcripts
+3. Process slides
+4. Fuse contexts from all sources
+5. Run supervision
+6. Generate knowledge graph
+7. Create visualizations
+8. Generate embeddings
+
+### Quick Start with Installation Scripts
+
+For convenience, you can also use the installation scripts:
 
 ```bash
 # On Windows
@@ -137,34 +159,14 @@ To process educational materials and generate the knowledge graph:
 ./install_and_run.sh
 ```
 
-### Run with Visualization
+### CLI Help
 
-To run the pipeline and automatically open the visualization:
-
-```bash
-python run_and_visualize.py
-```
-
-### Run Specific Components
-
-To run specific components of the pipeline:
+To see all available options:
 
 ```bash
-python run_component.py <component_name>
+python cli.py --help
+python cli.py run-pipeline --help
 ```
-
-Available components:
-
-- `fix`: Run only the `fix_pipeline_issues.py` script
-- `context`: Extract course context only
-- `transcripts`: Process transcripts only
-- `slides`: Process slides only
-- `fusion`: Generate fused context only
-- `supervise`: Supervise outputs only
-- `knowledge_graph`: Generate knowledge graph only
-- `visualize`: Create visualizations from existing knowledge graph only
-- `embeddings`: Generate embeddings from existing knowledge graph only
-- `all`: Run the complete pipeline
 
 ### Viewing Visualizations
 
@@ -226,9 +228,7 @@ The Vision & Mood-Board Creation pipeline can use this resource pool to:
 │   └── vision_board_input/   # Prepared input for vision board pipeline
 ├── core/                     # Core pipeline components
 ├── context_files/            # Stratified context for development
-├── run_enhanced_pipeline.py  # Main pipeline script
-├── run_and_visualize.py      # Run pipeline with visualization
-├── run_component.py          # Run specific pipeline components
+├── cli.py                    # Production CLI (main entry point)
 ├── prepare_for_vision_board.py # Prepare resources for next pipeline
 └── install_and_run.sh/bat    # Installation and execution scripts
 ```

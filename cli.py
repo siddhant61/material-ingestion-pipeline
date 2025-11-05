@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """
-Main Entry Point for Material Ingestion Pipeline
+Material Ingestion Pipeline CLI
 
-This script runs the modular material ingestion pipeline using the
-MaterialIngestionPipeline orchestrator with registered agents.
+This is the production-ready command-line interface for the Material Ingestion Pipeline.
+It allows users to run the pipeline on any set of course materials by specifying
+input and output directories.
 
 Usage:
-    python main.py
+    python cli.py run-pipeline --input-dir ./my_course/ --output-dir ./my_output/
 """
 
-import os
 import sys
 import logging
 from pathlib import Path
+import click
 
 # Import configuration
 from core.config import settings
@@ -33,15 +34,12 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
-logger = logging.getLogger("main")
+logger = logging.getLogger("cli")
 
 
-def setup_sample_files():
+def setup_sample_files(course_info_dir, transcripts_dir):
     """Create sample files if no course material files exist."""
     logger.info("Checking for course material files...")
-    
-    course_info_dir = settings.course_info_dir
-    transcripts_dir = settings.transcripts_dir
     
     # Check if course info directory is empty
     course_info_files = list(course_info_dir.glob("*"))
@@ -101,16 +99,87 @@ This property gives quantum computers their potential for exponential processing
         logger.info(f"Created sample transcript file at {transcripts_dir / '1.1 Introduction to Quantum Computing.txt'}")
 
 
-def main():
-    """Main execution function."""
-    logger.info("Starting Material Ingestion Pipeline")
-    logger.info("=" * 80)
+def update_settings_paths(input_dir_str, output_dir_str):
+    """
+    Update the global settings object with new input and output directories.
     
-    # Ensure directories exist
+    This function overrides all path-related settings to point to the user-specified
+    directories, making the pipeline portable.
+    """
+    input_dir = Path(input_dir_str).resolve()
+    output_dir = Path(output_dir_str).resolve()
+    
+    # Update base directories
+    settings.input_dir = input_dir
+    settings.output_dir = output_dir
+    settings.data_dir = output_dir / "data"
+    
+    # Update course material directories (relative to input_dir)
+    settings.course_info_dir = input_dir / "course_material" / "course_info"
+    settings.transcripts_dir = input_dir / "course_material" / "transcripts"
+    settings.slides_dir = input_dir / "course_material" / "slides"
+    
+    # Update output directories (relative to output_dir)
+    settings.course_context_dir = output_dir / "course_context"
+    settings.transcripts_output_dir = output_dir / "transcripts"
+    settings.slides_output_dir = output_dir / "slides"
+    settings.knowledge_graph_dir = output_dir / "knowledge_graph"
+    
+    # Ensure all directories exist
     settings.ensure_directories()
     
-    # Setup sample files if needed
-    setup_sample_files()
+    logger.info(f"Updated settings: input_dir={input_dir}, output_dir={output_dir}")
+
+
+@click.group()
+def cli():
+    """Material Ingestion Pipeline - Production CLI"""
+    pass
+
+
+@cli.command("run-pipeline")
+@click.option(
+    "--input-dir",
+    type=click.Path(exists=False, file_okay=False, dir_okay=True, resolve_path=True),
+    required=True,
+    help="Path to the directory containing course materials. Will be created with sample files if it doesn't exist."
+)
+@click.option(
+    "--output-dir",
+    type=click.Path(exists=False, file_okay=False, dir_okay=True, resolve_path=True),
+    required=True,
+    help="Path to the directory where pipeline outputs will be saved. Will be created if it doesn't exist."
+)
+def run_pipeline(input_dir, output_dir):
+    """
+    Run the complete 8-stage Material Ingestion Pipeline.
+    
+    This command processes educational content through all pipeline stages:
+    1. Course Context Extraction
+    2. Transcript Processing
+    3. Slide Processing
+    4. Context Fusion
+    5. Supervision
+    6. Knowledge Graph Generation
+    7. Visualization
+    8. Embeddings
+    
+    Example:
+        python cli.py run-pipeline --input-dir ./my_course/ --output-dir ./my_output/
+    """
+    logger.info("=" * 80)
+    logger.info("Material Ingestion Pipeline - Production CLI")
+    logger.info("=" * 80)
+    logger.info(f"Input Directory: {input_dir}")
+    logger.info(f"Output Directory: {output_dir}")
+    logger.info("=" * 80)
+    
+    # Update settings with user-provided paths
+    # This also calls ensure_directories() which creates the required directory structure
+    update_settings_paths(input_dir, output_dir)
+    
+    # Setup sample files if needed (directories are already created by update_settings_paths)
+    setup_sample_files(settings.course_info_dir, settings.transcripts_dir)
     
     # Initialize the pipeline
     logger.info("Initializing pipeline...")
@@ -163,7 +232,16 @@ def main():
     logger.info("Registered EmbeddingAgent for stage: embeddings")
     
     # Set execution plan
-    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion", "supervision", "knowledge_graph", "visualize", "embeddings"]
+    execution_plan = [
+        "course_context",
+        "process_transcripts",
+        "process_slides",
+        "context_fusion",
+        "supervision",
+        "knowledge_graph",
+        "visualize",
+        "embeddings"
+    ]
     pipeline.set_execution_plan(execution_plan)
     logger.info(f"Execution plan: {' -> '.join(execution_plan)}")
     
@@ -195,8 +273,9 @@ def main():
     logger.info(f"\nFull results saved to: {results_file}")
     
     # Return exit code
-    return 0 if results["status"] == "success" else 1
+    exit_code = 0 if results["status"] == "success" else 1
+    sys.exit(exit_code)
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    cli()
