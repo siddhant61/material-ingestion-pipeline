@@ -22,6 +22,7 @@ from core.pipeline.material_ingestion_pipeline import MaterialIngestionPipeline
 from core.agents.context_agent import ContextAgent
 from core.agents.transcript_agent import TranscriptAgent
 from core.agents.slide_agent import SlideAgent
+from core.agents.fusion_agent import FusionAgent
 
 # Configure logging
 logging.basicConfig(
@@ -132,8 +133,13 @@ def main():
     pipeline.register_agent("process_slides", slide_agent)
     logger.info("Registered SlideAgent for stage: process_slides")
     
+    # Register Fusion Agent
+    fusion_agent = FusionAgent()
+    pipeline.register_agent("context_fusion", fusion_agent)
+    logger.info("Registered FusionAgent for stage: context_fusion")
+    
     # Set execution plan
-    execution_plan = ["course_context", "process_transcripts", "process_slides"]
+    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion"]
     pipeline.set_execution_plan(execution_plan)
     logger.info(f"Execution plan: {' -> '.join(execution_plan)}")
     
