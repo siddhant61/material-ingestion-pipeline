@@ -34,8 +34,9 @@ class ContextFusion:
         self.course_context = {}
         self.transcript_data = {}
         self.slide_data = {}
+        self.vision_data = {}
         
-    def load_data(self, course_context_path: str, transcript_results_path: str, slide_results_path: str) -> bool:
+    def load_data(self, course_context_path: str, transcript_results_path: str, slide_results_path: str, vision_results_path: str = None) -> bool:
         """
         Load data from all sources.
         
@@ -43,6 +44,7 @@ class ContextFusion:
             course_context_path (str): Path to course context JSON file
             transcript_results_path (str): Path to transcript results JSON file
             slide_results_path (str): Path to slide results JSON file
+            vision_results_path (str, optional): Path to vision results JSON file
             
         Returns:
             bool: True if all data loaded successfully
@@ -62,6 +64,15 @@ class ContextFusion:
             with open(slide_results_path, 'r', encoding='utf-8') as f:
                 self.slide_data = json.load(f)
             logger.info(f"Loaded slide data from {slide_results_path}")
+            
+            # Load vision data if provided
+            if vision_results_path:
+                with open(vision_results_path, 'r', encoding='utf-8') as f:
+                    self.vision_data = json.load(f)
+                logger.info(f"Loaded vision data from {vision_results_path}")
+            else:
+                self.vision_data = {}
+                logger.info("No vision data provided")
             
             return True
         
@@ -241,6 +252,46 @@ class ContextFusion:
                                         concepts[keyword]["references"] += 1
                     except Exception as e:
                         logger.warning(f"Error extracting concepts from slide {slide_info.get('filename')}: {str(e)}")
+        
+        # Extract concepts from vision data (Visual RAG)
+        if self.vision_data and "result" in self.vision_data:
+            vision_results = self.vision_data["result"]
+            
+            # Process each image description
+            for image_path, description in vision_results.items():
+                if not description or "error" in description.lower():
+                    continue
+                
+                # Extract key terms from the description as concepts
+                # Simple approach: look for capitalized words and technical terms
+                words = description.split()
+                for i, word in enumerate(words):
+                    # Look for capitalized words (potential concepts) excluding common words
+                    cleaned_word = word.strip('.,!?:;()[]"\'')
+                    
+                    # Skip very short words and common articles
+                    if len(cleaned_word) < 3 or cleaned_word.lower() in ['the', 'this', 'that', 'these', 'those', 'with', 'from', 'and', 'for']:
+                        continue
+                    
+                    # Add as concept if it appears to be significant
+                    if cleaned_word[0].isupper() or any(char.isdigit() for char in cleaned_word):
+                        concept_name = cleaned_word
+                        
+                        if concept_name not in concepts:
+                            concepts[concept_name] = {
+                                "name": concept_name,
+                                "sources": ["visual_rag"],
+                                "importance": 3,
+                                "references": 1,
+                                "visual_context": description[:200]  # Store snippet of description
+                            }
+                        else:
+                            if "visual_rag" not in concepts[concept_name]["sources"]:
+                                concepts[concept_name]["sources"].append("visual_rag")
+                                concepts[concept_name]["visual_context"] = description[:200]
+                            concepts[concept_name]["references"] += 1
+            
+            logger.info(f"Extracted concepts from {len(vision_results)} image descriptions (Visual RAG)")
         
         # Calculate a weighted importance score based on references and sources
         for concept_name, concept_data in concepts.items():
@@ -501,7 +552,7 @@ class ContextFusion:
                         estimated_time = entry["start_time"]
                         break
                 
-                timeline.append({
+                slide_entry = {
                     "type": "slide",
                     "title": deck_title,
                     "source": "slide",
@@ -510,7 +561,31 @@ class ContextFusion:
                     "start_time": estimated_time,
                     "concepts": slide.get("concepts", []),
                     "sequence_num": sequence_num
-                })
+                }
+                
+                # Add visual descriptions if available
+                if self.vision_data and "result" in self.vision_data:
+                    vision_results = self.vision_data["result"]
+                    visual_descriptions = []
+                    
+                    # Check if any images are associated with this slide
+                    # Images typically have naming pattern: deckname_slideN_imgM.ext
+                    for image_path, description in vision_results.items():
+                        # Simple matching: check if image path contains slide number reference
+                        if f"slide{slide.get('slide_number', 0)}" in image_path.lower():
+                            visual_descriptions.append({
+                                "image_path": image_path,
+                                "description": description,
+                                "source": "Visual RAG"
+                            })
+                    
+                    if visual_descriptions:
+                        slide_entry["visual_descriptions"] = visual_descriptions
+                        # Mark that this entry has visual RAG content
+                        if "Visual RAG" not in slide_entry.get("sources", []):
+                            slide_entry["sources"] = slide_entry.get("sources", ["slide"]) + ["Visual RAG"]
+                
+                timeline.append(slide_entry)
         
         # Sort timeline by sequence number and then by start time
         timeline.sort(key=lambda x: (x["sequence_num"], x["start_time"]))
@@ -684,6 +759,15 @@ class ContextFusion:
         timeline = self._create_timeline(transcripts, slides)
         module_structure = self._build_module_structure()
         
+        # Count visual RAG concepts
+        visual_rag_concept_count = sum(1 for c in concepts.values() if "visual_rag" in c.get("sources", []))
+        vision_image_count = len(self.vision_data.get("result", {})) if self.vision_data else 0
+        
+        # Prepare sources list
+        sources = ["course_context", "transcripts", "slides"]
+        if self.vision_data and vision_image_count > 0:
+            sources.append("visual_rag")
+        
         # Construct the final fused context
         fused_context = {
             "course_info": self.course_context.get("course_info", {}),
@@ -697,11 +781,14 @@ class ContextFusion:
                 "timeline_entry_count": len(timeline),
                 "module_count": len(module_structure),
                 "transcript_count": len(transcripts),
-                "slide_count": len(slides)
+                "slide_count": len(slides),
+                "vision_image_count": vision_image_count,
+                "visual_rag_concept_count": visual_rag_concept_count
             },
             "metadata": {
-                "fusion_version": "1.0",
-                "sources": ["course_context", "transcripts", "slides"]
+                "fusion_version": "1.1",
+                "sources": sources,
+                "visual_rag_enabled": bool(self.vision_data and vision_image_count > 0)
             }
         }
         
