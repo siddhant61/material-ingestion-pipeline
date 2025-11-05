@@ -2,149 +2,106 @@
 Configuration Module
 
 This module provides centralized configuration management for the Material Ingestion Pipeline.
-All configuration values are externalized using environment variables and Pydantic Settings.
+All hardcoded paths, model settings, and parameters are externalized through this module.
 """
 
 import os
 from pathlib import Path
 from typing import Optional
-from pydantic import Field
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
-class Settings(BaseSettings):
+class Settings:
     """
-    Central configuration class for the Material Ingestion Pipeline.
+    Centralized configuration settings for the Material Ingestion Pipeline.
     
-    All settings can be overridden via environment variables.
-    Environment variables should be prefixed with the setting name in uppercase.
+    All configuration values can be overridden via environment variables.
     """
     
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        case_sensitive=False,
-        extra="ignore"
-    )
-    
-    # API Keys
-    openai_api_key: str = Field(
-        default="",
-        description="OpenAI API key for AI model access"
-    )
-    
-    # AI Model Settings
-    ai_model_name: str = Field(
-        default="gpt-3.5-turbo",
-        description="Primary AI model to use for processing"
-    )
-    
-    ai_model_temperature: float = Field(
-        default=0.2,
-        description="Temperature setting for AI model responses (0.0-1.0)",
-        ge=0.0,
-        le=1.0
-    )
-    
-    ai_fallback_model: str = Field(
-        default="gpt-3.5-turbo",
-        description="Fallback AI model if primary model fails"
-    )
-    
-    # Directory Paths
-    base_dir: Optional[Path] = Field(
-        default=None,
-        description="Base directory of the project"
-    )
-    
-    input_dir: Optional[Path] = Field(
-        default=None,
-        description="Input directory for course materials"
-    )
-    
-    output_dir: Optional[Path] = Field(
-        default=None,
-        description="Output directory for processed data"
-    )
-    
-    course_info_dir: Optional[Path] = Field(
-        default=None,
-        description="Directory containing course information documents"
-    )
-    
-    transcripts_dir: Optional[Path] = Field(
-        default=None,
-        description="Directory containing transcript files"
-    )
-    
-    slides_dir: Optional[Path] = Field(
-        default=None,
-        description="Directory containing slide files"
-    )
-    
-    # Data Manager Settings
-    data_base_dir: str = Field(
-        default="output/data",
-        description="Base directory for data manager storage"
-    )
-    
-    def model_post_init(self, __context) -> None:
-        """Post-initialization hook to resolve default paths."""
-        # Auto-detect base_dir if not provided
-        if self.base_dir is None:
-            # Try to find project root by looking for marker files
-            current = Path(__file__).parent.parent.absolute()
-            # Look for common project markers
-            markers = ['.git', 'requirements.txt', 'pyproject.toml', 'setup.py']
-            for marker in markers:
-                if (current / marker).exists():
-                    self.base_dir = current
-                    break
-            else:
-                # Fallback to parent of core directory
-                self.base_dir = current
+    def __init__(self):
+        """Initialize settings from environment variables with sensible defaults."""
         
-        # Set default paths if not provided
-        if self.input_dir is None:
-            self.input_dir = self.base_dir / "input"
+        # Base directories
+        self.project_root = Path(__file__).parent.parent.absolute()
+        self.input_dir = Path(os.getenv("INPUT_DIR", str(self.project_root / "input")))
+        self.output_dir = Path(os.getenv("OUTPUT_DIR", str(self.project_root / "output")))
+        self.data_dir = Path(os.getenv("DATA_DIR", str(self.output_dir / "data")))
         
-        if self.output_dir is None:
-            self.output_dir = self.base_dir / "output"
+        # Course material directories
+        self.course_info_dir = self.input_dir / "course_material" / "course_info"
+        self.transcripts_dir = self.input_dir / "course_material" / "transcripts"
+        self.slides_dir = self.input_dir / "course_material" / "slides"
         
-        if self.course_info_dir is None:
-            self.course_info_dir = self.input_dir / "course_material" / "course_info"
+        # Output directories
+        self.course_context_dir = self.output_dir / "course_context"
+        self.transcripts_output_dir = self.output_dir / "transcripts"
+        self.slides_output_dir = self.output_dir / "slides"
+        self.knowledge_graph_dir = self.output_dir / "knowledge_graph"
         
-        if self.transcripts_dir is None:
-            self.transcripts_dir = self.input_dir / "course_material" / "transcripts"
+        # AI Model settings
+        self.default_model = os.getenv("DEFAULT_MODEL", "gpt-4o-mini")
+        self.course_context_model = os.getenv("COURSE_CONTEXT_MODEL", self.default_model)
+        self.transcript_model = os.getenv("TRANSCRIPT_MODEL", self.default_model)
+        self.slide_model = os.getenv("SLIDE_MODEL", self.default_model)
         
-        if self.slides_dir is None:
-            self.slides_dir = self.input_dir / "course_material" / "slides"
+        # OpenAI API settings
+        self.openai_api_key = os.getenv("OPENAI_API_KEY", "")
+        
+        # Model parameters
+        self.temperature = float(os.getenv("MODEL_TEMPERATURE", "0.2"))
+        self.max_tokens = int(os.getenv("MODEL_MAX_TOKENS", "4000"))
+        
+        # Pipeline settings
+        self.pipeline_version = os.getenv("PIPELINE_VERSION", "1.0.0")
+        
+        # Logging settings
+        self.log_level = os.getenv("LOG_LEVEL", "INFO")
+        
+        # Create necessary directories
+        self._ensure_directories()
     
-    def ensure_directories(self):
-        """Create all necessary directories if they don't exist."""
+    def _ensure_directories(self):
+        """Ensure all necessary directories exist."""
         directories = [
             self.input_dir,
             self.output_dir,
+            self.data_dir,
             self.course_info_dir,
             self.transcripts_dir,
-            self.slides_dir
+            self.slides_dir,
+            self.course_context_dir,
+            self.transcripts_output_dir,
+            self.slides_output_dir,
+            self.knowledge_graph_dir,
         ]
         
         for directory in directories:
-            if directory:
-                directory.mkdir(parents=True, exist_ok=True)
+            directory.mkdir(parents=True, exist_ok=True)
     
-    def get_ai_model_config(self) -> dict:
-        """
-        Get AI model configuration as a dictionary.
-        
-        Returns:
-            dict: Configuration dictionary for AI model creation
-        """
+    def to_dict(self):
+        """Convert settings to a dictionary for passing to agents."""
         return {
-            "model_name": self.ai_model_name,
-            "temperature": self.ai_model_temperature,
-            "fallback_model": self.ai_fallback_model
+            "project_root": str(self.project_root),
+            "input_dir": str(self.input_dir),
+            "output_dir": str(self.output_dir),
+            "data_dir": str(self.data_dir),
+            "course_info_dir": str(self.course_info_dir),
+            "transcripts_dir": str(self.transcripts_dir),
+            "slides_dir": str(self.slides_dir),
+            "course_context_dir": str(self.course_context_dir),
+            "transcripts_output_dir": str(self.transcripts_output_dir),
+            "slides_output_dir": str(self.slides_output_dir),
+            "knowledge_graph_dir": str(self.knowledge_graph_dir),
+            "default_model": self.default_model,
+            "course_context_model": self.course_context_model,
+            "transcript_model": self.transcript_model,
+            "slide_model": self.slide_model,
+            "temperature": self.temperature,
+            "max_tokens": self.max_tokens,
+            "pipeline_version": self.pipeline_version,
+            "log_level": self.log_level,
         }
 
 
