@@ -259,7 +259,7 @@ class ContextFusion:
             
             # Process each image description
             for image_path, description in vision_results.items():
-                if not description or "error" in description.lower():
+                if not description or not isinstance(description, str) or "error" in description.lower():
                     continue
                 
                 # Extract key terms from the description as concepts
@@ -269,8 +269,11 @@ class ContextFusion:
                     # Look for capitalized words (potential concepts) excluding common words
                     cleaned_word = word.strip('.,!?:;()[]"\'')
                     
-                    # Skip very short words and common articles
-                    if len(cleaned_word) < 3 or cleaned_word.lower() in ['the', 'this', 'that', 'these', 'those', 'with', 'from', 'and', 'for']:
+                    # Skip empty strings, very short words, and common articles
+                    if not cleaned_word or len(cleaned_word) < 3:
+                        continue
+                    
+                    if cleaned_word.lower() in ['the', 'this', 'that', 'these', 'those', 'with', 'from', 'and', 'for', 'are', 'was', 'were', 'has', 'have']:
                         continue
                     
                     # Add as concept if it appears to be significant
@@ -288,7 +291,9 @@ class ContextFusion:
                         else:
                             if "visual_rag" not in concepts[concept_name]["sources"]:
                                 concepts[concept_name]["sources"].append("visual_rag")
-                                concepts[concept_name]["visual_context"] = description[:200]
+                                # Add visual_context if not already present
+                                if "visual_context" not in concepts[concept_name]:
+                                    concepts[concept_name]["visual_context"] = description[:200]
                             concepts[concept_name]["references"] += 1
             
             logger.info(f"Extracted concepts from {len(vision_results)} image descriptions (Visual RAG)")
