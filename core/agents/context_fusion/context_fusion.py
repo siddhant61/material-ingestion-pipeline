@@ -273,11 +273,26 @@ class ContextFusion:
                     if not cleaned_word or len(cleaned_word) < 3:
                         continue
                     
-                    if cleaned_word.lower() in ['the', 'this', 'that', 'these', 'those', 'with', 'from', 'and', 'for', 'are', 'was', 'were', 'has', 'have']:
+                    # Expanded list of common words to exclude
+                    common_words = {
+                        'the', 'this', 'that', 'these', 'those', 'with', 'from', 'and', 'for',
+                        'are', 'was', 'were', 'has', 'have', 'but', 'however', 'also', 'can',
+                        'will', 'would', 'should', 'could', 'may', 'might', 'must', 'when',
+                        'where', 'which', 'who', 'how', 'what', 'why', 'all', 'each', 'every',
+                        'some', 'any', 'many', 'few', 'more', 'most', 'less', 'such', 'very'
+                    }
+                    
+                    if cleaned_word.lower() in common_words:
                         continue
                     
-                    # Add as concept if it appears to be significant
-                    if cleaned_word[0].isupper() or any(char.isdigit() for char in cleaned_word):
+                    # Only consider as concept if:
+                    # 1. Contains digits (like "H2O", "1st", etc.), OR
+                    # 2. Is capitalized AND not at sentence start (i > 0 and prev word ends with punctuation)
+                    is_sentence_start = (i == 0 or words[i-1][-1] in '.!?')
+                    has_digits = any(char.isdigit() for char in cleaned_word)
+                    is_capitalized = cleaned_word[0].isupper()
+                    
+                    if has_digits or (is_capitalized and not is_sentence_start):
                         concept_name = cleaned_word
                         
                         if concept_name not in concepts:
@@ -575,9 +590,22 @@ class ContextFusion:
                     
                     # Check if any images are associated with this slide
                     # Images typically have naming pattern: deckname_slideN_imgM.ext
+                    slide_number = slide.get('slide_number', 0)
+                    
                     for image_path, description in vision_results.items():
-                        # Simple matching: check if image path contains slide number reference
-                        if f"slide{slide.get('slide_number', 0)}" in image_path.lower():
+                        # Skip if slide_number is 0 or not set (default value)
+                        if slide_number == 0:
+                            continue
+                        
+                        # Match using multiple patterns to be robust
+                        image_path_lower = image_path.lower()
+                        matches = (
+                            f"slide{slide_number}" in image_path_lower or
+                            f"slide_{slide_number}" in image_path_lower or
+                            f"slide-{slide_number}" in image_path_lower
+                        )
+                        
+                        if matches:
                             visual_descriptions.append({
                                 "image_path": image_path,
                                 "description": description,
@@ -587,8 +615,11 @@ class ContextFusion:
                     if visual_descriptions:
                         slide_entry["visual_descriptions"] = visual_descriptions
                         # Mark that this entry has visual RAG content
-                        if "Visual RAG" not in slide_entry.get("sources", []):
-                            slide_entry["sources"] = slide_entry.get("sources", ["slide"]) + ["Visual RAG"]
+                        # Note: slide_entry has "source" not "sources", so we create a new "sources" list
+                        if "sources" not in slide_entry:
+                            slide_entry["sources"] = [slide_entry["source"]]
+                        if "Visual RAG" not in slide_entry["sources"]:
+                            slide_entry["sources"].append("Visual RAG")
                 
                 timeline.append(slide_entry)
         
