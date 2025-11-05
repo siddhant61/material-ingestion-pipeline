@@ -21,6 +21,7 @@ from core.config import settings
 from core.pipeline.material_ingestion_pipeline import MaterialIngestionPipeline
 from core.agents.context_agent import ContextAgent
 from core.agents.transcript_agent import TranscriptAgent
+from core.agents.slide_agent import SlideAgent
 
 # Configure logging
 logging.basicConfig(
@@ -126,8 +127,13 @@ def main():
     pipeline.register_agent("process_transcripts", transcript_agent)
     logger.info("Registered TranscriptAgent for stage: process_transcripts")
     
+    # Register Slide Agent
+    slide_agent = SlideAgent()
+    pipeline.register_agent("process_slides", slide_agent)
+    logger.info("Registered SlideAgent for stage: process_slides")
+    
     # Set execution plan
-    execution_plan = ["course_context", "process_transcripts"]
+    execution_plan = ["course_context", "process_transcripts", "process_slides"]
     pipeline.set_execution_plan(execution_plan)
     logger.info(f"Execution plan: {' -> '.join(execution_plan)}")
     

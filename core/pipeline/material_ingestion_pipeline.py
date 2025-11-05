@@ -254,6 +254,12 @@ class MaterialIngestionPipeline:
             "pipeline_context": current_input.get("pipeline_context", {})
         }
         
+        # Accumulate results from all previous stages
+        # Copy all result_from_* keys from current_input to next_input
+        for key, value in current_input.items():
+            if key.startswith("result_from_"):
+                next_input[key] = value
+        
         # Add stage-specific context to the pipeline context
         next_input["pipeline_context"][current_stage] = {
             "output_summary": current_output.get("summary", "No summary available"),
