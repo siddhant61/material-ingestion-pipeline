@@ -18,6 +18,15 @@ logger = logging.getLogger(__name__)
 # Constants
 VISUAL_CONTEXT_SNIPPET_LENGTH = 200  # Maximum characters to store from visual descriptions
 
+# Common words to exclude from concept extraction (lowercase)
+COMMON_WORDS_TO_EXCLUDE = {
+    'the', 'this', 'that', 'these', 'those', 'with', 'from', 'and', 'for',
+    'are', 'was', 'were', 'has', 'have', 'but', 'however', 'also', 'can',
+    'will', 'would', 'should', 'could', 'may', 'might', 'must', 'when',
+    'where', 'which', 'who', 'how', 'what', 'why', 'all', 'each', 'every',
+    'some', 'any', 'many', 'few', 'more', 'most', 'less', 'such', 'very'
+}
+
 class ContextFusion:
     """
     Processor that fuses multiple content sources into a unified context representation.
@@ -276,25 +285,19 @@ class ContextFusion:
                     if not cleaned_word or len(cleaned_word) < 3:
                         continue
                     
-                    # Expanded list of common words to exclude
-                    common_words = {
-                        'the', 'this', 'that', 'these', 'those', 'with', 'from', 'and', 'for',
-                        'are', 'was', 'were', 'has', 'have', 'but', 'however', 'also', 'can',
-                        'will', 'would', 'should', 'could', 'may', 'might', 'must', 'when',
-                        'where', 'which', 'who', 'how', 'what', 'why', 'all', 'each', 'every',
-                        'some', 'any', 'many', 'few', 'more', 'most', 'less', 'such', 'very'
-                    }
-                    
-                    if cleaned_word.lower() in common_words:
+                    # Skip common words using the module-level constant
+                    if cleaned_word.lower() in COMMON_WORDS_TO_EXCLUDE:
                         continue
                     
                     # Only consider as concept if:
                     # 1. Contains digits (like "H2O", "1st", etc.), OR
-                    # 2. Is capitalized AND not at sentence start (i > 0 and prev word ends with punctuation)
-                    is_sentence_start = (i == 0 or (len(words[i-1]) > 0 and words[i-1][-1] in '.!?'))
+                    # 2. Is capitalized AND not at sentence start
+                    # Sentence start detection: first word OR previous word ends with sentence-ending punctuation
+                    is_sentence_start = (i == 0 or (words[i-1] and words[i-1][-1] in '.!?'))
                     has_digits = any(char.isdigit() for char in cleaned_word)
                     is_capitalized = cleaned_word[0].isupper()
                     
+                    # Accept if has digits, or if capitalized and not at sentence start
                     if has_digits or (is_capitalized and not is_sentence_start):
                         concept_name = cleaned_word
                         
@@ -596,10 +599,11 @@ class ContextFusion:
                     slide_number = slide.get('slide_number')
                     
                     for image_path, description in vision_results.items():
-                        # Skip if slide_number is None, 0 (default), or negative
-                        # Note: Most slide decks start numbering from 1, not 0
-                        # If your slide deck uses 0-based indexing, this logic may need adjustment
-                        if slide_number is None or slide_number <= 0:
+                        # Skip if slide_number is None or less than 1
+                        # Assumption: Slide decks use 1-based indexing (slides numbered 1, 2, 3, ...)
+                        # This excludes None, 0, and negative values
+                        # Note: If your slide deck uses 0-based indexing, adjust this to `< 0`
+                        if slide_number is None or slide_number < 1:
                             continue
                         
                         # Match using multiple patterns to be robust
