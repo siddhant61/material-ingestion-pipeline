@@ -2,8 +2,8 @@
 """
 Main Entry Point for Material Ingestion Pipeline
 
-This script serves as the primary entry point for running the Material Ingestion Pipeline
-using the formal MaterialIngestionPipeline orchestrator with class-based agents.
+This script runs the modular material ingestion pipeline using the
+MaterialIngestionPipeline orchestrator with registered agents.
 
 Usage:
     python main.py
@@ -12,13 +12,15 @@ Usage:
 import os
 import sys
 import logging
-import json
-from datetime import datetime
 from pathlib import Path
 
-# Add the project root to the Python path
-project_root = Path(__file__).parent.absolute()
-sys.path.insert(0, str(project_root))
+# Import configuration
+from core.config import settings
+
+# Import pipeline and agents
+from core.pipeline.material_ingestion_pipeline import MaterialIngestionPipeline
+from core.agents.context_agent import ContextAgent
+from core.agents.transcript_agent import TranscriptAgent
 
 # Configure logging
 logging.basicConfig(
@@ -27,102 +29,138 @@ logging.basicConfig(
 )
 logger = logging.getLogger("main")
 
-# Import the pipeline and agent components
-from core.pipeline.material_ingestion_pipeline import MaterialIngestionPipeline
-from core.agents.context_agent import ContextAgent
-from core.config import settings
+
+def setup_sample_files():
+    """Create sample files if no course material files exist."""
+    logger.info("Checking for course material files...")
+    
+    course_info_dir = settings.course_info_dir
+    transcripts_dir = settings.transcripts_dir
+    
+    # Check if course info directory is empty
+    course_info_files = list(course_info_dir.glob("*"))
+    if not course_info_files:
+        logger.warning("No course info files found. Creating a sample file.")
+        
+        # Create a sample course info file
+        sample_course_info = """# Quantum Computing Basics
+## Course Overview
+This course introduces the fundamentals of quantum computing, from basic quantum mechanics to quantum algorithms.
+
+## Learning Objectives
+- Understand quantum bits (qubits) and quantum gates
+- Learn about quantum superposition and entanglement
+- Explore simple quantum algorithms
+
+## Course Structure
+1. Introduction to Quantum Computing
+2. Quantum Bits and Gates
+3. Quantum Algorithms
+4. Applications of Quantum Computing
+"""
+        with open(course_info_dir / "course_info.md", "w", encoding="utf-8") as f:
+            f.write(sample_course_info)
+        
+        logger.info(f"Created sample course info file at {course_info_dir / 'course_info.md'}")
+    
+    # Check if transcripts directory is empty
+    transcript_files = list(transcripts_dir.glob("*"))
+    if not transcript_files:
+        logger.warning("No transcript files found. Creating a sample file.")
+        
+        # Create a sample transcript file in WebVTT format
+        sample_transcript = """WEBVTT
+
+00:00:00.000 --> 00:00:05.000
+Hello and welcome to the first lecture on Quantum Computing Basics.
+
+00:00:05.100 --> 00:00:10.000
+In this course, we'll explore the fascinating world of quantum computing.
+
+00:00:10.100 --> 00:00:15.000
+Let's start by understanding what makes quantum computing different from classical computing.
+
+00:00:15.100 --> 00:00:20.000
+The fundamental unit of quantum information is the qubit, which can exist in a superposition of states.
+
+00:00:20.100 --> 00:00:25.000
+Unlike classical bits that can only be 0 or 1, qubits can be both 0 and 1 simultaneously.
+
+00:00:25.100 --> 00:00:30.000
+This property gives quantum computers their potential for exponential processing power.
+"""
+        with open(transcripts_dir / "1.1 Introduction to Quantum Computing.txt", "w", encoding="utf-8") as f:
+            f.write(sample_transcript)
+        
+        logger.info(f"Created sample transcript file at {transcripts_dir / '1.1 Introduction to Quantum Computing.txt'}")
 
 
 def main():
-    """
-    Main function to execute the Material Ingestion Pipeline.
-    
-    This version runs only the course context extraction stage as the first
-    step in migrating from the procedural run_enhanced_pipeline.py script.
-    """
-    logger.info("=" * 80)
-    logger.info("Material Ingestion Pipeline - Course Context Extraction")
+    """Main execution function."""
+    logger.info("Starting Material Ingestion Pipeline")
     logger.info("=" * 80)
     
-    try:
-        # Create pipeline configuration from settings
-        pipeline_config = {
-            "pipeline_id": datetime.now().strftime("%Y%m%d_%H%M%S"),
-            "version": settings.pipeline_version,
-            "input_dir": str(settings.input_dir),
-            "output_dir": str(settings.output_dir),
-            "data_dir": str(settings.data_dir),
-        }
-        
-        # Initialize the Material Ingestion Pipeline
-        logger.info("Initializing Material Ingestion Pipeline...")
-        pipeline = MaterialIngestionPipeline(config=pipeline_config)
-        
-        # Initialize the Context Agent with settings
-        logger.info("Initializing Context Agent...")
-        context_agent = ContextAgent(config=settings.to_dict())
-        
-        # Register the Context Agent with the pipeline
-        logger.info("Registering Context Agent with pipeline...")
-        pipeline.register_agent("course_context", context_agent)
-        
-        # Set the execution plan to run only the course context extraction
-        logger.info("Setting execution plan...")
-        pipeline.set_execution_plan(["course_context"])
-        
-        # Prepare input data
-        input_data = {
-            "input_dir": str(settings.input_dir),
-            "course_info_path": str(settings.course_info_dir),
-        }
-        
-        # Run the pipeline
-        logger.info("Starting pipeline execution...")
-        logger.info("-" * 80)
-        results = pipeline.run(input_data)
-        logger.info("-" * 80)
-        
-        # Display results
-        logger.info("Pipeline execution completed!")
-        logger.info(f"Status: {results['status']}")
-        
-        if results['status'] == 'success':
-            logger.info(f"Pipeline ID: {results['pipeline_id']}")
-            logger.info(f"Total execution time: {results['execution_metadata']['total_execution_time']:.2f} seconds")
-            
-            # Display stage outputs
-            if 'course_context' in results['stage_outputs']:
-                context_output = results['stage_outputs']['course_context']
-                logger.info("\nCourse Context Extraction Results:")
-                logger.info(f"  Status: {context_output.get('status', 'unknown')}")
-                logger.info(f"  Summary: {context_output.get('summary', 'No summary available')}")
-                logger.info(f"  Output file: {context_output.get('output_file', 'Not saved')}")
-                
-                # Display extracted course title if available
-                if 'result' in context_output:
-                    course_title = context_output['result'].get('title', 'Unknown')
-                    logger.info(f"  Course title: {course_title}")
-            
-            # Save the full pipeline results
-            results_file = pipeline.save_results(results)
-            logger.info(f"\nFull results saved to: {results_file}")
-        else:
-            logger.error(f"Pipeline failed with error: {results.get('error', 'Unknown error')}")
-            if 'error' in results:
-                error_info = results['error']
-                logger.error(f"  Stage: {error_info.get('stage', 'Unknown')}")
-                logger.error(f"  Error type: {error_info.get('error_type', 'Unknown')}")
-                logger.error(f"  Error message: {error_info.get('error_message', 'Unknown')}")
-        
-        logger.info("=" * 80)
-        
-        return results
-        
-    except Exception as e:
-        logger.error(f"Fatal error in main execution: {str(e)}", exc_info=True)
-        raise
+    # Ensure directories exist
+    settings.ensure_directories()
+    
+    # Setup sample files if needed
+    setup_sample_files()
+    
+    # Initialize the pipeline
+    logger.info("Initializing pipeline...")
+    pipeline = MaterialIngestionPipeline(config={
+        "input_dir": str(settings.input_dir),
+        "output_dir": str(settings.output_dir)
+    })
+    
+    # Create and register agents
+    logger.info("Registering agents...")
+    
+    # Register Context Agent
+    context_agent = ContextAgent()
+    pipeline.register_agent("course_context", context_agent)
+    logger.info("Registered ContextAgent for stage: course_context")
+    
+    # Register Transcript Agent
+    transcript_agent = TranscriptAgent()
+    pipeline.register_agent("process_transcripts", transcript_agent)
+    logger.info("Registered TranscriptAgent for stage: process_transcripts")
+    
+    # Set execution plan
+    execution_plan = ["course_context", "process_transcripts"]
+    pipeline.set_execution_plan(execution_plan)
+    logger.info(f"Execution plan: {' -> '.join(execution_plan)}")
+    
+    # Run the pipeline
+    logger.info("=" * 80)
+    logger.info("Executing pipeline...")
+    logger.info("=" * 80)
+    
+    results = pipeline.run()
+    
+    # Display results
+    logger.info("=" * 80)
+    logger.info("Pipeline Execution Complete")
+    logger.info("=" * 80)
+    logger.info(f"Status: {results['status']}")
+    logger.info(f"Pipeline ID: {results['pipeline_id']}")
+    
+    if results["status"] == "success":
+        logger.info(f"Total execution time: {results['execution_metadata']['total_execution_time']:.2f} seconds")
+        logger.info("\nStage Results:")
+        for stage_name, stage_output in results["stage_outputs"].items():
+            summary = stage_output.get("summary", "No summary available")
+            logger.info(f"  - {stage_name}: {summary}")
+    else:
+        logger.error(f"Pipeline failed with error: {results.get('error', {}).get('error_message', 'Unknown error')}")
+    
+    # Save results
+    results_file = pipeline.save_results(results)
+    logger.info(f"\nFull results saved to: {results_file}")
+    
+    # Return exit code
+    return 0 if results["status"] == "success" else 1
 
 
 if __name__ == "__main__":
-    # Execute the main function
-    main()
+    sys.exit(main())
