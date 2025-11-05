@@ -21,6 +21,8 @@ from pathlib import Path
 from datetime import datetime
 import shutil
 
+# Import settings
+from core.config import settings
 
 # Configure logging
 logging.basicConfig(
@@ -29,23 +31,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger("pipeline_runner")
 
-# Setup directories
-script_dir = Path(__file__).parent.absolute()
-input_dir = script_dir / "input"
-output_dir = script_dir / "output"
+# Setup directories from settings
+settings.ensure_directories()
 
-# Course material directories 
-course_info_dir = input_dir / "course_material" / "course_info"
-transcripts_dir = input_dir / "course_material" / "transcripts"
-slides_dir = input_dir / "course_material" / "slides"
-
-# Make sure directories exist
-os.makedirs(course_info_dir, exist_ok=True)
-os.makedirs(transcripts_dir, exist_ok=True)
-os.makedirs(slides_dir, exist_ok=True)
-
-# Ensure output directory exists
-os.makedirs(output_dir, exist_ok=True)
+input_dir = settings.input_dir
+output_dir = settings.output_dir
+course_info_dir = settings.course_info_dir
+transcripts_dir = settings.transcripts_dir
+slides_dir = settings.slides_dir
 
 # Check if course material files exist and create samples if needed
 def setup_sample_files():
@@ -129,7 +122,7 @@ from core.utils.data_manager import DataManager
 
 # Initialize the DataManager
 data_manager = DataManager({
-    "base_data_dir": "output/data"
+    "base_data_dir": settings.data_base_dir
 })
 
 # Create a unique run ID for this pipeline run
