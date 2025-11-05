@@ -177,16 +177,19 @@ class SupervisionOrchestratorAgent(BaseAgent):
                         "refined_content": content
                     }
             
+            # Generate timestamp once for both purposes
+            timestamp_iso = datetime.now().isoformat()
+            timestamp_file = datetime.now().strftime("%Y%m%d_%H%M%S")
+            
             # Save all supervision results
             combined_results = {
                 "refined_outputs": refined_outputs,
                 "supervision_results": supervision_results,
-                "timestamp": datetime.now().isoformat()
+                "timestamp": timestamp_iso
             }
             
             # Use timestamp to avoid conflicts in concurrent executions
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            supervision_results_file = self.output_dir / f"supervision_results_{timestamp}.json"
+            supervision_results_file = self.output_dir / f"supervision_results_{timestamp_file}.json"
             with open(supervision_results_file, 'w', encoding='utf-8') as f:
                 json.dump(combined_results, f, ensure_ascii=False, indent=2)
             
