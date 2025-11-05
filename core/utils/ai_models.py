@@ -8,6 +8,7 @@ in the educational content pipeline.
 import logging
 from typing import Dict, Any, Optional
 from langchain_openai import ChatOpenAI
+from core.config import settings
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -18,21 +19,26 @@ class AIModelFactory:
     """
     
     @staticmethod
-    def create_model(model_name: str, config: Optional[Dict[str, Any]] = None) -> Any:
+    def create_model(model_name: Optional[str] = None, config: Optional[Dict[str, Any]] = None) -> Any:
         """
         Create an AI model instance with the specified name and configuration.
         
         Args:
-            model_name (str): Name of the model to create
-            config (Dict[str, Any], optional): Additional configuration for the model
+            model_name (str, optional): Name of the model to create. 
+                                       If not provided, uses the default from settings.
+            config (Dict[str, Any], optional): Additional configuration for the model.
+                                              Overrides settings values if provided.
             
         Returns:
             Any: An initialized model instance
         """
         if config is None:
             config = {}
-            
-        temperature = config.get("temperature", 0.2)
+        
+        # Use settings as defaults, allow config to override
+        model_name = model_name or config.get("model_name") or settings.ai_model_name
+        temperature = config.get("temperature", settings.ai_model_temperature)
+        fallback_model = config.get("fallback_model", settings.ai_fallback_model)
         
         try:
             logger.info(f"Creating model instance: {model_name}")
@@ -50,7 +56,6 @@ class AIModelFactory:
             logger.error(f"Error creating model {model_name}: {str(e)}")
             
             # Try to use a fallback model
-            fallback_model = config.get("fallback_model", "gpt-3.5-turbo")
             logger.info(f"Falling back to {fallback_model}")
             
             try:
