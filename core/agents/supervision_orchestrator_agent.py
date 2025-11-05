@@ -79,6 +79,50 @@ class SupervisionOrchestratorAgent(BaseAgent):
             "output_dir": str(self.output_dir)
         })
     
+    def validate_input(self, input_data: Dict[str, Any]) -> bool:
+        """
+        Validate the input data for the supervision agent.
+        
+        Args:
+            input_data: Input data to validate
+            
+        Returns:
+            True if the input is valid, False otherwise
+        """
+        # Input must be a dictionary (checked by base class)
+        if not super().validate_input(input_data):
+            return False
+        
+        # At least one result from previous stages should be present
+        has_results = any(
+            key in input_data for key in [
+                "result_from_course_context",
+                "result_from_process_transcripts",
+                "result_from_process_slides",
+                "result_from_context_fusion"
+            ]
+        )
+        
+        return has_results
+    
+    def validate_output(self, output_data: Dict[str, Any]) -> bool:
+        """
+        Validate the output data from the supervision agent.
+        
+        Args:
+            output_data: Output data to validate
+            
+        Returns:
+            True if the output is valid, False otherwise
+        """
+        # Output must be a dictionary (checked by base class)
+        if not super().validate_output(output_data):
+            return False
+        
+        # Output must have required keys
+        required_keys = ["status", "result", "summary", "output_type"]
+        return all(key in output_data for key in required_keys)
+    
     def run(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
         """
         Supervise and refine outputs from all previous pipeline stages.
