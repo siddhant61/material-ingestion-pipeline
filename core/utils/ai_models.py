@@ -42,7 +42,12 @@ class AIModelFactory:
             config = {}
         
         # Use settings as defaults, allow config to override
-        model_name = model_name or config.get("model_name") or settings.ai_model_name
+        # Use explicit None checks to avoid masking falsy but valid values
+        if model_name is None:
+            model_name = config.get("model_name")
+        if model_name is None:
+            model_name = settings.ai_model_name
+            
         temperature = config.get("temperature", settings.ai_model_temperature)
         fallback_model = config.get("fallback_model", settings.ai_fallback_model)
         
