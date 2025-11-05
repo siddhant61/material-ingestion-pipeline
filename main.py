@@ -23,6 +23,7 @@ from core.agents.context_agent import ContextAgent
 from core.agents.transcript_agent import TranscriptAgent
 from core.agents.slide_agent import SlideAgent
 from core.agents.fusion_agent import FusionAgent
+from core.agents.supervision_orchestrator_agent import SupervisionOrchestratorAgent
 
 # Configure logging
 logging.basicConfig(
@@ -138,8 +139,13 @@ def main():
     pipeline.register_agent("context_fusion", fusion_agent)
     logger.info("Registered FusionAgent for stage: context_fusion")
     
+    # Register Supervision Orchestrator Agent
+    supervision_orchestrator_agent = SupervisionOrchestratorAgent()
+    pipeline.register_agent("supervision", supervision_orchestrator_agent)
+    logger.info("Registered SupervisionOrchestratorAgent for stage: supervision")
+    
     # Set execution plan
-    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion"]
+    execution_plan = ["course_context", "process_transcripts", "process_slides", "context_fusion", "supervision"]
     pipeline.set_execution_plan(execution_plan)
     logger.info(f"Execution plan: {' -> '.join(execution_plan)}")
     
