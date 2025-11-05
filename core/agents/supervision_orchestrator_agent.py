@@ -135,10 +135,7 @@ class SupervisionOrchestratorAgent(BaseAgent):
                 try:
                     logger.info(f"Supervising output from {agent_name}...")
                     
-                    # Validate content is a dictionary
-                    # Note: Automatic wrapping of non-dictionary content is a defensive measure
-                    # to ensure supervision can proceed even with unexpected input formats.
-                    # This behavior matches the original supervise_outputs() implementation.
+                    # Validate and wrap non-dictionary content (defensive measure matching original implementation)
                     if not isinstance(content, dict):
                         logger.warning(f"Content from {agent_name} is not a dictionary, wrapping it")
                         if content is None:
@@ -196,7 +193,6 @@ class SupervisionOrchestratorAgent(BaseAgent):
             logger.info(f"All supervision results saved to {supervision_results_file}")
             
             # Return refined outputs in the format expected by the pipeline
-            # The refined fused_context is what the next stage will need
             return {
                 "status": "success",
                 "result": refined_outputs,
@@ -204,7 +200,7 @@ class SupervisionOrchestratorAgent(BaseAgent):
                 "output_type": "supervision_results",
                 "supervision_metadata": {
                     "agents_supervised": list(agent_outputs.keys()),
-                    "supervision_timestamp": datetime.now().isoformat(),
+                    "supervision_timestamp": timestamp_iso,
                     "results_file": str(supervision_results_file)
                 }
             }
