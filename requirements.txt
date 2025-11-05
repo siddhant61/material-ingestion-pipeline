@@ -56,4 +56,5 @@ tqdm>=4.62.0
 
 # Utilities
 python-dotenv>=0.19.0
-loguru>=0.5.3 
+loguru>=0.5.3
+click>=8.0.0
