@@ -15,6 +15,9 @@ from collections import defaultdict
 # Configure logging
 logger = logging.getLogger(__name__)
 
+# Constants
+VISUAL_CONTEXT_SNIPPET_LENGTH = 200  # Maximum characters to store from visual descriptions
+
 class ContextFusion:
     """
     Processor that fuses multiple content sources into a unified context representation.
@@ -288,7 +291,7 @@ class ContextFusion:
                     # Only consider as concept if:
                     # 1. Contains digits (like "H2O", "1st", etc.), OR
                     # 2. Is capitalized AND not at sentence start (i > 0 and prev word ends with punctuation)
-                    is_sentence_start = (i == 0 or words[i-1][-1] in '.!?')
+                    is_sentence_start = (i == 0 or (len(words[i-1]) > 0 and words[i-1][-1] in '.!?'))
                     has_digits = any(char.isdigit() for char in cleaned_word)
                     is_capitalized = cleaned_word[0].isupper()
                     
@@ -301,14 +304,14 @@ class ContextFusion:
                                 "sources": ["visual_rag"],
                                 "importance": 3,
                                 "references": 1,
-                                "visual_context": description[:200]  # Store snippet of description
+                                "visual_context": description[:VISUAL_CONTEXT_SNIPPET_LENGTH]
                             }
                         else:
                             if "visual_rag" not in concepts[concept_name]["sources"]:
                                 concepts[concept_name]["sources"].append("visual_rag")
                                 # Add visual_context if not already present
                                 if "visual_context" not in concepts[concept_name]:
-                                    concepts[concept_name]["visual_context"] = description[:200]
+                                    concepts[concept_name]["visual_context"] = description[:VISUAL_CONTEXT_SNIPPET_LENGTH]
                             concepts[concept_name]["references"] += 1
             
             logger.info(f"Extracted concepts from {len(vision_results)} image descriptions (Visual RAG)")
@@ -590,11 +593,13 @@ class ContextFusion:
                     
                     # Check if any images are associated with this slide
                     # Images typically have naming pattern: deckname_slideN_imgM.ext
-                    slide_number = slide.get('slide_number', 0)
+                    slide_number = slide.get('slide_number')
                     
                     for image_path, description in vision_results.items():
-                        # Skip if slide_number is 0 or not set (default value)
-                        if slide_number == 0:
+                        # Skip if slide_number is None, 0 (default), or negative
+                        # Note: Most slide decks start numbering from 1, not 0
+                        # If your slide deck uses 0-based indexing, this logic may need adjustment
+                        if slide_number is None or slide_number <= 0:
                             continue
                         
                         # Match using multiple patterns to be robust
@@ -615,7 +620,10 @@ class ContextFusion:
                     if visual_descriptions:
                         slide_entry["visual_descriptions"] = visual_descriptions
                         # Mark that this entry has visual RAG content
-                        # Note: slide_entry has "source" not "sources", so we create a new "sources" list
+                        # Design Note: Timeline entries use both "source" (string) and "sources" (list)
+                        # - "source" indicates the primary source type (e.g., "slide", "transcript")
+                        # - "sources" lists all contributing sources including enrichments like "Visual RAG"
+                        # This dual approach maintains backward compatibility while supporting multi-source tracking
                         if "sources" not in slide_entry:
                             slide_entry["sources"] = [slide_entry["source"]]
                         if "Visual RAG" not in slide_entry["sources"]:
