@@ -1,16 +1,139 @@
-# Knowledge Graph Generation for Educational Content
+# 📚 Material Ingestion Pipeline
 
-This project processes educational materials and creates a hierarchical knowledge graph with rich metadata and visualizations.
+**Transform Educational Content into Interactive Knowledge Graphs**
 
-## Overview
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-009688.svg)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-FF4B4B.svg)](https://streamlit.io/)
 
-The material ingestion pipeline processes course materials (PDFs, transcripts, slides) and generates:
+The Material Ingestion Pipeline is a comprehensive system that processes educational materials (PDFs, transcripts, slides) and automatically generates hierarchical knowledge graphs with rich metadata, interactive visualizations, and semantic embeddings.
 
-1. A hierarchical knowledge graph representing the educational content
-2. Interactive and static visualizations of the knowledge graph
-3. Vector embeddings for semantic search and retrieval
+![Material Ingestion Pipeline UI](https://github.com/user-attachments/assets/06cb27f7-b8dc-4fc1-ba3c-df152a4f0810)
 
-## Configuration
+---
+
+## 📑 Table of Contents
+
+- [Key Features](#-key-features)
+- [Screenshots](#️-screenshots)
+- [Overview](#-overview)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Configuration](#️-configuration)
+- [Knowledge Graph Features](#enhanced-knowledge-graph-features)
+- [API Documentation](#api-endpoints-reference)
+- [Directory Structure](#directory-structure)
+- [Integration](#integration-with-vision--mood-board-creation)
+- [Support](#support)
+
+---
+
+## ✨ Key Features
+
+- **📊 Automated Knowledge Graph Generation** - Extract concepts, relationships, and hierarchies from educational content
+- **🎨 Interactive Visualizations** - Explore knowledge graphs with interactive HTML and static PNG outputs
+- **🔍 Semantic Search** - Vector embeddings enable intelligent content retrieval
+- **🌐 Web Interface** - User-friendly Streamlit UI for pipeline management
+- **🚀 REST API** - FastAPI backend for programmatic access
+- **📈 Real-time Monitoring** - Track pipeline progress with live status updates
+- **🎯 Multi-Source Integration** - Process course materials, transcripts, slides, and visual content
+- **🏗️ Production-Ready** - Modular architecture with comprehensive error handling
+
+## 🖼️ Screenshots
+
+### Web Dashboard
+The intuitive web interface makes it easy to configure and run the pipeline:
+
+![Pipeline Configuration](https://github.com/user-attachments/assets/06cb27f7-b8dc-4fc1-ba3c-df152a4f0810)
+
+### Pipeline Execution
+Monitor your pipeline in real-time with progress tracking:
+
+![Pipeline Running](https://github.com/user-attachments/assets/f2c66374-94e2-476b-9f2c-50b45b0b8bc3)
+
+### API Documentation
+Full REST API with interactive documentation:
+
+![API Documentation](https://github.com/user-attachments/assets/9ee67fbe-0f5b-4f44-8ecc-c561307a5542)
+
+### Knowledge Graph Output
+Beautiful, hierarchical visualization of extracted knowledge:
+
+<details>
+<summary>View Knowledge Graph Example (Click to expand)</summary>
+
+![Knowledge Graph](./screenshots/04_knowledge_graph_output.png)
+
+</details>
+
+## 🎯 Overview
+
+The Material Ingestion Pipeline processes course materials through a sophisticated 9-stage pipeline:
+
+1. **Extract Course Context** - Analyze course information and structure
+2. **Process Transcripts** - Extract knowledge from lecture transcripts
+3. **Process Slides** - Analyze presentation materials
+4. **Vision Analysis** - Extract information from visual content
+5. **Fuse Contexts** - Combine information from all sources
+6. **Run Supervision** - Validate and enhance extracted knowledge
+7. **Generate Knowledge Graph** - Create hierarchical knowledge structures
+8. **Create Visualizations** - Generate interactive and static outputs
+9. **Generate Embeddings** - Create vector representations for semantic search
+
+**Output:**
+- Hierarchical knowledge graph with rich metadata
+- Interactive HTML visualizations
+- High-resolution static PNG visualizations
+- Vector embeddings for semantic search
+- Comprehensive pipeline reports
+
+## 📦 Installation
+
+### Prerequisites
+
+- Python 3.9 or higher
+- OpenAI API key ([Get one here](https://platform.openai.com/api-keys))
+
+### Quick Install
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/siddhant61/material-ingestion-pipeline.git
+   cd material-ingestion-pipeline
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment:**
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your OPENAI_API_KEY
+   ```
+
+4. **Run the application:**
+   ```bash
+   # Start the web interface
+   ./start_api.sh    # In one terminal
+   ./start_ui.sh     # In another terminal
+   
+   # Or use the CLI
+   python cli.py run-pipeline --input-dir ./input --output-dir ./output
+   ```
+
+### One-Command Installation (Optional)
+
+For convenience, you can use the installation scripts:
+
+```bash
+./install_and_run.sh    # Unix/Linux/Mac
+install_and_run.bat     # Windows
+```
+
+## ⚙️ Configuration
 
 The pipeline uses a centralized configuration system that externalizes all settings through environment variables.
 
@@ -123,15 +246,38 @@ The static PNG visualization offers:
 - **Legend**: Comprehensive legend for interpretation
 - **High Resolution**: Suitable for presentations and documentation
 
-## Usage
+## 🚀 Quick Start
 
-### Running the Pipeline
+### Option 1: Web Interface (Recommended)
 
-The Material Ingestion Pipeline can be run through either the CLI or the Web API:
+The easiest way to use the pipeline is through the web interface:
 
-#### Option 1: Command Line Interface (CLI)
+**Step 1: Start the API Server**
+```bash
+./start_api.sh        # Unix/Linux/Mac
+start_api.bat         # Windows
+```
 
-The production CLI allows you to process any set of course materials:
+**Step 2: Start the Web UI**
+```bash
+./start_ui.sh         # Unix/Linux/Mac
+start_ui.bat          # Windows
+```
+
+**Step 3: Open in Browser**
+
+Navigate to `http://localhost:8501` and you'll see the intuitive dashboard where you can:
+- Configure input/output directories
+- Start pipeline runs with a single click
+- Monitor progress in real-time
+- View interactive visualizations
+- Download reports
+
+![Dashboard Screenshot](https://github.com/user-attachments/assets/06cb27f7-b8dc-4fc1-ba3c-df152a4f0810)
+
+### Option 2: Command Line Interface
+
+For automation and scripting, use the CLI:
 
 ```bash
 # Run the complete 9-stage pipeline
@@ -141,20 +287,9 @@ python cli.py run-pipeline --input-dir ./input --output-dir ./output
 python cli.py run-pipeline --input-dir ./my_course --output-dir ./my_output
 ```
 
-The pipeline executes these stages:
-1. Extract course context
-2. Process transcripts
-3. Process slides
-4. Vision analysis
-5. Fuse contexts from all sources
-6. Run supervision
-7. Generate knowledge graph
-8. Create visualizations
-9. Generate embeddings
+### Option 3: REST API
 
-#### Option 2: Web API (FastAPI Backend)
-
-The API provides HTTP endpoints for programmatic access and UI integration:
+For programmatic access, use the FastAPI backend:
 
 ```bash
 # Start the API server
@@ -286,11 +421,49 @@ The codebase is developed according to stratified contexts defined in the `conte
 
 When working on specific elements of the codebase, the appropriate context files should be considered, while remaining cognizant of the larger global and universal context.
 
-## Technical Details
+## 🛠️ Technical Stack
 
-The knowledge graph generation uses:
+The pipeline leverages modern Python technologies:
 
-- NetworkX and Pyvis for graph creation and visualization
-- Sentence-Transformers for generating embeddings
-- Interactive HTML with customized CSS and JavaScript for visualization
-- Matplotlib for static image generation
+- **FastAPI** - High-performance REST API backend
+- **Streamlit** - Interactive web interface
+- **LangChain** - AI agent orchestration
+- **OpenAI GPT** - Language model for knowledge extraction
+- **NetworkX & Pyvis** - Graph creation and visualization
+- **Sentence-Transformers** - Semantic embeddings
+- **Matplotlib** - Static visualization generation
+- **Pydantic** - Configuration and data validation
+
+## 📚 Documentation
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get started in 5 minutes
+- **[UI Guide](UI_GUIDE.md)** - Comprehensive web interface documentation
+- **[API Documentation](API_USAGE.md)** - REST API reference and examples
+- **[Pipeline Flow](PIPELINE_FLOW.md)** - Detailed pipeline architecture
+- **[Testing Guide](TESTING.md)** - Running and writing tests
+
+## 🤝 Support & Contributing
+
+### Getting Help
+
+- 📖 Check the [documentation](#-documentation) for detailed guides
+- 🐛 Found a bug? [Open an issue](https://github.com/siddhant61/material-ingestion-pipeline/issues)
+- 💡 Have a feature request? [Start a discussion](https://github.com/siddhant61/material-ingestion-pipeline/discussions)
+
+### Contributing
+
+Contributions are welcome! Please read our contributing guidelines and submit pull requests to our repository.
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+**Built with ❤️ for Educators and Learners**
+
+[⭐ Star us on GitHub](https://github.com/siddhant61/material-ingestion-pipeline) | [📖 Documentation](QUICKSTART.md) | [🐛 Report Bug](https://github.com/siddhant61/material-ingestion-pipeline/issues)
+
+</div>
