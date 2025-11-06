@@ -195,4 +195,11 @@ temp/
 
 # Logs
 *.log
-logs/ 
+logs/
+
+# Screenshot mockups (HTML mockups for testing only)
+screenshots/mockups/
+
+# Test/mock files
+capture_ui_screenshots.py
+create_ui_mockups.py 
