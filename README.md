@@ -127,25 +127,66 @@ The static PNG visualization offers:
 
 ### Running the Pipeline
 
-The Material Ingestion Pipeline is run through a production CLI that allows you to process any set of course materials:
+The Material Ingestion Pipeline can be run through either the CLI or the Web API:
+
+#### Option 1: Command Line Interface (CLI)
+
+The production CLI allows you to process any set of course materials:
 
 ```bash
-# Run the complete 8-stage pipeline
+# Run the complete 9-stage pipeline
 python cli.py run-pipeline --input-dir ./input --output-dir ./output
 
 # Use custom directories
 python cli.py run-pipeline --input-dir ./my_course --output-dir ./my_output
 ```
 
-The CLI will:
+The pipeline executes these stages:
 1. Extract course context
 2. Process transcripts
 3. Process slides
-4. Fuse contexts from all sources
-5. Run supervision
-6. Generate knowledge graph
-7. Create visualizations
-8. Generate embeddings
+4. Vision analysis
+5. Fuse contexts from all sources
+6. Run supervision
+7. Generate knowledge graph
+8. Create visualizations
+9. Generate embeddings
+
+#### Option 2: Web API (FastAPI Backend)
+
+The API provides HTTP endpoints for programmatic access and UI integration:
+
+```bash
+# Start the API server
+uvicorn api:app --reload
+
+# Or use the convenience script
+./start_api.sh        # Unix/Linux/Mac
+start_api.bat         # Windows
+```
+
+The API will be available at `http://localhost:8000` with:
+- **Interactive Documentation**: `http://localhost:8000/docs`
+- **POST /run**: Start a new pipeline run asynchronously
+- **GET /status/{run_id}**: Check pipeline execution status
+- **GET /results/{run_id}/visualization**: Download the interactive HTML visualization
+- **GET /results/{run_id}/report**: Download the pipeline execution report
+
+For detailed API usage, see [API_USAGE.md](API_USAGE.md).
+
+**Example API Usage:**
+```bash
+# Start a pipeline run
+curl -X POST http://localhost:8000/run \
+     -H "Content-Type: application/json" \
+     -d '{"input_dir": "./my_course/", "output_dir": "./my_output/"}'
+
+# Check status (replace RUN_ID with actual run_id from above)
+curl http://localhost:8000/status/RUN_ID
+
+# Download visualization when complete
+curl http://localhost:8000/results/RUN_ID/visualization -o visualization.html
+```
 
 ### Quick Start with Installation Scripts
 
