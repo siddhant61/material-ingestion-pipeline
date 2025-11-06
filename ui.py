@@ -20,6 +20,9 @@ from pathlib import Path
 
 # Configuration
 API_BASE_URL = "http://localhost:8000"
+MAX_TIMEOUT_MINUTES = 30
+POLL_INTERVAL_SECONDS = 5
+VISUALIZATION_HEIGHT = 800
 
 # Page configuration
 st.set_page_config(
@@ -172,8 +175,9 @@ if "run_id" in st.session_state:
     message_placeholder = st.empty()
     
     # Poll for status
-    max_polls = 360  # 30 minutes max (5 second intervals)
+    max_polls = (MAX_TIMEOUT_MINUTES * 60) // POLL_INTERVAL_SECONDS  # 30 minutes max
     poll_count = 0
+    current_status = None  # Initialize to avoid undefined variable
     
     while poll_count < max_polls:
         try:
@@ -220,7 +224,7 @@ if "run_id" in st.session_state:
                         
                         if viz_response.status_code == 200:
                             html_content = viz_response.text
-                            st.components.v1.html(html_content, height=800, scrolling=True)
+                            st.components.v1.html(html_content, height=VISUALIZATION_HEIGHT, scrolling=True)
                             st.success("✓ Visualization loaded successfully!")
                         else:
                             st.error("Failed to load visualization")
@@ -272,7 +276,7 @@ if "run_id" in st.session_state:
         
         # Wait before next poll
         if current_status in ["initializing", "running"]:
-            time.sleep(5)
+            time.sleep(POLL_INTERVAL_SECONDS)
             poll_count += 1
         else:
             break
