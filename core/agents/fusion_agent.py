@@ -80,6 +80,7 @@ class FusionAgent(BaseAgent):
                 - result_from_course_context: Course context from ContextAgent
                 - result_from_process_transcripts: Transcript data from TranscriptAgent
                 - result_from_process_slides: Slide data from SlideAgent
+                - result_from_vision: Vision data from VisionAgent (optional)
                 
         Returns:
             Dictionary containing fused context and metadata
@@ -92,6 +93,7 @@ class FusionAgent(BaseAgent):
             course_context = input_data.get("result_from_course_context")
             transcript_data = input_data.get("result_from_process_transcripts")
             slide_data = input_data.get("result_from_process_slides")
+            vision_data = input_data.get("result_from_vision")
             
             # Validate that we received all required inputs
             if course_context is None:
@@ -105,6 +107,12 @@ class FusionAgent(BaseAgent):
             logger.info(f"Course context keys: {list(course_context.keys()) if isinstance(course_context, dict) else type(course_context)}")
             logger.info(f"Transcript data keys: {list(transcript_data.keys()) if isinstance(transcript_data, dict) else type(transcript_data)}")
             logger.info(f"Slide data keys: {list(slide_data.keys()) if isinstance(slide_data, dict) else type(slide_data)}")
+            
+            # Vision data is optional (may not exist if VisionAgent wasn't run or found no images)
+            if vision_data is not None:
+                logger.info(f"Vision data keys: {list(vision_data.keys()) if isinstance(vision_data, dict) else type(vision_data)}")
+            else:
+                logger.info("No vision data found - continuing without visual analysis")
             
             # Create a temporary directory for input files
             temp_dir = self.output_dir / "temp"
@@ -124,13 +132,22 @@ class FusionAgent(BaseAgent):
             with open(slide_data_path, 'w', encoding='utf-8') as f:
                 json.dump(slide_data, f, ensure_ascii=False, indent=2)
             
-            logger.info("Temporary input files created for ContextFusion")
+            # Save vision data if available
+            vision_data_path = None
+            if vision_data is not None:
+                vision_data_path = temp_dir / "vision_data.json"
+                with open(vision_data_path, 'w', encoding='utf-8') as f:
+                    json.dump(vision_data, f, ensure_ascii=False, indent=2)
+                logger.info("Temporary input files created for ContextFusion (including vision data)")
+            else:
+                logger.info("Temporary input files created for ContextFusion (no vision data)")
             
             # Load the data into the ContextFusion component
             load_success = self.context_fusion.load_data(
                 str(course_context_path),
                 str(transcript_data_path),
-                str(slide_data_path)
+                str(slide_data_path),
+                str(vision_data_path) if vision_data_path else None
             )
             
             if not load_success:
