@@ -235,7 +235,8 @@ class TestLegacyReportAdapter(unittest.TestCase):
         self.assertEqual(metrics["total_steps"], 3)
         self.assertEqual(metrics["completed_steps"], 3)
         self.assertIn("duration_seconds", metrics)
-        self.assertGreater(metrics["duration_seconds"], 0)
+        # 04:25:50 to 04:57:41 = 1911.389 seconds
+        self.assertAlmostEqual(metrics["duration_seconds"], 1911.39, places=1)
 
     def test_adapt_legacy_report_with_failed_step(self):
         """Steps with non-completed status should be captured as errors."""
