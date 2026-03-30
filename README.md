@@ -88,8 +88,14 @@ python -m unittest test_phase1_happy_path -v
 
 ## Legacy Pipeline (Full 9-Stage)
 
-The original AI-powered pipeline is still available and requires the full
-dependency set plus an OpenAI API key:
+> **Note:** The legacy pipeline is functional but **not yet contract-aligned**.
+> Its outputs use different field names and schemas than the shared contract
+> (e.g., `entities`/`relationships` instead of `nodes`/`edges` in the knowledge graph).
+> Bridging adapters are planned for Phase 1 Sprint 2.
+> See [`AUDIT.md`](AUDIT.md) for the full gap analysis.
+
+The original AI-powered pipeline requires the full dependency set (~67 packages)
+plus an `OPENAI_API_KEY`:
 
 ```bash
 pip install -r requirements.txt
@@ -146,8 +152,14 @@ See [`contracts/schemas.md`](contracts/schemas.md) for full field definitions.
 | Issue | Status |
 |---|---|
 | Raw JWST content not bundled (NASA/ESA assets) | By design – scaffold only |
-| Legacy pipeline not contract-aligned | Planned for Phase 2 |
+| Legacy pipeline not contract-aligned | Planned for Phase 1 Sprint 2 |
 | No embeddings in Phase 1 KG | Requires model access |
+| Legacy KG uses `entities`/`relationships` not `nodes`/`edges` | Adapter planned |
+
+## Audit & Phase 1 Plan
+
+See [`AUDIT.md`](AUDIT.md) for the complete audit package including:
+gap analysis, prioritized backlog, implementation order, and validation plan.
 
 ## License
 
