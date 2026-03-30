@@ -167,20 +167,20 @@ Ranked by impact÷effort:
 ## 8. Proposed Implementation Order
 
 ```
-Phase 1 Sprint 1 (this PR):
+Phase 1 Sprint 1 (completed):
   ✅ Audit package (this document)
   ✅ Contract validator
   ✅ Phase 1 happy path (ingest_demo.py)
   ✅ Phase 1 tests (16/16 passing)
   ✅ README update
 
-Phase 1 Sprint 2 (next PR):
-  → Legacy KG → KnowledgeGraphPackage adapter
-  → Legacy pipeline report → RunManifest adapter
-  → --validate-only flag for ingest_demo.py
-  → Lightweight test runner script
+Phase 1 Sprint 2 (completed — this PR):
+  ✅ Legacy KG → KnowledgeGraphPackage adapter (core/adapters/legacy_kg_adapter.py)
+  ✅ Legacy pipeline report → RunManifest adapter (core/adapters/legacy_report_adapter.py)
+  ✅ --validate-only flag for ingest_demo.py
+  ✅ Adapter tests (test_adapters.py — 20 tests)
 
-Phase 1 Sprint 3 (follow-up PR):
+Phase 1 Sprint 3 (next PR):
   → Contract wrapper around MaterialIngestionPipeline
   → Separate requirements-phase1.txt (minimal deps)
   → Document cross-repo handoff procedure
@@ -273,3 +273,98 @@ for f in sorted(glob.glob('output/demo_run/*.json')):
 - `content-research-pipeline` should handle `embeddings_index == null` in `KnowledgeGraphPackage`.
 - All repos should agree on `provenance` internal structure before Phase 2.
 - `seed_entities` in the manifest should either be added to the `RawSourceBundle` contract as an optional field, or removed from the ingestion flow.
+
+---
+
+## 11. Sprint 2 Worklog — Legacy-to-Contract Adapters
+
+> Completed: 2026-03-30
+> Scope: Bridge legacy outputs to shared contract via adapters
+
+### What was implemented
+
+| Deliverable | File | Description |
+|-------------|------|-------------|
+| KG Adapter | `core/adapters/legacy_kg_adapter.py` | Maps legacy `{entities, relationships, hierarchy, metadata}` → `KnowledgeGraphPackage` `{nodes, edges, embeddings_index, provenance}` |
+| Report Adapter | `core/adapters/legacy_report_adapter.py` | Maps legacy `{run_id, timestamp, status, steps}` → `RunManifest` |
+| Validate-only mode | `ingest_demo.py --validate-only` | Builds artifacts in memory and validates without writing output |
+| Adapter tests | `test_adapters.py` | 20 unit tests covering both adapters + validate-only mode |
+
+### Legacy KG → KnowledgeGraphPackage field mapping
+
+| Legacy entity field | Contract node field | Notes |
+|---------------------|---------------------|-------|
+| `id` | `node_id` | Direct 1:1 |
+| `name` | `label` | Direct 1:1 |
+| `type` | `node_type` | Direct 1:1 |
+| `description` | `description` | Direct 1:1 |
+| *(none)* | `aliases` | Set to `[]` — legacy has no alias concept |
+| `properties` | `attributes` | Entire properties dict carried forward |
+| `properties.sources` | `source_refs` | Extracted from properties |
+| `hierarchy_level` | `attributes.hierarchy_level` | Preserved inside attributes |
+
+| Legacy relationship field | Contract edge field | Notes |
+|---------------------------|---------------------|-------|
+| *(generated)* | `edge_id` | Synthetic `edge-{index}` |
+| `source` | `source_node_id` | Direct 1:1 |
+| `target` | `target_node_id` | Direct 1:1 |
+| `type` | `relation_type` | Direct 1:1 |
+| `properties.strength` | `weight` | Direct 1:1 |
+| `properties.description` | `evidence` | Best-available mapping |
+| `properties.sources` | `source_refs` | Extracted from properties |
+
+| Legacy top-level field | Contract field | Notes |
+|------------------------|----------------|-------|
+| `hierarchy` | `provenance.legacy_hierarchy_*` | Preserved in provenance metadata |
+| `metadata` | `provenance.legacy_*` | Key metadata fields preserved in provenance |
+| *(none)* | `embeddings_index` | Set to `null` — legacy has no embeddings |
+
+### Legacy pipeline_report → RunManifest field mapping
+
+| Legacy field | Contract field | Notes |
+|--------------|----------------|-------|
+| `run_id` | `source_run_id` | Direct 1:1 |
+| `timestamp` | `created_at` | Direct 1:1 |
+| `status` | `status` | Remapped: adds `completed_with_errors` when failed steps present |
+| `steps` keys | `inputs.legacy_steps` | Step names preserved as list |
+| `steps.*.output` | `outputs` | All output paths extracted (handles both string and dict values) |
+| `completion_timestamp` | `metrics.completion_timestamp` | Preserved in metrics |
+| *(computed)* | `metrics.duration_seconds` | Calculated from timestamps |
+| *(computed)* | `metrics.total_steps`, `metrics.completed_steps` | Counted from steps dict |
+| *(none)* | `artifact_type`, `schema_version`, `artifact_id`, `producer` | Injected by adapter |
+| *(none)* | `pipeline_name`, `pipeline_stage` | Defaults: `material-ingestion-pipeline`, `legacy_full_pipeline` |
+
+### Fields that could not be cleanly mapped
+
+1. **`aliases` on KG nodes**: Legacy entities have no alias concept. Set to empty list.
+2. **`evidence` on KG edges**: Mapped from `properties.description`, which is a human summary, not a citation or reference. Downstream consumers should not treat this as a citation.
+3. **`embeddings_index`**: Legacy KG has no embeddings. Set to `null`.
+4. **`inputs` on RunManifest**: Legacy report does not record input paths or parameters. Only step names are preserved.
+5. **`pipeline_stage`**: Legacy report has no equivalent. Defaults to `legacy_full_pipeline`.
+6. **`edge_id`**: Legacy relationships have no ID. Synthetic IDs (`edge-0`, `edge-1`, …) are generated based on array order.
+
+### Contract ambiguities discovered
+
+1. **`provenance` internal structure is unspecified**: The contract requires a `provenance` field on `KnowledgeGraphPackage` but does not define its schema. Phase 1 uses `{method, source_manifest}`, the KG adapter uses `{method, legacy_source, legacy_entity_count, ...}`. Downstream consumers must handle varying provenance shapes.
+
+2. **`evidence` field semantics**: The contract requires `evidence` on edges but doesn't specify whether this should be a free-text description, a citation, or a structured reference. The adapter maps legacy descriptions here.
+
+3. **`weight` default**: The contract requires `weight` on edges. Legacy relationships without `properties.strength` default to `0.5`. The contract doesn't specify a valid range or default.
+
+4. **`status` vocabulary**: The contract requires `status` on `RunManifest` but doesn't enumerate valid values. Phase 1 uses `completed`, `completed_with_warnings`; the adapter introduces `completed_with_errors`.
+
+### Validation results
+
+```
+# Phase 1 tests (unchanged)
+python -m unittest test_phase1_happy_path -v   → 16/16 pass
+
+# Adapter tests (new)
+python -m unittest test_adapters -v            → 20/20 pass
+
+# Real legacy KG (492 entities, 3008 relationships) → validates as KnowledgeGraphPackage ✅
+# Real legacy report (8 steps) → validates as RunManifest ✅
+
+# --validate-only mode
+python ingest_demo.py --validate-only          → all 5 artifact types pass
+```
