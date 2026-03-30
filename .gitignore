@@ -175,6 +175,7 @@ Thumbs.db
 output/data/runtime/
 output/data/archive/
 output/temp/
+output/demo_run/
 
 # Large model files and embeddings
 *.bin
