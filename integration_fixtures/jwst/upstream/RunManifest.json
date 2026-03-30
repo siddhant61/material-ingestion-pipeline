@@ -1,0 +1,25 @@
+{
+  "artifact_type": "RunManifest",
+  "schema_version": "1.0.0",
+  "artifact_id": "fixture-rm-jwst-001",
+  "created_at": "2026-03-30T00:00:00Z",
+  "producer": "material-ingestion-pipeline",
+  "source_run_id": "fixture-jwst-001",
+  "pipeline_name": "material-ingestion-pipeline",
+  "pipeline_stage": "phase1_demo_ingest",
+  "status": "completed",
+  "inputs": {
+    "topic": "jwst_star_formation_early_universe_demo",
+    "manifest": "demo_data/jwst_star_formation_early_universe_demo/manifest.json"
+  },
+  "outputs": [
+    "RawSourceBundle.json",
+    "NormalizedDocumentSet.json",
+    "ChunkSet.json",
+    "KnowledgeGraphPackage.json"
+  ],
+  "metrics": {
+    "artifact_count": 4
+  },
+  "errors": []
+}

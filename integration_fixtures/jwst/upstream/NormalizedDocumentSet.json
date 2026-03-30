@@ -1,0 +1,128 @@
+{
+  "artifact_type": "NormalizedDocumentSet",
+  "schema_version": "1.0.0",
+  "artifact_id": "fixture-nds-jwst-001",
+  "created_at": "2026-03-30T00:00:00Z",
+  "producer": "material-ingestion-pipeline",
+  "source_run_id": "fixture-jwst-001",
+  "topic": "James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+  "documents": [
+    {
+      "document_id": "doc-jwst-001",
+      "source_id": "jwst-nasa-mission-overview",
+      "title": "NASA Webb Mission Overview",
+      "document_type": "webpage",
+      "language": "en",
+      "text": "[Placeholder: content not yet retrieved for NASA Webb Mission Overview]",
+      "sections": [],
+      "metadata": {
+        "placeholder": true,
+        "origin_org": "NASA",
+        "url": "https://science.nasa.gov/mission/webb/",
+        "tags": [
+          "overview",
+          "mission",
+          "jwst",
+          "authoritative"
+        ]
+      }
+    },
+    {
+      "document_id": "doc-jwst-002",
+      "source_id": "jwst-nasa-fact-sheet",
+      "title": "NASA Webb Fact Sheet",
+      "document_type": "webpage",
+      "language": "en",
+      "text": "[Placeholder: content not yet retrieved for NASA Webb Fact Sheet]",
+      "sections": [],
+      "metadata": {
+        "placeholder": true,
+        "origin_org": "NASA",
+        "url": "https://science.nasa.gov/mission/webb/fact-sheet/",
+        "tags": [
+          "fact-sheet",
+          "technical",
+          "jwst"
+        ]
+      }
+    },
+    {
+      "document_id": "doc-jwst-003",
+      "source_id": "jwst-nasa-about-infographic",
+      "title": "About the James Webb Space Telescope",
+      "document_type": "webpage",
+      "language": "en",
+      "text": "[Placeholder: content not yet retrieved for About the James Webb Space Telescope]",
+      "sections": [],
+      "metadata": {
+        "placeholder": true,
+        "origin_org": "NASA",
+        "url": "https://science.nasa.gov/asset/webb/about-the-james-webb-space-telescope/",
+        "tags": [
+          "diagram",
+          "infographic",
+          "components"
+        ]
+      }
+    },
+    {
+      "document_id": "doc-jwst-004",
+      "source_id": "jwst-nasa-gallery",
+      "title": "NASA James Webb Space Telescope Gallery",
+      "document_type": "webpage",
+      "language": "en",
+      "text": "[Placeholder: content not yet retrieved for NASA James Webb Space Telescope Gallery]",
+      "sections": [],
+      "metadata": {
+        "placeholder": true,
+        "origin_org": "NASA",
+        "url": "https://www.nasa.gov/gallery/james-webb-space-telescope/",
+        "tags": [
+          "gallery",
+          "images",
+          "visuals"
+        ]
+      }
+    },
+    {
+      "document_id": "doc-jwst-005",
+      "source_id": "jwst-nasa-video-star-formation",
+      "title": "Webb: Transforming Our Understanding of Star Formation",
+      "document_type": "video",
+      "language": "en",
+      "text": "[Placeholder: content not yet retrieved for Webb: Transforming Our Understanding of Star Formation]",
+      "sections": [],
+      "metadata": {
+        "placeholder": true,
+        "origin_org": "NASA",
+        "url": "https://science.nasa.gov/asset/webb/webb-transforming-our-understanding-of-star-formation/",
+        "tags": [
+          "video",
+          "star-formation",
+          "transcript",
+          "captions"
+        ]
+      }
+    },
+    {
+      "document_id": "doc-jwst-006",
+      "source_id": "jwst-esa-brochure",
+      "title": "ESA Webb Ready-to-use Material",
+      "document_type": "pdf",
+      "language": "en",
+      "text": "[Placeholder: content not yet retrieved for ESA Webb Ready-to-use Material]",
+      "sections": [],
+      "metadata": {
+        "placeholder": true,
+        "origin_org": "ESA",
+        "url": "https://www.esa.int/About_Us/Exhibitions/Ready-to-use_material/Webb",
+        "tags": [
+          "pdf",
+          "brochure",
+          "esa",
+          "outreach"
+        ]
+      }
+    }
+  ]
+}

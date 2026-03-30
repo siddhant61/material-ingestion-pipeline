@@ -1,0 +1,190 @@
+{
+  "artifact_type": "KnowledgeGraphPackage",
+  "schema_version": "1.0.0",
+  "artifact_id": "fixture-kg-jwst-001",
+  "created_at": "2026-03-30T00:00:00Z",
+  "producer": "material-ingestion-pipeline",
+  "source_run_id": "fixture-jwst-001",
+  "topic": "James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+  "graph_name": "James Webb Space Telescope: telescope architecture, star formation, and the early universe_seed_graph",
+  "nodes": [
+    {
+      "node_id": "node-jwst-001",
+      "label": "James Webb Space Telescope",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-002",
+      "label": "infrared astronomy",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-003",
+      "label": "L2 orbit",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-004",
+      "label": "sunshield",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-005",
+      "label": "primary mirror",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-006",
+      "label": "star formation",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-007",
+      "label": "early universe",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-008",
+      "label": "galaxies",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-009",
+      "label": "exoplanets",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    },
+    {
+      "node_id": "node-jwst-010",
+      "label": "spectroscopy",
+      "node_type": "seed_entity",
+      "description": "Seed entity from demo manifest for topic: James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+      "aliases": [],
+      "attributes": {},
+      "source_refs": []
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge-jwst-000",
+      "source_node_id": "node-jwst-001",
+      "target_node_id": "node-jwst-002",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-001",
+      "source_node_id": "node-jwst-002",
+      "target_node_id": "node-jwst-003",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-002",
+      "source_node_id": "node-jwst-003",
+      "target_node_id": "node-jwst-004",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-003",
+      "source_node_id": "node-jwst-004",
+      "target_node_id": "node-jwst-005",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-004",
+      "source_node_id": "node-jwst-005",
+      "target_node_id": "node-jwst-006",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-005",
+      "source_node_id": "node-jwst-006",
+      "target_node_id": "node-jwst-007",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-006",
+      "source_node_id": "node-jwst-007",
+      "target_node_id": "node-jwst-008",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-007",
+      "source_node_id": "node-jwst-008",
+      "target_node_id": "node-jwst-009",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    },
+    {
+      "edge_id": "edge-jwst-008",
+      "source_node_id": "node-jwst-009",
+      "target_node_id": "node-jwst-010",
+      "relation_type": "related_to",
+      "weight": 0.5,
+      "evidence": "Co-listed as seed entities in demo manifest",
+      "source_refs": []
+    }
+  ],
+  "embeddings_index": null,
+  "provenance": {
+    "method": "seed_entity_bootstrap",
+    "source_manifest": "fixture-rsb-jwst-001"
+  }
+}
