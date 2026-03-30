@@ -1,0 +1,96 @@
+{
+  "artifact_type": "ChunkSet",
+  "schema_version": "1.0.0",
+  "artifact_id": "fixture-cs-jwst-001",
+  "created_at": "2026-03-30T00:00:00Z",
+  "producer": "material-ingestion-pipeline",
+  "source_run_id": "fixture-jwst-001",
+  "topic": "James Webb Space Telescope: telescope architecture, star formation, and the early universe",
+  "chunking_strategy": "fixed_char_500",
+  "chunks": [
+    {
+      "chunk_id": "doc-jwst-001__chunk_0",
+      "document_id": "doc-jwst-001",
+      "source_id": "jwst-nasa-mission-overview",
+      "text": "[Placeholder: content not yet retrieved for NASA Webb Mission Overview]",
+      "token_count": 10,
+      "char_count": 71,
+      "embedding_model": null,
+      "embedding_vector_ref": null,
+      "metadata": {
+        "placeholder": true,
+        "chunk_index": 0
+      }
+    },
+    {
+      "chunk_id": "doc-jwst-002__chunk_0",
+      "document_id": "doc-jwst-002",
+      "source_id": "jwst-nasa-fact-sheet",
+      "text": "[Placeholder: content not yet retrieved for NASA Webb Fact Sheet]",
+      "token_count": 10,
+      "char_count": 65,
+      "embedding_model": null,
+      "embedding_vector_ref": null,
+      "metadata": {
+        "placeholder": true,
+        "chunk_index": 0
+      }
+    },
+    {
+      "chunk_id": "doc-jwst-003__chunk_0",
+      "document_id": "doc-jwst-003",
+      "source_id": "jwst-nasa-about-infographic",
+      "text": "[Placeholder: content not yet retrieved for About the James Webb Space Telescope]",
+      "token_count": 12,
+      "char_count": 81,
+      "embedding_model": null,
+      "embedding_vector_ref": null,
+      "metadata": {
+        "placeholder": true,
+        "chunk_index": 0
+      }
+    },
+    {
+      "chunk_id": "doc-jwst-004__chunk_0",
+      "document_id": "doc-jwst-004",
+      "source_id": "jwst-nasa-gallery",
+      "text": "[Placeholder: content not yet retrieved for NASA James Webb Space Telescope Gallery]",
+      "token_count": 12,
+      "char_count": 84,
+      "embedding_model": null,
+      "embedding_vector_ref": null,
+      "metadata": {
+        "placeholder": true,
+        "chunk_index": 0
+      }
+    },
+    {
+      "chunk_id": "doc-jwst-005__chunk_0",
+      "document_id": "doc-jwst-005",
+      "source_id": "jwst-nasa-video-star-formation",
+      "text": "[Placeholder: content not yet retrieved for Webb: Transforming Our Understanding of Star Formation]",
+      "token_count": 13,
+      "char_count": 99,
+      "embedding_model": null,
+      "embedding_vector_ref": null,
+      "metadata": {
+        "placeholder": true,
+        "chunk_index": 0
+      }
+    },
+    {
+      "chunk_id": "doc-jwst-006__chunk_0",
+      "document_id": "doc-jwst-006",
+      "source_id": "jwst-esa-brochure",
+      "text": "[Placeholder: content not yet retrieved for ESA Webb Ready-to-use Material]",
+      "token_count": 10,
+      "char_count": 75,
+      "embedding_model": null,
+      "embedding_vector_ref": null,
+      "metadata": {
+        "placeholder": true,
+        "chunk_index": 0
+      }
+    }
+  ]
+}

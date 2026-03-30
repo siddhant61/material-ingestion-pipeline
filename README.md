@@ -82,9 +82,36 @@ python ingest_demo.py --validate-only   # validate without writing output
 ### Running tests
 
 ```bash
-python -m unittest test_phase1_happy_path -v   # Phase 1 happy-path tests (16)
-python -m unittest test_adapters -v            # Legacy adapter tests (20)
+python -m unittest test_phase1_happy_path -v      # Phase 1 happy-path tests (16)
+python -m unittest test_adapters -v               # Legacy adapter tests (20)
+python -m unittest test_integration_fixtures -v   # Fixture validation tests (20)
 ```
+
+---
+
+## Integration Fixtures (Phase 2A)
+
+Stable, deterministic fixture artifacts are available for downstream repos
+under `integration_fixtures/jwst/upstream/`:
+
+```
+integration_fixtures/jwst/upstream/
+  RawSourceBundle.json
+  NormalizedDocumentSet.json
+  ChunkSet.json
+  KnowledgeGraphPackage.json
+  RunManifest.json
+```
+
+These fixtures are contract-valid, use fixed IDs and timestamps, and can be
+regenerated without API keys:
+
+```bash
+python generate_fixtures.py
+```
+
+See [`FIXTURES.md`](FIXTURES.md) for known limitations (placeholder content,
+null embeddings, partial provenance).
 
 ---
 
@@ -157,6 +184,8 @@ See [QUICKSTART.md](QUICKSTART.md), [API_USAGE.md](API_USAGE.md), and
 │   └── jwst_star_formation_early_universe_demo/
 │       ├── manifest.json       # RawSourceBundle seed manifest
 │       └── sources/            # Placeholder source directories
+├── integration_fixtures/       # Stable upstream fixture outputs
+│   └── jwst/upstream/          # JWST demo fixtures (5 artifacts)
 ├── core/                       # Core pipeline modules
 │   ├── contract_validator.py   # Contract validation against shared_artifacts.json
 │   ├── adapters/               # Legacy-to-contract bridge adapters
@@ -167,11 +196,14 @@ See [QUICKSTART.md](QUICKSTART.md), [API_USAGE.md](API_USAGE.md), and
 │   ├── agents/                 # Agent implementations (legacy + future)
 │   └── utils/                  # Shared utilities
 ├── ingest_demo.py              # Phase 1 happy-path entry point (+ --validate-only)
+├── generate_fixtures.py        # Deterministic fixture generator
 ├── cli.py                      # Legacy full-pipeline CLI
 ├── main.py                     # Legacy compatibility wrapper
 ├── test_phase1_happy_path.py   # Phase 1 tests (16)
 ├── test_adapters.py            # Legacy adapter tests (20)
+├── test_integration_fixtures.py # Fixture validation tests (20)
 ├── test_pipeline_structure.py  # Legacy structure tests
+├── FIXTURES.md                 # Fixture limitations documentation
 └── requirements.txt            # Full dependency list
 ```
 
