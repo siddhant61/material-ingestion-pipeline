@@ -413,6 +413,69 @@ def run_ingest(manifest_path: Path, output_dir: Path) -> Dict[str, Any]:
     return summary
 
 
+def run_validate_only(manifest_path: Path) -> Dict[str, Any]:
+    """
+    Validate the manifest and artifact structures without producing output.
+
+    Returns a summary dict with validation results.
+    """
+    logger.info("Running in validate-only mode")
+    logger.info("Manifest: %s", manifest_path)
+
+    # Load manifest
+    with open(manifest_path, "r", encoding="utf-8") as fh:
+        manifest = json.load(fh)
+
+    manifest_dir = manifest_path.parent
+    run_id = _new_id("val-")
+
+    contract = load_contract()
+    all_errors: List[str] = []
+
+    # Build artifacts in memory (no I/O)
+    raw_bundle = build_raw_source_bundle(manifest, manifest_dir, run_id)
+    raw_bundle["_seed_entities"] = manifest.get("seed_entities", [])
+    doc_set = build_normalized_document_set(raw_bundle, manifest_dir, run_id)
+    chunk_set = build_chunk_set(doc_set, run_id)
+    kg = build_knowledge_graph_package(raw_bundle, doc_set, run_id)
+
+    artifacts = {
+        "RawSourceBundle": raw_bundle,
+        "NormalizedDocumentSet": doc_set,
+        "ChunkSet": chunk_set,
+        "KnowledgeGraphPackage": kg,
+    }
+
+    for name, art in artifacts.items():
+        ok, errs = validate_artifact(art, contract)
+        if not ok:
+            for e in errs:
+                msg = f"[{name}] {e}"
+                logger.warning(msg)
+                all_errors.append(msg)
+        else:
+            logger.info("✓ %s passed contract validation", name)
+
+    rm = build_run_manifest(run_id, manifest.get("source_bundle_name", ""), [], all_errors)
+    ok, errs = validate_artifact(rm, contract)
+    if not ok:
+        for e in errs:
+            logger.warning("[RunManifest] %s", e)
+            all_errors.append(f"[RunManifest] {e}")
+    else:
+        logger.info("✓ RunManifest passed contract validation")
+
+    status = "valid" if not all_errors else "invalid"
+    logger.info("Validation complete: %s (%d errors)", status, len(all_errors))
+
+    return {
+        "mode": "validate-only",
+        "status": status,
+        "artifacts_checked": list(artifacts.keys()) + ["RunManifest"],
+        "validation_errors": all_errors,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Phase 1 demo ingestion for material-ingestion-pipeline",
@@ -429,16 +492,25 @@ def main():
         default=str(DEFAULT_OUTPUT_DIR),
         help="Directory to write contract-aligned artifacts",
     )
+    parser.add_argument(
+        "--validate-only",
+        action="store_true",
+        default=False,
+        help="Validate manifest and artifact structures without writing output",
+    )
     args = parser.parse_args()
 
-    summary = run_ingest(
-        manifest_path=Path(args.manifest),
-        output_dir=Path(args.output_dir),
-    )
+    if args.validate_only:
+        summary = run_validate_only(manifest_path=Path(args.manifest))
+    else:
+        summary = run_ingest(
+            manifest_path=Path(args.manifest),
+            output_dir=Path(args.output_dir),
+        )
 
     # Print summary
     print(json.dumps(summary, indent=2))
-    return 0 if summary["status"] == "success" else 0  # warnings are OK in Phase 1
+    return 0 if summary["status"] in ("success", "valid") else 0  # warnings are OK in Phase 1
 
 
 if __name__ == "__main__":

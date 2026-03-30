@@ -76,22 +76,59 @@ output/demo_run/
 ```bash
 python ingest_demo.py --help
 python ingest_demo.py --manifest path/to/manifest.json --output-dir path/to/output
+python ingest_demo.py --validate-only   # validate without writing output
 ```
 
 ### Running tests
 
 ```bash
-python -m unittest test_phase1_happy_path -v
+python -m unittest test_phase1_happy_path -v   # Phase 1 happy-path tests (16)
+python -m unittest test_adapters -v            # Legacy adapter tests (20)
 ```
+
+---
+
+## Legacy-to-Contract Adapters
+
+Adapters bridge the legacy pipeline outputs into the shared contract format
+without rewriting the original pipeline.
+
+### Knowledge Graph Adapter
+
+```python
+from core.adapters.legacy_kg_adapter import adapt_legacy_kg
+
+# Load a legacy KG (e.g. output/knowledge_graph/knowledge_graph.json)
+import json
+with open("output/knowledge_graph/knowledge_graph.json") as f:
+    legacy_kg = json.load(f)
+
+kg_package = adapt_legacy_kg(legacy_kg, topic="my_topic")
+# → contract-valid KnowledgeGraphPackage with nodes/edges/provenance
+```
+
+### Pipeline Report Adapter
+
+```python
+from core.adapters.legacy_report_adapter import adapt_legacy_report
+
+with open("output/pipeline_report.json") as f:
+    legacy_report = json.load(f)
+
+run_manifest = adapt_legacy_report(legacy_report)
+# → contract-valid RunManifest
+```
+
+See [`AUDIT.md` §11](AUDIT.md) for detailed field mappings and known limitations.
 
 ---
 
 ## Legacy Pipeline (Full 9-Stage)
 
-> **Note:** The legacy pipeline is functional but **not yet contract-aligned**.
+> **Note:** The legacy pipeline is functional but **not yet contract-aligned** natively.
 > Its outputs use different field names and schemas than the shared contract
 > (e.g., `entities`/`relationships` instead of `nodes`/`edges` in the knowledge graph).
-> Bridging adapters are planned for Phase 1 Sprint 2.
+> Legacy-to-contract **adapters are now available** in `core/adapters/` to bridge the gap.
 > See [`AUDIT.md`](AUDIT.md) for the full gap analysis.
 
 The original AI-powered pipeline requires the full dependency set (~67 packages)
@@ -122,14 +159,18 @@ See [QUICKSTART.md](QUICKSTART.md), [API_USAGE.md](API_USAGE.md), and
 │       └── sources/            # Placeholder source directories
 ├── core/                       # Core pipeline modules
 │   ├── contract_validator.py   # Contract validation against shared_artifacts.json
+│   ├── adapters/               # Legacy-to-contract bridge adapters
+│   │   ├── legacy_kg_adapter.py
+│   │   └── legacy_report_adapter.py
 │   ├── config.py               # Centralized configuration
 │   ├── pipeline/               # Pipeline orchestrator
 │   ├── agents/                 # Agent implementations (legacy + future)
 │   └── utils/                  # Shared utilities
-├── ingest_demo.py              # Phase 1 happy-path entry point
+├── ingest_demo.py              # Phase 1 happy-path entry point (+ --validate-only)
 ├── cli.py                      # Legacy full-pipeline CLI
 ├── main.py                     # Legacy compatibility wrapper
-├── test_phase1_happy_path.py   # Phase 1 tests
+├── test_phase1_happy_path.py   # Phase 1 tests (16)
+├── test_adapters.py            # Legacy adapter tests (20)
 ├── test_pipeline_structure.py  # Legacy structure tests
 └── requirements.txt            # Full dependency list
 ```
@@ -152,9 +193,9 @@ See [`contracts/schemas.md`](contracts/schemas.md) for full field definitions.
 | Issue | Status |
 |---|---|
 | Raw JWST content not bundled (NASA/ESA assets) | By design – scaffold only |
-| Legacy pipeline not contract-aligned | Planned for Phase 1 Sprint 2 |
+| Legacy pipeline not natively contract-aligned | Bridged via adapters (`core/adapters/`) |
 | No embeddings in Phase 1 KG | Requires model access |
-| Legacy KG uses `entities`/`relationships` not `nodes`/`edges` | Adapter planned |
+| Legacy KG uses `entities`/`relationships` not `nodes`/`edges` | ✅ Resolved via `legacy_kg_adapter.py` |
 
 ## Audit & Phase 1 Plan
 
