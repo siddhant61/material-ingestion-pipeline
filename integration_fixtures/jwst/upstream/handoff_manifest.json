@@ -1,12 +1,13 @@
 {
   "handoff_format_version": "1.0.0",
-  "package_id": "jwst-upstream-handoff-phase2b",
+  "package_id": "jwst-upstream-handoff-phase3-frozen",
   "produced_by": "material-ingestion-pipeline",
-  "phase": "Phase 2B",
+  "phase": "Phase 3 (frozen)",
   "packaged_at": "2026-03-31T00:00:00Z",
+  "frozen_at": "2026-03-31T08:25:49Z",
   "source_run_id": "fixture-jwst-001",
   "topic": "jwst_star_formation_early_universe_demo",
-  "description": "Canonical upstream handoff package for the JWST demo. Downstream repos (content-research-pipeline, media-generation-pipeline) should consume these artifacts as their upstream inputs.",
+  "description": "Canonical upstream handoff package for the JWST demo. Downstream repos (content-research-pipeline, media-generation-pipeline) should consume these artifacts as their upstream inputs. This package is frozen as of Phase 3 and will not change until a new run replaces it.",
   "artifacts": [
     {
       "artifact_type": "RawSourceBundle",
@@ -47,11 +48,13 @@
   "contract_ref": "contracts/shared_artifacts.json",
   "regenerate_command": "python generate_fixtures.py",
   "validate_command": "python validate_upstream_handoff.py",
+  "smoke_test_command": "python validate_upstream_handoff.py",
   "known_limitations": [
     "All NormalizedDocumentSet documents have placeholder=true; real content not yet retrieved.",
     "ChunkSet and KnowledgeGraphPackage embeddings are null (Phase 1 placeholder).",
     "KnowledgeGraphPackage nodes are bootstrapped from seed entities only; no content extraction.",
     "RawSourceBundle sources have null retrieved_at and checksum (files not fetched).",
-    "NormalizedDocumentSet documents have empty sections list."
+    "NormalizedDocumentSet documents have empty sections list.",
+    "ChunkSet uses fixed_char_500 chunking strategy only; semantic/token-aware chunking not yet implemented."
   ]
 }

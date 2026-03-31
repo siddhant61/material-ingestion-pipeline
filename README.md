@@ -89,11 +89,12 @@ python -m unittest test_integration_fixtures -v   # Fixture validation tests (26
 
 ---
 
-## Integration Fixtures & Upstream Handoff (Phase 2A/2B)
+## Integration Fixtures & Upstream Handoff (Phase 3 — Frozen)
 
 Stable, deterministic fixture artifacts are available under
-`integration_fixtures/jwst/upstream/`.  As of Phase 2B, this directory is the
-**canonical upstream handoff package** for the other two repos in the stack.
+`integration_fixtures/jwst/upstream/`.  As of Phase 3, this directory is the
+**frozen canonical upstream handoff package** for the other two repos in the stack.
+It will not change until a new ingestion run explicitly replaces it.
 
 ### What downstream repos should use
 
@@ -111,6 +112,17 @@ integration_fixtures/jwst/upstream/
 repo needs each file, and the contract reference.  Downstream repos should
 treat this file as the authoritative package descriptor.
 
+### Downstream Smoke Test
+
+Run this before consuming the package in a downstream repo:
+
+```bash
+python validate_upstream_handoff.py
+```
+
+Expected: all checks `[PASS]`, exit code `0`.  Requires only `jsonschema` and
+`python-dotenv` — no API keys.
+
 ### How to regenerate the upstream handoff package
 
 ```bash
@@ -120,15 +132,11 @@ python generate_fixtures.py   # regenerates the 5 artifact files
 `handoff_manifest.json` is a static descriptor and does not need to be
 regenerated unless artifact IDs or downstream repo assignments change.
 
-### Validating the upstream handoff package
+### Full fixture validation suite
 
 ```bash
-python validate_upstream_handoff.py
+python -m unittest test_integration_fixtures -v   # 26 tests
 ```
-
-This standalone script verifies every artifact is contract-valid, all declared
-files exist, and all artifacts share the same `source_run_id`.  Run this before
-committing a new fixture set or before downstream repos pull the fixtures.
 
 See [`FIXTURES.md`](FIXTURES.md) for known limitations (placeholder content,
 null embeddings, partial provenance).
