@@ -87,6 +87,61 @@ Section extraction requires actual content.
 500-character split.  Semantic or token-aware chunking is not
 implemented in Phase 1.
 
+## Phase 2B — Upstream Handoff Package
+
+As of Phase 2B, this fixture set is the **canonical upstream handoff package**
+for the other two repos in the workflow stack.
+
+### What downstream repos should consume
+
+Downstream repos (`content-research-pipeline`, `media-generation-pipeline`)
+should point to the files in this directory:
+
+```
+integration_fixtures/jwst/upstream/
+├── RawSourceBundle.json          # consumed by content-research-pipeline
+├── NormalizedDocumentSet.json    # consumed by content-research-pipeline
+├── ChunkSet.json                 # consumed by content-research-pipeline
+├── KnowledgeGraphPackage.json    # consumed by both downstream repos
+├── RunManifest.json              # consumed by both downstream repos
+└── handoff_manifest.json         # machine-readable package descriptor
+```
+
+The `handoff_manifest.json` file provides a machine-readable description of
+the package: which artifacts are included, their IDs, which downstream repo
+needs each file, the contract reference, and commands to regenerate or
+validate the package.
+
+### Validating the handoff package
+
+Run the dedicated validation script to confirm the full package is
+complete, contract-valid, and internally consistent before handing off:
+
+```bash
+python validate_upstream_handoff.py
+```
+
+This checks every artifact against `contracts/shared_artifacts.json`, verifies
+all files declared in `handoff_manifest.json` exist on disk, and confirms that
+all artifacts share the same `source_run_id`.
+
+### How to regenerate
+
+```bash
+python generate_fixtures.py   # regenerates the 5 artifact files
+```
+
+`handoff_manifest.json` is a static descriptor that does not need to be
+regenerated unless the artifact IDs or downstream mapping changes.
+
+### Cross-repo implications
+
+- **Artifact IDs are stable** — downstream repos can use them as primary keys.
+- **`source_run_id = fixture-jwst-001`** — all artifacts belong to the same
+  logical run.
+- **Shared contract**: `contracts/shared_artifacts.json` v1.0.0.  Do not
+  redefine these contracts locally in downstream repos.
+
 ## Contract Reference
 
 These fixtures conform to `contracts/shared_artifacts.json` v1.0.0.

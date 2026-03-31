@@ -1,0 +1,57 @@
+{
+  "handoff_format_version": "1.0.0",
+  "package_id": "jwst-upstream-handoff-phase2b",
+  "produced_by": "material-ingestion-pipeline",
+  "phase": "Phase 2B",
+  "packaged_at": "2026-03-31T00:00:00Z",
+  "source_run_id": "fixture-jwst-001",
+  "topic": "jwst_star_formation_early_universe_demo",
+  "description": "Canonical upstream handoff package for the JWST demo. Downstream repos (content-research-pipeline, media-generation-pipeline) should consume these artifacts as their upstream inputs.",
+  "artifacts": [
+    {
+      "artifact_type": "RawSourceBundle",
+      "filename": "RawSourceBundle.json",
+      "artifact_id": "fixture-rsb-jwst-001",
+      "schema_version": "1.0.0",
+      "required_by_downstream": ["content-research-pipeline"]
+    },
+    {
+      "artifact_type": "NormalizedDocumentSet",
+      "filename": "NormalizedDocumentSet.json",
+      "artifact_id": "fixture-nds-jwst-001",
+      "schema_version": "1.0.0",
+      "required_by_downstream": ["content-research-pipeline"]
+    },
+    {
+      "artifact_type": "ChunkSet",
+      "filename": "ChunkSet.json",
+      "artifact_id": "fixture-cs-jwst-001",
+      "schema_version": "1.0.0",
+      "required_by_downstream": ["content-research-pipeline"]
+    },
+    {
+      "artifact_type": "KnowledgeGraphPackage",
+      "filename": "KnowledgeGraphPackage.json",
+      "artifact_id": "fixture-kg-jwst-001",
+      "schema_version": "1.0.0",
+      "required_by_downstream": ["content-research-pipeline", "media-generation-pipeline"]
+    },
+    {
+      "artifact_type": "RunManifest",
+      "filename": "RunManifest.json",
+      "artifact_id": "fixture-rm-jwst-001",
+      "schema_version": "1.0.0",
+      "required_by_downstream": ["content-research-pipeline", "media-generation-pipeline"]
+    }
+  ],
+  "contract_ref": "contracts/shared_artifacts.json",
+  "regenerate_command": "python generate_fixtures.py",
+  "validate_command": "python validate_upstream_handoff.py",
+  "known_limitations": [
+    "All NormalizedDocumentSet documents have placeholder=true; real content not yet retrieved.",
+    "ChunkSet and KnowledgeGraphPackage embeddings are null (Phase 1 placeholder).",
+    "KnowledgeGraphPackage nodes are bootstrapped from seed entities only; no content extraction.",
+    "RawSourceBundle sources have null retrieved_at and checksum (files not fetched).",
+    "NormalizedDocumentSet documents have empty sections list."
+  ]
+}
