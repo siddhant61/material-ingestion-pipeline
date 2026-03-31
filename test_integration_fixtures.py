@@ -161,5 +161,54 @@ class TestFixtureRegeneration(unittest.TestCase):
                                      f"{name} fixture is stale — run: python generate_fixtures.py")
 
 
+class TestHandoffManifest(unittest.TestCase):
+    """Verify the Phase 2B handoff_manifest.json is present and consistent."""
+
+    HANDOFF_FILE = FIXTURE_DIR / "handoff_manifest.json"
+    EXPECTED_ARTIFACT_TYPES = {
+        "RawSourceBundle",
+        "NormalizedDocumentSet",
+        "ChunkSet",
+        "KnowledgeGraphPackage",
+        "RunManifest",
+    }
+
+    @classmethod
+    def setUpClass(cls):
+        with open(cls.HANDOFF_FILE, "r", encoding="utf-8") as fh:
+            cls.handoff = json.load(fh)
+
+    def test_handoff_manifest_exists(self):
+        self.assertTrue(self.HANDOFF_FILE.is_file(), f"Missing: {self.HANDOFF_FILE}")
+
+    def test_handoff_manifest_is_valid_json(self):
+        self.assertIsInstance(self.handoff, dict)
+
+    def test_handoff_manifest_has_required_fields(self):
+        required = {"handoff_format_version", "package_id", "produced_by",
+                    "source_run_id", "artifacts", "contract_ref",
+                    "regenerate_command", "validate_command"}
+        for field in required:
+            with self.subTest(field=field):
+                self.assertIn(field, self.handoff)
+
+    def test_handoff_manifest_declares_all_five_artifacts(self):
+        declared = {a["artifact_type"] for a in self.handoff["artifacts"]}
+        self.assertEqual(declared, self.EXPECTED_ARTIFACT_TYPES)
+
+    def test_handoff_manifest_artifact_ids_match_fixtures(self):
+        for entry in self.handoff["artifacts"]:
+            name = entry["artifact_type"]
+            expected_id = entry["artifact_id"]
+            committed_path = FIXTURE_DIR / f"{name}.json"
+            with self.subTest(artifact=name):
+                with open(committed_path, "r", encoding="utf-8") as fh:
+                    actual_id = json.load(fh)["artifact_id"]
+                self.assertEqual(actual_id, expected_id)
+
+    def test_handoff_manifest_source_run_id_matches_fixtures(self):
+        self.assertEqual(self.handoff["source_run_id"], FIXED_RUN_ID)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -84,31 +84,51 @@ python ingest_demo.py --validate-only   # validate without writing output
 ```bash
 python -m unittest test_phase1_happy_path -v      # Phase 1 happy-path tests (16)
 python -m unittest test_adapters -v               # Legacy adapter tests (20)
-python -m unittest test_integration_fixtures -v   # Fixture validation tests (20)
+python -m unittest test_integration_fixtures -v   # Fixture validation tests (26)
 ```
 
 ---
 
-## Integration Fixtures (Phase 2A)
+## Integration Fixtures & Upstream Handoff (Phase 2A/2B)
 
-Stable, deterministic fixture artifacts are available for downstream repos
-under `integration_fixtures/jwst/upstream/`:
+Stable, deterministic fixture artifacts are available under
+`integration_fixtures/jwst/upstream/`.  As of Phase 2B, this directory is the
+**canonical upstream handoff package** for the other two repos in the stack.
+
+### What downstream repos should use
 
 ```
 integration_fixtures/jwst/upstream/
-  RawSourceBundle.json
-  NormalizedDocumentSet.json
-  ChunkSet.json
-  KnowledgeGraphPackage.json
-  RunManifest.json
+  RawSourceBundle.json          ← consumed by content-research-pipeline
+  NormalizedDocumentSet.json    ← consumed by content-research-pipeline
+  ChunkSet.json                 ← consumed by content-research-pipeline
+  KnowledgeGraphPackage.json    ← consumed by both downstream repos
+  RunManifest.json              ← consumed by both downstream repos
+  handoff_manifest.json         ← machine-readable package descriptor
 ```
 
-These fixtures are contract-valid, use fixed IDs and timestamps, and can be
-regenerated without API keys:
+`handoff_manifest.json` lists all artifacts, their stable IDs, which downstream
+repo needs each file, and the contract reference.  Downstream repos should
+treat this file as the authoritative package descriptor.
+
+### How to regenerate the upstream handoff package
 
 ```bash
-python generate_fixtures.py
+python generate_fixtures.py   # regenerates the 5 artifact files
 ```
+
+`handoff_manifest.json` is a static descriptor and does not need to be
+regenerated unless artifact IDs or downstream repo assignments change.
+
+### Validating the upstream handoff package
+
+```bash
+python validate_upstream_handoff.py
+```
+
+This standalone script verifies every artifact is contract-valid, all declared
+files exist, and all artifacts share the same `source_run_id`.  Run this before
+committing a new fixture set or before downstream repos pull the fixtures.
 
 See [`FIXTURES.md`](FIXTURES.md) for known limitations (placeholder content,
 null embeddings, partial provenance).
@@ -185,7 +205,7 @@ See [QUICKSTART.md](QUICKSTART.md), [API_USAGE.md](API_USAGE.md), and
 │       ├── manifest.json       # RawSourceBundle seed manifest
 │       └── sources/            # Placeholder source directories
 ├── integration_fixtures/       # Stable upstream fixture outputs
-│   └── jwst/upstream/          # JWST demo fixtures (5 artifacts)
+│   └── jwst/upstream/          # JWST demo fixtures (5 artifacts + handoff manifest)
 ├── core/                       # Core pipeline modules
 │   ├── contract_validator.py   # Contract validation against shared_artifacts.json
 │   ├── adapters/               # Legacy-to-contract bridge adapters
@@ -197,11 +217,12 @@ See [QUICKSTART.md](QUICKSTART.md), [API_USAGE.md](API_USAGE.md), and
 │   └── utils/                  # Shared utilities
 ├── ingest_demo.py              # Phase 1 happy-path entry point (+ --validate-only)
 ├── generate_fixtures.py        # Deterministic fixture generator
+├── validate_upstream_handoff.py # Phase 2B handoff package validator
 ├── cli.py                      # Legacy full-pipeline CLI
 ├── main.py                     # Legacy compatibility wrapper
 ├── test_phase1_happy_path.py   # Phase 1 tests (16)
 ├── test_adapters.py            # Legacy adapter tests (20)
-├── test_integration_fixtures.py # Fixture validation tests (20)
+├── test_integration_fixtures.py # Fixture + handoff validation tests (26)
 ├── test_pipeline_structure.py  # Legacy structure tests
 ├── FIXTURES.md                 # Fixture limitations documentation
 └── requirements.txt            # Full dependency list
