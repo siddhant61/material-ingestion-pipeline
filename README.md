@@ -87,23 +87,43 @@ python -m unittest test_adapters -v               # Legacy adapter tests (20)
 python -m unittest test_integration_fixtures -v   # Fixture validation tests (26)
 ```
 
-### Manual workflow – Validate Upstream Handoff
+### Workflow – Validate Upstream Handoff
 
-A `workflow_dispatch` workflow is available to validate the upstream handoff
-package on demand.
+The `Validate Upstream Handoff` workflow can be triggered in two ways:
+
+1. **Manually** via `workflow_dispatch` — run from the Actions tab.
+2. **As a reusable workflow** via `workflow_call` — called from another
+   repository (e.g. `pipeline-integration`).
 
 | Detail | Value |
 |---|---|
 | **Workflow name** | `Validate Upstream Handoff` |
 | **File** | `.github/workflows/manual-validate-upstream.yml` |
-| **Trigger** | Manual — run from **Actions → Validate Upstream Handoff → Run workflow** |
-| **Uploaded artifact** | `jwst-upstream-handoff` (`integration_fixtures/jwst/upstream/`) |
+| **Triggers** | `workflow_dispatch` (manual) and `workflow_call` (reusable) |
+| **Uploaded artifact** | `jwst-upstream-handoff` |
+| **Output directory** | `integration_fixtures/jwst/upstream/` |
 
-To run it:
+#### Running manually
 
 1. Open the **Actions** tab in the GitHub repository.
 2. Select **Validate Upstream Handoff** from the workflow list on the left.
 3. Click **Run workflow**, choose the branch, and confirm.
+
+#### Calling as a reusable workflow
+
+From another repository's workflow (e.g. `pipeline-integration`):
+
+```yaml
+jobs:
+  ingestion-validate:
+    uses: siddhant61/material-ingestion-pipeline/.github/workflows/manual-validate-upstream.yml@main
+```
+
+When called this way the workflow explicitly checks out
+`siddhant61/material-ingestion-pipeline`, so the caller does not need to
+provide a checkout step for this repository.
+
+#### What the workflow does
 
 The workflow installs only the lightweight dependencies (`jsonschema`,
 `python-dotenv`), runs `python validate_upstream_handoff.py`, executes the
