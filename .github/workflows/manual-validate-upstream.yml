@@ -1,0 +1,34 @@
+name: Validate Upstream Handoff
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install minimum dependencies
+        run: pip install jsonschema python-dotenv
+
+      - name: Run upstream handoff validation
+        run: python validate_upstream_handoff.py
+
+      - name: Run lightweight test suite
+        run: python -m unittest test_phase1_happy_path test_adapters test_integration_fixtures -v
+
+      - name: Upload upstream handoff artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: jwst-upstream-handoff
+          path: integration_fixtures/jwst/upstream/
