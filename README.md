@@ -87,6 +87,29 @@ python -m unittest test_adapters -v               # Legacy adapter tests (20)
 python -m unittest test_integration_fixtures -v   # Fixture validation tests (26)
 ```
 
+### Manual workflow – Validate Upstream Handoff
+
+A `workflow_dispatch` workflow is available to validate the upstream handoff
+package on demand.
+
+| Detail | Value |
+|---|---|
+| **Workflow name** | `Validate Upstream Handoff` |
+| **File** | `.github/workflows/manual-validate-upstream.yml` |
+| **Trigger** | Manual — run from **Actions → Validate Upstream Handoff → Run workflow** |
+| **Uploaded artifact** | `jwst-upstream-handoff` (`integration_fixtures/jwst/upstream/`) |
+
+To run it:
+
+1. Open the **Actions** tab in the GitHub repository.
+2. Select **Validate Upstream Handoff** from the workflow list on the left.
+3. Click **Run workflow**, choose the branch, and confirm.
+
+The workflow installs only the lightweight dependencies (`jsonschema`,
+`python-dotenv`), runs `python validate_upstream_handoff.py`, executes the
+full lightweight test suite, and uploads `integration_fixtures/jwst/upstream/`
+as a downloadable artifact named **`jwst-upstream-handoff`**.
+
 ---
 
 ## Integration Fixtures & Upstream Handoff (Phase 3 — Frozen)
