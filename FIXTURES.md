@@ -87,10 +87,11 @@ Section extraction requires actual content.
 500-character split.  Semantic or token-aware chunking is not
 implemented in Phase 1.
 
-## Phase 2B — Upstream Handoff Package
+## Phase 3 — Frozen Upstream Handoff Package
 
-As of Phase 2B, this fixture set is the **canonical upstream handoff package**
-for the other two repos in the workflow stack.
+As of Phase 3, this fixture set is the **frozen canonical upstream handoff package**
+for the other two repos in the workflow stack.  It will not change until a new
+ingestion run explicitly replaces it.
 
 ### What downstream repos should consume
 
@@ -112,18 +113,32 @@ the package: which artifacts are included, their IDs, which downstream repo
 needs each file, the contract reference, and commands to regenerate or
 validate the package.
 
-### Validating the handoff package
+### Downstream Smoke Test
 
-Run the dedicated validation script to confirm the full package is
-complete, contract-valid, and internally consistent before handing off:
+Run this single command to quickly verify the package is complete and
+contract-valid before consuming it in a downstream repo:
 
 ```bash
 python validate_upstream_handoff.py
 ```
 
-This checks every artifact against `contracts/shared_artifacts.json`, verifies
-all files declared in `handoff_manifest.json` exist on disk, and confirms that
-all artifacts share the same `source_run_id`.
+Expected output ends with:
+
+```
+All checks passed. Upstream handoff package is ready for downstream consumption.
+```
+
+Exit code is `0` on success, `1` if any check fails.  The script requires
+only `jsonschema` and `python-dotenv` — no API keys or heavy ML dependencies.
+
+### Validating the handoff package (full suite)
+
+For a more thorough check that also verifies regeneration determinism, run
+the full test suite:
+
+```bash
+python -m unittest test_integration_fixtures -v   # 26 tests
+```
 
 ### How to regenerate
 
