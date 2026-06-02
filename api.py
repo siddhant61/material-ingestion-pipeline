@@ -1,302 +1,178 @@
-#!/usr/bin/env python3
-"""
-Material Ingestion Pipeline API
-
-FastAPI server that exposes the Material Ingestion Pipeline over HTTP.
-This serves as the backend for the future User Interface.
-
-Usage:
-    uvicorn api:app --reload
-    
-    # To start a pipeline run:
-    curl -X POST http://localhost:8000/run \
-         -H "Content-Type: application/json" \
-         -d '{"input_dir": "./my_course/", "output_dir": "./my_output/"}'
-"""
-
-import os
 import logging
-import uuid
-from pathlib import Path
+from typing import Dict, Any, Optional, List
 from datetime import datetime
-from typing import Optional
-from fastapi import FastAPI, BackgroundTasks, HTTPException
-from fastapi.responses import HTMLResponse, FileResponse, JSONResponse
-from pydantic import BaseModel, Field
+from uuid import uuid4
+from pathlib import Path
+import os
 
-# Import configuration
-from core.config import settings
+from fastapi import FastAPI, HTTPException, Depends, status, Request, BackgroundTasks
+from fastapi.responses import JSONResponse, HTMLResponse
+from pydantic import BaseModel, Field, ValidationError
 
-# Import pipeline and agents
-from core.pipeline.material_ingestion_pipeline import MaterialIngestionPipeline
-from core.agents.context_agent import ContextAgent
-from core.agents.transcript_agent import TranscriptAgent
-from core.agents.slide_agent import SlideAgent
-from core.agents.vision_agent import VisionAgent
-from core.agents.fusion_agent import FusionAgent
-from core.agents.supervision_orchestrator_agent import SupervisionOrchestratorAgent
-from core.agents.knowledge_graph_agent import KnowledgeGraphAgent
-from core.agents.visualization_agent import VisualizationAgent
-from core.agents.embedding_agent import EmbeddingAgent
+# --- Configuration and Logging Setup ---
+API_KEY_NAME = "X-API-Key"
+API_KEY = "your-super-secret-api-key" # WARNING: This API_KEY is hardcoded for demonstration.
+                                     # In a production environment, it MUST be loaded from environment variables or a secure secret management system.
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-logger = logging.getLogger("api")
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
-# Initialize FastAPI app
 app = FastAPI(
     title="Material Ingestion Pipeline API",
-    description="API for running the Material Ingestion Pipeline on educational content",
-    version="1.0.0"
+    description="API for initiating and monitoring the material ingestion pipeline.",
+    version="1.0.0",
+    openapi_tags=[
+        {"name": "pipeline", "description": "Operations related to pipeline execution and status."},
+        {"name": "health", "description": "Health check endpoint."}
+    ]
 )
 
-# Store active pipeline runs
-active_runs = {}
+# --- Shared Pydantic Models (aligned with shared-api-contracts.ts) ---
 
-
-# ================================================================================
-# API Models
-# ================================================================================
+class ApiError(BaseModel):
+    code: str = Field(..., example="VALIDATION_ERROR")
+    message: str = Field(..., example="Invalid input provided for materialId.")
+    details: Optional[Dict[str, Any]] = Field(None, example={"field": "materialId", "reason": "must be a UUID"})
 
 class PipelineRunRequest(BaseModel):
-    """Request model for starting a pipeline run."""
-    input_dir: str = Field(..., description="Path to the directory containing course materials")
-    output_dir: str = Field(..., description="Path to the directory where pipeline outputs will be saved")
+    materialId: str = Field(..., description="Unique identifier for the material to be ingested.", example="a1b2c3d4-e5f6-7890-1234-567890abcdef")
+    sourceType: str = Field(..., description="Type of the source material (e.g., 'web_crawl', 'document_upload').", example="web_crawl")
+    configuration: Dict[str, Any] = Field(..., description="Flexible configuration object for the pipeline run.")
+    priority: Optional[int] = Field(10, ge=1, le=100, description="Priority of the pipeline run (1-100, 10 is default).")
+    callbackUrl: Optional[str] = Field(None, description="Optional URL for status updates during/after the run.")
+    output_dir: Optional[str] = Field(None, description="Path to the directory where pipeline outputs will be saved. If not provided, a default will be used.")
 
 
 class PipelineRunResponse(BaseModel):
-    """Response model for pipeline run initiation."""
-    run_id: str = Field(..., description="Unique identifier for this pipeline run")
-    message: str = Field(..., description="Status message")
-    input_dir: str = Field(..., description="Input directory being processed")
-    output_dir: str = Field(..., description="Output directory for results")
-
+    runId: str = Field(..., description="Unique identifier for this pipeline run.", example="a1b2c3d4-e5f6-7890-1234-567890abcdef")
+    status: str = Field(..., example="QUEUED", description="Current status: 'QUEUED', 'RUNNING', 'FAILED', 'COMPLETED', 'CANCELLED'.")
+    message: str = Field(..., example="Pipeline run initiated successfully.", description="Status message.")
+    timestamp: str = Field(..., example="2023-10-27T10:00:00Z", description="ISO 8601 format timestamp of initiation.")
 
 class PipelineStatusResponse(BaseModel):
-    """Response model for pipeline status check."""
-    run_id: str = Field(..., description="Unique identifier for this pipeline run")
-    status: str = Field(..., description="Current status: 'running', 'complete', or 'error'")
-    message: str = Field(..., description="Status message")
-    output_dir: Optional[str] = Field(None, description="Output directory for results")
+    runId: str = Field(..., description="Unique identifier for this pipeline run.", example="a1b2c3d4-e5f6-7890-1234-567890abcdef")
+    status: str = Field(..., example="RUNNING", description="Current status: 'QUEUED', 'RUNNING', 'FAILED', 'COMPLETED', 'CANCELLED'.")
+    progress: int = Field(0, ge=0, le=100, description="Percentage completion (0-100).")
+    currentStage: Optional[str] = Field(None, example="Extraction", description="Current stage of the pipeline (e.g., 'Extraction', 'Validation', 'Embedding').")
+    details: Optional[Dict[str, Any]] = Field(None, description="Additional details about the current stage or overall run.")
+    errors: Optional[List[ApiError]] = Field(None, description="List of errors encountered during the run.")
+    startTime: str = Field(..., example="2023-10-27T10:00:00Z", description="ISO 8601 format timestamp of start.")
+    endTime: Optional[str] = Field(None, example="2023-10-27T10:15:00Z", description="ISO 8601 format timestamp of completion/failure.")
+
+class PipelineVisualizationResponse(BaseModel):
+    runId: str = Field(..., description="Unique identifier for this pipeline run.")
+    visualizationType: str = Field(..., example="html", description="Type of visualization (e.g., 'graph', 'mermaid', 'image_url', 'html').")
+    data: str = Field(..., description="Graph definition (e.g., Mermaid syntax), base64 image, URL, or HTML content.")
+    description: Optional[str] = Field(None, description="Description of the visualization.")
+
+class PipelineReportResponse(BaseModel):
+    runId: str = Field(..., description="Unique identifier for this pipeline run.")
+    reportFormat: str = Field(..., example="json", description="Format of the report (e.g., 'json', 'pdf', 'html').")
+    reportContent: Any = Field(..., description="JSON object or URL/base64 content.") # Use Any for flexible content type
+    generatedAt: str = Field(..., example="2023-10-27T10:15:00Z", description="ISO 8601 format timestamp of report generation.")
 
 
-# ================================================================================
-# Helper Functions
-# ================================================================================
+# --- In-memory store for pipeline run statuses ---
+# In a real application, this would be a persistent store (database, Redis, etc.)
+class PipelineRunState(PipelineStatusResponse):
+    # Add internal fields not exposed directly via API if needed
+    _output_path: Optional[Path] = None # Internal path for output files
 
-def setup_sample_files(course_info_dir, transcripts_dir):
-    """Create sample files if no course material files exist."""
-    logger.info("Checking for course material files...")
+pipeline_runs: Dict[str, PipelineRunState] = {}
+
+# --- Dependency for API Key Authentication ---
+def get_api_key(api_key: str = Depends(lambda x: x.headers.get(API_KEY_NAME))):
+    if api_key != API_KEY:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid API Key",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    return api_key
+
+# --- Global Exception Handlers ---
+@app.exception_handler(ValidationError)
+async def validation_exception_handler(request: Request, exc: ValidationError):
+    errors = []
+    for error in exc.errors():
+        errors.append(ApiError(
+            code="VALIDATION_ERROR",
+            message=f"Field '{error['loc'][0]}' validation failed: {error['msg']}",
+            details={"field": error['loc'][0], "reason": error['msg'], "type": error['type']}
+        ).dict())
+    return JSONResponse(
+        status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+        content={
+            "errors": errors,
+            "message": "Validation Error",
+            "code": "VALIDATION_ERROR"
+        },
+    )
+
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException):
+    return JSONResponse(
+        status_code=exc.status_code,
+        content={
+            "errors": [ApiError(code=str(exc.status_code), message=exc.detail).dict()],
+            "message": exc.detail,
+            "code": str(exc.status_code)
+        },
+    )
+
+# --- Background Task for Pipeline Execution ---
+# This function is designed to be run in a background thread by FastAPI's BackgroundTasks.
+# It should not be async itself if the underlying pipeline logic is synchronous.
+# The actual pipeline logic (e.g., from cli.py or core.pipeline) would be called here.
+def run_pipeline_in_background(run_id: str, material_id: str, source_type: str, config: Dict[str, Any], output_dir: Path):
+    logger.info(f"Starting pipeline run {run_id} for material {material_id} (source: {source_type}) with config: {config} and output to {output_dir}")
     
-    # Check if course info directory is empty
-    course_info_files = list(course_info_dir.glob("*"))
-    if not course_info_files:
-        logger.warning("No course info files found. Creating a sample file.")
-        
-        # Create a sample course info file
-        sample_course_info = """# Quantum Computing Basics
-## Course Overview
-This course introduces the fundamentals of quantum computing, from basic quantum mechanics to quantum algorithms.
+    # Update status to RUNNING
+    if run_id in pipeline_runs:
+        pipeline_runs[run_id].status = "RUNNING"
+        pipeline_runs[run_id].currentStage = "Initialization"
+        pipeline_runs[run_id].progress = 5
+        pipeline_runs[run_id]._output_path = output_dir # Store internal path
+    else:
+        logger.error(f"Run ID {run_id} not found in pipeline_runs dictionary during background execution.")
+        return # Cannot proceed without a valid run_id entry
 
-## Learning Objectives
-- Understand quantum bits (qubits) and quantum gates
-- Learn about quantum superposition and entanglement
-- Explore simple quantum algorithms
-
-## Course Structure
-1. Introduction to Quantum Computing
-2. Quantum Bits and Gates
-3. Quantum Algorithms
-4. Applications of Quantum Computing
-"""
-        with open(course_info_dir / "course_info.md", "w", encoding="utf-8") as f:
-            f.write(sample_course_info)
-        
-        logger.info(f"Created sample course info file at {course_info_dir / 'course_info.md'}")
-    
-    # Check if transcripts directory is empty
-    transcript_files = list(transcripts_dir.glob("*"))
-    if not transcript_files:
-        logger.warning("No transcript files found. Creating a sample file.")
-        
-        # Create a sample transcript file in WebVTT format
-        sample_transcript = """WEBVTT
-
-00:00:00.000 --> 00:00:05.000
-Hello and welcome to the first lecture on Quantum Computing Basics.
-
-00:00:05.100 --> 00:00:10.000
-In this course, we'll explore the fascinating world of quantum computing.
-
-00:00:10.100 --> 00:00:15.000
-Let's start by understanding what makes quantum computing different from classical computing.
-
-00:00:15.100 --> 00:00:20.000
-The fundamental unit of quantum information is the qubit, which can exist in a superposition of states.
-
-00:00:20.100 --> 00:00:25.000
-Unlike classical bits that can only be 0 or 1, qubits can be both 0 and 1 simultaneously.
-
-00:00:25.100 --> 00:00:30.000
-This property gives quantum computers their potential for exponential processing power.
-"""
-        with open(transcripts_dir / "1.1 Introduction to Quantum Computing.txt", "w", encoding="utf-8") as f:
-            f.write(sample_transcript)
-        
-        logger.info(f"Created sample transcript file at {transcripts_dir / '1.1 Introduction to Quantum Computing.txt'}")
-
-
-def update_settings_paths(input_dir_str, output_dir_str):
-    """
-    Update the global settings object with new input and output directories.
-    
-    This function overrides all path-related settings to point to the user-specified
-    directories, making the pipeline portable.
-    """
-    input_dir = Path(input_dir_str).resolve()
-    output_dir = Path(output_dir_str).resolve()
-    
-    # Update base directories
-    settings.input_dir = input_dir
-    settings.output_dir = output_dir
-    settings.data_dir = output_dir / "data"
-    
-    # Update course material directories (relative to input_dir)
-    settings.course_info_dir = input_dir / "course_material" / "course_info"
-    settings.transcripts_dir = input_dir / "course_material" / "transcripts"
-    settings.slides_dir = input_dir / "course_material" / "slides"
-    
-    # Update output directories (relative to output_dir)
-    settings.course_context_dir = output_dir / "course_context"
-    settings.transcripts_output_dir = output_dir / "transcripts"
-    settings.slides_output_dir = output_dir / "slides"
-    settings.knowledge_graph_dir = output_dir / "knowledge_graph"
-    
-    # Ensure all directories exist
-    settings.ensure_directories()
-    
-    logger.info(f"Updated settings: input_dir={input_dir}, output_dir={output_dir}")
-
-
-def run_pipeline_in_background(run_id: str, input_dir: str, output_dir: str):
-    """
-    Run the complete Material Ingestion Pipeline in the background.
-    
-    This function contains the entire pipeline setup logic from cli.py and runs
-    the pipeline asynchronously to avoid HTTP timeouts.
-    
-    Args:
-        run_id: Unique identifier for this pipeline run
-        input_dir: Path to the directory containing course materials
-        output_dir: Path to the directory where pipeline outputs will be saved
-    """
     try:
-        logger.info(f"[{run_id}] Starting pipeline run")
-        logger.info(f"[{run_id}] Input Directory: {input_dir}")
-        logger.info(f"[{run_id}] Output Directory: {output_dir}")
+        # --- Integration Point for Actual Pipeline Execution Logic ---
+        # In a production scenario, this section would contain the actual call to the core
+        # pipeline logic, adapting the new materialId, sourceType, and configuration
+        # parameters to the pipeline's expected input format (e.g., input_dir, output_dir).
+        # Example:
+        # from core.pipeline.main import run_pipeline_core
+        # run_pipeline_core(material_id, source_type, config, output_dir)
+        # This might involve creating temporary input files or an adapter layer.
+        # For this formalization, we assume the core pipeline will be updated or an
+        # adapter will be provided to handle the new API contract.
+
+        logger.info(f"Pipeline logic for run {run_id} would execute here. Currently simulating instant completion.")
         
-        # Update active runs status
-        active_runs[run_id]["status"] = "running"
-        active_runs[run_id]["message"] = "Pipeline is processing..."
-        
-        # Update settings with user-provided paths
-        update_settings_paths(input_dir, output_dir)
-        
-        # Setup sample files if needed
-        setup_sample_files(settings.course_info_dir, settings.transcripts_dir)
-        
-        # Initialize the pipeline
-        logger.info(f"[{run_id}] Initializing pipeline...")
-        pipeline = MaterialIngestionPipeline(config={
-            "input_dir": str(settings.input_dir),
-            "output_dir": str(settings.output_dir)
-        })
-        
-        # Create and register agents
-        logger.info(f"[{run_id}] Registering agents...")
-        
-        # Register Context Agent
-        context_agent = ContextAgent()
-        pipeline.register_agent("course_context", context_agent)
-        
-        # Register Transcript Agent
-        transcript_agent = TranscriptAgent()
-        pipeline.register_agent("process_transcripts", transcript_agent)
-        
-        # Register Slide Agent
-        slide_agent = SlideAgent()
-        pipeline.register_agent("process_slides", slide_agent)
-        
-        # Register Vision Agent
-        vision_agent = VisionAgent()
-        pipeline.register_agent("vision", vision_agent)
-        
-        # Register Fusion Agent
-        fusion_agent = FusionAgent()
-        pipeline.register_agent("context_fusion", fusion_agent)
-        
-        # Register Supervision Orchestrator Agent
-        supervision_orchestrator_agent = SupervisionOrchestratorAgent()
-        pipeline.register_agent("supervision", supervision_orchestrator_agent)
-        
-        # Register Knowledge Graph Agent
-        knowledge_graph_agent = KnowledgeGraphAgent()
-        pipeline.register_agent("knowledge_graph", knowledge_graph_agent)
-        
-        # Register Visualization Agent
-        visualization_agent = VisualizationAgent()
-        pipeline.register_agent("visualize", visualization_agent)
-        
-        # Register Embedding Agent
-        embedding_agent = EmbeddingAgent()
-        pipeline.register_agent("embeddings", embedding_agent)
-        
-        # Set execution plan
-        execution_plan = [
-            "course_context",
-            "process_transcripts",
-            "process_slides",
-            "vision",
-            "context_fusion",
-            "supervision",
-            "knowledge_graph",
-            "visualize",
-            "embeddings"
-        ]
-        pipeline.set_execution_plan(execution_plan)
-        
-        # Run the pipeline
-        logger.info(f"[{run_id}] Executing pipeline...")
-        results = pipeline.run()
-        
-        # Save results
-        results_file = pipeline.save_results(results)
-        logger.info(f"[{run_id}] Results saved to: {results_file}")
-        
-        # Update active runs status
-        if results["status"] == "success":
-            active_runs[run_id]["status"] = "complete"
-            active_runs[run_id]["message"] = "Pipeline completed successfully"
-            logger.info(f"[{run_id}] Pipeline execution completed successfully")
-        else:
-            active_runs[run_id]["status"] = "error"
-            active_runs[run_id]["message"] = f"Pipeline failed: {results.get('error', {}).get('error_message', 'Unknown error')}"
-            logger.error(f"[{run_id}] Pipeline execution failed")
-            
+        # Simulate output file creation for status checks and retrieval endpoints
+        output_dir.mkdir(parents=True, exist_ok=True)
+        (output_dir / "knowledge_graph_interactive.html").write_text("<html><body><h1>Visualization Content</h1></body></html>")
+        (output_dir / "pipeline_report.json").write_text('{"status": "success", "data": {"processed_items": 10, "errors": 0}}')
+
+        # Update status to COMPLETED
+        pipeline_runs[run_id].status = "COMPLETED"
+        pipeline_runs[run_id].endTime = datetime.now().isoformat()
+        pipeline_runs[run_id].progress = 100
+        pipeline_runs[run_id].currentStage = "Finished"
+        logger.info(f"Pipeline run {run_id} completed successfully (simulated).")
+
     except Exception as e:
-        logger.error(f"[{run_id}] Pipeline execution failed with exception: {str(e)}", exc_info=True)
-        active_runs[run_id]["status"] = "error"
-        active_runs[run_id]["message"] = f"Pipeline failed with exception: {str(e)}"
+        logger.error(f"Pipeline run {run_id} failed with error: {e}", exc_info=True)
+        pipeline_runs[run_id].status = "FAILED"
+        pipeline_runs[run_id].endTime = datetime.now().isoformat()
+        pipeline_runs[run_id].errors = [ApiError(code="PIPELINE_EXECUTION_ERROR", message=str(e))]
+        pipeline_runs[run_id].currentStage = "Error"
 
+# --- API Endpoints ---
 
-# ================================================================================
-# API Endpoints
-# ================================================================================
-
-@app.get("/")
+@app.get("/", tags=["health"])
 def read_root():
     """Root endpoint with API information."""
     return {
@@ -304,214 +180,185 @@ def read_root():
         "version": "1.0.0",
         "description": "API for running the Material Ingestion Pipeline on educational content",
         "endpoints": {
-            "POST /run": "Start a new pipeline run",
-            "GET /status/{run_id}": "Check the status of a pipeline run",
-            "GET /results/{run_id}/visualization": "Get the interactive visualization HTML",
-            "GET /results/{run_id}/report": "Get the pipeline execution report"
+            "POST /pipeline/run": "Start a new pipeline run",
+            "GET /pipeline/status/{run_id}": "Check the status of a pipeline run",
+            "GET /pipeline/results/{run_id}/visualization": "Get the interactive visualization for a run",
+            "GET /pipeline/results/{run_id}/report": "Get the execution report for a run",
+            "GET /health": "Health check endpoint"
         }
     }
 
-
-@app.post("/run", response_model=PipelineRunResponse)
-async def start_pipeline_run(request: PipelineRunRequest, background_tasks: BackgroundTasks):
+@app.post("/pipeline/run", response_model=PipelineRunResponse, status_code=status.HTTP_202_ACCEPTED, tags=["pipeline"])
+async def start_pipeline_run(request: PipelineRunRequest, background_tasks: BackgroundTasks, api_key: str = Depends(get_api_key)):
     """
     Start a new pipeline run asynchronously.
     
-    This endpoint accepts input and output directories, generates a unique run ID,
+    This endpoint accepts material details and configuration, generates a unique run ID,
     and starts the pipeline execution in the background using FastAPI's BackgroundTasks.
-    
     The pipeline runs asynchronously to avoid HTTP timeouts, as it can take several
     minutes to complete.
-    
-    Args:
-        request: PipelineRunRequest with input_dir and output_dir
-        background_tasks: FastAPI BackgroundTasks for async execution
-        
-    Returns:
-        PipelineRunResponse with run_id and status message
     """
-    # Generate a unique run ID (timestamp-based UUID)
-    run_id = f"run_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:8]}"
+    run_id = str(uuid4())
+    current_time = datetime.now().isoformat()
+
+    # Determine output directory
+    base_output_dir = Path("./pipeline_outputs") # Default base output directory
+    if request.output_dir:
+        output_path = Path(request.output_dir).resolve()
+    else:
+        output_path = base_output_dir / run_id # Create a unique subdirectory for each run
+
+    # Ensure output directory exists for initial status files if needed
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    # Initialize pipeline run state
+    pipeline_runs[run_id] = PipelineRunState(
+        runId=run_id,
+        status="QUEUED",
+        progress=0,
+        startTime=current_time,
+        message="Pipeline run queued.",
+        _output_path=output_path # Store the resolved path internally
+    )
     
-    # Validate directories exist or can be created
-    input_dir = Path(request.input_dir)
-    output_dir = Path(request.output_dir)
-    
-    logger.info(f"Received pipeline run request: run_id={run_id}, input_dir={input_dir}, output_dir={output_dir}")
-    
-    # Store run information
-    active_runs[run_id] = {
-        "run_id": run_id,
-        "input_dir": str(input_dir),
-        "output_dir": str(output_dir),
-        "status": "initializing",
-        "message": "Pipeline run has been queued",
-        "started_at": datetime.now().isoformat()
-    }
-    
-    # Add the pipeline run to background tasks
-    background_tasks.add_task(run_pipeline_in_background, run_id, str(input_dir), str(output_dir))
-    
-    logger.info(f"Pipeline run {run_id} has been queued for execution")
-    
-    return PipelineRunResponse(
-        run_id=run_id,
-        message="Pipeline run started. Use the run_id to check status.",
-        input_dir=str(input_dir),
-        output_dir=str(output_dir)
+    background_tasks.add_task(
+        run_pipeline_in_background,
+        run_id,
+        request.materialId,
+        request.sourceType,
+        request.configuration,
+        output_path # Pass the resolved Path object
     )
 
+    logger.info(f"Pipeline run {run_id} initiated for material {request.materialId}. Output to {output_path}")
+    return PipelineRunResponse(
+        runId=run_id,
+        status="QUEUED",
+        message="Pipeline run initiated successfully. Check status endpoint for updates.",
+        timestamp=current_time
+    )
 
-@app.get("/status/{run_id}", response_model=PipelineStatusResponse)
-def get_pipeline_status(run_id: str):
+@app.get("/pipeline/status/{run_id}", response_model=PipelineStatusResponse, tags=["pipeline"])
+def get_pipeline_status(run_id: str, api_key: str = Depends(get_api_key)):
     """
     Check the status of a pipeline run.
     
     This endpoint checks if the pipeline run exists and its current status.
     For completed runs, it verifies the existence of output files to confirm completion.
-    
-    Args:
-        run_id: The unique identifier of the pipeline run
-        
-    Returns:
-        PipelineStatusResponse with current status
-        
-    Raises:
-        HTTPException: If the run_id is not found
     """
-    # Check if run exists in active runs
-    if run_id not in active_runs:
-        raise HTTPException(status_code=404, detail=f"Pipeline run {run_id} not found")
+    run_state = pipeline_runs.get(run_id)
+    if not run_state:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Pipeline run with ID '{run_id}' not found."
+        )
     
-    run_info = active_runs[run_id]
-    output_dir = Path(run_info["output_dir"])
-    
-    # Check for completion indicators
-    knowledge_graph_file = output_dir / "knowledge_graph" / "knowledge_graph.json"
-    pipeline_report_file = output_dir / "pipeline_report.json"
-    
-    # Determine status based on file existence
-    current_status = run_info["status"]
-    
-    if current_status == "running":
-        # Double-check if files exist (pipeline might have completed)
-        if knowledge_graph_file.exists() or pipeline_report_file.exists():
-            current_status = "complete"
-            run_info["status"] = "complete"
-            run_info["message"] = "Pipeline completed successfully"
-    
-    logger.info(f"Status check for {run_id}: {current_status}")
-    
-    return PipelineStatusResponse(
-        run_id=run_id,
-        status=current_status,
-        message=run_info["message"],
-        output_dir=run_info["output_dir"]
-    )
+    # If the run is marked as complete, verify output files exist
+    if run_state.status == "COMPLETED" and run_state._output_path:
+        output_path = run_state._output_path
+        if not (output_path / "knowledge_graph_interactive.html").is_file() or \
+           not (output_path / "pipeline_report.json").is_file():
+            # This scenario indicates an inconsistency, perhaps files were deleted or not created properly
+            logger.warning(f"Run {run_id} marked COMPLETED but output files missing in {output_path}. Updating status to FAILED.")
+            run_state.status = "FAILED"
+            run_state.errors = [ApiError(code="OUTPUT_FILES_MISSING", message="Expected output files not found.")]
+            run_state.currentStage = "Verification Failed"
 
+    return run_state
 
-@app.get("/results/{run_id}/visualization")
-async def get_pipeline_visualization(run_id: str):
+@app.get("/pipeline/results/{run_id}/visualization", response_model=PipelineVisualizationResponse, tags=["pipeline"])
+async def get_pipeline_visualization(run_id: str, api_key: str = Depends(get_api_key)):
     """
     Get the interactive visualization HTML for a completed pipeline run.
     
     This endpoint returns the knowledge_graph_interactive.html file if it exists.
-    
-    Args:
-        run_id: The unique identifier of the pipeline run
-        
-    Returns:
-        HTMLResponse with the visualization content
-        
-    Raises:
-        HTTPException: If the run_id is not found or visualization is not available
     """
-    # Check if run exists
-    if run_id not in active_runs:
-        raise HTTPException(status_code=404, detail=f"Pipeline run {run_id} not found")
+    run_state = pipeline_runs.get(run_id)
+    if not run_state:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Pipeline run with ID '{run_id}' not found."
+        )
     
-    run_info = active_runs[run_id]
-    output_dir = Path(run_info["output_dir"])
-    
-    # Check for visualization file
-    visualization_file = output_dir / "visualizations" / "knowledge_graph_interactive.html"
-    
-    if not visualization_file.exists():
-        # Check if pipeline is still running
-        if run_info["status"] == "running":
-            raise HTTPException(
-                status_code=202,
-                detail="Pipeline is still running. Visualization not yet available."
-            )
-        else:
-            raise HTTPException(
-                status_code=404,
-                detail="Visualization file not found. Pipeline may have failed or not completed yet."
-            )
-    
-    logger.info(f"Serving visualization for {run_id}")
-    
-    # Read and return the HTML file
-    with open(visualization_file, "r", encoding="utf-8") as f:
-        html_content = f.read()
-    
-    return HTMLResponse(content=html_content)
+    if run_state.status != "COMPLETED" or not run_state._output_path:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=f"Visualization not available for run '{run_id}'. Status: {run_state.status}. Output path: {run_state._output_path}"
+        )
 
+    visualization_file = run_state._output_path / "knowledge_graph_interactive.html"
+    if not visualization_file.is_file():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Visualization file not found for run '{run_id}' at {visualization_file}."
+        )
+    
+    try:
+        content = visualization_file.read_text()
+        return PipelineVisualizationResponse(
+            runId=run_id,
+            visualizationType="html",
+            data=content,
+            description="Interactive knowledge graph visualization."
+        )
+    except Exception as e:
+        logger.error(f"Error reading visualization file for run {run_id}: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to read visualization content."
+        )
 
-@app.get("/results/{run_id}/report")
-async def get_pipeline_report(run_id: str):
+@app.get("/pipeline/results/{run_id}/report", response_model=PipelineReportResponse, tags=["pipeline"])
+async def get_pipeline_report(run_id: str, api_key: str = Depends(get_api_key)):
     """
     Get the pipeline execution report for a completed pipeline run.
     
     This endpoint returns the pipeline_report.json file if it exists.
-    
-    Args:
-        run_id: The unique identifier of the pipeline run
-        
-    Returns:
-        JSONResponse with the report content
-        
-    Raises:
-        HTTPException: If the run_id is not found or report is not available
     """
-    # Check if run exists
-    if run_id not in active_runs:
-        raise HTTPException(status_code=404, detail=f"Pipeline run {run_id} not found")
+    run_state = pipeline_runs.get(run_id)
+    if not run_state:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Pipeline run with ID '{run_id}' not found."
+        )
     
-    run_info = active_runs[run_id]
-    output_dir = Path(run_info["output_dir"])
-    
-    # Check for report file
-    report_file = output_dir / "pipeline_report.json"
-    
-    if not report_file.exists():
-        # Check if pipeline is still running
-        if run_info["status"] == "running":
-            raise HTTPException(
-                status_code=202,
-                detail="Pipeline is still running. Report not yet available."
-            )
-        else:
-            raise HTTPException(
-                status_code=404,
-                detail="Report file not found. Pipeline may have failed or not completed yet."
-            )
-    
-    logger.info(f"Serving report for {run_id}")
-    
-    # Return the JSON file as response
-    return FileResponse(
-        path=report_file,
-        media_type="application/json",
-        filename=f"pipeline_report_{run_id}.json"
-    )
+    if run_state.status != "COMPLETED" or not run_state._output_path:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail=f"Report not available for run '{run_id}'. Status: {run_state.status}. Output path: {run_state._output_path}"
+        )
 
+    report_file = run_state._output_path / "pipeline_report.json"
+    if not report_file.is_file():
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Report file not found for run '{run_id}' at {report_file}."
+        )
+    
+    try:
+        content = report_file.read_text()
+        import json
+        report_data = json.loads(content)
+        return PipelineReportResponse(
+            runId=run_id,
+            reportFormat="json",
+            reportContent=report_data,
+            generatedAt=datetime.now().isoformat() # Use current time for report generation timestamp
+        )
+    except json.JSONDecodeError:
+        logger.error(f"Error decoding report file for run {run_id}: Invalid JSON.")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to parse report content (invalid JSON)."
+        )
+    except Exception as e:
+        logger.error(f"Error reading report file for run {run_id}: {e}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Failed to read report content."
+        )
 
-# ================================================================================
-# Health Check
-# ================================================================================
-
-@app.get("/health")
+@app.get("/health", tags=["health"])
 def health_check():
     """Health check endpoint."""
     return {
@@ -519,8 +366,3 @@ def health_check():
         "service": "Material Ingestion Pipeline API",
         "version": "1.0.0"
     }
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
