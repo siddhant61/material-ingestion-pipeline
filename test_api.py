@@ -1,208 +1,384 @@
-#!/usr/bin/env python3
-"""
-Test API Structure
+import pytest
+from httpx import AsyncClient
+from unittest.mock import patch, AsyncMock
+import datetime
+import uuid
 
-This script validates that the API is correctly set up and can be imported
-without errors. It tests the API endpoint structure without running the full pipeline.
-"""
+# Assuming the FastAPI app and models are defined in api.py
+from api import app, pipeline_runs, PipelineRunRequest, PipelineRunResponse, PipelineStatusResponse, PipelineErrorDetail
 
-import sys
-import logging
-from pathlib import Path
+@pytest.fixture(autouse=True)
+def clear_pipeline_runs_store():
+    """Fixture to clear the in-memory store before each test to ensure isolation."""
+    pipeline_runs.clear()
+    yield
 
-# Add the project root to the Python path
-project_root = Path(__file__).parent.absolute()
-sys.path.insert(0, str(project_root))
+@pytest.mark.asyncio
+async def test_read_root():
+    """Test the root endpoint returns a success message."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get("/")
+    assert response.status_code == 200
+    assert response.json() == {"message": "Material Ingestion Pipeline API"}
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-logger = logging.getLogger("test_api")
+@pytest.mark.asyncio
+async def test_health_check():
+    """Test the health check endpoint returns a healthy status and timestamp."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get("/health")
+    assert response.status_code == 200
+    assert "status" in response.json()
+    assert response.json()["status"] == "healthy"
+    assert "timestamp" in response.json()
+
+@pytest.mark.asyncio
+@patch("api._mock_pipeline_execution", new_callable=AsyncMock)
+async def test_start_pipeline_run_success(mock_pipeline_execution):
+    """Test successful initiation of a pipeline run with valid input."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        request_data = {
+            "pipelineConfigId": "config-123",
+            "inputData": {"document_url": "http://example.com/doc1.pdf"},
+            "metadata": {"user": "test_user"}
+        }
+        response = await ac.post("/pipeline/run", json=request_data)
+
+    assert response.status_code == 202
+    response_data = response.json()
+    assert "runId" in response_data
+    assert response_data["status"] == "PENDING"
+    assert response_data["message"] == "Pipeline run initiated successfully"
+    assert "submittedAt" in response_data
+
+    run_id = response_data["runId"]
+    assert run_id in pipeline_runs
+    assert pipeline_runs[run_id]["status"] == "PENDING"
+    assert pipeline_runs[run_id]["pipelineConfigId"] == "config-123"
+    assert pipeline_runs[run_id]["inputData"] == {"document_url": "http://example.com/doc1.pdf"}
+
+    # Ensure the background task was added and called with correct parameters
+    mock_pipeline_execution.assert_called_once_with(
+        run_id, request_data["pipelineConfigId"], request_data["inputData"]
+    )
+
+@pytest.mark.asyncio
+async def test_start_pipeline_run_invalid_input():
+    """Test pipeline run initiation with an invalid request body (missing required field)."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        # Missing required field 'pipelineConfigId'
+        request_data = {
+            "inputData": {"document_url": "http://example.com/doc1.pdf"}
+        }
+        response = await ac.post("/pipeline/run", json=request_data)
+
+    assert response.status_code == 422 # Unprocessable Entity for Pydantic validation error
+    assert "detail" in response.json()
+    assert any("field required" in err["msg"] for err in response.json()["detail"])
+
+@pytest.mark.asyncio
+async def test_get_pipeline_status_pending():
+    """Test retrieving status for a pipeline run that is currently PENDING."""
+    test_run_id = str(uuid.uuid4())
+    submitted_at = datetime.datetime.now(datetime.timezone.utc)
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id,
+        "status": "PENDING",
+        "progress": 0,
+        "submittedAt": submitted_at,
+        "lastUpdatedAt": submitted_at,
+        "pipelineConfigId": "config-test",
+        "inputData": {"test_key": "test_value"},
+        "error": None
+    }
+
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/status")
+
+    assert response.status_code == 200
+    response_data = response.json()
+    assert response_data["runId"] == test_run_id
+    assert response_data["status"] == "PENDING"
+    assert response_data["progress"] == 0
+    assert response_data["submittedAt"] == submitted_at.isoformat().replace("+00:00", "Z")
+    assert response_data["lastUpdatedAt"] == submitted_at.isoformat().replace("+00:00", "Z")
+    assert response_data["error"] is None
+
+@pytest.mark.asyncio
+async def test_get_pipeline_status_completed():
+    """Test retrieving status for a pipeline run that has COMPLETED successfully."""
+    test_run_id = str(uuid.uuid4())
+    submitted_at = datetime.datetime.now(datetime.timezone.utc)
+    completed_at = submitted_at + datetime.timedelta(minutes=5)
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id,
+        "status": "COMPLETED",
+        "progress": 100,
+        "submittedAt": submitted_at,
+        "lastUpdatedAt": completed_at,
+        "pipelineConfigId": "config-test",
+        "inputData": {},
+        "reportUrl": f"/pipeline/{test_run_id}/report",
+        "visualizationUrl": f"/pipeline/{test_run_id}/visualization",
+        "error": None
+    }
+
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/status")
+
+    assert response.status_code == 200
+    response_data = response.json()
+    assert response_data["runId"] == test_run_id
+    assert response_data["status"] == "COMPLETED"
+    assert response_data["progress"] == 100
+    assert response_data["reportUrl"] == f"/pipeline/{test_run_id}/report"
+    assert response_data["visualizationUrl"] == f"/pipeline/{test_run_id}/visualization"
+    assert response_data["error"] is None
+
+@pytest.mark.asyncio
+async def test_get_pipeline_status_failed():
+    """Test retrieving status for a pipeline run that has FAILED."""
+    test_run_id = str(uuid.uuid4())
+    submitted_at = datetime.datetime.now(datetime.timezone.utc)
+    failed_at = submitted_at + datetime.timedelta(minutes=2)
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id,
+        "status": "FAILED",
+        "progress": 75,
+        "submittedAt": submitted_at,
+        "lastUpdatedAt": failed_at,
+        "pipelineConfigId": "config-test",
+        "inputData": {},
+        "error": PipelineErrorDetail(code="VALIDATION_ERROR", message="Input data schema mismatch").dict(),
+    }
+
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/status")
+
+    assert response.status_code == 200
+    response_data = response.json()
+    assert response_data["runId"] == test_run_id
+    assert response_data["status"] == "FAILED"
+    assert response_data["progress"] == 75
+    assert response_data["error"] == {"code": "VALIDATION_ERROR", "message": "Input data schema mismatch", "details": None}
+
+@pytest.mark.asyncio
+async def test_get_pipeline_status_not_found():
+    """Test retrieving status for a non-existent pipeline run ID."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{uuid.uuid4()}/status")
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Pipeline run not found"}
+
+@pytest.mark.asyncio
+async def test_get_pipeline_report_success():
+    """Test retrieving a report for a successfully completed pipeline run."""
+    test_run_id = str(uuid.uuid4())
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id, "status": "COMPLETED", "progress": 100,
+        "submittedAt": datetime.datetime.now(datetime.timezone.utc),
+        "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+        "pipelineConfigId": "config-test", "inputData": {},
+        "reportUrl": f"/pipeline/{test_run_id}/report_content.json",
+        "error": None
+    }
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/report")
+    assert response.status_code == 200
+    assert response.json()["report_content"] == f"Detailed report for run {test_run_id}"
+    assert response.json()["url"] == f"/pipeline/{test_run_id}/report_content.json"
+
+@pytest.mark.asyncio
+async def test_get_pipeline_report_not_found():
+    """Test retrieving a report for a non-existent pipeline run ID."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{uuid.uuid4()}/report")
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Pipeline run not found"}
+
+@pytest.mark.asyncio
+async def test_get_pipeline_report_not_completed():
+    """Test retrieving a report for a pipeline run that is not yet completed."""
+    test_run_id = str(uuid.uuid4())
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id, "status": "RUNNING", "progress": 50,
+        "submittedAt": datetime.datetime.now(datetime.timezone.utc),
+        "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+        "pipelineConfigId": "config-test", "inputData": {},
+        "error": None
+    }
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/report")
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Pipeline not completed yet or failed"}
+
+@pytest.mark.asyncio
+async def test_get_pipeline_report_url_not_available():
+    """Test retrieving a report when the report URL is not set, even if completed."""
+    test_run_id = str(uuid.uuid4())
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id, "status": "COMPLETED", "progress": 100,
+        "submittedAt": datetime.datetime.now(datetime.timezone.utc),
+        "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+        "pipelineConfigId": "config-test", "inputData": {},
+        "error": None
+        # No reportUrl
+    }
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/report")
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Report not available"}
 
 
-def test_fastapi_import():
-    """Test that FastAPI library can be imported."""
-    logger.info("Testing FastAPI library import...")
-    try:
-        import fastapi
-        logger.info(f"✓ FastAPI library imported successfully")
-        logger.info(f"  - FastAPI version: {fastapi.__version__}")
-        return True
-    except ImportError as e:
-        logger.error(f"✗ FastAPI import failed: {e}")
-        return False
+@pytest.mark.asyncio
+async def test_get_pipeline_visualization_success():
+    """Test retrieving visualization data for a successfully completed pipeline run."""
+    test_run_id = str(uuid.uuid4())
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id, "status": "COMPLETED", "progress": 100,
+        "submittedAt": datetime.datetime.now(datetime.timezone.utc),
+        "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+        "pipelineConfigId": "config-test", "inputData": {},
+        "visualizationUrl": f"/pipeline/{test_run_id}/viz_data.json",
+        "error": None
+    }
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/visualization")
+    assert response.status_code == 200
+    assert response.json()["visualization_data"] == f"Visualization for run {test_run_id}"
+    assert response.json()["url"] == f"/pipeline/{test_run_id}/viz_data.json"
 
+@pytest.mark.asyncio
+async def test_get_pipeline_visualization_not_found():
+    """Test retrieving visualization data for a non-existent pipeline run ID."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{uuid.uuid4()}/visualization")
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Pipeline run not found"}
 
-def test_uvicorn_import():
-    """Test that uvicorn library can be imported."""
-    logger.info("Testing uvicorn library import...")
-    try:
-        import uvicorn
-        logger.info(f"✓ Uvicorn library imported successfully")
-        return True
-    except ImportError as e:
-        logger.error(f"✗ Uvicorn import failed: {e}")
-        return False
+@pytest.mark.asyncio
+async def test_get_pipeline_visualization_not_completed():
+    """Test retrieving visualization data for a pipeline run that is not yet completed."""
+    test_run_id = str(uuid.uuid4())
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id, "status": "RUNNING", "progress": 50,
+        "submittedAt": datetime.datetime.now(datetime.timezone.utc),
+        "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+        "pipelineConfigId": "config-test", "inputData": {},
+        "error": None
+    }
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/visualization")
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Pipeline not completed yet or failed"}
 
+@pytest.mark.asyncio
+async def test_get_pipeline_visualization_url_not_available():
+    """Test retrieving visualization data when the URL is not set, even if completed."""
+    test_run_id = str(uuid.uuid4())
+    pipeline_runs[test_run_id] = {
+        "runId": test_run_id, "status": "COMPLETED", "progress": 100,
+        "submittedAt": datetime.datetime.now(datetime.timezone.utc),
+        "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+        "pipelineConfigId": "config-test", "inputData": {},
+        "error": None
+        # No visualizationUrl
+    }
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get(f"/pipeline/{test_run_id}/visualization")
+    assert response.status_code == 404
+    assert response.json() == {"detail": "Visualization not available"}
 
-def test_api_import():
-    """Test that the API module can be imported."""
-    logger.info("Testing API import...")
-    try:
-        import api
-        logger.info("✓ API module imported successfully")
-        
-        # Check that the app exists
-        if hasattr(api, 'app'):
-            logger.info("  - FastAPI app instance found")
-        else:
-            logger.warning("  - FastAPI app instance not found")
-            return False
-            
-        return True
-    except Exception as e:
-        logger.error(f"✗ API import failed: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
+# Integration test: simulate a full run from start to completion (mocking background task internals)
+@pytest.mark.asyncio
+async def test_full_pipeline_run_lifecycle_success():
+    """Integration test for a full successful pipeline run lifecycle, from initiation to report/visualization retrieval."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        # 1. Start pipeline
+        request_data = {
+            "pipelineConfigId": "config-full-success",
+            "inputData": {"document_id": "doc-full-success"},
+        }
+        start_response = await ac.post("/pipeline/run", json=request_data)
+        assert start_response.status_code == 202
+        run_id = start_response.json()["runId"]
 
+        # 2. Check status immediately (should be PENDING)
+        status_response_pending = await ac.get(f"/pipeline/{run_id}/status")
+        assert status_response_pending.status_code == 200
+        assert status_response_pending.json()["status"] == "PENDING"
+        assert status_response_pending.json()["progress"] == 0
 
-def test_api_models():
-    """Test that the API models are correctly defined."""
-    logger.info("Testing API models...")
-    try:
-        from api import PipelineRunRequest, PipelineRunResponse, PipelineStatusResponse
-        
-        # Test PipelineRunRequest
-        request = PipelineRunRequest(input_dir="./test_input", output_dir="./test_output")
-        assert request.input_dir == "./test_input"
-        assert request.output_dir == "./test_output"
-        logger.info("  - PipelineRunRequest model validated")
-        
-        # Test PipelineRunResponse
-        response = PipelineRunResponse(
-            run_id="test_run_123",
-            message="Test message",
-            input_dir="./test_input",
-            output_dir="./test_output"
-        )
-        assert response.run_id == "test_run_123"
-        logger.info("  - PipelineRunResponse model validated")
-        
-        # Test PipelineStatusResponse
-        status = PipelineStatusResponse(
-            run_id="test_run_123",
-            status="running",
-            message="Pipeline is running"
-        )
-        assert status.status == "running"
-        logger.info("  - PipelineStatusResponse model validated")
-        
-        logger.info("✓ API models validated successfully")
-        return True
-    except Exception as e:
-        logger.error(f"✗ API models validation failed: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
+        # 3. Manually advance the state to COMPLETED (simulating background task finishing)
+        # In a real integration test, you might wait for the background task or use a more sophisticated mock
+        # For this test, we directly manipulate the shared state as if the background task completed.
+        pipeline_runs[run_id].update({
+            "status": "COMPLETED",
+            "progress": 100,
+            "currentStage": "Finished",
+            "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+            "reportUrl": f"/pipeline/{run_id}/report",
+            "visualizationUrl": f"/pipeline/{run_id}/visualization",
+            "error": None
+        })
 
+        # 4. Check status again (should be COMPLETED)
+        status_response_completed = await ac.get(f"/pipeline/{run_id}/status")
+        assert status_response_completed.status_code == 200
+        assert status_response_completed.json()["status"] == "COMPLETED"
+        assert status_response_completed.json()["progress"] == 100
+        assert "reportUrl" in status_response_completed.json()
+        assert "visualizationUrl" in status_response_completed.json()
 
-def test_api_endpoints():
-    """Test that the API endpoints are defined."""
-    logger.info("Testing API endpoints...")
-    try:
-        from api import app
-        
-        # Get all routes
-        routes = [route.path for route in app.routes]
-        
-        expected_routes = [
-            "/",
-            "/run",
-            "/status/{run_id}",
-            "/results/{run_id}/visualization",
-            "/results/{run_id}/report",
-            "/health"
-        ]
-        
-        for expected_route in expected_routes:
-            if expected_route in routes:
-                logger.info(f"  - ✓ Endpoint {expected_route} found")
-            else:
-                logger.warning(f"  - ✗ Endpoint {expected_route} not found")
-                return False
-        
-        logger.info("✓ API endpoints validated successfully")
-        return True
-    except Exception as e:
-        logger.error(f"✗ API endpoints validation failed: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
+        # 5. Get report
+        report_response = await ac.get(f"/pipeline/{run_id}/report")
+        assert report_response.status_code == 200
+        assert "report_content" in report_response.json()
 
+        # 6. Get visualization
+        viz_response = await ac.get(f"/pipeline/{run_id}/visualization")
+        assert viz_response.status_code == 200
+        assert "visualization_data" in viz_response.json()
 
-def test_helper_functions():
-    """Test that helper functions are defined."""
-    logger.info("Testing helper functions...")
-    try:
-        from api import setup_sample_files, update_settings_paths, run_pipeline_in_background
-        
-        logger.info("  - setup_sample_files function found")
-        logger.info("  - update_settings_paths function found")
-        logger.info("  - run_pipeline_in_background function found")
-        
-        logger.info("✓ Helper functions validated successfully")
-        return True
-    except Exception as e:
-        logger.error(f"✗ Helper functions validation failed: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
+@pytest.mark.asyncio
+async def test_full_pipeline_run_lifecycle_failure():
+    """Integration test for a full failed pipeline run lifecycle, including attempts to retrieve reports/visualizations."""
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        # 1. Start pipeline with input that triggers failure
+        request_data = {
+            "pipelineConfigId": "config-full-fail",
+            "inputData": {"document_id": "doc-full-fail", "fail_me": True}, # This input will trigger failure in _mock_pipeline_execution
+        }
+        start_response = await ac.post("/pipeline/run", json=request_data)
+        assert start_response.status_code == 202
+        run_id = start_response.json()["runId"]
 
+        # 2. Check status immediately (should be PENDING)
+        status_response_pending = await ac.get(f"/pipeline/{run_id}/status")
+        assert status_response_pending.status_code == 200
+        assert status_response_pending.json()["status"] == "PENDING"
 
-def main():
-    """Run all API structure tests."""
-    logger.info("=" * 80)
-    logger.info("Testing API Structure")
-    logger.info("=" * 80)
-    
-    tests = [
-        ("FastAPI Import", test_fastapi_import),
-        ("Uvicorn Import", test_uvicorn_import),
-        ("API Import", test_api_import),
-        ("API Models", test_api_models),
-        ("API Endpoints", test_api_endpoints),
-        ("Helper Functions", test_helper_functions),
-    ]
-    
-    results = {}
-    
-    for test_name, test_func in tests:
-        logger.info(f"\nRunning test: {test_name}")
-        logger.info("-" * 80)
-        results[test_name] = test_func()
-        logger.info("")
-    
-    # Print summary
-    logger.info("=" * 80)
-    logger.info("Test Summary")
-    logger.info("=" * 80)
-    
-    for test_name, result in results.items():
-        status = "✓ PASS" if result else "✗ FAIL"
-        logger.info(f"{status}: {test_name}")
-    
-    logger.info("=" * 80)
-    passed = sum(results.values())
-    total = len(results)
-    logger.info(f"Results: {passed}/{total} tests passed")
-    logger.info("=" * 80)
-    
-    return passed == total
+        # 3. Manually advance the state to FAILED
+        pipeline_runs[run_id].update({
+            "status": "FAILED",
+            "progress": 75,
+            "currentStage": "Data Processing",
+            "lastUpdatedAt": datetime.datetime.now(datetime.timezone.utc),
+            "error": PipelineErrorDetail(code="PROCESSING_ERROR", message="Failed to process document").dict(),
+        })
 
+        # 4. Check status again (should be FAILED)
+        status_response_failed = await ac.get(f"/pipeline/{run_id}/status")
+        assert status_response_failed.status_code == 200
+        assert status_response_failed.json()["status"] == "FAILED"
+        assert status_response_failed.json()["progress"] == 75
+        assert "error" in status_response_failed.json()
 
-if __name__ == "__main__":
-    success = main()
-    sys.exit(0 if success else 1)
+        # 5. Attempt to get report (should fail as not completed)
+        report_response = await ac.get(f"/pipeline/{run_id}/report")
+        assert report_response.status_code == 400
+        assert report_response.json() == {"detail": "Pipeline not completed yet or failed"}
+
+        # 6. Attempt to get visualization (should fail as not completed)
+        viz_response = await ac.get(f"/pipeline/{run_id}/visualization")
+        assert viz_response.status_code == 400
+        assert viz_response.json() == {"detail": "Pipeline not completed yet or failed"}
